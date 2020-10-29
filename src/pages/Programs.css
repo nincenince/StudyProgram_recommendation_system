@@ -1,0 +1,20 @@
+.fac-prog-career{
+    /* float:left;
+    top:10px; */
+    border: 3px  solid transparent;
+    width: 150px;
+    /* border-width: 8px; */
+    overflow-x:visible;
+    overflow-y: hidden;
+}
+
+.program-list{
+    /* float:left;
+    top:10px; */
+    border: 3px  solid ;
+    width: 150px;
+    /* border-width: 8px; */
+    overflow-x:visible;
+    overflow-y: hidden;
+
+}

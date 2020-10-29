@@ -1,0 +1,93 @@
+
+
+.nextpage-button{
+    /* font-size: 2rem; */
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-decoration: bold;
+    position:absolute;
+    top:650px;
+    left: 75%;
+    border-radius: 20px;
+    border: 1px solid coral;
+    padding:0em 1em;
+    height: 40px;
+    width:250px;
+    background-color: rgb(255, 189, 102)
+}
+
+.nextpage-button:hover{
+    /* font-size: 2rem; */
+    color: white;
+    /* text-decoration: bold; */
+    position:absolute;
+    top:650px;
+    left: 75%;
+    border-radius: 20px;
+    border: 1px solid coral;
+    padding:0em 1em;
+    height: 40px;
+    width:250px;
+    background-color:coral;
+}
+
+.about-bg {
+    /* background-image: url(./bg2.jpg); */
+     
+    position:absolute;
+    top:110px;
+
+}
+
+.centered-text{
+    position: absolute;
+    top:47%;
+    left: 50%;
+    transform:translate(-50%, -50%) ;
+    color: white;
+    font-size: 30px;
+}
+
+.centered-text2{
+    position: absolute;
+    top:100%;
+    left: 50%;
+    transform:translate(-50%, -50%) ;
+    color: black;
+    font-size: 25px;
+    text-decoration: underline;
+    text-decoration-color: rgb(241, 141, 74);
+}
+
+.bottom-left {
+    position: absolute;
+    left:20%;
+    top:110%;
+    border: 1px solid black;
+    padding: 5px;
+    padding-bottom: 50px;
+    margin: 20px;
+    }
+
+
+.bottom-center {
+    position: absolute;
+    left:45%; 
+    top:110%;
+    border: 1px solid black;
+    padding: 5px;
+    padding-bottom: 50px;
+    margin: 20px;
+    
+}
+
+.bottom-right {
+    position: absolute;
+    left:70%; 
+    top:110%;
+    border: 1px solid black;
+    padding: 5px;
+    padding-bottom: 50px;
+    margin: 20px;
+        
+}
