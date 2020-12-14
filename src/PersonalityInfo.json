@@ -1,0 +1,44 @@
+{
+    "PersonalInfo": [
+      {
+        "Personality": "Extroversion",
+        "PersonalityList": [
+          {
+            "PerScore": "97"
+          }
+        ]
+      },
+      {
+        "Personality": "Emotion Stability",
+        "PersonalityList": [
+          {
+            "PerScore": "79"
+          }
+        ]
+      },
+      {
+        "Personality": "Agreeableness",
+        "PersonalityList": [
+          {
+            "PerScore": "83"
+          }
+        ]
+      },
+      {
+        "Personality": "Conscientiousness",
+        "PersonalityList": [
+          {
+            "PerScore": "58"
+          }
+        ]
+      },
+      {
+        "Personality": "Intellect/ Imagination",
+        "PersonalityList": [
+          {
+            "PerScore": "8"
+          }
+        ]
+      }      
+    ]   
+    }

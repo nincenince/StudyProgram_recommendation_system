@@ -1,0 +1,224 @@
+/* 
+*{
+    max-width: 100%;
+}
+
+.Test-dropdown{
+    margin: 10px;
+    width:70%;
+    padding:20px;
+      
+}
+
+.AContainer{
+    margin: 10px;
+    font-size: 15px;
+
+}
+
+.Step-container{
+    position:fixed;
+    top: 25%;
+    left: 20%; 
+    width:70%;
+}
+
+.test-header-text{
+    color: rgb(136, 57, 1);
+    position:fixed;
+    top: 15%;
+    left: 5%; 
+}
+
+.test-step-label{
+    font-size: 50px;
+}
+
+.result-program-list{
+    color: black;
+    position: relative;
+    top:40%;
+    left:5%;
+
+    border: 1px  solid black;
+    border-left: 7px solid red;
+    width: 800px;
+    height: 150px;
+    padding: 25px;
+   
+    overflow-x:visible;
+    overflow-y: visible;
+
+}
+ */
+
+ .rec-header{
+    position:absolute;
+    top: 18%;
+    left: 5%;
+    font-weight: 900;
+ }
+
+ .rec-education-info {
+    position: absolute;
+    left:20%;
+    top:30%;
+    border: 1px solid black;
+    border-left-color:red;
+    border-left-width: thick;
+    padding: 5px;
+    padding-bottom: 1%;
+    padding-right: 2%;
+    margin: 20px;
+    font-weight: 100;
+    }
+
+.rec-educationalInformation{
+    /* font-weight: thin; */
+    font-size: 24px;
+    font-weight: 200;
+}
+.rec-personalityInformation{
+    font-size: 24px;
+    font-weight: 200;   
+
+}
+
+
+
+.rec-personality{
+    position: absolute;
+    left:55%; 
+    top:30%;
+    border: 1px solid black;
+    border-left-color:red;
+    border-left-width: thick;
+    padding: 5px;
+    padding-bottom: 1%;
+    padding-right: 2%;
+    margin: 20px;
+        
+}
+
+.rec-edit-button{
+    color: white;
+    font-size: 14px;
+    font-weight:bold;
+    position:relative;
+    /* top: 90%; */
+    left: 45%;
+    border-radius: 20px;
+    border: 1px solid red;
+    padding:5px;
+    height: 40px;
+    width:50%;
+    margin:5%;
+    background-color: rgb(238, 96, 44);
+}
+
+.rec-edit-button:hover{
+    color: white;
+    font-size: 14px;
+    font-weight:bold;
+    position:relative;
+    /* top: 90%; */
+    left: 45%;
+    border-radius: 20px;
+    border: 1px solid coral;
+    padding:5px;
+    height: 40px;
+    width:50%;
+    margin:5%;
+    background-color:coral;
+}
+
+.rec-retake-button{
+    color: white;
+    font-size: 14px;
+    font-weight:bold;
+    position: relative;;
+    /* top: 90%; */
+    left: 45%;
+    border-radius: 20px;
+    border: 1px solid red;
+    padding:5px;
+    height: 40px;
+    width:50%;
+    margin:4%;
+    background-color: rgb(238, 96, 44);
+}
+.rec-retake-button:hover{
+    color: white;
+    font-size: 14px;
+    font-weight:bold;
+    position: relative;;
+    /* top: 90%; */
+    left: 45%;
+    border-radius: 20px;
+    border: 1px solid coral;
+    padding:5px;
+    height: 40px;
+    width:50%;
+    margin:4%;
+    background-color:coral;
+}
+
+.rec-programs-button{
+    color: white;
+    font-size: 14px;
+    font-weight:bold;
+    position:absolute;
+    top:90%;
+    left: 70%;
+    border-radius: 20px;
+    border: 1px solid red;
+    padding:0em 1em;
+    height: 40px;
+    width:15%;
+    background-color: rgb(238, 96, 44);
+}
+
+.rec-programs-button:hover{
+
+    color: white;
+    font-size: 14px;
+    font-weight:bold;
+    position:absolute;
+    top:90%;
+    left: 70%;
+    border-radius: 20px;
+    border: 1px solid coral;
+    padding:0em 1em;
+    height: 40px;
+    width:15%;
+    background-color:coral;
+}
+
+.rec-EduInfo{
+    border: 0.5px solid black;
+    width:30%;
+    background-color: rgb(238, 235, 235);
+    padding: 5px;
+    margin: auto;
+    text-align: center;
+}
+
+.rec-EduName{
+    padding: 3px;
+    margin: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.rec-PerScore{
+    padding: 6px;
+    margin: auto;
+    text-align: center;
+}
+
+.rec-PerName{
+    /* padding: 3px;
+    margin: 8px; */
+    text-align: center;
+    font-weight: 500;
+}

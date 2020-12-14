@@ -1,0 +1,79 @@
+.recprog-header{
+    position:absolute;
+    top: 18%;
+    left: 15%;
+    font-weight: 900;
+}
+
+.recprog-box{
+    position: absolute;
+    left:20%; 
+    top:30%;
+    border: 1px solid black;
+    border-left-color:red;
+    border-left-width: thick;
+    padding: 5px;
+    padding-bottom: 1%;
+    padding-right: 2%;
+    margin: 20px;
+    display: flex;
+
+}
+
+.recprog-result{
+    /* font-weight: thin; */
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+
+}
+
+.recprog-proglist{
+   
+    font-weight: 500;
+    float:left; 
+    width: 60%;
+    flex: 1;
+    margin:5px;
+
+}
+
+.recprog-recscore{
+   
+    margin-right: 20px;
+    margin:50px;
+     
+}
+
+
+.recprog-done-button{
+    color: white;
+    font-size: 14px;
+    font-weight:bold;
+    position:fixed;
+    top: 80%;
+    left: 75%;
+    border-radius: 20px;
+    border: 1px solid red;
+    padding:5px;
+    height: 5%;
+    width:10%;
+    margin:5%;
+    background-color: rgb(238, 96, 44);
+}
+
+.recprog-done-button:hover{
+    color: white;
+    font-size: 14px;
+    font-weight:bold;
+    position:fixed;
+    top: 80%;
+    left: 75%;
+    border-radius: 20px;
+    border: 1px solid coral;
+    padding:5px;
+    height: 5%;
+    width:10%;
+    margin:5%;
+    background-color: coral;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import './SignUp.css'
 // import {Link} from 'react-router-dom';
-import bg from './IMG_0947.JPG'; 
+import bg from '../images/IMG_0947.JPG'; 
 
   
 class SignUp extends React.Component {

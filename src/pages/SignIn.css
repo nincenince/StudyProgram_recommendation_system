@@ -114,14 +114,14 @@
 
 .google-signin{
     position: relative;
-    top: 0px;
-    left: 600px;
+    top: 50%;
+    left: 40%;
     width:270px;
 }
 
 .facebook-signin{
     position: relative;
-    top: 10px;
-    left: 600px;
+    top:  10%;
+    left: 40%;
     width:270px;
 }

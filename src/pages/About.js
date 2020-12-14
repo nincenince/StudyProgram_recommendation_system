@@ -1,19 +1,20 @@
 import React from 'react';
 import {Link } from "react-router-dom";
 import './About.css';
-// import bg from './images/crop.jpg';
-import logo from './bg2.jpg'; 
-
+// import bgimg from './bg2.jpg'; 
+import Image from 'react-bootstrap/Image';
+import bgimg from '../images/bg2.jpg';
 
 function About() {
     return (
-        // <div className="about-bg" >
+     
 <div>
       <div styles={{
   
-         backgroundImage:`url(${logo})` }}>
+         backgroundImage:`url(${bgimg})` }}>
        
-        <img src={logo} alt="Logo" widht="1440" className = "about-bg" />
+        <Image src={bgimg}  alt="bgimg" widht="100%" className = "about-bg" />
+       
         <div className="centered-text">
           <p>Discover your study program and future career, </p>
             Let’s start analyse them with your 
@@ -27,28 +28,52 @@ function About() {
         </Link>
 
     </div>
+
+    <div>
+      <div className="about-guide">
+        <h1 style={{color: "red"}}>55</h1>
+        <p>recommendation</p>
+        <p>programs</p>
+      </div>
+        
+        <p className="vertical-line"></p>
+
+      <div className="about-guide2">
+        <h1 style={{color: "red"}}>Big 5</h1>
+        <p>Personality Test</p>
+        <p>based</p>
+      </div>
+
+    </div>
+
+
         <div>
           <div className="centered-text2">
-            What will you get?
+            STEPS
           </div>
           
-        <div class="bottom-left">           
-          <i class="fas fa-smile-beam"></i>
-          Bottom Left
+        <div class="bottom-left">   
+        <p>Sign In to </p>        
+        <p>our website</p>
         </div>
           
-        <div class="bottom-center">
-          <i class="fas fa-user-graduate"></i>
-          Bottom center</div>
-
-        <div class="bottom-right">
-          <i class="fas fa-briefcase"></i>
-          Bottom right</div>
-
-
-            
+        <div class="bottom-center1">
+        <p>Fill in your </p>     
+        <p>Educational</p>   
+        <p>Information</p>
         </div>
 
+        <div class="bottom-center2">
+        <p> Take  </p>        
+        <p>Personality Test</p>
+        </div>
+
+        <div class="bottom-right">
+        <p> Recommend  </p>        
+        <p>Programs Results</p>
+        </div>
+
+        </div>
 
   </div>
     )

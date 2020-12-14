@@ -3,7 +3,9 @@ import './SignIn.css'
 import {Link} from 'react-router-dom';
 import {GoogleLogin} from 'react-google-login';
 import ReactFacebookLogin from 'react-facebook-login';
-import bg from './IMG_0947.JPG'; 
+// import bg from '../images/plain.png'; 
+import bg from '../images/IMG_0947.JPG'; 
+
 
 const clientId = '304351361611-crq2n9aucmhcee8bf7pnujvmvfg5pe1v.apps.googleusercontent.com'
 const responseGoogle = (response) => {
@@ -92,14 +94,7 @@ class SignIn extends React.Component {
 
          
       render() {
-        // const customStyle = {
-        //     color: "grey",
-        //     backgroundColor: "white",
-        //     padding: "10px",
-        //     // icon:"fa-facebook",
-        //     width:"270px",
-        //     height:"55px"
-        //   };
+    
         return (
     <div>
       <img src={bg} alt="Logo" widht="1440" className = "signup-bg" />
@@ -138,7 +133,7 @@ class SignIn extends React.Component {
                   <div className="text-danger signin-password-error">{this.state.errors.password}</div>
               </div>
                   
-              <input type="submit" value="Submit" class="btn btn-success signin-submit-button" />
+              <input type="submit" value="Sign In" class="btn btn-success signin-submit-button" />
 
               <span className='signin-to-signup'>
                 Don't have an account? <Link to="/SignUp">Sign Up</Link>

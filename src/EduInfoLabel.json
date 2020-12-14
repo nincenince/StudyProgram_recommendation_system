@@ -1,0 +1,36 @@
+{
+    "EduInfo": [
+      {
+        "TestName": "SAT Math",
+        "ScoreList": [
+          {
+            "Score": ""
+          }
+        ]
+      },
+      {
+        "TestName": "SAT English",
+        "ScoreList": [
+          {
+            "Score": ""
+          }
+        ]
+      },
+      {
+        "TestName": "SAT Physics",
+        "ScoreList": [
+          {
+            "Score": ""
+          }
+        ]
+      },
+      {
+        "TestName": "SAT Chemistry",
+        "ScoreList": [
+          {
+            "Score": ""
+          }
+        ]
+      }      
+    ]   
+    }

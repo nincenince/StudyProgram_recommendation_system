@@ -1,19 +1,19 @@
 
-
 .nextpage-button{
     /* font-size: 2rem; */
     color: rgb(0, 0, 0);
     font-size: 15px;
     text-decoration: bold;
     position:absolute;
-    top:650px;
+    top: 80%;
     left: 75%;
     border-radius: 20px;
     border: 1px solid coral;
     padding:0em 1em;
     height: 40px;
     width:250px;
-    background-color: rgb(255, 189, 102)
+    background-color: rgb(255, 189, 102);
+    /* z-index: -1; */
 }
 
 .nextpage-button:hover{
@@ -21,7 +21,7 @@
     color: white;
     /* text-decoration: bold; */
     position:absolute;
-    top:650px;
+    top:80%;
     left: 75%;
     border-radius: 20px;
     border: 1px solid coral;
@@ -33,24 +33,44 @@
 
 .about-bg {
     /* background-image: url(./bg2.jpg); */
-     
     position:absolute;
-    top:110px;
+    top:15%;
+    z-index: -1;
+}
 
+.about-guide{
+    position: absolute;
+    top:100%;
+    left: 25%;
+}
+
+.about-guide2{
+    position: absolute;
+    top:100%;
+    left: 65%;
+}
+
+.vertical-line{
+    position:absolute;
+    top:100%;
+    left: 50%;
+    border-left: 1px solid rgb(107, 107, 107);
+    height: 100px;
 }
 
 .centered-text{
     position: absolute;
-    top:47%;
+    top:50%;
     left: 50%;
     transform:translate(-50%, -50%) ;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
+    /* z-index: -1; */
 }
 
 .centered-text2{
     position: absolute;
-    top:100%;
+    top:130%;
     left: 50%;
     transform:translate(-50%, -50%) ;
     color: black;
@@ -61,20 +81,36 @@
 
 .bottom-left {
     position: absolute;
-    left:20%;
-    top:110%;
+    left:10%;
+    top:135%;
     border: 1px solid black;
+    border-left: 5px solid red;
     padding: 5px;
     padding-bottom: 50px;
+    padding-right: 30px;
     margin: 20px;
     }
 
 
-.bottom-center {
+.bottom-center1 {
     position: absolute;
-    left:45%; 
-    top:110%;
+    left:35%; 
+    top:135%;
     border: 1px solid black;
+    border-left: 5px solid red;
+    padding: 5px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    margin: 20px;
+    
+}
+
+.bottom-center2 {
+    position: absolute;
+    left:55%; 
+    top:135%;
+    border: 1px solid black;
+    border-left: 5px solid red;
     padding: 5px;
     padding-bottom: 50px;
     margin: 20px;
@@ -83,9 +119,10 @@
 
 .bottom-right {
     position: absolute;
-    left:70%; 
-    top:110%;
+    left:75%; 
+    top:135%;
     border: 1px solid black;
+    border-left: 5px solid red;
     padding: 5px;
     padding-bottom: 50px;
     margin: 20px;
