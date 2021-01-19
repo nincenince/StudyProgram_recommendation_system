@@ -1,0 +1,83 @@
+.PerResult-done-button{
+    color: white;
+    font-weight:bold;
+    position:fixed;
+    top: 80%;
+    left: 75%;
+    border-radius: 20px;
+    border: 1px solid red;
+    margin:5%;
+    background-color: rgb(238, 96, 44);
+}
+
+.PerResult-done-button:hover{
+    color: white;
+    font-weight:bold;
+    position:fixed;
+    top: 80%;
+    left: 75%;
+    border-radius: 20px;
+    border: 1px solid coral;
+    margin:5%;
+    background-color: coral;
+}
+
+.PerResult-header{
+    font-weight: 900;
+    margin-bottom: 5%;;
+}
+
+.PerResult-box{
+
+    border: 1px solid black;
+    border-left-color:red;
+    border-left-width: thick;
+    padding: 5px;
+    padding-bottom: 1%;
+    padding-right: 2%;
+    margin: 20px;
+    display: flex;
+
+}
+
+.PerResult-result{
+    margin-left:5%;
+    margin-top: 2%;
+    font-weight: 700;
+    text-align: center;
+
+}
+
+.PerResult-proglist{
+   
+    font-weight: 500;
+    float:left; 
+    width: 100%;
+    flex: 1;
+    margin:0%;
+
+}
+
+.PerResult-recscore{
+       margin:20%;
+     
+}
+
+
+.PerResult-done-button{
+    color: white;
+    border-radius: 20px;
+    font-weight:bold;
+    border: 1px solid red;
+    background-color: rgb(238, 96, 44);
+
+
+}
+
+.PerResult-done-button:hover{
+    color: white;
+    font-weight:bold;
+    border-radius: 20px;
+    border: 1px solid coral;
+    background-color: coral;
+}

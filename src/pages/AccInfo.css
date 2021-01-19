@@ -1,0 +1,82 @@
+.update-pas-button{
+    color: white;
+    font-weight:bold;
+    position:relative;
+    border-radius: 20px;
+    border: 1px solid red;
+    background-color: rgb(238, 96, 44);
+    margin-bottom: 20%;
+}
+
+.update-pas-button:hover{
+    color: white;
+    font-weight:bold;
+    position:relative;
+    border-radius: 20px;
+    border: 1px solid coral;
+    background-color:coral;
+    margin-bottom: 20%;
+
+}
+.update-username-button{
+    color: white;
+    font-weight:bold;
+    position:relative;
+    border-radius: 20px;
+    border: 1px solid red;
+    background-color: rgb(238, 96, 44);
+    margin-bottom: 5%;
+}
+
+.update-username-button:hover{
+    color: white;
+    font-weight:bold;
+    position:relative;
+    border-radius: 20px;
+    border: 1px solid coral;
+    background-color:coral;
+    margin-bottom: 5%;
+
+}
+.update-email-button{
+    color: white;
+    font-weight:bold;
+    position:relative;
+    border-radius: 20px;
+    border: 1px solid red;
+    background-color: rgb(238, 96, 44);
+    margin-bottom: 5%;
+}
+
+.update-email-button:hover{
+    color: white;
+    font-weight:bold;
+    position:relative;
+    border-radius: 20px;
+    border: 1px solid coral;
+    background-color:coral;
+    margin-bottom: 5%;
+
+}
+
+.acc-done-button{
+    color: white;
+    font-weight:bold;
+    position:relative;
+    border-radius: 20px;
+    border: 1px solid red;
+    background-color: rgb(238, 96, 44);
+    
+}
+
+
+.acc-done-button:hover{
+    color: white;
+    font-weight:bold;
+    position:relative;
+    border-radius: 20px;
+    border: 1px solid coral;
+    background-color:coral;
+    align-items: right;
+
+}

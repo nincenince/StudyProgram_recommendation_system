@@ -1,0 +1,36 @@
+{
+    "PersonalityTestList": [
+      {
+        "Question": "question 1",
+        "ScoreList": [
+          {
+            "Score": ""
+          }
+        ]
+      },
+      {
+        "Question": "question 2",
+        "ScoreList": [
+          {
+            "Score": ""
+          }
+        ]
+      },
+      {
+        "Question": "question 3",
+        "ScoreList": [
+          {
+            "Score": ""
+          }
+        ]
+      },
+      {
+        "Question": "question 4",
+        "ScoreList": [
+          {
+            "Score": ""
+          }
+        ]
+      }      
+    ]   
+    }

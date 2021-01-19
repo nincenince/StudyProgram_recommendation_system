@@ -1,20 +1,29 @@
-.fac-prog-career{
-    /* float:left;
-    top:10px; */
-    border: 3px  solid transparent;
-    width: 150px;
-    /* border-width: 8px; */
-    overflow-x:visible;
-    overflow-y: hidden;
-}
 
-.program-list{
-    /* float:left;
-    top:10px; */
-    border: 3px  solid ;
-    width: 150px;
-    /* border-width: 8px; */
-    overflow-x:visible;
-    overflow-y: hidden;
+.container {
+    position:relative;
+    top:20px;
+    display: flex;
+    justify-content: space-between;
+    padding:90px;
 
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 100%;
+    align-content: space-between;
+  }
+
+
+.ProgramsList-box{
+    border: 1px solid #000000;
+    border-left-color:red;
+    border-left-width: 5px;
+    display: grid;
+    text-align: center;
+    margin:15px;
+ 
+    width:320px;
+    height:90%;
+
+   
 }

@@ -1,53 +1,93 @@
 import React from 'react';
 import {Link } from "react-router-dom";
 import './About.css';
-// import bgimg from './bg2.jpg'; 
-import Image from 'react-bootstrap/Image';
+
 import bgimg from '../images/bg2.jpg';
+import { Col,Row, Container , Image, Jumbotron, Button} from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function About() {
     return (
      
 <div>
-      <div styles={{
-  
-         backgroundImage:`url(${bgimg})` }}>
-       
-        <Image src={bgimg}  alt="bgimg" widht="100%" className = "about-bg" />
-       
-        <div className="centered-text">
-          <p>Discover your study program and future career, </p>
-            Let’s start analyse them with your 
-            education information and Personality.</div>
-   
 
-        <Link to="/Test">
-          <button className="nextpage-button">
-          Take the test
-        </button>
-        </Link>
+<Jumbotron style={{ backgroundImage: `url(${bgimg})`, width:'100vw', height:'76vh'}} fluid>
 
-    </div>
-
-    <div>
-      <div className="about-guide">
-        <h1 style={{color: "red"}}>55</h1>
-        <p>recommendation</p>
-        <p>programs</p>
-      </div>
         
-        <p className="vertical-line"></p>
+          <p className="centered-text" style={{ fontSize:'2vw'}}>Discover your study program and future career,
+            Let’s start analyse them with your 
+            education information and Personality.</p>
+      
+      
+    <Col lg={{ span: 12, offset: 9 }} >
+        <Link to="/RecProgram">
+          <Button 
+          className="nextpage-button" style={{ fontSize:'1vw'}}
+          // className="mx-auto"
+          >
+        Recommend Program
+        </Button>
+        </Link>
+     </Col>
+       
+  </Jumbotron>
 
-      <div className="about-guide2">
-        <h1 style={{color: "red"}}>Big 5</h1>
-        <p>Personality Test</p>
-        <p>based</p>
-      </div>
 
-    </div>
+    <Container fluid>
+      <Row>
+        <Col></Col>
+          <Col md={2} ><h1 style={{color: "red", textAlign:"center"}}>55</h1>
+          <p style={{textAlign:"center"}} >recommendation program</p>
+          </Col>
+ 
+          <Col md={1.5} >
+          <p className="vertical-line"></p>
+          </Col>
+  
+          <Col md={2} > <h1 style={{color: "red",textAlign:"center"}}>Big5</h1>
+          <p style={{textAlign:"center"}}>Personality Test based</p>
+          </Col>
+          <Col></Col>
+      </Row>
+   
+<Row><br></br></Row>
+      <Row>
+        <Col className="Step-header">
+                STEPS
+        </Col>
+      </Row>
+      <Row><br></br><br></br></Row>
+
+      <Row>
+        <Col></Col>
+          <Col md={2} >
+          <p 
+          class="Step1"
+          >Sign In to our website </p>        
+          </Col>
+          <Col md={2}>
+          <p 
+          class="Step2"
+          >Fill in your Educational Information</p>
+          </Col>
+       
+     
+  
+          <Col md={2}><p 
+          class="Step3"
+          >Take Personality Test</p></Col>
+          <Col md={2}><p 
+          class="Step4"
+          >Recommend Programs Result</p></Col>
+       <Col></Col>
+
+      </Row>
 
 
-        <div>
+  </Container>
+
+
+        {/* <div>
           <div className="centered-text2">
             STEPS
           </div>
@@ -73,9 +113,11 @@ function About() {
         <p>Programs Results</p>
         </div>
 
-        </div>
+        </div> */}
+        {/* </Container> */}
+      </div>
+   
 
-  </div>
     )
   }
 

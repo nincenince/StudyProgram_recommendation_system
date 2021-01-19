@@ -1,7 +1,7 @@
 import React from 'react';
 import './SignUp.css'
-// import {Link} from 'react-router-dom';
 import bg from '../images/IMG_0947.JPG'; 
+import { Col,Row, Container , Image, Jumbotron, Button, Form} from "react-bootstrap";
 
   
 class SignUp extends React.Component {
@@ -17,6 +17,7 @@ class SignUp extends React.Component {
   }
      
   handleChange(event) {
+    // event.preventDefault();
     let input = this.state.input;
     input[event.target.name] = event.target.value;
   
@@ -32,7 +33,7 @@ class SignUp extends React.Component {
         console.log(this.state);
   
         let input = {};
-        input["name"] = "";
+        input["username"] = "";
         input["last_name"]= "";
         input["email"] = "";
         input["password"] = "";
@@ -48,9 +49,9 @@ class SignUp extends React.Component {
       let errors = {};
       let isValid = true;
   
-      if (!input["name"]) {
+      if (!input["username"]) {
         isValid = false;
-        errors["name"] = "Please enter your name.";
+        errors["username"] = "Please enter your username.";
       }
       if (!input["last_name"]) {
         isValid = false;
@@ -99,95 +100,94 @@ class SignUp extends React.Component {
   render() {
     return (
       <div>
-      <img src={bg} alt="Logo" widht="1440" className = "signup-bg" />
-      <div className="signup-container">
-        
-        <h1 className="signup-h1">Sign Up</h1>
-
+          <Container>
+            <Col></Col>
+            <Col>
         <form onSubmit={this.handleSubmit}>
-  
-        <div class="form-group">
-            <label for="name" className="name-label">Name:</label>
-            <label for="last name" className="last-name-label">Last Name:</label>
-        </div>
+
+          <Form onSubmit={this.handleSubmit}>
+            <h1 style={{ fontSize:'2vw'}}>Sign Up</h1>
+            <Form.Group >
+              <Form.Label style={{ fontSize:'1vw'}}>Username</Form.Label>
+              <Form.Control style={{ fontSize:'1vw'}} type="text" name="username"
+              placeholder="Enter Username" value={this.state.input.username} onChange={this.handleChange} />
+              <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+              {this.state.errors.username}
+              </Form.Text>
+            </Form.Group>
+
+            <Form.Group >
+              <Form.Label style={{ fontSize:'1vw'}}>Email address</Form.Label>
+              <Form.Control style={{ fontSize:'1vw'}} type="email" name="email"
+               placeholder="Enter email" value={this.state.input.email} onChange={this.handleChange} />
+              <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+              {this.state.errors.email}
+              </Form.Text>
+            </Form.Group>
 
 
-          <div>
-          <input 
-              type="text" 
-              name="name" 
-              value={this.state.input.name}
-              onChange = {this.handleChange}
-              class="form-control name-button name-input" 
-              placeholder="Enter name" 
-              id="name" />
-              <div className="text-danger name-error">{this.state.errors.name}</div>
+          <Form.Row>   <Form.Label style={{ fontSize:'1vw'}}>Date of Birth</Form.Label></Form.Row>
+          <Form.Row>
+            <Form.Group as={Col} controlId="formGridState">
+              <Form.Control as="select" defaultValue="DD" style={{ fontSize:'1vw'}}>
+               <option style={{ fontSize:'1vw'}}>DD</option>
+               <option style={{ fontSize:'1vw'}}>01</option>
+              </Form.Control>
+            </Form.Group>
+            <Form.Group as={Col} controlId="formGridState">
+              <Form.Control as="select" defaultValue="MM" style={{ fontSize:'1vw'}}>
+               <option style={{ fontSize:'1vw'}}>MM</option>
+               <option style={{ fontSize:'1vw'}}>01</option>
+              </Form.Control>
+            </Form.Group>
+            <Form.Group as={Col} controlId="formGridState">
+              <Form.Control as="select" defaultValue="YY" style={{ fontSize:'1vw'}}>
+               <option style={{ fontSize:'1vw'}}>YY</option>
+               <option style={{ fontSize:'1vw'}}>01</option>
+              </Form.Control>
+            </Form.Group>
 
-              <input 
-              type="text" 
-              name="last_name" 
-              value={this.state.input.name}
-              onChange = {this.handleChange}
-              class="form-control last-name-input" 
-              placeholder="Enter last name" 
-              id="last_name" />
-              <div className="text-danger last-name-error">{this.state.errors.last_name}</div>
-          </div>
+            </Form.Row> 
 
- 
-  
-          <div class="form-group ">
-            <label for="email" className="email-label">Email Address:</label>
-            <input 
-              type="text" 
-              name="email" 
-              value={this.state.input.email}
-              onChange={this.handleChange}
-              class="form-control email-input" 
-              placeholder="Enter email " 
-              id="email" />
-  
-              <div className="text-danger email-error">{this.state.errors.email}</div>
-          </div>
+            <Form.Group >
+              <Form.Label style={{ fontSize:'1vw'}}>Password</Form.Label>
+              <Form.Control style={{ fontSize:'1vw'}} type="password" name="password"
+               placeholder="Enter password" 
+              value={this.state.input.password} onChange={this.handleChange} />
+              <Form.Text style={{color: "red", fontSize: "0.75vw"}} className="text-danger">
+              {this.state.errors.password}
+              </Form.Text>
+            </Form.Group>
 
-
-          <div class="form-group">
-            <label for="password" className="password-label">Password:</label>
-            <input 
-              type="password" 
-              name="password" 
-              value={this.state.input.password}
-              onChange={this.handleChange}
-              class="form-control password-input" 
+            <Form.Group >
+              <Form.Label style={{ fontSize:'1vw'}}>Confirm Password</Form.Label>
+              <Form.Control style={{ fontSize:'1vw'}} type="password" name="confirm_password"
               placeholder="Enter password" 
-              id="password" />
-  
-              <div className="text-danger password-error">{this.state.errors.password}</div>
-          </div>
-  
-          <div class="form-group">
-            <label for="password" className = "password-confirm-label">Confirm Password:</label>
-            <input 
-              type="password" 
-              name="confirm_password" 
-              value={this.state.input.confirm_password}
-              onChange={this.handleChange}
-              class="form-control password-confirm-input" 
-              placeholder="Enter confirm password" 
-              id="confirm_password" />
-  
-              <div className="text-danger password-confirm-error">{this.state.errors.confirm_password}</div>
-          </div>
-              
-          <input type="submit" value="Submit" class="btn btn-success submit-button" />
+              value={this.state.input.confirm_password} onChange={this.handleChange} />
+              <Form.Text style={{color: "red", fontSize: "0.75vw"}} className="text-danger">
+              {this.state.errors.confirm_password}
+              </Form.Text>
+            </Form.Group>
+     
 
-          
+            <Button 
+            style={{display:"flex", alignItems:"center", justifyContent:"center", fontSize:"1vw"}}
+            variant="primary" type="submit" value="Submit">
+              Sign Up
+            </Button>
+           
+           </Form>
+           </form>
+          </Col>
+          <Col></Col>
+        </Container>
 
-        </form>
-      </div>
+
+
       </div>
     );
   }
 }
   
 export default SignUp;
+

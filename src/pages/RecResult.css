@@ -1,0 +1,62 @@
+.recprog-header{
+    font-weight: 900;
+    margin-bottom: 5%;;
+}
+
+.recprog-box{
+
+    border: 1px solid black;
+    border-left-color:red;
+    border-left-width: thick;
+    padding: 5px;
+    padding-bottom: 1%;
+    padding-right: 2%;
+    margin: 20px;
+    display: flex;
+
+}
+
+.recprog-result{
+    margin-left:5%;
+    margin-top: 2%;
+    /* font-size: 24px; */
+    font-weight: 700;
+    text-align: center;
+
+}
+
+.recprog-proglist{
+   
+    font-weight: 500;
+    float:left; 
+    width: 60%;
+    flex: 1;
+    margin:5px;
+
+}
+
+.recprog-recscore{
+   
+    margin-right: 20px;
+    margin:50px;
+     
+}
+
+
+.recprog-done-button{
+    color: white;
+    border-radius: 20px;
+    font-weight:bold;
+    border: 1px solid red;
+    background-color: rgb(238, 96, 44);
+
+
+}
+
+.recprog-done-button:hover{
+    color: white;
+    font-weight:bold;
+    border-radius: 20px;
+    border: 1px solid coral;
+    background-color: coral;
+}

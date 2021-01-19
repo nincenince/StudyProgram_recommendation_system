@@ -1,0 +1,23 @@
+.Dashboard-done-button{
+    color: white;
+    font-weight:bold;
+    position:fixed;
+    top: 80%;
+    left: 75%;
+    border-radius: 20px;
+    border: 1px solid red;
+    margin:5%;
+    background-color: rgb(238, 96, 44);
+}
+
+.Dashboard-done-button:hover{
+    color: white;
+    font-weight:bold;
+    position:fixed;
+    top: 80%;
+    left: 75%;
+    border-radius: 20px;
+    border: 1px solid coral;
+    margin:5%;
+    background-color: coral;
+}

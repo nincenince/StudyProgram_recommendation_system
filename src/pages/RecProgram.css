@@ -1,0 +1,125 @@
+.rec-header{
+    font-weight: 900;
+ }
+
+ .rec-education-info {
+ 
+    border: 1px solid black;
+    border-left-color:red;
+    border-left-width: thick;
+    padding: 10%;
+    padding-bottom: 1%;
+    padding-right: 15%;
+    margin: 4%;
+    font-weight: 100;
+    }
+
+.rec-educationalInformation{
+    font-weight: 200;
+}
+.rec-personalityInformation{
+    font-weight: 200;   
+
+}
+
+
+.rec-personality{
+    
+    border: 1px solid black;
+    border-left-color:red;
+    border-left-width: thick;
+    padding: 10%;
+    padding-bottom: 1%;
+    padding-right: 15%;
+    margin: 4%;
+        
+}
+
+.rec-edit-button{
+    color: white;
+    font-weight:bold;
+    position:relative;
+    left: 45%;
+    border-radius: 20px;
+    border: 1px solid red;
+    background-color: rgb(238, 96, 44);
+}
+
+.rec-edit-button:hover{
+    color: white;
+    font-weight:bold;
+    position:relative;
+    left: 45%;
+    border-radius: 20px;
+    border: 1px solid coral;
+    background-color:coral;
+}
+
+.rec-retake-button{
+    color: white;
+    font-weight:bold;
+    position: relative;;
+    left: 45%;
+    border-radius: 20px;
+    border: 1px solid red;
+    background-color: rgb(238, 96, 44);
+    margin-left:30%;
+}
+.rec-retake-button:hover{
+    color: white;
+    font-weight:bold;
+    position: relative;;
+    left: 45%;
+    border-radius: 20px;
+    border: 1px solid coral;
+    background-color:coral;
+    margin-left:30%;
+}
+
+.rec-programs-button{
+    color: white;
+    font-weight:bold;
+    border-radius: 20px;
+    border: 1px solid red;
+    background-color: rgb(238, 96, 44);
+    margin-left:80%;
+    margin-bottom: 20%;
+}
+
+.rec-programs-button:hover{
+
+    color: white;
+    font-weight:bold;
+    border-radius: 20px;
+    border: 1px solid coral;
+    background-color:coral;
+}
+
+.rec-EduInfo{
+    border: 0.5px solid black;
+    width:30%;
+    background-color: rgb(238, 235, 235);
+    padding: 5px;
+    margin: auto;
+    text-align: center;
+    
+}
+
+.rec-EduName{
+    padding: 3px;
+    margin: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.rec-PerScore{
+    padding: 6px;
+    margin: auto;
+    text-align: center;
+}
+
+.rec-PerName{
+
+    text-align: center;
+    font-weight: 500;
+}

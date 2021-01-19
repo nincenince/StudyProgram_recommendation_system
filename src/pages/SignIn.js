@@ -5,6 +5,9 @@ import {GoogleLogin} from 'react-google-login';
 import ReactFacebookLogin from 'react-facebook-login';
 // import bg from '../images/plain.png'; 
 import bg from '../images/IMG_0947.JPG'; 
+// import { Container } from 'react-bootstrap';
+import { Col,Row, Container , Image, Jumbotron, Button, Form} from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const clientId = '304351361611-crq2n9aucmhcee8bf7pnujvmvfg5pe1v.apps.googleusercontent.com'
@@ -97,79 +100,77 @@ class SignIn extends React.Component {
     
         return (
     <div>
-      <img src={bg} alt="Logo" widht="1440" className = "signup-bg" />
-          <div className="signin-container">
-            <h1 className="signin-h1">Sign In</h1>
-    
-            <form onSubmit={this.handleSubmit}>
-     
-      
-              <div class="form-group ">
-                <label for="email" className="signin-email-label">Email Address:</label>
-                <input 
-                  type="text" 
-                  name="email" 
-                  value={this.state.input.email}
-                  onChange={this.handleChange}
-                  class="form-control signin-email-input" 
-                  placeholder="Enter email " 
-                  id="email" />
-      
-                  <div className="text-danger signin-email-error">{this.state.errors.email}</div>
-              </div>
-    
-    
-              <div class="form-group">
-                <label for="password" className="signin-password-label">Password:</label>
-                <input 
-                  type="password" 
-                  name="password" 
-                  value={this.state.input.password}
-                  onChange={this.handleChange}
-                  class="form-control signin-password-input" 
-                  placeholder="Enter password" 
-                  id="password" />
-      
-                  <div className="text-danger signin-password-error">{this.state.errors.password}</div>
-              </div>
-                  
-              <input type="submit" value="Sign In" class="btn btn-success signin-submit-button" />
-
-              <span className='signin-to-signup'>
-                Don't have an account? <Link to="/SignUp">Sign Up</Link>
-          </span>
-
-            </form>
-          </div>
-            <div className="google-signin">
-          <GoogleLogin
-          clientId ={clientId}
-        //   render={renderProps => (
-        //     <button onClick={renderProps.onClick} style={customStyle}>Login with Google account</button>
-        //   )}
+      {/* <img src={bg}  widht="100vw" height="100vh" className = "signup-bg" > */}
           
-          buttonText="login with google account"
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
-          cookiePolicy={'single_host_origin'}
-        
-          isSignedIn={true}
-          />
-          </div>
+    
+      <Form onSubmit={this.handleSubmit}>
+      
+        <Container>
+          <Col></Col>
+          <Col>
+            <Form>
+            <h1 style={{ fontSize:'2vw'}}>Sign In</h1>
+            <Form.Group >
+              <Form.Label style={{ fontSize:'1vw'}}>Email address</Form.Label>
+              <Form.Control style={{ fontSize:'1vw'}} type="email" placeholder="Enter email" value={this.state.input.email} onChange={this.handleChange}/>
+              <Form.Text style={{color: "red", fontSize: "12px"}} >
+              {this.state.errors.email}
+              </Form.Text>
+            </Form.Group>
 
-          <div className="facebook-signin">
-              <ReactFacebookLogin
-              appId="257174585672540"
-              // autoLoad={true}
-              fields="name, email,picture"
-              icon="fa-facebook"
-             
-            //   scope="public_profile, user_friends, user_actions,email,user_birthday"
-              callback={responseFacebook}
-              
+            <Form.Group >
+              <Form.Label style={{ fontSize:'1vw'}}>Password</Form.Label>
+              <Form.Control style={{ fontSize:'1vw'}} type="password" placeholder="Enter password" value={this.state.input.password} onChange={this.handleChange}/>
+              <Form.Text  style={{color: "red", fontSize: "12px"}} >
+              {this.state.errors.password}
+              </Form.Text>
+            </Form.Group>
+
+           
+
+            <Button 
+            style={{display:"flex", alignItems:"center", justifyContent:"center", fontSize:"1vw"}}
+            variant="primary" type="submit" >
+              Submit
+            </Button>
+            <p style={{ fontSize:'1vw'}}>
+                Don't have an account? <Link to="/SignUp">Sign Up</Link>
+            </p>
+        
+
+            <GoogleLogin
+                  style={{width:"50vw", fontSize:"0.5vw",height:"30vh"}}
+                  clientId ={clientId}
+                  buttonText="login with google account"
+                  onSuccess={responseGoogle}
+                  onFailure={responseGoogle}
+                  cookiePolicy={'single_host_origin'}
+                  isSignedIn={true}
               />
-              
-          </div>
+
+            <ReactFacebookLogin
+                  style={{width:"50vw", fontSize:"0.5vw",height:"30vh"}}
+                  appId="257174585672540"
+                  // autoLoad={true}
+                  fields="name, email,picture"
+                  icon="fa-facebook"
+                  //   scope="public_profile, user_friends, user_actions,email,user_birthday"
+                  callback={responseFacebook}
+            />
+
+                </Form>
+          </Col>
+          <Col></Col>
+      
+          </Container>
+
+    
+                      
+  
+
+                
+            </Form>
+           {/* </img> */}
           
           </div>
       

@@ -1,34 +1,20 @@
 
 .nextpage-button{
-    /* font-size: 2rem; */
     color: rgb(0, 0, 0);
-    font-size: 15px;
-    text-decoration: bold;
-    position:absolute;
-    top: 80%;
-    left: 75%;
     border-radius: 20px;
     border: 1px solid coral;
-    padding:0em 1em;
-    height: 40px;
-    width:250px;
     background-color: rgb(255, 189, 102);
-    /* z-index: -1; */
+    padding:0.75%;
+    margin-top: 30%;
 }
 
 .nextpage-button:hover{
-    /* font-size: 2rem; */
     color: white;
-    /* text-decoration: bold; */
-    position:absolute;
-    top:80%;
-    left: 75%;
     border-radius: 20px;
     border: 1px solid coral;
-    padding:0em 1em;
-    height: 40px;
-    width:250px;
     background-color:coral;
+    padding:0.75%;
+    margin-top: 30%;
 }
 
 .about-bg {
@@ -36,11 +22,12 @@
     position:absolute;
     top:15%;
     z-index: -1;
+    width:100vw;
 }
 
 .about-guide{
     position: absolute;
-    top:100%;
+    top:100vh;
     left: 25%;
 }
 
@@ -51,80 +38,71 @@
 }
 
 .vertical-line{
-    position:absolute;
-    top:100%;
-    left: 50%;
+
     border-left: 1px solid rgb(107, 107, 107);
     height: 100px;
 }
 
 .centered-text{
     position: absolute;
-    top:50%;
+    top:47%;
     left: 50%;
     transform:translate(-50%, -50%) ;
     color: white;
-    font-size: 25px;
-    /* z-index: -1; */
+    font-weight: 900;
 }
 
-.centered-text2{
-    position: absolute;
-    top:130%;
-    left: 50%;
-    transform:translate(-50%, -50%) ;
+.Step-header{
+    text-align: center;
     color: black;
-    font-size: 25px;
+    /* font-size: 25px; */
     text-decoration: underline;
     text-decoration-color: rgb(241, 141, 74);
 }
 
-.bottom-left {
-    position: absolute;
-    left:10%;
-    top:135%;
+.Step1 {
     border: 1px solid black;
     border-left: 5px solid red;
-    padding: 5px;
-    padding-bottom: 50px;
-    padding-right: 30px;
-    margin: 20px;
+    height:100px;
+    width:200px;
+    margin-bottom: 50%;
+    margin-right: 20%;
+    padding-left: 10%;
+    padding-right: 5%;
     }
 
-
-.bottom-center1 {
-    position: absolute;
-    left:35%; 
-    top:135%;
+.Step2 {
     border: 1px solid black;
     border-left: 5px solid red;
-    padding: 5px;
-    padding-right: 30px;
-    padding-bottom: 30px;
-    margin: 20px;
-    
+    height:100px;
+    width:200px;
+    margin-bottom: 50%;
+    margin-right: 20%;
+    padding-left: 10%;
+    padding-right: 5%;
+
 }
 
-.bottom-center2 {
-    position: absolute;
-    left:55%; 
-    top:135%;
+.Step3 {
     border: 1px solid black;
     border-left: 5px solid red;
-    padding: 5px;
-    padding-bottom: 50px;
-    margin: 20px;
-    
+    height:100px;
+    width:200px;
+    margin-bottom: 50%;
+    margin-right: 20%;
+    padding-left: 10%;
+    padding-right: 5%;
+  
 }
 
-.bottom-right {
-    position: absolute;
-    left:75%; 
-    top:135%;
+.Step4{
     border: 1px solid black;
     border-left: 5px solid red;
-    padding: 5px;
-    padding-bottom: 50px;
-    margin: 20px;
-        
+    height:100px;
+    width:200px;
+    margin-bottom: 50%;
+    margin-right: 20%;
+    padding-left: 10%;
+    padding-right: 5%;
+
 }

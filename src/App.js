@@ -2,42 +2,18 @@ import React, { Component } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 import About from './pages/About';
-import Test from './pages/Test';
+import RecProgram from './pages/RecProgram';
 import Programs from './pages/Programs';
-import Personality from './pages/Personality';
+import Feedbacks from './pages/Feedbacks';
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import './App.css';
 import EduInformation from './pages/EduInformation';
-import RecommendProg from './pages/RecommendProg'
-
-
-
-// 2
-
-// function App() {
-//   return (
-//     <Router>
-//      <Navbar/>
-//       <Switch>
-  
-//         <Route path='/'  exact component={About} />
-//         <Route path='/Test' component={Test}/>
-//         <Route path='/Programs' component={Programs} />
-//         <Route path='/Personality' component={Personality} />
-//         <Route path='/SignUp' component={SignUp} />
-//         <Route path='/SignIn' component={SignIn} />
-//         {/* <Route path='/EduInformation' component={EduInformation} /> */}
-//       </Switch>
-//     </Router>
-
-    
-//   )
-
-// }
-
-// export default App;
-
+import RecResult from './pages/RecResult'
+import Dashboard from './pages/Dashboard'
+import AccInfo from './pages/AccInfo'
+import PerTest from './pages/PerTest'
+import PerResult from './pages/PerResult'
 
 
 export const IncludeNav = ({ component: Component , ...rest})=>{
@@ -66,13 +42,20 @@ const App = () => (
       <Switch>
   
         <IncludeNav path='/'  exact component={About} />
-        <IncludeNav path='/Test' component={Test}/>
+        <IncludeNav path='/RecProgram' component={RecProgram}/>
         <IncludeNav path='/Programs' component={Programs} />
-        <IncludeNav path='/Personality' component={Personality} />
+        <IncludeNav path='/Feedbacks' component={Feedbacks} />
         <IncludeNav path='/SignUp' component={SignUp} />
         <IncludeNav path='/SignIn' component={SignIn} />
         <NoNav path='/EduInformation' component={EduInformation} />
-        <NoNav path ='/RecommendProg' component={RecommendProg} />
+        <NoNav path ='/RecResult' component={RecResult} />
+        <NoNav path='/Dashboard' component={Dashboard}/>
+        <NoNav path='/AccInfo' component={AccInfo}/>
+        <NoNav path='/PerTest' component={PerTest}/>
+        <NoNav path='/PerResult' component={PerResult}/>
+
+
+
       </Switch>
     </Router>
 
