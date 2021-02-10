@@ -1,24 +1,51 @@
-import React, { Component } from 'react';
+import React, { Component , useState}  from 'react';
 import {Link } from "react-router-dom";
 import './EduInformation.css'
 import EduInfoLabel from "../EduInfoLabel"; 
 import PersonalityTest from "../PersonalityTest.json"
-import { Col,Row, Container , Button, Form} from "react-bootstrap";
+import { Col,Row, Container , Button, Form, Navbar,Alert} from "react-bootstrap";
+
+
+
 
 class EduInformation extends Component{
 
-  render(){
+  
 
+     
+  render(){
+    
 
       return(
           <>
           <div>
            
              
-             <h1 className = "edu-navbar-logo">
+             {/* <h1 className = "edu-navbar-logo">
              <i className = "fas fa-graduation-cap edu-cap" style={{ fontSize:'5vw'}}></i>
                  <p className= "edu-navbar-p" style={{ fontSize:'1.25vw'}}>Study Program</p><p className="edu-navbar-p" style={{ fontSize:'1.25vw'}}>Recommendation</p><p className="edu-navbar-p" style={{ fontSize:'1.25vw'}}>System
-             </p></h1>
+             </p></h1> */}
+          <Navbar collapseOnSelect expand="lg"  >
+            <Navbar.Brand href="/"  >
+                <i 
+                 className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
+                ></i>
+                    <p 
+                    className= "navbar-p" style={{ fontSize:'1vw'}}
+                    >Study Program</p><p 
+                    className="navbar-p" style={{ fontSize:'1vw'}}
+                    >Recommendation</p>
+                    <p 
+                    className="navbar-p" style={{ fontSize:'1vw'}}
+                    >System
+                </p>
+                </Navbar.Brand>
+            </Navbar>
+<p style={{paddingLeft:'15%'}}>Answer all 44 questions to see your Openness, Conscientiousness,
+ Extraversion, Agreeableness, and Neuroticism score which labeled based on Big 5 Personality.</p>
+
+<p style={{paddingLeft:'10%'}}>Rate each statement according to how it describes you, where 1 = Disagree, 3 = Neutral, and 5 = Agree.
+</p>
 
     <Container>
       <Col>
@@ -33,47 +60,50 @@ class EduInformation extends Component{
                 {
                   PersonalityTest.PersonalityTestList.map((Info) => {
                     return (
-                      <Col md={{ span: 5, offset: 3 }}
-                      // className= "edu-input-box" 
+                      <Col md={{ span: 9, offset: 3 }}
                       >
                         <Row>
-                        <h4 className= "edu-info-label" style={{ fontSize:'1.75vw'}} >{Info.Question}</h4>
+                        <h4 className= "pertest-info-label" style={{ fontSize:'1.4vw', textAlign:'left'}} >{Info.Question}</h4>
                         </Row>
                         <Row >
                         <ul>
                           {
-                            Info.ScoreList.map((InfoDetail) => {
-                              return (
+                            // Info.ScoreList.map((InfoDetail) => {
+                            //   return (
                              
-                                <Form>
+                                <Form >
+                                  <form >
                                       {['radio'].map((type) => (
-                                        <div key={`inline-${type}`} className="mb-3" >
-                                          <fieldset>
-                                          <Form.Group>
+                                        <div key={`inline-${type}`} className="mb-3"  >
+                                          <fieldset >
+                                        <Form.Group onChange={this.onChangeValue}  >
                                           <Form.Check 
                                           inline label="1" type={type} id={`inline-${type}-1`} value="1" style={{ fontSize:'1.5vw'}}
-                                          name="formHorizontalRadios"/>
-                                          <Form.Check 
+                                          name="formHorizontalRadios  "  />
+                                          <Form.Check  
                                           inline label="2" type={type} id={`inline-${type}-2`}  value="2" style={{ fontSize:'1.25vw'}}
-                                          name="formHorizontalRadios"/>
-                                          <Form.Check                                  
+                                          name="formHorizontalRadios "  />
+                                          <Form.Check                          
                                           inline label="3" type={type} id={`inline-${type}-3`} value="3" style={{ fontSize:'1.25vw'}}
-                                          name="formHorizontalRadios"/>
-                                          <Form.Check                                  
+                                          name="formHorizontalRadios "  />
+                                          <Form.Check                               
                                           inline label="4" type={type} id={`inline-${type}-4`} value="4" style={{ fontSize:'1.25vw'}}
-                                          name="formHorizontalRadios"/>
-                                          <Form.Check                                  
+                                          name="formHorizontalRadios "  />
+                                          <Form.Check                                
                                           inline label="5" type={type} id={`inline-${type}-5`} value="5" style={{ fontSize:'1.25vw'}}
-                                          name="formHorizontalRadios"/>
-                                          </Form.Group>
+                                          name="formHorizontalRadios "   />
+                                         
+                                         
+                                        </Form.Group>
                                           </fieldset>
                                         </div>
                                       ))}
+                                      </form>
                                     </Form>
      
                                   
-                              );
-                            })
+                              // );
+                            // })
                           }
                         </ul>
                         </Row>
@@ -82,11 +112,11 @@ class EduInformation extends Component{
                   })
                 } 
 
-        <Link to="/PerResult">
-                <Button className="Edu-done-button" style={{ fontSize:'1vw'}}>
+        {/* <Link to="/RecProgram"> */}
+                <Button className="Edu-done-button" type="submit" value="Submit" style={{ fontSize:'1vw', float:'right'}}>
                   Done
                 </Button>
-                </Link>
+                {/* </Link> */}
     
           </Col>
             </ul>
@@ -104,5 +134,8 @@ class EduInformation extends Component{
       )
   }
 }
+
+
+
 
 export default EduInformation;

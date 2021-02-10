@@ -14,7 +14,7 @@ import Dashboard from './pages/Dashboard'
 import AccInfo from './pages/AccInfo'
 import PerTest from './pages/PerTest'
 import PerResult from './pages/PerResult'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const IncludeNav = ({ component: Component , ...rest})=>{
   return (

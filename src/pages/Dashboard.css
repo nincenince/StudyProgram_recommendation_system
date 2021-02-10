@@ -1,7 +1,7 @@
 .Dashboard-done-button{
     color: white;
     font-weight:bold;
-    position:fixed;
+    position:relative;
     top: 80%;
     left: 75%;
     border-radius: 20px;
@@ -13,11 +13,91 @@
 .Dashboard-done-button:hover{
     color: white;
     font-weight:bold;
-    position:fixed;
+    position:relative;
     top: 80%;
     left: 75%;
     border-radius: 20px;
     border: 1px solid coral;
     margin:5%;
+    background-color: coral;
+}
+
+.recprog-header{
+    font-weight: 900;
+    margin-bottom: 5%;;
+}
+
+.recprog-box{
+
+    border: 1px solid black;
+    border-left-color:red;
+    border-left-width: thick;
+    padding: 5px;
+    padding-bottom: 1%;
+    padding-right: 2%;
+    margin: 20px;
+    display: flex;
+
+}
+
+.recprog-result{
+    margin-left:5%;
+    margin-top: 2%;
+    /* font-size: 24px; */
+    font-weight: 700;
+    text-align: center;
+
+}
+
+.history-proglist{
+    font-weight: 500;
+    float:left; 
+    flex: 2;
+
+}
+
+.history-recprogram{
+    /* float:'center'; */
+    flex: 4;
+   
+}
+
+.history-recscore{
+    float:right; 
+    /* flex: 1; */
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+    /* flex-direction: row; */
+ 
+}
+
+
+.recprog-done-button{
+    color: white;
+    border-radius: 20px;
+    font-weight:bold;
+    border: 1px solid red;
+    background-color: rgb(238, 96, 44);
+
+
+}
+.history-edulist{
+    font-weight: 500;
+    float:left; 
+    width: 50%;
+    flex: 1;
+    margin:0%;
+
+}
+
+.recprog-done-button:hover{
+    color: white;
+    font-weight:bold;
+    border-radius: 20px;
+    border: 1px solid coral;
     background-color: coral;
 }

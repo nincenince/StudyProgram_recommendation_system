@@ -4,7 +4,7 @@ import {Link } from "react-router-dom";
 import './RecProgram.css'
 import EducationInfo from "../EducationInfo"; 
 import PersonanlityInfo from "../PersonalityInfo";
-import { Col,Row, Container , Image, Jumbotron, Button} from "react-bootstrap";
+import { Col,Row, Container , Button} from "react-bootstrap";
 
 class Test extends Component{
 
@@ -82,19 +82,10 @@ class Test extends Component{
                     return (
                       <div>
                         <p className= "rec-PerName" style={{ fontSize:'1vw'}}  >{PerInfo.Personality}</p>
-                          {
-                            PerInfo.PersonalityList.map((PerInfoDetail) => {
-                              return (
-                                <p className="rec-PerScore" style={{ fontSize:'1vw'}}>
-                                    {PerInfoDetail.PerScore}
-                                </p>
-                              );
-                            }) 
-                           
-                         }
-                        
-              
 
+                                <p className="rec-PerScore" style={{ fontSize:'1vw'}}>
+                                    {PerInfo.PersonalityScore}
+                                </p>
                       </div>
                     );
                   })

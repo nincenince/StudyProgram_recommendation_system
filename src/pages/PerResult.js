@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link } from "react-router-dom";
 import './PerResult.css';
-import { Col,Row, Container , Image, Jumbotron, Button, Card} from "react-bootstrap";
+import { Col,Row, Container , Button} from "react-bootstrap";
 import PersonanlityInfo from "../PersonalityInfo";
 
 

@@ -172,22 +172,15 @@
     }
 
 
-    Button {
-        display: none;
-    }
-
     .NavDropdown{
-        text-align: center;
-        padding: 2rem;
-        width: 100%;
-        display: table;
+        display:none;
+
      }
      .NavDropdownItem {
-        text-align: center;
-        padding: 2rem;
-        width: 100%;
-        display: table;
+        display:none;
      
      }
+    
 }
+
 

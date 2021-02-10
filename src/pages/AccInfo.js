@@ -125,8 +125,8 @@ class AccInfo extends React.Component {
             <Form.Label style={{ fontSize:'1vw'}}>Nationality</Form.Label>
             <Form.Group  >
               <Form.Control as="select" defaultValue="" style={{ fontSize:'1vw'}}>
-               <option style={{ fontSize:'1vw'}}>F</option>
-               <option style={{ fontSize:'1vw'}}>M</option>
+               <option style={{ fontSize:'1vw'}}>Thai</option>
+               <option style={{ fontSize:'1vw'}}></option>
               </Form.Control>
             </Form.Group>
 

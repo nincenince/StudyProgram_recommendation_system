@@ -12,7 +12,7 @@ function About() {
 <div>
 
 <Jumbotron style={{ backgroundImage: `url(${bgimg})`, width:'100vw', height:'76vh'}} fluid>
-
+    <Container>
         
           <p className="centered-text" style={{ fontSize:'2vw'}}>Discover your study program and future career,
             Let’s start analyse them with your 
@@ -20,6 +20,7 @@ function About() {
       
       
     <Col lg={{ span: 12, offset: 9 }} >
+        <p>
         <Link to="/RecProgram">
           <Button 
           className="nextpage-button" style={{ fontSize:'1vw'}}
@@ -28,8 +29,9 @@ function About() {
         Recommend Program
         </Button>
         </Link>
+        </p>
      </Col>
-       
+     </Container>
   </Jumbotron>
 
 

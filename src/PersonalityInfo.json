@@ -1,44 +1,24 @@
 {
-    "PersonalInfo": [
-      {
-        "Personality": "Extroversion",
-        "PersonalityList": [
-          {
-            "PerScore": "97"
-          }
-        ]
-      },
-      {
-        "Personality": "Emotion Stability",
-        "PersonalityList": [
-          {
-            "PerScore": "79"
-          }
-        ]
-      },
-      {
-        "Personality": "Agreeableness",
-        "PersonalityList": [
-          {
-            "PerScore": "83"
-          }
-        ]
-      },
-      {
-        "Personality": "Conscientiousness",
-        "PersonalityList": [
-          {
-            "PerScore": "58"
-          }
-        ]
-      },
-      {
-        "Personality": "Intellect/ Imagination",
-        "PersonalityList": [
-          {
-            "PerScore": "8"
-          }
-        ]
-      }      
-    ]   
-    }
+  "PersonalInfo": [
+    {
+      "Personality": "Extroversion",
+      "PersonalityScore": "97"
+    },
+    {
+      "Personality": "Emotion Stability",
+      "PersonalityScore": "79"
+    },
+    {
+      "Personality": "Agreeableness",
+      "PersonalityScore": "83"
+    },
+    {
+      "Personality": "Conscientiousness",
+      "PersonalityScore": "58"
+    },
+    {
+      "Personality": "Intellect/ Imagination",
+      "PersonalityScore": "8"
+    }      
+  ]   
+  }

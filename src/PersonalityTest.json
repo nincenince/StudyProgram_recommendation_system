@@ -1,36 +1,136 @@
 {
     "PersonalityTestList": [
       {
-        "Question": "question 1",
-        "ScoreList": [
-          {
-            "Score": ""
-          }
-        ]
+        "Question": "Is talkative"
       },
       {
-        "Question": "question 2",
-        "ScoreList": [
-          {
-            "Score": ""
-          }
-        ]
+        "Question": "Tends to find fault with others"
       },
       {
-        "Question": "question 3",
-        "ScoreList": [
-          {
-            "Score": ""
-          }
-        ]
+        "Question": "Does a thorough job"
       },
       {
-        "Question": "question 4",
-        "ScoreList": [
-          {
-            "Score": ""
-          }
-        ]
+        "Question": "Is depressed, blue"
+      },
+      {
+        "Question": "Is original, comes up with new ideas"
+      },
+      {
+        "Question": "Is reserved"
+      },
+      {
+        "Question": "Is helpful and unselfish with others"
+      },
+      {
+        "Question": "Can be somewhat careless"
+      },
+      {
+        "Question": "Is relaxed, handles stress well"
+      },
+      {
+        "Question": "Is curious about many different things"
+      },
+      {
+        "Question": "Is full of energy"
+      },
+      {
+        "Question": "Starts quarrels with others"
+      },
+      {
+        "Question": "Is a reliable worker"
+      },
+      {
+        "Question": "Can be tense"
+      },
+      {
+        "Question": "Is ingenious, a deep thinker"
+      },
+      {
+        "Question": "Generates a lot of enthusiasm"
+      },
+      {
+        "Question": "Has a forgiving nature"
+      },
+      {
+        "Question": "Tends to be disorganized"
+      },
+      {
+        "Question": "Worries a lot"
+      },
+      {
+        "Question": "Has an active imagination"
+      },
+      {
+        "Question": "Tends to be quiet"
+      },
+      {
+        "Question": "Is generally trusting"
+      },
+      {
+        "Question": "Tends to be lazy"
+      },
+      {
+        "Question": "Is emotionally stable, not easily upset"
+      },
+      {
+        "Question": "Is inventive"
+      },
+      {
+        "Question": "Has an assertive personality"
+      },
+      {
+        "Question": "Can be cold and aloof"
+      },
+      {
+        "Question": "Perseveres until the task is finished"
+      },
+      {
+        "Question": "Can be moody"
+      },
+      {
+        "Question": "Values artistic, aesthetic experiences"
+      },
+      {
+        "Question": "Is sometimes shy, inhibited"
+      },
+      {
+        "Question": "Is considerate and kind to almost everyone"
+      },
+      {
+        "Question": "Does things efficiently"
+      },
+      {
+        "Question": "Remains calm in tense situations"
+      },
+      {
+        "Question": "Prefers work that is routine"
+      },
+      {
+        "Question": "Is outgoing, sociable"
+      },
+      {
+        "Question": "Is sometimes rude to others"
+      },
+      {
+        "Question": "Makes plans and follows through with them"
+      },
+      {
+        "Question": "Gets nervous easily"
+      },
+      {
+        "Question": "Likes to reflect, play with ideas"
+      },
+      {
+        "Question": "Has few artistic interests"
+      },
+      {
+        "Question": "Likes to cooperate with others"
+      },
+      {
+        "Question": "Is easily distracted"
+      },
+      {
+        "Question": "Is sophisticated in art, music, or literature"
       }      
     ]   
     }

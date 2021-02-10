@@ -52,15 +52,18 @@ class Navbarr extends Component{
             <Navbar.Collapse id="responsive-navbar-nav" >
            
                 <Nav className="mr-auto nav-menu ">
-                <Nav.Link as={NavLink} to='/' exact href="/" className= "nav-links" exact activeClassName="underline" >About</Nav.Link>
-                <Nav.Link as={NavLink} to='/RecProgram' exact href="/RecProgram" className= "nav-links" exact activeClassName="underline" >Recommend Programs</Nav.Link>
-                <Nav.Link  as={NavLink} to='/Programs' exact href="/Programs" className= "nav-links" exact activeClassName="underline">Browse Programs</Nav.Link>
-                <Nav.Link as={NavLink} to='/Feedbacks' exact  href="/Feedbacks" className= "nav-links" exact activeClassName="underline" >Feedbacks </Nav.Link>
-                <NavDropdown title="User" id="collasible-nav-dropdown" className="NavDropdown" >
-                    <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style={{ fontSize:'0.9vw'}}>Account Information</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem" style={{ fontSize:'0.9vw'}}>User Dashboard</NavDropdown.Item>
+                <Nav.Link as={NavLink} to='/' exact href="/" className= "nav-links" exact activeClassName="underline" style={{ fontSize:'1vw'}}>About</Nav.Link>
+                <Nav.Link as={NavLink} to='/RecProgram' exact href="/RecProgram" className= "nav-links" exact activeClassName="underline" style={{ fontSize:'1vw'}}>Recommend Programs</Nav.Link>
+                <Nav.Link  as={NavLink} to='/Programs' exact href="/Programs" className= "nav-links" exact activeClassName="underline" style={{ fontSize:'1vw'}}>Browse Programs</Nav.Link>
+                <Nav.Link as={NavLink} to='/Feedbacks' exact  href="/Feedbacks" className= "nav-links" exact activeClassName="underline" style={{ fontSize:'1vw'}}>Feedbacks </Nav.Link>
+                <NavDropdown style={{ fontSize:'1vw'}}
+                title="User"
+                 id="collasible-nav-dropdown" 
+                className="NavDropdown" >
+                    <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw'}}>Account Information</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  style={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw'}}>User Dashboard</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item as={NavLink} to='/SignIn' className="NavDropdownItem" style={{ fontSize:'0.9vw'}}>Log out</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/SignIn' className="NavDropdownItem"  tyle={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw'}}>Log out</NavDropdown.Item>
                 </NavDropdown>
                 </Nav>
              
