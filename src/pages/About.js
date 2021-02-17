@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link } from "react-router-dom";
 import './About.css';
-
 import bgimg from '../images/bg2.jpg';
 import { Col,Row, Container , Image, Jumbotron, Button} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,7 +9,7 @@ function About() {
     return (
      
 <div>
-
+  
 <Jumbotron style={{ backgroundImage: `url(${bgimg})`, width:'100vw', height:'76vh'}} fluid>
     <Container>
         
@@ -54,7 +53,7 @@ function About() {
    
 <Row><br></br></Row>
       <Row>
-        <Col className="Step-header">
+        <Col className="Step-header" style={{fontWeight:'900'}}>
                 STEPS
         </Col>
       </Row>
@@ -63,23 +62,41 @@ function About() {
       <Row>
         <Col></Col>
           <Col md={2} >
-          <p 
-          class="Step1"
-          >Sign In to our website </p>        
+          <Image style={{widht:'4vw', height:'7vh', paddingLeft:'35%'}} src={require("../images/signin.png")}/>
+
+          <p style={{textAlign:'center', paddingTop:'3%'}}
+          >Sign In to our website </p>
+          {/* <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
+        
           </Col>
+
+
           <Col md={2}>
-          <p 
-          class="Step2"
+          <Image style={{widht:'4vw', height:'7vh', paddingLeft:'35%'}} src={require("../images/signup.png")}/>
+
+          <p style={{textAlign:'center', paddingTop:'3%'}}
+          // class="Step2"
           >Fill in your Educational Information</p>
+        {/* <div>Icons made by <a href="" title="catkuro">catkuro</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
+
           </Col>
        
      
   
-          <Col md={2}><p 
-          class="Step3"
+          <Col md={2}>
+          <Image style={{widht:'4vw', height:'7vh', paddingLeft:'35%'}} src={require("../images/perstest.png")}/>
+
+          {/* <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
+          <p style={{textAlign:'center', paddingTop:'3%'}}
+          // class="Step3"
           >Take Personality Test</p></Col>
-          <Col md={2}><p 
-          class="Step4"
+
+          <Col md={2}>
+          <Image style={{widht:'4vw', height:'7vh', paddingLeft:'35%'}} src={require("../images/results.png")}/>
+
+          {/* <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
+          <p style={{textAlign:'center', paddingTop:'3%'}}
+          // class="Step4"
           >Recommend Programs Result</p></Col>
        <Col></Col>
 
