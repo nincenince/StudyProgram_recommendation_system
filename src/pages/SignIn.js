@@ -9,6 +9,10 @@ import bg from '../images/IMG_0947.JPG';
 import { Col,Row, Container , Image, Jumbotron, Button, Form} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import axios from 'axios';
+import { useState } from 'react';
+import { useSelector, useDispatch} from 'react-redux';
+import { update_token, signin, update_firstname, update_lastname, update_email, update_sex, update_age } from '../actions';
 
 const clientId = '304351361611-crq2n9aucmhcee8bf7pnujvmvfg5pe1v.apps.googleusercontent.com'
 const responseGoogle = (response) => {
@@ -20,47 +24,53 @@ const responseFacebook=(response)=>{
 }
 
 
-class SignIn extends React.Component {
-        constructor() {
-        super();
-        this.state = {
-          input: {},
-          errors: {}
-        };
+function SignIn(props) {
+      //   constructor() {
+      //   super();
+      //   this.state = {
+      //     input: {},
+      //     errors: {}
+      //   };
          
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-      }
+      //   this.handleChange = this.handleChange.bind(this);
+      //   this.handleSubmit = this.handleSubmit.bind(this);
+      // }
          
-      handleChange(event) {
-        let input = this.state.input;
-        input[event.target.name] = event.target.value;
-      
-        this.setState({
-          input
-        });
-      }
+      let token = useSelector(state => state.token);
+      let isLogged = useSelector(state => state.isLogged);
+      let dispatch = useDispatch();
+
+      const [email, setemail] = useState('');
+      const [password, setpassword] =useState('');
+      const [input, setinput] = useState({
+        email: '',
+        password: ''
+      });
+
+      const handleChange = (event) => {
+        setinput({input});
+      };
          
-      handleSubmit(event) {
+      const handleSubmit = (event) => {
         event.preventDefault();
       
-        if(this.validate()){
-      
-            let input = {};
-            input["email"] = "";
-            input["password"] = "";
-            this.setState({input:input});
-      
-
+        if(validate(email, password)){
+          let input = {};
+          input["email"] = "";
+          input["password"] = "";
+          setinput({input});
         }
-      }
+      };
 
       
-      validate(){
-          let input = this.state.input;
+      const validate = async (em,ps) =>{
+          let input = {
+            "email": em,
+            "password": ps
+          };
           let errors = {};
           let isValid = true;
-      
+          let response = {};
 
           if (!input["email"]) {
             isValid = false;
@@ -81,48 +91,72 @@ class SignIn extends React.Component {
             errors["password"] = "Please enter your password.";
           }
 
-      
-          this.setState({
-            errors: errors
-          });
-      
+          if (isValid) {
+            let payload = {
+              'email' : input["email"],
+              'password' : input["password"]
+            }
+            //this.response = await axios.post("https://spr-system.herokuapp.com/login/", payload)
+            response = await axios.post("http://127.0.0.1:8000/login/", payload)
+          }
+          else{
+            return isValid;
+          }
+          // console.log(isValid)
+          // console.log("Now")
+          console.log(response.data)
+          // console.log("Wow")
+          if (response.data['status'] === true) {
+            console.log("Passed");
+            //this.history.push("/");
+            dispatch(signin());
+            dispatch(update_token(response.data['token']));
+            alert(response.data['info']['firstname']);
+            dispatch(update_firstname(response.data['info']['firstname']));
+            dispatch(update_lastname(response.data['info']['lastname']));
+            dispatch(update_email(response.data['info']['email']));
+            dispatch(update_sex(response.data['info']['sex']));
+            dispatch(update_age(response.data['info']['age']));
+            // alert("Your status: "+ {isLogged} +"\nYour token is: " + {token});
+            //return <Redirect to="/"/>;
+            props.history.push("/");
+          }
+          else {
+            alert("Fail to login");
+          }
+          console.log(isValid);
           return isValid;
       }
 
  
 
-      onFailure = (res) =>{
+      const onFailure = (res) =>{
         console.log('[login failed] res:' , res);
-    }
-
-         
-      render() {
+    };
     
         return (
     <div>
       {/* <img src={bg}  widht="100vw" height="100vh" className = "signup-bg" > */}
           
     
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={handleSubmit}>
       
         <Container>
           <Col></Col>
           <Col>
             <Form>
             <h1 style={{ fontSize:'2vw'}}>Sign In</h1>
-            <Form.Group >
+            <Form.Group controlId="foremail">
               <Form.Label style={{ fontSize:'1vw'}}>Email address</Form.Label>
-              <Form.Control style={{ fontSize:'1vw'}} type="email" placeholder="Enter email" value={this.state.input.email} onChange={this.handleChange}/>
+              <Form.Control style={{ fontSize:'1vw'}} type="email" placeholder="Enter email" value={email} onChange={e => setemail(e.target.value)}/>
               <Form.Text style={{color: "red", fontSize: "12px"}} >
-              {this.state.errors.email}
               </Form.Text>
             </Form.Group>
 
-            <Form.Group >
+            <Form.Group controlId="forpassword">
               <Form.Label style={{ fontSize:'1vw'}}>Password</Form.Label>
-              <Form.Control style={{ fontSize:'1vw'}} type="password" placeholder="Enter password" value={this.state.input.password} onChange={this.handleChange}/>
+              <Form.Control style={{ fontSize:'1vw'}} type="password" placeholder="Enter password" value={password} onChange={e => setpassword(e.target.value)}/>
               <Form.Text  style={{color: "red", fontSize: "12px"}} >
-              {this.state.errors.password}
               </Form.Text>
             </Form.Group>
 
@@ -175,7 +209,7 @@ class SignIn extends React.Component {
           </div>
       
         );
-      }
+      
     }
       
     export default SignIn;
