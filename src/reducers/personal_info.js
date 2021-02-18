@@ -13,7 +13,7 @@ const personal_info_Reducer = (state = data, action) => {
         state.firstname = action.payload;
         return state
       case "DESTROY_FIRSTNAME":
-        state.firstname.push("");
+        state.firstname = "";
         return state;
       case "UPDATE_LASTNAME":
         state.lastname = action.payload;
