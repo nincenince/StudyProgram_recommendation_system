@@ -10,7 +10,7 @@ import { Col,Row, Container , Image, Jumbotron, Button, Form} from "react-bootst
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import { update_token, signin, update_firstname, update_lastname, update_email, update_sex, update_age } from '../actions';
 
@@ -39,6 +39,10 @@ function SignIn(props) {
       let token = useSelector(state => state.token);
       let isLogged = useSelector(state => state.isLogged);
       let dispatch = useDispatch();
+
+      useEffect(() => {
+        //token = useSelector(state => state.token);
+      }, [token, isLogged]);
 
       const [email, setemail] = useState('');
       const [password, setpassword] =useState('');
@@ -135,10 +139,11 @@ function SignIn(props) {
     };
     
         return (
+        
     <div>
       {/* <img src={bg}  widht="100vw" height="100vh" className = "signup-bg" > */}
           
-    
+      {isLogged ? <h1>You are alredy logged in</h1> :
       <Form onSubmit={handleSubmit}>
       
         <Container>
@@ -196,16 +201,8 @@ function SignIn(props) {
           </Col>
           <Col></Col>
       
-          </Container>
-
-    
-                      
-  
-
-                
-            </Form>
-           {/* </img> */}
-          
+          </Container>   
+            </Form> }
           </div>
       
         );
