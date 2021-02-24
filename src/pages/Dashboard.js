@@ -3,38 +3,63 @@ import {Link } from "react-router-dom";
 import './Dashboard.css';
 import { Col, Row, Container , Button, Card, Form, FormControl, Navbar} from "react-bootstrap";
 import {Doughnut, Radar} from 'react-chartjs-2';
-import PersonanlityInfo from "../PersonalityInfo.json";
+//import PersonanlityInfo from "../PersonalityInfo.json";
 import History from "../History";
 import {Faculties} from "../faculties.jsx";
-import EducationInfo from "../EducationInfo"; 
 
-const Score =  PersonanlityInfo.PersonalInfo.map((PerInfo) => 
-                    PerInfo.PersonalityScore
-                );
+
+import { useSelector, useDispatch} from 'react-redux';
+import { useState, useEffect } from 'react';
+import { destroy_token, signout, destroy_firstname, destroy_lastname, destroy_email, destroy_sex, destroy_age, destroy_edu, update_edu } from '../actions';
+import axios from 'axios';
+
+// const Score =  PersonanlityInfo.PersonalInfo.map((PerInfo) => 
+//                     PerInfo.PersonalityScore
+//                 );
     
-console.log(Score);
+//console.log(Score);
 
-const dataa ={
-    labels: ['Extroversion', 'Emotion Stability', 'Agreeableness', 'Conscientiousness', 'Intellect/ Imagination'],
-    datasets:
-    [{ 
-    label: "",
-    backgroundColor: "rgba(241, 90, 34, 0.2)",
-    data: Score
+// const dataa ={
+//     labels: ['Extroversion', 'Neuroticism', 'Agreeableness', 'Conscientiousness', 'Openness'],
+//     datasets:
+//     [{ 
+//     label: "",
+//     backgroundColor: "rgba(241, 90, 34, 0.2)",
+//     data: Score
 
+//         }]
+//     };
+
+
+function RecommendProg (props){
+    let token = useSelector(state => state.token)
+    let isLogged = useSelector(state => state.isLogged);
+    let EducationInfo = useSelector(state => state.education);
+    let PersonalityInfo = useSelector(state => state.personality);
+    let dispatch = useDispatch();
+
+    //let Score =  PersonalityInfo.PersonalInfo.map((PerInfo) => PerInfo.PersonalityScore);
+    
+    let dataa = {
+        labels: ['Extroversion', 'Neuroticism', 'Agreeableness', 'Conscientiousness', 'Openness'],
+        datasets:
+        [{ 
+            label: "",
+            backgroundColor: "rgba(241, 90, 34, 0.2)",
+            data: PersonalityInfo
         }]
     };
 
+    useEffect(() => {
 
-class RecommendProg extends Component{
-  render(){
+    }, [EducationInfo]);  
 
-      return(
-         
-         
+    return(
+        
     <div 
     // style={{backgroundImage: 'linear-gradient(to top,rgb(188,221,250), white)'}}
     >
+        
             {/* <div> */}
                 {/* <h1 className = "edu-navbar-logo">
                 <i className = "fas fa-graduation-cap edu-cap" style={{ fontSize:'5vw'}}></i>
@@ -64,7 +89,6 @@ class RecommendProg extends Component{
 
         <h2 style={{textAlign:'center'}}>Welcome back!</h2>
         <h3 style={{textAlign:'center'}}>Let's explore your data</h3>
-    
         {/* <Container > */}
                 <Row>
                 <Col xs={6} style={{ border:'solid', borderWidth:'thin', borderRadius:'9px', backgroundColor:'white', marginLeft:'5%', marginTop:'2%'}}>
@@ -223,7 +247,7 @@ class RecommendProg extends Component{
 
           
       )
-  }
+  
 }
 
 export default RecommendProg;
