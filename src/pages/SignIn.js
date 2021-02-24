@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
-import { update_token, signin, update_firstname, update_lastname, update_email, update_sex, update_age } from '../actions';
+import { update_token, signin, update_firstname, update_lastname, update_email, update_sex, update_age, update_edu, update_per } from '../actions';
 
 const clientId = '304351361611-crq2n9aucmhcee8bf7pnujvmvfg5pe1v.apps.googleusercontent.com'
 const responseGoogle = (response) => {
@@ -100,8 +100,8 @@ function SignIn(props) {
               'email' : input["email"],
               'password' : input["password"]
             }
-            response = await axios.post("https://spr-system.herokuapp.com/login/", payload)
-            //response = await axios.post("http://127.0.0.1:8000/login/", payload)
+            //response = await axios.post("https://spr-system.herokuapp.com/login/", payload)
+            response = await axios.post("http://127.0.0.1:8000/login/", payload)
           }
           else{
             return isValid;
@@ -115,7 +115,7 @@ function SignIn(props) {
             //this.history.push("/");
             dispatch(signin());
             dispatch(update_token(response.data['token']));
-            alert(response.data['info']['firstname']);
+            //alert(response.data['info']['firstname']);
             dispatch(update_firstname(response.data['info']['firstname']));
             dispatch(update_lastname(response.data['info']['lastname']));
             dispatch(update_email(response.data['info']['email']));
@@ -123,7 +123,9 @@ function SignIn(props) {
             dispatch(update_age(response.data['info']['age']));
             // alert("Your status: "+ {isLogged} +"\nYour token is: " + {token});
             //return <Redirect to="/"/>;
-            props.history.push("/");
+            get_edu(response.data['token']);
+            get_per(response.data['token']);
+            props.history.push("/");    
           }
           else {
             alert("Fail to login");
@@ -131,8 +133,35 @@ function SignIn(props) {
           console.log(isValid);
           return isValid;
       }
-
- 
+      const get_edu = async (tk) => {
+        let payload = {
+          "token": tk
+        }
+        let response = {};
+        response = await axios.post("http://127.0.0.1:8000/get/education/info/", payload)
+        if(response.data['status'] === true) {
+          dispatch(update_edu(response.data['info']))
+        }
+        else {
+          alert("Fail to get data");
+        }
+        
+        return payload;
+      }
+      const get_per = async (tk) => {
+        let payload = {
+          "token": tk
+        }
+        let response3 = {};
+        response3 = await axios.post("http://127.0.0.1:8000/get/personality/info/", payload)
+        if(response3.data['status'] === true) {
+          dispatch(update_per(response3.data['info']))
+        }
+        else {
+          alert("Fail to get data");
+        }
+      }
+      
 
       const onFailure = (res) =>{
         console.log('[login failed] res:' , res);
