@@ -34,16 +34,6 @@ function Navbarr (props){
         //token = useSelector(state => state.token);
       }, [token, isLogged]);
 
-    const get_edu_info = async (tk) => {
-        let response = {};
-        let payload= {
-            "token": tk
-        }
-        // response = await axios.get("http://127.0.0.1:8000/get/education/info/", payload)
-        // if(response.data['status'] === true){
-        //     dispatch(update_edu(response.data['info']));
-        // }
-    }
     const logout = async (tk) => {
         //let token = useSelector(state => state.token)
         let response = {};
@@ -98,7 +88,7 @@ function Navbarr (props){
                  id="collasible-nav-dropdown" 
                 className="NavDropdown" >
                     <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style={{ fontSize:'0.9vw'}} >Account Information</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  style={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw'}} onClick={() => get_edu_info(token)}>User Dashboard</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  style={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw'}}>User Dashboard</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem"  tyle={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw'}} onClick={() => logout(token)} >Log out</NavDropdown.Item>
                 </NavDropdown> :
