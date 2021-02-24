@@ -74,3 +74,27 @@ export const destroy_age = () => {
         type: 'DESTROY_AGE'
     };
 };
+
+export const update_edu = pl => {
+    return {
+        type: 'UPDATE_EDU',
+        payload: pl
+    };
+};
+export const destroy_edu = () => {
+    return {
+        type: 'DESTROY_EDU'
+    };
+};
+
+export const update_per = pl => {
+    return {
+        type: 'UPDATE_PER',
+        payload: pl
+    };
+};
+export const destroy_per = () => {
+    return {
+        type: 'DESTROY_PER'
+    };
+};
