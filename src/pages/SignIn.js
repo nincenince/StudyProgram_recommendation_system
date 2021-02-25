@@ -45,7 +45,7 @@ function SignIn(props) {
       }, [token, isLogged]);
 
       const [email, setemail] = useState('');
-      const [password, setpassword] =useState('');
+      const [password, setpassword] = useState('');
       const [input, setinput] = useState({
         email: '',
         password: ''
