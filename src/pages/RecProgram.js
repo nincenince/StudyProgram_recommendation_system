@@ -4,7 +4,7 @@ import {Link } from "react-router-dom";
 import './RecProgram.css'
 import EducationInfo from "../EducationInfo"; 
 import PersonanlityInfo from "../PersonalityInfo";
-import { Col,Row, Container , Button} from "react-bootstrap";
+import { Col,Row, Container , Button, Image} from "react-bootstrap";
 
 class Test extends Component{
 
@@ -21,101 +21,58 @@ class Test extends Component{
               style={{ fontSize:'2vw', marginLeft:"5%", marginTop:"3%"}}
               >Get ready to discover your programs</h1>
             
-      <Container>
-            <Col >
-           
-              <div 
-              class="rec-education-info"
-              >         
-               <h2 style={{ fontSize:'2vw'}}
-               >Education Information </h2>
-          <br></br>
-
-      <ul>
-          <div>
-                {
-                  EducationInfo.EduInfo.map((Info) => {
-                    return (
-                      <div>
-                        <h4 className= "rec-EduName" style={{ fontSize:'1vw'}} >{Info.TestName}</h4>
-                        <ul>
-                          {
-                            Info.ScoreList.map((InfoDetail) => {
-                              return (
-                                  <p className= "rec-EduInfo" style={{ fontSize:'1vw'}} >
-                                    {InfoDetail.Score}
-                                  </p>
-                              );
-                            })
-                          }
-                        </ul>
-                      </div>
-                    );
-                  })
-                } 
-            </div>
-
-              </ul>
-
-
-               <Link to="/EduInformation">
-                <Button className="rec-edit-button" style={{ fontSize:'1vw'}}>
-                  Edit Information
-                </Button>
-                </Link>
-                </div>  
-
-           </Col>
-                
-
-      <Col 
-      >
-        <div className="rec-personality">
-              <h2 className="rec-personalityInformation" style={{ fontSize:'2vw'}}>Big 5 Personality Label</h2>
-              <br></br>
-
-              <ul>
-
-          <div>
-                {
-                  PersonanlityInfo.PersonalInfo.map((PerInfo) => {
-                    return (
-                      <div>
-                        <p className= "rec-PerName" style={{ fontSize:'1vw'}}  >{PerInfo.Personality}</p>
-
-                                <p className="rec-PerScore" style={{ fontSize:'1vw'}}>
-                                    {PerInfo.PersonalityScore}
-                                </p>
-                      </div>
-                    );
-                  })
-                } 
-            </div>
-
-              </ul>
-
-              <Link to="/PerTest">
-                <Button className="rec-retake-button" style={{ fontSize:'1vw'}}>
-                  Retake Test
-                </Button>
-                </Link>
-                </div>
-         
-    
    
-              <Link to="/RecResult">
-                <Button
-                 className="rec-programs-button"
-                 style={{ fontSize:'1vw'}}
-                 >
-                  Recommend Programs
-                </Button>
-                </Link>
-            
-          </Col>
+                <Row>
 
-               
-                </Container>
+                <Col md={{ span: 3, offset: 3 }}>
+                  <div style={{border:'solid', borderWidth:'thin',marginTop:'15%', padding:'10%'}}>
+                    <Image style={{widht:'3vw', height:'7vh', paddingLeft:'35%'}} src={require("../images/1.png")}/>
+                    <p style={{fontSize:'1.4vw', padding:'5%'}}>Enter your Educational Information</p>
+                    {/* <p style={{fontSize:'1.4vw'}}>Educational Information</p> */}
+                    <Link to="/EduInformation">
+                    <Button 
+                    style={{ fontSize:'1vw',borderRadius:' 20px', backgroundColor:'coral',
+                    border:'coral', marginLeft:'15%'}}
+                    >
+                    Enter Information
+                    </Button>
+                    </Link>
+                  </div>
+                </Col>
+
+
+
+                <Col  md={{ span: 3 }}>
+                <div style={{border:'solid', borderWidth:'thin',marginTop:'15%', padding:'10%'}}>
+                <Image style={{widht:'4vw', height:'7vh' ,paddingLeft:'35%'}} src={require("../images/2.png")}/>
+                    <p style={{fontSize:'1.4vw', padding:'5%'}}>Take Big 5 Personality Label test</p>
+                    {/* <p style={{fontSize:'1.4vw'}}>Personality Label test</p> */}
+                    <Link to="/PerTest">
+                    <Button 
+                    style={{ fontSize:'1vw',borderRadius:' 20px', backgroundColor:'coral',
+                    border:'coral', marginLeft:'30%'}}
+                    >
+                    Take test
+                    </Button>
+                    </Link>
+                  </div>
+                </Col>
+
+                </Row>
+
+                <Row>
+                <Col  md={{ span: 3, offset: 5}}>
+                <Link to="/RecResult">
+                    <Button 
+                    style={{ fontSize:'1vw', marginTop:'10%',borderRadius:' 20px', backgroundColor:'rgb(255, 70, 0)',
+                    border:'coral'
+                  }}
+                    >
+                    Recommend Program
+                    </Button>
+                </Link>
+                </Col>
+                </Row>
           </>
       )
   }
