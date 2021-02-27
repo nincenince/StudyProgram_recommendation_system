@@ -174,7 +174,8 @@ function AccInfo (props) {
           "new_gender": ng
         }
         console.log(payload);
-        response = await axios.post("http://127.0.0.1:8000/edit/personal/info/", payload)
+        response = await axios.post("https://spr-system.herokuapp.com/edit/personal/info/", payload)
+        //response = await axios.post("http://127.0.0.1:8000/edit/personal/info/", payload)
       }
       else {
         return isValid;
