@@ -9,29 +9,11 @@ import {Faculties} from "../faculties.jsx";
 
 
 import { useSelector, useDispatch} from 'react-redux';
-import { useState, useEffect } from 'react';
-import { destroy_token, signout, destroy_firstname, destroy_lastname, destroy_email, destroy_sex, destroy_age, destroy_edu, update_edu } from '../actions';
-import axios from 'axios';
-
-// const Score =  PersonanlityInfo.PersonalInfo.map((PerInfo) => 
-//                     PerInfo.PersonalityScore
-//                 );
-    
-//console.log(Score);
-
-// const dataa ={
-//     labels: ['Extroversion', 'Neuroticism', 'Agreeableness', 'Conscientiousness', 'Openness'],
-//     datasets:
-//     [{ 
-//     label: "",
-//     backgroundColor: "rgba(241, 90, 34, 0.2)",
-//     data: Score
-
-//         }]
-//     };
+import {  useEffect } from 'react';
+import { update_comefrom } from '../actions';
 
 
-function RecommendProg (props){
+function Dashboard (props){
     let token = useSelector(state => state.token)
     let isLogged = useSelector(state => state.isLogged);
     let EducationInfo = useSelector(state => state.education);
@@ -49,6 +31,11 @@ function RecommendProg (props){
             data: PersonalityInfo
         }]
     };
+
+    const changeComefrom = () => {
+        dispatch(update_comefrom('dashboard'));
+        props.history.push("/PerTest");
+    }
 
     useEffect(() => {
 
@@ -96,46 +83,46 @@ function RecommendProg (props){
                         <p style={{ fontSize:'1.5vw', textDecoration:'bold', paddingTop:'2%'}} >Result History</p>
                         { History.RecommendProgList.map((RecInfo) => {
                             return(
-                                <div style={{border:'solid',borderRadius:'0px', borderWidth:'thin', paddingRight:'5%', paddingButtom:'5%', margin:'2%',  paddingLeft:'2%', backgroundImage: 'linear-gradient(to right, white, white)'}}>
+                                <div style={{border:'solid',borderRadius:'0px', borderWidth:'thin', paddingRight:'5%', paddingButtom:'5%', margin:'2%',  paddingLeft:'2%', backgroundImage: 'linear-gradient(to right, white, white)'}} key={ Math.random().toString(36).substr(2, 9) }>
                                 <p style={{fontSize:'1vw'}}>Date</p>
-                                <div class="row">   
+                                <div className="row">   
                                 <div className= "col-4 history-proglist"  style={{ fontSize:'1vw'}}>{RecInfo.Date}</div>
                                     {
                                     RecInfo.ProgramList.map((RecDetail) => {
                                         return (
-                                        <div class="col-8" style={{ fontSize:'1vw'}}>
-                                            <div class="row"> 
+                                        <div className="col-8" style={{ fontSize:'1vw'}} key={ Math.random().toString(36).substr(2, 9) }>
+                                            <div className="row"> 
                                                 <div className="col-8 history-recprogram">
                                                     {RecDetail.Programs1}
                                                 </div>
-                                                <div class="col-4 history-recscore">
+                                                <div className="col-4 history-recscore">
                                                     {RecDetail.RecProgScore1}
                                                 </div>                                                
                                             </div>
                                             <hr></hr>
-                                            <div class="row"> 
-                                                <div class="col-8 history-recprogram">
+                                            <div className="row"> 
+                                                <div className="col-8 history-recprogram">
                                                     {RecDetail.Programs2}
                                                 </div>
-                                                <div class="col-4 history-recscore">
+                                                <div className="col-4 history-recscore">
                                                     {RecDetail.RecProgScore2}
                                                 </div>                                                
                                             </div>
                                             <hr></hr>
-                                            <div class="row"> 
-                                                <div class="col-8 history-recprogram">
+                                            <div className="row"> 
+                                                <div className="col-8 history-recprogram">
                                                     {RecDetail.Programs3}
                                                 </div>
-                                                <div class="col-4 history-recscore">
+                                                <div className="col-4 history-recscore">
                                                     {RecDetail.RecProgScore3}
                                                 </div>                                                
                                             </div>
                                             <hr></hr>
-                                            <div class="row"> 
-                                                <div class="col-8 history-recprogram">
+                                            <div className="row"> 
+                                                <div className="col-8 history-recprogram">
                                                     {RecDetail.Programs4}
                                                 </div>
-                                                <div class="col-4 history-recscore">
+                                                <div className="col-4 history-recscore">
                                                     {RecDetail.RecProgScore4}
                                                 </div>                                                
                                             </div>        
@@ -187,13 +174,13 @@ function RecommendProg (props){
                 {
                   EducationInfo.EduInfo.map((Info) => {
                     return (
-                      <div>
+                      <div key={ Math.random().toString(36).substr(2, 9) }>
                         <h4 className= "history-edulist" style={{ fontSize:'1vw'}} >{Info.TestName}</h4>
                         <ul>
                           {
                             Info.ScoreList.map((InfoDetail) => {
                               return (
-                                  <p  style={{ fontSize:'1vw'}} >
+                                  <p  style={{ fontSize:'1vw'}} key={ Math.random().toString(36).substr(2, 9) }>
                                     {InfoDetail.Score}
                                   </p>
                               );
@@ -216,40 +203,24 @@ function RecommendProg (props){
       
 
 
-
+                
         <Col xs={4} style={{marginTop:'2%',marginLeft:'4%'}}>
             <div style={{ border:'solid', borderWidth:'thin', backgroundColor:'white', paddingBottom:'15%', borderRadius:'5px'}}>
                 <p style={{ fontSize:'1.5vw', textDecoration:'bold', padding:'3%'}}>Big 5 Personality Label</p>
                     <Radar style="responsive:true;" data={dataa} />
-
-            <Link to="/EduInformation">
-                <Button  style={{ fontSize:'1vw', borderRadius:'50px', backgroundColor:'coral',    border: '1px solid coral', float:'right', margin:'5%'}}>
-                    Edit Information
-                </Button>
-            </Link>
-
+                <Link to="/PerTest">
+                    <Button  onClick={changeComefrom} style={{ fontSize:'1vw', borderRadius:'50px', backgroundColor:'coral',    border: '1px solid coral', float:'right', margin:'5%'}}>
+                        Take personality test
+                    </Button>
+                </Link>
             </div>
         </Col>
     {/* </Container> */}
     </Row>
 
-
-        <br/>
-        <Link to="/RecProgram">
-                <Button className="Dashboard-done-button" style={{ fontSize:'1vw'}}>
-                    Done
-                </Button>
-            </Link>
-
-</div>
-        
-
-
-          
-      )
-  
+    </div>)
 }
 
-export default RecommendProg;
+export default Dashboard;
 
 
