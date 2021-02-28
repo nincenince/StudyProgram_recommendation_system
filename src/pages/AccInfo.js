@@ -35,10 +35,10 @@ function AccInfo (props) {
   const [confirmnewpassword, setconfirmnewpassword] = useState('');
   const [oldemail, setoldemail] = useState('');
   const [oldpassword, setoldpassword] = useState('');
-  const [firstname, setfirstname] = useState('');
-  const [lastname, setlastname] = useState('');
-  const [gender, setgender] = useState('');
-  const [age, setage] = useState(0);
+  const [firstname, setfirstname] = useState(personal.firstname);
+  const [lastname, setlastname] = useState(personal.lastname);
+  const [gender, setgender] = useState(personal.gender);
+  const [age, setage] = useState(personal.age);
   const [gendererrors, setgendererrors] = useState('');
   const [ageerrors, setageerrors] = useState('');
   const [emailerrors, setemailerrors] = useState('');
@@ -55,6 +55,18 @@ function AccInfo (props) {
      
   const handlePersonalSubmit = (event) => {
     event.preventDefault();
+    if(firstname == ''){
+      setfirstname(personal.firstname);
+    }
+    if(lastname == ''){
+      setlastname(personal.lastname);
+    }
+    if(age == 0){
+      setage(personal.age);
+    }
+    if(gender == null || gender == ''){
+      setgender(personal.sex);
+    }
     validate(token,false,null,false,null,null,null,true,firstname,true,lastname,true,age,true,gender);
   }
   const handleEmailSubmit = (event) => {
@@ -174,8 +186,8 @@ function AccInfo (props) {
           "new_gender": ng
         }
         console.log(payload);
-        response = await axios.post("https://spr-system.herokuapp.com/edit/personal/info/", payload)
-        //response = await axios.post("http://127.0.0.1:8000/edit/personal/info/", payload)
+        //response = await axios.post("https://spr-system.herokuapp.com/edit/personal/info/", payload)
+        response = await axios.post("http://127.0.0.1:8000/edit/personal/info/", payload)
       }
       else {
         return isValid;
@@ -227,16 +239,17 @@ function AccInfo (props) {
               <Form onSubmit={handlePersonalSubmit}>
                 
                 <Form.Group controlId="forfn">
-                  <Form.Label style={{ fontSize:'1vw'}}>First Name</Form.Label>
-                  <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder="Enter First Name"  value={firstname} onChange={e => setfirstname(e.target.value)} />
+                  <Form.Label style={{ fontSize:'1vw'}}>Firstname</Form.Label>
+                  {/* <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder="Enter First Name"  value={firstname} onChange={e => setfirstname(e.target.value)} /> */}
+                  <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder={personal.firstname}  value={firstname} onChange={e => setfirstname(e.target.value)} />
                   <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
                     {firstnameerrors}
                   </Form.Text>
                 </Form.Group>
 
                 <Form.Group controlId="forln">
-                  <Form.Label style={{ fontSize:'1vw'}}>Last Name</Form.Label>
-                  <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder="Enter Last Name"  value={lastname} onChange={e => setlastname(e.target.value)} />
+                  <Form.Label style={{ fontSize:'1vw'}}>Lastname</Form.Label>
+                  <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder={personal.lastname} value={lastname} onChange={e => setlastname(e.target.value)} />
                   <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
                     {lastnameerrors}
                   </Form.Text>
@@ -245,7 +258,7 @@ function AccInfo (props) {
 
               <Form.Label style={{ fontSize:'1vw'}}>Gender</Form.Label>
                 <Form.Group  controlId="forgd">
-                  <Form.Control as="select" defaultValue="" style={{ fontSize:'1vw'}} value={gender} onChange={e => setgender(e.target.value)} >
+                  <Form.Control as="select" defaultValue={personal.sex} style={{ fontSize:'1vw'}} placeholder={personal.sex} value={gender} onChange={e => setgender(e.target.value)} >
                     <option style={{ fontSize:'1vw'}}>{null}</option>
                     <option style={{ fontSize:'1vw'}}>Female</option>
                     <option style={{ fontSize:'1vw'}}>Male</option>
@@ -258,7 +271,7 @@ function AccInfo (props) {
 
                 <Form.Label style={{ fontSize:'1vw'}}>Age</Form.Label>
                 <Form.Group  controlId="forag">
-                  <Form.Control type="number" style={{ fontSize:'1vw'}} value={age} onChange={e => setage(e.target.value)}/>
+                  <Form.Control type="number" style={{ fontSize:'1vw'}} placeholder={personal.age} value={age} onChange={e => setage(e.target.value)}/>
                   <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
                     {ageerrors}
                   </Form.Text>
