@@ -98,3 +98,15 @@ export const destroy_per = () => {
         type: 'DESTROY_PER'
     };
 };
+
+export const update_comefrom = pl => {
+    return {
+        type: 'UPDATE_COMEFROM',
+        payload: pl
+    };
+};
+export const destroy_comefrom = () => {
+    return {
+        type: 'DESTROY_COMEFROM'
+    };
+};
