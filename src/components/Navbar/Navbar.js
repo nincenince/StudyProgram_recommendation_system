@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector, useDispatch} from 'react-redux';
 import { useState, useEffect } from 'react';
 //import { signout } from '../actions';
-import { destroy_token, signout, destroy_firstname, destroy_lastname, destroy_email, destroy_sex, destroy_age, destroy_edu, destroy_per } from '../../actions';
+import { destroy_token, signout, destroy_firstname, destroy_lastname, destroy_email, destroy_sex, destroy_age, destroy_edu, destroy_per, destroy_comefrom } from '../../actions';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom'
 
@@ -40,8 +40,8 @@ function Navbarr (props){
         let payload = {
             "token": tk
         }
-        response = await axios.post("https://spr-system.herokuapp.com/logout/", payload)
-        //response = await axios.post("http://127.0.0.1:8000/logout/", payload)
+        //response = await axios.post("https://spr-system.herokuapp.com/logout/", payload)
+        response = await axios.post("http://127.0.0.1:8000/logout/", payload)
         if(response.data['status'] === true){
             dispatch(signout());
             dispatch(destroy_token());
@@ -52,6 +52,7 @@ function Navbarr (props){
             dispatch(destroy_sex());
             dispatch(destroy_edu());
             dispatch(destroy_per());
+            dispatch(destroy_comefrom());
             alert(response.data['message']);
             //props.history.push('/');
         }
