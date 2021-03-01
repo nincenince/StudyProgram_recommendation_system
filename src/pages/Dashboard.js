@@ -194,7 +194,7 @@ function Dashboard (props){
             </div>
 
             <Link to="/EduInformation">
-                <Button  style={{ fontSize:'1vw', borderRadius:'50px', backgroundColor:'coral',  float:'right'}}>
+                <Button  onClick={changeComefrom} style={{ fontSize:'1vw', borderRadius:'50px', backgroundColor:'coral',  float:'right'}}>
                     Edit Information
                 </Button>
             </Link>
