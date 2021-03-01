@@ -72,8 +72,8 @@ function PerTest (props){
       "answer": ans
     }
     let response = {};
-    //response = await axios.post("https://spr-system.herokuapp.compersonality_result/", payload);
-    response = await axios.post("http://127.0.0.1:8000/personality_result/", payload);
+    response = await axios.post("https://spr-system.herokuapp.com/personality_result/", payload);
+    //response = await axios.post("http://127.0.0.1:8000/personality_result/", payload);
     if (response.data['status'] === true) {
       dispatch(update_per(response.data['info']))
       alert("congratulations you have finished the personality test.")
