@@ -34,14 +34,15 @@ function Navbarr (props){
         //token = useSelector(state => state.token);
       }, [token, isLogged]);
 
+
     const logout = async (tk) => {
         //let token = useSelector(state => state.token)
         let response = {};
         let payload = {
             "token": tk
         }
-        //response = await axios.post("https://spr-system.herokuapp.com/logout/", payload)
-        response = await axios.post("http://127.0.0.1:8000/logout/", payload)
+        response = await axios.post("https://spr-system.herokuapp.com/logout/", payload)
+        //response = await axios.post("http://127.0.0.1:8000/logout/", payload)
         if(response.data['status'] === true){
             dispatch(signout());
             dispatch(destroy_token());
