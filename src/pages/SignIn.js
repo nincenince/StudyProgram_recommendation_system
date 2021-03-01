@@ -91,7 +91,12 @@ function SignIn(props) {
               'email' : input["email"],
               'password' : input["password"]
             }
-            response = await axios.post("https://spr-system.herokuapp.com/login/", payload)
+            await axios.post("https://spr-system.herokuapp.com/login/", payload).then(
+            //await axios.post("http://127.0.0.1:8000/login/", payload).then(
+              res => {
+                response = res;
+              }
+            )
             //response = await axios.post("http://127.0.0.1:8000/login/", payload)
           }
           else{
@@ -114,8 +119,9 @@ function SignIn(props) {
             dispatch(update_age(response.data['info']['age']));
             // alert("Your status: "+ {isLogged} +"\nYour token is: " + {token});
             //return <Redirect to="/"/>;
-            get_edu(response.data['token']);
-            get_per(response.data['token']);
+            //get_edu(response.data['token']);
+            //get_per(response.data['token']);
+            get_nes(response.data['token']);
             props.history.push("/");    
           }
           else {
@@ -124,38 +130,22 @@ function SignIn(props) {
           console.log(isValid);
           return isValid;
       }
-      const get_edu = async (tk) => {
+      const get_nes = async (tk) => {
         let payload = {
           "token": tk
         }
         let response = {};
-        response = await axios.post("https://spr-system.herokuapp.com/get/education/info/", payload)
-        //response = await axios.post("http://127.0.0.1:8000/get/education/info/", payload)
-        if(response.data['status'] === true) {
-          dispatch(update_edu(response.data['info']))
-        }
-        else {
-          alert("Fail to get data");
-        }
-        
-        return payload;
-      }
-      const get_per = async (tk) => {
-        let payload = {
-          "token": tk
-        }
-        let response3 = {};
-        response3 = await axios.post("https://spr-system.herokuapp.com/get/personality/info/", payload)
-        //response3 = await axios.post("http://127.0.0.1:8000/get/personality/info/", payload)
-        if(response3.data['status'] === true) {
-          dispatch(update_per(response3.data['info']))
+        //response = await axios.post("http://127.0.0.1:8000/get_nescessary/", payload);
+        response = await axios.post("https://spr-system.herokuapp.com/get_nescessary/", payload);
+        if(response.data['1']['status'] === true) {
+          dispatch(update_edu(response.data['1']['info']));
+          dispatch(update_per(response.data['2']));
         }
         else {
           alert("Fail to get data");
         }
       }
       
-
       const onFailure = (res) =>{
         console.log('[login failed] res:' , res);
     };
