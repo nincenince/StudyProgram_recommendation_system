@@ -91,8 +91,8 @@ function SignIn(props) {
               'email' : input["email"],
               'password' : input["password"]
             }
-            //response = await axios.post("https://spr-system.herokuapp.com/login/", payload)
-            response = await axios.post("http://127.0.0.1:8000/login/", payload)
+            response = await axios.post("https://spr-system.herokuapp.com/login/", payload)
+            //response = await axios.post("http://127.0.0.1:8000/login/", payload)
           }
           else{
             return isValid;
@@ -129,8 +129,8 @@ function SignIn(props) {
           "token": tk
         }
         let response = {};
-        //response = await axios.post("https://spr-system.herokuapp.com/get/education/info/", payload)
-        response = await axios.post("http://127.0.0.1:8000/get/education/info/", payload)
+        response = await axios.post("https://spr-system.herokuapp.com/get/education/info/", payload)
+        //response = await axios.post("http://127.0.0.1:8000/get/education/info/", payload)
         if(response.data['status'] === true) {
           dispatch(update_edu(response.data['info']))
         }
@@ -145,8 +145,8 @@ function SignIn(props) {
           "token": tk
         }
         let response3 = {};
-        //response3 = await axios.post("https://spr-system.herokuapp.com/get/personality/info/", payload)
-        response3 = await axios.post("http://127.0.0.1:8000/get/personality/info/", payload)
+        response3 = await axios.post("https://spr-system.herokuapp.com/get/personality/info/", payload)
+        //response3 = await axios.post("http://127.0.0.1:8000/get/personality/info/", payload)
         if(response3.data['status'] === true) {
           dispatch(update_per(response3.data['info']))
         }
