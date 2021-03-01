@@ -123,8 +123,8 @@ class SignUp extends React.Component {
           'lastname' : input['lastname']
         }
         console.log(payload);
-        //response = await axios.post("https://spr-system.herokuapp.com/signup/", payload);
-        this.response = await axios.post("http://127.0.0.1:8000/signup/", payload);
+        this.response = await axios.post("https://spr-system.herokuapp.com/signup/", payload);
+        //this.response = await axios.post("http://127.0.0.1:8000/signup/", payload);
       }
       else {
         return isValid;
