@@ -4,8 +4,10 @@
     top:20px;
     display: flex;
     justify-content: space-between;
-    padding:90px;
-
+    padding-top: 10px;
+    padding-right: 90px;
+    padding-bottom: 90px;
+    padding-left: 90px;
     display: flex;
     flex-wrap: wrap;
     height: 400px;
