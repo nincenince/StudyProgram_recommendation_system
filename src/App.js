@@ -14,6 +14,8 @@ import Dashboard from './pages/Dashboard'
 import AccInfo from './pages/AccInfo'
 import PerTest from './pages/PerTest'
 import PerResult from './pages/PerResult'
+import ForgotPassword from './pages/ForgotPassword'
+import Loading from './pages/Loading'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const IncludeNav = ({ component: Component , ...rest})=>{
@@ -53,6 +55,8 @@ const App = () => (
         <NoNav path='/AccInfo' component={AccInfo}/>
         <NoNav path='/PerTest' component={PerTest}/>
         <NoNav path='/PerResult' component={PerResult}/>
+        <NoNav path='/ForgotPassword' component={ForgotPassword}/>
+        <NoNav path='/Loading' component={Loading}/>
 
 
 
