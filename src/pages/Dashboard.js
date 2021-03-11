@@ -6,11 +6,11 @@ import {Doughnut, Radar} from 'react-chartjs-2';
 //import PersonanlityInfo from "../PersonalityInfo.json";
 import History from "../History";
 import {Faculties} from "../faculties.jsx";
-
+import axios from 'axios';
 
 import { useSelector, useDispatch} from 'react-redux';
 import {  useEffect } from 'react';
-import { update_comefrom } from '../actions';
+import { update_comefrom , update_per, update_edu} from '../actions';
 
 
 function Dashboard (props){
@@ -19,7 +19,23 @@ function Dashboard (props){
     let EducationInfo = useSelector(state => state.education);
     let PersonalityInfo = useSelector(state => state.personality);
     let dispatch = useDispatch();
-
+    let response = {}
+    
+    // useEffect(() => {
+    //     async function get_nes () {
+    //         let payload = {
+    //             "token" : token
+    //         }
+    //       const res = await axios.post('https://spr-system.herokuapp.com/get_nescessary/', payload);
+    //       //const res = await axios.get('http://127.0.0.1:8000/get_course/');
+    //       response = res.data['result'];
+    //       dispatch(update_edu(response.data['1']['info']));
+    //       dispatch(update_per(response.data['2']));
+          
+    //     }
+    //     get_nes();
+    //     // console.log(response);
+    //   },[EducationInfo, PersonalityInfo])
     //let Score =  PersonalityInfo.PersonalInfo.map((PerInfo) => PerInfo.PersonalityScore);
     
     let dataa = {
