@@ -14,15 +14,6 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import { update_token, signin, update_firstname, update_lastname, update_email, update_sex, update_age, update_edu, update_per } from '../actions';
 
-const clientId = '304351361611-crq2n9aucmhcee8bf7pnujvmvfg5pe1v.apps.googleusercontent.com'
-const responseGoogle = (response) => {
-    console.log(response);
-    console.log("google")
-  }
-const responseFacebook=(response)=>{
-    console.log(response);
-}
-
 
 function SignIn(props) {
 
@@ -121,11 +112,12 @@ function SignIn(props) {
             //return <Redirect to="/"/>;
             //get_edu(response.data['token']);
             //get_per(response.data['token']);
-            setTimeout(() => {
-              get_nes(response.data['token']);
-            }, 5000);
             
-            props.history.push("/");    
+            // setTimeout(() => {
+            //   get_nes(response.data['token']);
+            // }, 5000);
+            
+            props.history.push("/Loading");    
           }
           else {
             alert("Fail to login");
@@ -174,55 +166,35 @@ function SignIn(props) {
         <Container>
           <Col></Col>
           <Col>
-            <Form>
-            <h1 style={{ fontSize:'2vw'}}>Sign In</h1>
-            <Form.Group controlId="foremail">
-              <Form.Label style={{ fontSize:'1vw'}}>Email address</Form.Label>
-              <Form.Control style={{ fontSize:'1vw'}} type="email" placeholder="Enter email" value={email} onChange={e => setemail(e.target.value)}/>
-              <Form.Text style={{color: "red", fontSize: "12px"}} >
-              </Form.Text>
-            </Form.Group>
+              <h1 style={{ fontSize:'2vw'}}>Sign In</h1>
+              <Form.Group controlId="foremail">
+                <Form.Label style={{ fontSize:'1vw'}}>Email address</Form.Label>
+                <Form.Control style={{ fontSize:'1vw'}} type="email" placeholder="Enter email" value={email} onChange={e => setemail(e.target.value)}/>
+                <Form.Text style={{color: "red", fontSize: "12px"}} >
+                </Form.Text>
+              </Form.Group>
 
-            <Form.Group controlId="forpassword">
-              <Form.Label style={{ fontSize:'1vw'}}>Password</Form.Label>
-              <Form.Control style={{ fontSize:'1vw'}} type="password" placeholder="Enter password" value={password} onChange={e => setpassword(e.target.value)}/>
-              <Form.Text  style={{color: "red", fontSize: "12px"}} >
-              </Form.Text>
-            </Form.Group>
+              <Form.Group controlId="forpassword">
+                <Form.Label style={{ fontSize:'1vw'}}>Password</Form.Label>
+                <Form.Control style={{ fontSize:'1vw'}} type="password" placeholder="Enter password" value={password} onChange={e => setpassword(e.target.value)}/>
+                <Form.Text  style={{color: "red", fontSize: "12px"}} >
+                </Form.Text>
+              </Form.Group>
 
-           
+            
 
-            <Button 
-            style={{display:"flex", alignItems:"center", justifyContent:"center", fontSize:"1vw"}}
-            variant="primary" type="submit" >
-              Submit
-            </Button>
-            <p style={{ fontSize:'1vw'}}>
+              <Button 
+                style={{display:"flex", alignItems:"center", justifyContent:"center", fontSize:"1vw"}}
+                variant="primary" type="submit" >
+                  Submit
+              </Button>
+              <p style={{ fontSize:'1vw'}}>
                 Don't have an account? <Link to="/SignUp">Sign Up</Link>
-            </p>
-        
-
-            <GoogleLogin
-                  style={{width:"50vw", fontSize:"0.5vw",height:"30vh"}}
-                  clientId ={clientId}
-                  buttonText="login with google account"
-                  onSuccess={responseGoogle}
-                  onFailure={responseGoogle}
-                  cookiePolicy={'single_host_origin'}
-                  isSignedIn={true}
-              />
-
-            <ReactFacebookLogin
-                  style={{width:"50vw", fontSize:"0.5vw",height:"30vh"}}
-                  appId="257174585672540"
-                  // autoLoad={true}
-                  fields="name, email,picture"
-                  icon="fa-facebook"
-                  //   scope="public_profile, user_friends, user_actions,email,user_birthday"
-                  callback={responseFacebook}
-            />
-
-                </Form>
+              </p>
+          
+              <p style={{ fontSize:'1vw'}}>
+                <Link to="/ForgotPassword">Forgot password?</Link>
+              </p>
           </Col>
           <Col></Col>
       
