@@ -34,7 +34,7 @@ function Loading(props) {
 
   useEffect(() => {
     setTimeout(async () => {
-      //fetch("http://127.0.0.1:8000/get_nescessary/",
+      //await fetch("http://127.0.0.1:8000/get_nescessary/",
       await fetch("https://spr-system.herokuapp.com/get_nescessary/",
       {
         method: 'post',
