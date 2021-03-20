@@ -4,6 +4,7 @@ import personal_info_Reducer from './personal_info';
 import education_info_Reducer from './education_info';
 import personality_info_Reducer from './personality_info';
 import comefromReducer from './comefrom';
+import adminlockReducer from './isAdmin';
 import { combineReducers } from 'redux';
 
 const allReducer = combineReducers({
@@ -13,5 +14,6 @@ const allReducer = combineReducers({
     education : education_info_Reducer,
     personality: personality_info_Reducer,
     comefrom: comefromReducer,
+    isAdmin: adminlockReducer,
 });
 export default allReducer;

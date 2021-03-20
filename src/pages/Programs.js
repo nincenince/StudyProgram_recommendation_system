@@ -1,15 +1,16 @@
-import React, { Component , useState} from 'react';
+import React, { useState} from 'react';
 // import ProgramsList from "../ProgramsList";
-import {ProgramsList} from "../ProgramsList.js";
-import { Col,Row, Container , Image, Jumbotron, Button, Form} from "react-bootstrap";
+// import {ProgramsList} from "../ProgramsList.js";
+import { Col,Row, Container, Form} from "react-bootstrap";
+// import { Col,Row, Container , Image, Jumbotron, Button, Form} from "react-bootstrap";
 
 import axios from 'axios';
 import { useEffect } from 'react';
-import { useSelector, useDispatch} from 'react-redux';
+// import { useSelector, useDispatch} from 'react-redux';
 
 import  "./Programs.css"
-import Select from 'react-select';
-import makeAnimated from 'react-select/animated';
+// import Select from 'react-select';
+// import makeAnimated from 'react-select/animated';
 
  
 function Programs() {
@@ -27,13 +28,13 @@ function Programs() {
     async function get_course () {
       const res = await axios.get('https://spr-system.herokuapp.com/get_course/');
       //const res = await axios.get('http://127.0.0.1:8000/get_course/');
-      response = res.data['result'];
-      setData(response);
-      setrresponse(response);
+      let responses = res.data['result'];
+      setData(responses);
+      setrresponse(responses);
     }
     get_course();
     // console.log(response);
-  },found)
+  },[found])
   
   const [facu, setfacu] = useState('');
   const [rresponse, setrresponse] = useState(response);
@@ -64,7 +65,7 @@ function Programs() {
         );
       });
       setfound(true);
-      if(filteredData.length == 0){
+      if(filteredData.length === 0){
         setfound(false);
       }
       setData(filteredData);

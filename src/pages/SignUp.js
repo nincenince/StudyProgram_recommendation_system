@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './SignUp.css'
-import bg from '../images/IMG_0947.JPG'; 
-import { Col,Row, Container , Image, Jumbotron, Button, Form} from "react-bootstrap";
+// import bg from '../images/IMG_0947.JPG'; 
+import { Col, Container , Button, Form} from "react-bootstrap";
 
 
   
@@ -36,7 +36,7 @@ class SignUp extends React.Component {
         input["username"] = "test_user";
         input["last_name"]= "test_user";
         input["gender"]="Male";
-        input["age"]=32;
+        input["school"]="";
         input["email"] = " ";
         input["password"] = " ";
         input["confirm_password"] = " ";
@@ -82,10 +82,10 @@ class SignUp extends React.Component {
         isValid = false;
         errors["gender"] = "Please select your gender.";
       }
-      if (input["age"] == null) {
+      if (!input["school"]) {
         console.log('6');
         isValid = false;
-        errors["age"] = "Please enter your age.";
+        errors["school"] = "Please enter your school.";
       }
 
       if (!input["password"]) {
@@ -117,10 +117,12 @@ class SignUp extends React.Component {
         let payload = {
           'email' : input['email'],
           'password' : input['password'],
-          'age' : input['age'],
+          'age' : 0,
           'sex' : input['gender'],
           'firstname' : input['firstname'],
-          'lastname' : input['lastname']
+          'lastname' : input['lastname'],
+          'school' : input['school'],
+          'role' : 'user'
         }
         console.log(payload);
         this.response = await axios.post("https://spr-system.herokuapp.com/signup/", payload);
@@ -178,11 +180,16 @@ class SignUp extends React.Component {
             </Form.Group>
 
 
-            <Form.Group controlId="formage">
-              <Form.Label style={{ fontSize:'1vw'}}>Age</Form.Label>
-              <Form.Control style={{ fontSize:'1vw'}} type="number" name="age" value={this.state.input.age} onChange={this.handleChange} />
+            <Form.Group controlId="formschool">
+              <Form.Label style={{ fontSize:'1vw'}}>School</Form.Label>
+              <Form.Control style={{ fontSize:'1vw'}} as="select" name="school" value={this.state.input.school} onChange={this.handleChange} >
+              <option style={{ fontSize:'1vw'}}>{null}</option>
+                    <option style={{ fontSize:'1vw'}}>School1</option>
+                    <option style={{ fontSize:'1vw'}}>School2</option>
+                    <option style={{ fontSize:'1vw'}}>School3</option>
+              </Form.Control>
               <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
-              {this.state.errors.age}
+              {this.state.errors.school}
               </Form.Text>
             </Form.Group>
 

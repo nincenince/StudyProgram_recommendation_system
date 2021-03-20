@@ -1,18 +1,17 @@
 import React from 'react';
 import './SignIn.css'
 import {Link} from 'react-router-dom';
-import {GoogleLogin} from 'react-google-login';
-import ReactFacebookLogin from 'react-facebook-login';
+
 // import bg from '../images/plain.png'; 
-import bg from '../images/IMG_0947.JPG'; 
+// import bg from '../images/IMG_0947.JPG'; 
 // import { Container } from 'react-bootstrap';
-import { Col,Row, Container , Image, Jumbotron, Button, Form} from "react-bootstrap";
+import { Col, Container , Button, Form} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
-import { update_token, signin, update_firstname, update_lastname, update_email, update_sex, update_age, update_edu, update_per } from '../actions';
+import { update_token, signin, update_firstname, update_lastname, update_email, update_sex, update_age, update_school, update_role, signin_admin } from '../actions';
 
 
 function SignIn(props) {
@@ -33,18 +32,15 @@ function SignIn(props) {
         password: ''
       });
 
-      const handleChange = (event) => {
-        setinput({input});
-      };
+      // const handleChange = (event) => {
+      //   setinput({input});
+      // };
          
       const handleSubmit = (event) => {
         event.preventDefault();
       
         if(validate(email, password)){
-          let input = {};
-          input["email"] = "";
-          input["password"] = "";
-          setinput({input});
+          setinput(input);
         }
       };
 
@@ -108,6 +104,12 @@ function SignIn(props) {
             dispatch(update_email(response.data['info']['email']));
             dispatch(update_sex(response.data['info']['sex']));
             dispatch(update_age(response.data['info']['age']));
+            dispatch(update_school(response.data['info']['school']));
+            dispatch(update_role(response.data['info']['role']));
+            if(response.data['info']['role'] === "admin"){
+              dispatch(signin_admin());
+            }
+            
             // alert("Your status: "+ {isLogged} +"\nYour token is: " + {token});
             //return <Redirect to="/"/>;
             //get_edu(response.data['token']);
@@ -125,35 +127,32 @@ function SignIn(props) {
           console.log(isValid);
           return isValid;
       }
-      const get_nes = async (tk) => {
-        let payload = {
-          "token": tk
-        }
-        let ok = true;
-        let i = 0;
-        while(ok){
-          let response = {};
-          //response = await axios.post("http://127.0.0.1:8000/get_nescessary/", payload);
-          if(i === 300){
-            i = 0
-            response = await axios.post("https://spr-system.herokuapp.com/get_nescessary/", payload);
-            if(response.data['1']['status'] === true) {
-              ok = false;
-              dispatch(update_edu(response.data['1']['info']));
-              dispatch(update_per(response.data['2']));
-            }
-            else {
-              alert("Fail to get data");
-            }
-          }
-          i+=1;
-        }
-        return !ok;
-      }
-      
-      const onFailure = (res) =>{
-        console.log('[login failed] res:' , res);
-    };
+      // const get_nes = async (tk) => {
+      //   let payload = {
+      //     "token": tk
+      //   }
+      //   let ok = true;
+      //   let i = 0;
+      //   while(ok){
+      //     let response = {};
+      //     //response = await axios.post("http://127.0.0.1:8000/get_nescessary/", payload);
+      //     if(i === 300){
+      //       i = 0
+      //       response = await axios.post("https://spr-system.herokuapp.com/get_nescessary/", payload);
+      //       if(response.data['1']['status'] === true) {
+      //         ok = false;
+      //         dispatch(update_edu(response.data['1']['info']));
+      //         dispatch(update_per(response.data['2']));
+      //       }
+      //       else {
+      //         alert("Fail to get data");
+      //       }
+      //     }
+      //     i+=1;
+      //   }
+      //   return !ok;
+      // }
+
     
         return (
         
