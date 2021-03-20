@@ -1,26 +1,31 @@
-import React, { Component } from 'react';
+/* eslint-disable jsx-a11y/accessible-emoji */
+/* eslint-disable react/jsx-no-comment-textnodes */
+import React from 'react';
 import {Link } from "react-router-dom";
 import './Dashboard.css';
-import { Col, Row, Container , Button, Card, Form, FormControl, Navbar} from "react-bootstrap";
-import {Doughnut, Radar} from 'react-chartjs-2';
+import { Col, Row, Button, Form, Navbar} from "react-bootstrap";
+import { Radar} from 'react-chartjs-2';
 //import PersonanlityInfo from "../PersonalityInfo.json";
 import History from "../History";
-import {Faculties} from "../faculties.jsx";
+// import {Faculties} from "../faculties.jsx";
 import axios from 'axios';
 
 import { useSelector, useDispatch} from 'react-redux';
-import {  useEffect } from 'react';
-import { update_comefrom , update_per, update_edu} from '../actions';
+import {  useEffect, useState } from 'react';
+import { update_comefrom } from '../actions';
 
 
 function Dashboard (props){
     let token = useSelector(state => state.token)
-    let isLogged = useSelector(state => state.isLogged);
+    // let isLogged = useSelector(state => state.isLogged);
     let EducationInfo = useSelector(state => state.education);
     let PersonalityInfo = useSelector(state => state.personality);
+    // let personal = useSelector(state => state.personal);
     let dispatch = useDispatch();
-    let response = {}
+    // let response = {}
     
+    const [rating, setrating] = useState(1);
+    const [feedback, setfeedback] = useState('');
     // useEffect(() => {
     //     async function get_nes () {
     //         let payload = {
@@ -56,6 +61,38 @@ function Dashboard (props){
     useEffect(() => {
 
     }, [EducationInfo]);  
+    
+    const submitfeedback = () => {
+        // console.log(rating);
+        // console.log(typeof(feedback));
+        // console.log(feedback.length);
+        // console.log(feedback+"...");
+        const regExp = /[a-zA-Z]/g;
+        let temp = feedback.replace(/\n/g, " ");
+        if(regExp.test(temp)){
+        /* do something if letters are found in your string */
+            validate(rating,temp);
+        } else {
+            validate(rating,"");
+        /* do something if letters are not found in your string */
+        }
+    }
+    const validate = async (rat, feed) => {
+        let payload = {
+            "token": token,
+            "rating": rat,
+            "feedback": feed
+        }
+        let response = await axios.post('https://spr-system.herokuapp.com/new_feedback/', payload);
+        //let response = await axios.post('http://127.0.0.1:8000/new_feedback/', payload);
+        if( response.data['status'] === true) {
+            alert(response.data['message']);
+            window.location.reload(false);
+          }
+        else{
+            alert("Somethings went wrong, please try again later.");
+        }
+    }
 
     return(
         
@@ -158,19 +195,24 @@ function Dashboard (props){
         
             <div style={{ border:'solid',borderRadius:'20px', borderWidth:'thin',marginLeft:'5%', padding:'10%', backgroundColor:'rgb(255,255,255)'}}>
             <p style={{ fontSize:'1.5vw', textDecoration:'bold'}} >Give us some feedback!</p>
-            <Form.Group>
-            <FormControl as="select" >
-                    {Faculties.faculites.map((e, key) => {
-                    return <option key={key} value={e.Key}>{e.Value}</option>
-                })}
-            </FormControl> 
-            <Form.Control style={{ fontSize:'1vw', height:"100px", marginTop:"4%"}} type="text" name="feedback"
-                placeholder="Your Feedback..."/>
+            
+            
+            <Form.Group controlId="formratingstar">
+              <Form.Label style={{ fontSize:'1vw'}}>How do you like our service</Form.Label>
+              <Form.Control style={{ fontSize:'1vw'}} as="select" name="rating" value={rating} onChange={e => setrating(e.target.value)} >
+                <option style={{ fontSize:'1vw'}} value={1}>⭐</option>
+                <option style={{ fontSize:'1vw'}} value={2}>⭐⭐</option>
+                <option style={{ fontSize:'1vw'}} value={3}>⭐⭐⭐</option>
+                <option style={{ fontSize:'1vw'}} value={4}>⭐⭐⭐⭐</option>
+                <option style={{ fontSize:'1vw'}} value={5}>⭐⭐⭐⭐⭐</option>
+              </Form.Control>
+              <textarea style={{ fontSize:'1vw', height:"100px", marginTop:"4%"}} rows="4" cols="50" name="feedback"
+                placeholder="Your Feedback..." value={feedback} onChange={e => setfeedback(e.target.value)}/>
                 
-                <Button style={{float:'right', marginTop:'2%',fontSize:'1vw'}}>Submit</Button>
+                <Button style={{float:'right', marginTop:'2%',fontSize:'1vw'}} onClick={() => submitfeedback()}>Submit</Button>
             </Form.Group>
-
             </div>
+            
             
             </Col>
         </Row>
@@ -223,7 +265,7 @@ function Dashboard (props){
         <Col xs={4} style={{marginTop:'2%',marginLeft:'4%'}}>
             <div style={{ border:'solid', borderWidth:'thin', backgroundColor:'white', paddingBottom:'15%', borderRadius:'5px'}}>
                 <p style={{ fontSize:'1.5vw', textDecoration:'bold', padding:'3%'}}>Big 5 Personality Label</p>
-                    <Radar style="responsive:true;" data={dataa} />
+                    <Radar style={{responsive:true}} data={dataa} />
                 <Link to="/PerTest">
                     <Button  onClick={changeComefrom} style={{ fontSize:'1vw', borderRadius:'50px', backgroundColor:'coral',    border: '1px solid coral', float:'right', margin:'5%'}}>
                         Take personality test
