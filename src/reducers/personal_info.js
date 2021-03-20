@@ -4,7 +4,9 @@ const data = {
   lastname: "",
   email: "",
   age: 0,
-  sex: ""
+  sex: "",
+  school: "",
+  role: "",
 };
 const personal_info_Reducer = (state = data, action) => {
   switch(action.type){
@@ -39,6 +41,18 @@ const personal_info_Reducer = (state = data, action) => {
       case "DESTROY_AGE":
         state.age = 0
         return state;
+      case "UPDATE_SCHOOL":
+        state.school = action.payload;
+        return state;
+      case "DESTROY_SCHOOL":
+        state.school = ""
+        return state;
+      case "UPDATE_ROLE":
+        state.role = action.payload;
+        return state;
+      case "DESTROY_ROLE":
+        state.role = ""
+        return state;  
       default:
         return state;
   }
