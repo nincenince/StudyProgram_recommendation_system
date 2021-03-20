@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import {Link } from "react-router-dom";
+import React from 'react';
+// import {Link } from "react-router-dom";
 import './AccInfo.css';
-import { Col,Row, Container , Image, Form, Button} from "react-bootstrap";
+import { Col,Row, Container , Form, Button} from "react-bootstrap";
 
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
-import { update_firstname, update_lastname, update_email, update_sex, update_age } from '../actions';
+import { update_firstname, update_lastname, update_email, update_sex, update_school } from '../actions';
 
 
 function AccInfo (props) {
@@ -38,9 +38,11 @@ function AccInfo (props) {
   const [firstname, setfirstname] = useState(personal.firstname);
   const [lastname, setlastname] = useState(personal.lastname);
   const [gender, setgender] = useState(personal.gender);
-  const [age, setage] = useState(personal.age);
+  // const [age, setage] = useState(personal.age);
+  const [school, setschool] = useState(personal.school);
   const [gendererrors, setgendererrors] = useState('');
-  const [ageerrors, setageerrors] = useState('');
+  // const [ageerrors, setageerrors] = useState('');
+  const [schoolerrors, setschoolerrors] = useState('');
   const [emailerrors, setemailerrors] = useState('');
   const [oldpassworderrors, setoldpassworderrors] = useState('');
   const [newpassworderrors, setnewpassworderrors] = useState('');
@@ -49,25 +51,25 @@ function AccInfo (props) {
   const [lastnameerrors, setlastnameerrors] = useState('');
   const [codes, setcodes] = useState(0);
 
-  const handleChange = (event) => {
-    setnewemail("");
-  }
+  // const handleChange = (event) => {
+  //   setnewemail("");
+  // }
      
   const handlePersonalSubmit = (event) => {
     event.preventDefault();
-    if(firstname == ''){
+    if(firstname === ''){
       setfirstname(personal.firstname);
     }
-    if(lastname == ''){
+    if(lastname === ''){
       setlastname(personal.lastname);
     }
-    if(age == 0){
-      setage(personal.age);
+    if(school === null || school === ''){
+      setschool(personal.school);
     }
-    if(gender == null || gender == ''){
+    if(gender === null || gender === ''){
       setgender(personal.sex);
     }
-    validate(token,false,null,false,null,null,null,true,firstname,true,lastname,true,age,true,gender);
+    validate(token,false,null,false,null,null,null,true,firstname,true,lastname,true,school,true,gender);
   }
   const handleEmailSubmit = (event) => {
     event.preventDefault();
@@ -78,23 +80,23 @@ function AccInfo (props) {
     validate(token,false,null,true,newpassword,confirmnewpassword,oldpassword,false,null,false,null,false,null,false,null);
   }
   
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
     
-    if(this.validate()){
-        console.log(this.state);
+  //   if(this.validate()){
+  //       console.log(this.state);
   
-        let input = {};
-        input["email"] = "";
-        input["password"] = "";
-        input["confirm_password"] = "";
-        this.setState({input:input});
+  //       let input = {};
+  //       input["email"] = "";
+  //       input["password"] = "";
+  //       input["confirm_password"] = "";
+  //       this.setState({input:input});
   
-        alert('Demo Form is submited');
-    }
-  }
+  //       alert('Demo Form is submited');
+  //   }
+  // }
   
-  const validate = async (tk,ec,ne,pc,np,cnp,op,fc,nf,lc,nl,ac,na,gc,ng) => {
+  const validate = async (tk,ec,ne,pc,np,cnp,op,fc,nf,lc,nl,sc,ns,gc,ng) => {
       let input = {};
       input['email'] = ne;
       input['oldpassword'] = op;
@@ -103,7 +105,7 @@ function AccInfo (props) {
       input['firstname'] = nf;
       input['lastname'] = nl;
       input['gender'] = ng;
-      input['age'] = na;
+      input['school'] = ns;
 
       // console.log(input);
       let isValid = true;
@@ -115,9 +117,9 @@ function AccInfo (props) {
           isValid = false;
           setgendererrors("Please select your gender.");
         }
-        if (input["age"] == 0) {
+        if (!input["school"]) {
           isValid = false;
-          setageerrors("Please enter your age.");
+          setschoolerrors("Please select your school.");
         }
         if (!input["firstname"]) {
           isValid = false;
@@ -180,8 +182,8 @@ function AccInfo (props) {
           "new_firstname": nf,
           "lastname_change": lc,
           "new_lastname": nl,
-          "age_change": ac,
-          "new_age": na,
+          "school_change": sc,
+          "new_school": ns,
           "gender_change": gc,
           "new_gender": ng
         }
@@ -199,7 +201,7 @@ function AccInfo (props) {
         dispatch(update_lastname(response.data['info']['lastname']));
         dispatch(update_email(response.data['info']['email']));
         dispatch(update_sex(response.data['info']['sex']));
-        dispatch(update_age(response.data['info']['age']));
+        dispatch(update_school(response.data['info']['school']));
         alert(response.data['message']);
         response = {};
         props.history.push("/AccInfo");
@@ -269,11 +271,16 @@ function AccInfo (props) {
                   </Form.Text>
                 </Form.Group>
 
-                <Form.Label style={{ fontSize:'1vw'}}>Age</Form.Label>
-                <Form.Group  controlId="forag">
-                  <Form.Control type="number" style={{ fontSize:'1vw'}} placeholder={personal.age} value={age} onChange={e => setage(e.target.value)}/>
+                <Form.Label style={{ fontSize:'1vw'}}>School</Form.Label>
+                <Form.Group  controlId="forsc">
+                  <Form.Control as="select" style={{ fontSize:'1vw'}} defaultValue={personal.school} placeholder={personal.school} value={school} onChange={e => setschool(e.target.value)}>
+                    <option style={{ fontSize:'1vw'}}>{null}</option>
+                    <option style={{ fontSize:'1vw'}}>School1</option>
+                    <option style={{ fontSize:'1vw'}}>School2</option>
+                    <option style={{ fontSize:'1vw'}}>School3</option>
+                  </Form.Control>
                   <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
-                    {ageerrors}
+                    {schoolerrors}
                   </Form.Text>
                 </Form.Group>
 
