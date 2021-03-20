@@ -74,6 +74,28 @@ export const destroy_age = () => {
         type: 'DESTROY_AGE'
     };
 };
+export const update_school = pl => {
+    return {
+        type: 'UPDATE_SCHOOL',
+        payload: pl
+    };
+};
+export const destroy_school = () => {
+    return {
+        type: 'DESTROY_SCHOOL'
+    };
+};
+export const update_role = pl => {
+    return {
+        type: 'UPDATE_ROLE',
+        payload: pl
+    };
+};
+export const destroy_role = () => {
+    return {
+        type: 'DESTROY_ROLE'
+    };
+};
 
 export const update_edu = pl => {
     return {
@@ -110,3 +132,13 @@ export const destroy_comefrom = () => {
         type: 'DESTROY_COMEFROM'
     };
 };
+export const signin_admin = () => {
+    return {
+        type: 'SIGN_IN_ADMIN'
+    }
+}
+export const signout_admin = () => {
+    return {
+        type: 'SIGN_OUT_ADMIN'
+    }
+}
