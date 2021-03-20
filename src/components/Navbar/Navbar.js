@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Navbar.css'
 // import {Button} from "../Button"
-import {Link} from 'react-router-dom';
-import Button from '@material-ui/core/Button';
+// import {Link} from 'react-router-dom';
+// import Button from '@material-ui/core/Button';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
@@ -10,9 +10,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { useSelector, useDispatch} from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 //import { signout } from '../actions';
-import { destroy_token, signout, destroy_firstname, destroy_lastname, destroy_email, destroy_sex, destroy_age, destroy_edu, destroy_per, destroy_comefrom } from '../../actions';
+import { destroy_token, signout, destroy_firstname, destroy_lastname, destroy_email, destroy_sex, destroy_age, destroy_edu, destroy_per, destroy_comefrom, destroy_school, destroy_role, signout_admin } from '../../actions';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom'
 
@@ -28,6 +28,7 @@ function Navbarr (props){
     
     let token = useSelector(state => state.token)
     let isLogged = useSelector(state => state.isLogged);
+    let isAdmin = useSelector(state => state.isAdmin);
     let dispatch = useDispatch();
 
     useEffect(() => {
@@ -54,6 +55,9 @@ function Navbarr (props){
             dispatch(destroy_edu());
             dispatch(destroy_per());
             dispatch(destroy_comefrom());
+            dispatch(destroy_school());
+            dispatch(destroy_role());
+            dispatch(signout_admin());
             alert(response.data['message']);
             //props.history.push('/');
         }
@@ -63,15 +67,15 @@ function Navbarr (props){
             <Navbar collapseOnSelect expand="lg"  >
             <Navbar.Brand href="/"  >
                 <i 
-                 className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
+                 className = "fas fa-graduation-cap" Style={{ fontSize:'4.95vw'}}
                 ></i>
                     <p 
-                    className= "navbar-p" style={{ fontSize:'1vw'}}
+                    className= "navbar-p" Style={{ fontSize:'1vw'}}
                     >Study Program</p><p 
-                    className="navbar-p" style={{ fontSize:'1vw'}}
+                    className="navbar-p" Style={{ fontSize:'1vw'}}
                     >Recommendation</p>
                     <p 
-                    className="navbar-p" style={{ fontSize:'1vw'}}
+                    className="navbar-p" Style={{ fontSize:'1vw'}}
                     >System
                 </p>
                 </Navbar.Brand>
@@ -80,19 +84,20 @@ function Navbarr (props){
             <Navbar.Collapse id="responsive-navbar-nav" >
            
                 <Nav className="mr-auto nav-menu ">
-                <Nav.Link as={NavLink} to='/' exact href="/" className= "nav-links" exact activeClassName="underline" style={{ fontSize:'1vw'}}>About</Nav.Link>
-                <Nav.Link as={NavLink} to='/RecProgram' exact href="/RecProgram" className= "nav-links" exact activeClassName="underline" style={{ fontSize:'1vw'}}>Recommend Programs</Nav.Link>
-                <Nav.Link  as={NavLink} to='/Programs' exact href="/Programs" className= "nav-links" exact activeClassName="underline" style={{ fontSize:'1vw'}}>Browse Programs</Nav.Link>
-                <Nav.Link as={NavLink} to='/Feedbacks' exact  href="/Feedbacks" className= "nav-links" exact activeClassName="underline" style={{ fontSize:'1vw'}}>Feedbacks </Nav.Link>
-                
+                <Nav.Link as={NavLink} to='/' exact href="/" className= "nav-links" activeClassName="underline" style={{ fontSize:'1vw'}}>About</Nav.Link>
+                <Nav.Link as={NavLink} to='/RecProgram' exact href="/RecProgram" className= "nav-links" activeClassName="underline" Style={{ fontSize:'1vw'}}>Recommend Programs</Nav.Link>
+                <Nav.Link  as={NavLink} to='/Programs' exact href="/Programs" className= "nav-links" activeClassName="underline" Style={{ fontSize:'1vw'}}>Browse Programs</Nav.Link>
+                <Nav.Link as={NavLink} to='/Feedbacks' exact  href="/Feedbacks" className= "nav-links" activeClassName="underline" Style={{ fontSize:'1vw'}}>Feedbacks </Nav.Link>
+                {isAdmin ? <Nav.Link as={NavLink} to='/Admin_prog' exact  href="/Admin_prog" className= "nav-links" activeClassName="underline" style={{ fontSize:'1vw'}}>Add Course </Nav.Link>
+                : null}
                 {isLogged ? <NavDropdown style={{ fontSize:'1vw'}}
                 title="User"
                  id="collasible-nav-dropdown" 
                 className="NavDropdown" >
-                    <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style={{ fontSize:'0.9vw'}} >Account Information</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  style={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw'}}>User Dashboard</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" Style={{ fontSize:'0.9vw'}} >Account Information</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  Style={{ fontSize:'0.9vw'}} >User Dashboard</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem"  tyle={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw'}} onClick={() => logout(token)} >Log out</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem"  tyle={{ fontSize:'0.9vw'}} Style={{ fontSize:'1vw'}} onClick={() => logout(token)} >Log out</NavDropdown.Item>
                 </NavDropdown> :
                 <NavDropdown style={{ fontSize:'1vw'}}
                 title="User"
@@ -101,7 +106,7 @@ function Navbarr (props){
                     {/* <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style={{ fontSize:'0.9vw'}} >Account Information</NavDropdown.Item>
                     <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  style={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw'}}>User Dashboard</NavDropdown.Item>
                     <NavDropdown.Divider /> */}
-                    <NavDropdown.Item as={NavLink} to='/SignIn' className="NavDropdownItem"  tyle={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw'}}>Log in</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/SignIn' className="NavDropdownItem"  tyle={{ fontSize:'0.9vw'}} Style={{ fontSize:'1vw'}}>Log in</NavDropdown.Item>
                 </NavDropdown>
                 }
                 
