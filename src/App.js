@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 import About from './pages/About';
@@ -16,6 +16,7 @@ import PerTest from './pages/PerTest'
 import PerResult from './pages/PerResult'
 import ForgotPassword from './pages/ForgotPassword'
 import Loading from './pages/Loading'
+import Admin_prog from './pages/Admin_prog'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const IncludeNav = ({ component: Component , ...rest})=>{
@@ -57,6 +58,7 @@ const App = () => (
         <NoNav path='/PerResult' component={PerResult}/>
         <NoNav path='/ForgotPassword' component={ForgotPassword}/>
         <NoNav path='/Loading' component={Loading}/>
+        <NoNav path='/Admin_prog' component={Admin_prog}/>
 
 
 
