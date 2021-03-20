@@ -1,4 +1,4 @@
-import React, { Component , useState}  from 'react';
+import React, { useState}  from 'react';
 import './EduInformation.css'
 
 import { Col,Row, Container , Button, Form, Navbar} from "react-bootstrap";
@@ -77,10 +77,10 @@ function PerTest (props){
     if (response.data['status'] === true) {
       dispatch(update_per(response.data['info']))
       alert("congratulations you have finished the personality test.")
-      if(comefrom == 'dashboard'){
+      if(comefrom === 'dashboard'){
         props.history.push("/Dashboard");
       }
-      else if(comefrom == 'recommend') {
+      else if(comefrom === 'recommend') {
         props.history.push("/RecProgram");
       }
     }
@@ -98,18 +98,10 @@ function PerTest (props){
           </p></h1> */}
       <Navbar collapseOnSelect expand="lg"  >
         <Navbar.Brand href="/"  >
-            <i 
-              className = "fas fa-graduation-cap" Style={{ fontSize:'4.95vw'}}
-            ></i>
-                <p 
-                className= "navbar-p" Style={{ fontSize:'1vw'}}
-                >Study Program</p><p 
-                className="navbar-p" Style={{ fontSize:'1vw'}}
-                >Recommendation</p>
-                <p 
-                className="navbar-p" Style={{ fontSize:'1vw'}}
-                >System
-            </p>
+            <i className = "fas fa-graduation-cap" Style={{ fontSize:'4.95vw'}}></i>
+                <p className= "navbar-p" Style={{ fontSize:'1vw'}}>Study Program</p>
+                <p className="navbar-p" Style={{ fontSize:'1vw'}}>Recommendation</p>
+                <p className="navbar-p" Style={{ fontSize:'1vw'}}>System</p>
             </Navbar.Brand>
         </Navbar>
       <p Style={{paddingLeft:'15%'}}>Answer all 44 questions to see your Openness, Conscientiousness,
