@@ -108,8 +108,11 @@ function SignIn(props) {
             dispatch(update_role(response.data['info']['role']));
             if(response.data['info']['role'] === "admin"){
               dispatch(signin_admin());
+              props.history.push('/');
             }
-            
+            else{
+              props.history.push("/Loading"); 
+            }
             // alert("Your status: "+ {isLogged} +"\nYour token is: " + {token});
             //return <Redirect to="/"/>;
             //get_edu(response.data['token']);
@@ -119,7 +122,7 @@ function SignIn(props) {
             //   get_nes(response.data['token']);
             // }, 5000);
             
-            props.history.push("/Loading");    
+               
           }
           else {
             alert("Fail to login");
