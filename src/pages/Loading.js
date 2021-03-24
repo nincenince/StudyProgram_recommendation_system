@@ -30,6 +30,7 @@ function Loading(props) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   let token = useSelector(state => state.token)
+  let isAdmin = useSelector(state => state.isAdmin);
   let dispatch = useDispatch();
 
   useEffect(() => {
