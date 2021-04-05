@@ -167,34 +167,34 @@ function SignIn(props) {
       
         <Container>
           <Col></Col>
-          <Col>
-              <h1 style={{ fontSize:'2vw'}}>Sign In</h1>
+          <Col sm={6}>
+              <h2 >Sign In</h2>
               <Form.Group controlId="foremail">
-                <Form.Label style={{ fontSize:'1vw'}}>Email address</Form.Label>
-                <Form.Control style={{ fontSize:'1vw'}} type="email" placeholder="Enter email" value={email} onChange={e => setemail(e.target.value)}/>
-                <Form.Text style={{color: "red", fontSize: "12px"}} >
+                <Form.Label>Email address</Form.Label>
+                <Form.Control  type="email" placeholder="Enter email" value={email} onChange={e => setemail(e.target.value)}/>
+                <Form.Text style={{color: "red"}} >
                 </Form.Text>
               </Form.Group>
 
               <Form.Group controlId="forpassword">
-                <Form.Label style={{ fontSize:'1vw'}}>Password</Form.Label>
-                <Form.Control style={{ fontSize:'1vw'}} type="password" placeholder="Enter password" value={password} onChange={e => setpassword(e.target.value)}/>
-                <Form.Text  style={{color: "red", fontSize: "12px"}} >
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" placeholder="Enter password" value={password} onChange={e => setpassword(e.target.value)}/>
+                <Form.Text  style={{color: "red"}} >
                 </Form.Text>
               </Form.Group>
 
             
 
               <Button 
-                style={{display:"flex", alignItems:"center", justifyContent:"center", fontSize:"1vw"}}
+                style={{display:"flex", alignItems:"center", justifyContent:"center"}}
                 variant="primary" type="submit" >
                   Submit
               </Button>
-              <p style={{ fontSize:'1vw'}}>
+              <p >
                 Don't have an account? <Link to="/SignUp">Sign Up</Link>
               </p>
           
-              <p style={{ fontSize:'1vw'}}>
+              <p >
                 <Link to="/ForgotPassword">Forgot password?</Link>
               </p>
           </Col>

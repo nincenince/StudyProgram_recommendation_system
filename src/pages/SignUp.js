@@ -148,88 +148,88 @@ class SignUp extends React.Component {
       <div>
           <Container>
             <Col></Col>
-            <Col>
+            <Col sm={5}>
 
           <Form onSubmit={this.handleSubmit}>
-            <h1 style={{ fontSize:'2vw'}}>Sign Up</h1>
+            <h2>Sign Up</h2>
             <Form.Group controlId="formfirstname">
-              <Form.Label style={{ fontSize:'1vw'}}>Firstname</Form.Label>
-              <Form.Control style={{ fontSize:'1vw'}} type="text" name="firstname"
+              <Form.Label >Firstname</Form.Label>
+              <Form.Control  type="text" name="firstname"
               placeholder="Enter Firstname" value={this.state.input.firstname} onChange={this.handleChange} />
-              <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+              <Form.Text style={{color: "red"}} >
               {this.state.errors.firstname}
               </Form.Text>
             </Form.Group>
 
             <Form.Group controlId="formlastname">
-              <Form.Label style={{ fontSize:'1vw'}}>Lastname</Form.Label>
-              <Form.Control style={{ fontSize:'1vw'}} type="text" name="lastname"
+              <Form.Label >Lastname</Form.Label>
+              <Form.Control type="text" name="lastname"
               placeholder="Enter Lastname" value={this.state.input.lastname} onChange={this.handleChange} />
-              <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+              <Form.Text style={{color: "red"}} >
               {this.state.errors.lastname}
               </Form.Text>
             </Form.Group>
 
             <Form.Group controlId="formemail">
-              <Form.Label style={{ fontSize:'1vw'}}>Email address</Form.Label>
-              <Form.Control style={{ fontSize:'1vw'}} type="email" name="email"
+              <Form.Label>Email address</Form.Label>
+              <Form.Control  type="email" name="email"
               placeholder="Enter email" value={this.state.input.email} onChange={this.handleChange} />
-              <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+              <Form.Text style={{color: "red"}} >
               {this.state.errors.email}
               </Form.Text>
             </Form.Group>
 
 
             <Form.Group controlId="formschool">
-              <Form.Label style={{ fontSize:'1vw'}}>School</Form.Label>
-              <Form.Control style={{ fontSize:'1vw'}} as="select" name="school" value={this.state.input.school} onChange={this.handleChange} >
-              <option style={{ fontSize:'1vw'}}>{null}</option>
-                    <option style={{ fontSize:'1vw'}}>School1</option>
-                    <option style={{ fontSize:'1vw'}}>School2</option>
-                    <option style={{ fontSize:'1vw'}}>School3</option>
+              <Form.Label >School</Form.Label>
+              <Form.Control  as="select" name="school" value={this.state.input.school} onChange={this.handleChange} >
+              <option >{null}</option>
+                    <option >School1</option>
+                    <option >School2</option>
+                    <option >School3</option>
               </Form.Control>
-              <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+              <Form.Text style={{color: "red"}} >
               {this.state.errors.school}
               </Form.Text>
             </Form.Group>
 
             <Form.Group controlId="formgender">
-              <Form.Label style={{ fontSize:'1vw'}}>Gender</Form.Label>
-              <Form.Control style={{ fontSize:'1vw'}} as="select" name="gender" value={this.state.input.gender} onChange={this.handleChange} >
-                <option style={{ fontSize:'1vw'}}>{null}</option>
-                    <option style={{ fontSize:'1vw'}}>Female</option>
-                    <option style={{ fontSize:'1vw'}}>Male</option>
-                    <option style={{ fontSize:'1vw'}}>Other</option>
+              <Form.Label >Gender</Form.Label>
+              <Form.Control  as="select" name="gender" value={this.state.input.gender} onChange={this.handleChange} >
+                <option >{null}</option>
+                    <option >Female</option>
+                    <option >Male</option>
+                    <option>Other</option>
               </Form.Control>
-              <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+              <Form.Text style={{color: "red"}} >
               {this.state.errors.gender}
               </Form.Text>
             </Form.Group>
 
             <br></br>
             <Form.Group controlId="formpassword">
-              <Form.Label style={{ fontSize:'1vw'}}>Password</Form.Label>
-              <Form.Control style={{ fontSize:'1vw'}} type="password" name="password"
+              <Form.Label >Password</Form.Label>
+              <Form.Control  type="password" name="password"
               placeholder="Enter password" 
               value={this.state.input.password} onChange={this.handleChange} />
-              <Form.Text style={{color: "red", fontSize: "0.75vw"}} className="text-danger">
+              <Form.Text style={{color: "red"}} className="text-danger">
               {this.state.errors.password}
               </Form.Text>
             </Form.Group>
             <br></br>
             <Form.Group controlId="formconfirmpassword">
-              <Form.Label style={{ fontSize:'1vw'}}>Confirm Password</Form.Label>
-              <Form.Control style={{ fontSize:'1vw'}} type="password" name="confirm_password"
+              <Form.Label >Confirm Password</Form.Label>
+              <Form.Control  type="password" name="confirm_password"
               placeholder="Enter password" 
               value={this.state.input.confirm_password} onChange={this.handleChange} />
-              <Form.Text style={{color: "red", fontSize: "0.75vw"}} className="text-danger">
+              <Form.Text style={{color: "red"}} className="text-danger">
               {this.state.errors.confirm_password}
               </Form.Text>
             </Form.Group>
             <br></br>
 
             <Button 
-            style={{display:"flex", alignItems:"center", justifyContent:"center", fontSize:"1vw"}}
+            style={{display:"flex", alignItems:"center", justifyContent:"center"}}
             variant="primary" type="submit" value="Submit">
               Sign Up
             </Button>

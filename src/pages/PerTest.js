@@ -97,28 +97,29 @@ function PerTest (props){
               <p className= "edu-navbar-p" Style={{ fontSize:'1.25vw'}}>Study Program</p><p className="edu-navbar-p" Style={{ fontSize:'1.25vw'}}>Recommendation</p><p className="edu-navbar-p" Style={{ fontSize:'1.25vw'}}>System
           </p></h1> */}
       <Navbar collapseOnSelect expand="lg"  >
-        <Navbar.Brand href="/"  >
-            <i className = "fas fa-graduation-cap" Style={{ fontSize:'4.95vw'}}></i>
-                <p className= "navbar-p" Style={{ fontSize:'1vw'}}>Study Program</p>
-                <p className="navbar-p" Style={{ fontSize:'1vw'}}>Recommendation</p>
-                <p className="navbar-p" Style={{ fontSize:'1vw'}}>System</p>
-            </Navbar.Brand>
-        </Navbar>
-      <p Style={{paddingLeft:'15%'}}>Answer all 44 questions to see your Openness, Conscientiousness,
-      Extraversion, Agreeableness, and Neuroticism score which labeled based on Big 5 Personality.</p>
+            <Navbar.Brand href="/"  >
+                <i 
+                 className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
+                ></i>
+                   <h5 style={{color:'coral'}}>website name</h5>
+                </Navbar.Brand>
+            </Navbar>
+          
+      <h5 style={{marginLeft:'10%'}}>Answer all 44 questions to see your Openness, Conscientiousness,
+      Extraversion, Agreeableness, and Neuroticism score which labeled based on Big 5 Personality.</h5>
 
-      <p Style={{paddingLeft:'10%'}}>Rate each statement according to how it describes you, where 1 = Disagree, 3 = Neutral, and 5 = Agree.</p>
+      <h5 style={{paddingLeft:'10%'}}>Rate each statement according to how it describes you, where 1 = Disagree, 3 = Neutral, and 5 = Agree.</h5>
       <Form onSubmit={handleSubmit}>
         <Container>
           <Col>
-            <h1 className= "Edu-header" Style={{ fontSize:'2vw'}}>Personality Test</h1>
+            <h2 className= "Edu-header" >Personality Test</h2>
             <div>
               <ul>
                 <Col className= "edu-box">
                   <Col md={{ span: 9, offset: 3 }}>
                     
                     <Row>
-                      <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is talkative</h4>
+                      <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is talkative</h4>
                     </Row>
                     <Row>
                       <div className="range" >
@@ -132,7 +133,7 @@ function PerTest (props){
                     </Row>
 
                     <Row>
-                      <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Tends to find fault with others</h4>
+                      <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Tends to find fault with others</h4>
                     </Row>
                     <Row>
                       <div className="range" >
@@ -146,7 +147,7 @@ function PerTest (props){
                     </Row>
 
                     <Row>
-                      <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Does a thorough job</h4>
+                      <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Does a thorough job</h4>
                     </Row>
                     <Row>
                       <div className="range" >
@@ -160,7 +161,7 @@ function PerTest (props){
                     </Row>
 
                     <Row>
-                      <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is depressed, blue</h4>
+                      <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is depressed, blue</h4>
                     </Row>
                     <Row>
                       <div className="range" >
@@ -174,7 +175,7 @@ function PerTest (props){
                     </Row>
 
                     <Row>
-                      <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is original, comes up with new ideas</h4>
+                      <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is original, comes up with new ideas</h4>
                     </Row>
                     <Row>
                       <div className="range" >
@@ -188,7 +189,7 @@ function PerTest (props){
                     </Row>
 
                     <Row>
-                      <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is reserved</h4>
+                      <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is reserved</h4>
                     </Row>
                     <Row>
                       <div className="range" >
@@ -202,7 +203,7 @@ function PerTest (props){
                     </Row>
 
                     <Row>
-                      <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is helpful and unselfish with others</h4>
+                      <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is helpful and unselfish with others</h4>
                     </Row>
                     <Row>
                       <div className="range" >
@@ -216,7 +217,7 @@ function PerTest (props){
                     </Row>
 
                     <Row>
-                      <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Can be somewhat careless</h4>
+                      <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Can be somewhat careless</h4>
                     </Row>
                     <Row>
                       <div className="range" >
@@ -230,7 +231,7 @@ function PerTest (props){
                     </Row>
 
                     <Row>
-                      <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is relaxed, handles stress well</h4>
+                      <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is relaxed, handles stress well</h4>
                     </Row>
                     <Row>
                       <div className="range" >
@@ -244,7 +245,7 @@ function PerTest (props){
                     </Row>
 
                     <Row>
-                      <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is curious about many different things</h4>
+                      <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is curious about many different things</h4>
                     </Row>
                     <Row>
                       <div className="range" >
@@ -258,7 +259,7 @@ function PerTest (props){
                     </Row>
 
                     <Row>
-                      <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is full of energy</h4>
+                      <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is full of energy</h4>
                     </Row>
                     <Row>
                       <div className="range" >
@@ -272,7 +273,7 @@ function PerTest (props){
                     </Row>
 
                     <Row>
-                      <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Starts quarrels with others</h4>
+                      <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Starts quarrels with others</h4>
                     </Row>
                     <Row>
                       <div className="range" >
@@ -286,7 +287,7 @@ function PerTest (props){
                     </Row>
 
                     <Row>
-                      <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is a reliable worker</h4>
+                      <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is a reliable worker</h4>
                     </Row>
                     <Row>
                       <div className="range" >

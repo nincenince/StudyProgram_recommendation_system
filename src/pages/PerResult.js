@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link } from "react-router-dom";
 import './PerResult.css';
-import { Col,Row, Container , Button} from "react-bootstrap";
+import { Col,Row, Container , Button, Navbar} from "react-bootstrap";
 import PersonanlityInfo from "../PersonalityInfo";
 
 
@@ -14,10 +14,14 @@ class RecommendProg extends Component{
           <>
             <div>
              
-                <h1 className = "edu-navbar-logo">
-                <i className = "fas fa-graduation-cap edu-cap" style={{ fontSize:'5vw'}}></i>
-                    <p className= "edu-navbar-p" style={{ fontSize:'1.25vw'}}>Study Program</p><p className="edu-navbar-p" style={{ fontSize:'1.25vw'}}>Recommendation</p><p className="edu-navbar-p" style={{ fontSize:'1.25vw'}}>System
-                </p></h1>
+            <Navbar collapseOnSelect expand="lg"  >
+            <Navbar.Brand href="/"  >
+                <i 
+                 className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
+                ></i>
+                   <h5 style={{color:'coral'}}>website name</h5>
+                </Navbar.Brand>
+            </Navbar>
             
              
             </div>
@@ -27,55 +31,47 @@ class RecommendProg extends Component{
 
                            
 <Col >
-  <h1 
-  className= "PerResult-header"
-   style={{ fontSize:'2vw'}}>Big 5 Personality Result</h1>
-  <Col className="PerResult-box">
-        <h2 
-      style={{ fontSize:'2vw', margin:'2%'}}
-        >Personality Label</h2>
+  <h4 
+   >Big 5 Personality Result</h4>
+  <Col sm={{ span: 6, offset: 2}} style={{border:'solid', borderWidth:'thin', marginTop:"5%", borderLeftColor:'coral', borderLeftWidth:"5px"}}>
+        <h4
+      style={{ margin:'2%'}}
+        >Personality Label</h4>
            
-            <ul>
+           <ul>
 
-          <div>
-              <br/>
-           
-                        
-            {
-                  PersonanlityInfo.PersonalInfo.map((PerInfo) => {
-                    return (
-                      <div>
-                        <Col
-                         className= "PerResult-proglist" 
-                         style={{ fontSize:'1vw'}}  >{PerInfo.Personality}</Col>
-                          {
-                            PerInfo.PersonalityList.map((PerInfoDetail) => {
-                              return (
-                                <Col
-                                className="PerResult-recscore"
-                                 style={{ fontSize:'1vw'}}>
-                                    {PerInfoDetail.PerScore}
-                                </Col>
-                              );
-                            }) 
-                           
-                         }
+<div>
+    <br/>
+ 
               
+  {
+        PersonanlityInfo.PersonalInfo.map((PerInfo) => {
+          return (
+            <div>
+              <Row>
+              <Col style={{float:'left', paddingLeft:'5%', marginRight:'85%'}}>
+                {PerInfo.Personality}
+              </Col>
+                  {/* <Col style={{float:'right'}}> */}
+                        <p>{PerInfo.PersonalityScore}</p> 
+                  {/* </Col> */}
+                  
+              </Row>
 
-                      </div>
-                    );
-                  })
-                } 
             </div>
+          );
+        })
+      } 
+  </div>
 
-              </ul>
+    </ul>
      </Col>
     
               
-            <Col lg={{ span: 12, offset: 11 }}>
+            <Col sm={{ span: 12, offset: 11 }}>
                 <Row>
                   <Link to="/RecProgram">
-                    <Button className="PerResult-done-button" style={{ fontSize:'1vw'}}>
+                    <Button className="PerResult-done-button" style={{marginTop:'25%', borderRadius:'20px', backgroundColor:'coral', bordercolor:'coral'}}>
                       Done
                     </Button>
                     </Link>

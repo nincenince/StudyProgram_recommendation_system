@@ -1,7 +1,7 @@
 import React from 'react';
 // import {Link } from "react-router-dom";
 import './AccInfo.css';
-import { Row, Container ,Form, Button} from "react-bootstrap";
+import { Row, Col, Container ,Form, Button, Navbar} from "react-bootstrap";
 
 import axios from 'axios';
 import { useState, useEffect } from 'react';
@@ -279,58 +279,57 @@ function EduInformation (props) {
      
     return (
       <div>
-          <h1 className = "edu-navbar-logo">
-            <i className = "fas fa-graduation-cap edu-cap" style={{ fontSize:'5vw'}}></i>
-              <p className= "edu-navbar-p" style={{ fontSize:'1.25vw'}}>Study Program</p><p className="edu-navbar-p" style={{ fontSize:'1.25vw'}}>Recommendation</p><p className="edu-navbar-p" style={{ fontSize:'1.25vw'}}>
-                System
-              </p>
-          </h1>
+          <Navbar collapseOnSelect expand="lg"  >
+            <Navbar.Brand href="/"  >
+                <i 
+                 className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
+                ></i>
+                   <h5 style={{color:'coral'}}>website name</h5>
+                </Navbar.Brand>
+            </Navbar>
           
           <Container>
-            <Col-4 xs={3}> </Col-4>
-            <Col-4 xs={5}>
-              {/* <Row>  */}
-                  <h1 style={{ fontSize:'2vw'}}>Education Information</h1>
-              {/* </Row> */}
+            <Col sm={{ span: 4, offset: 3}}>
+                  <h1 style={{marginTop:'20%'}}>Education Information</h1>
             
               <Form onSubmit={handlefSubmit}>
                 
 
-                <Form.Label style={{ fontSize:'1vw'}}>GPAX</Form.Label>
+                <Form.Label >GPAX</Form.Label>
                 <Form.Group  controlId="forgpax">
-                  <Form.Control type="number" min="0.00" max="4.00" step="0.05" style={{ fontSize:'1vw'}} placeholder={newgpax} value={newgpax} onChange={e => setnewgpax(e.target.value)} />
-                  <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+                  <Form.Control type="number" min="0.00" max="4.00" step="0.05" placeholder={newgpax} value={newgpax} onChange={e => setnewgpax(e.target.value)} />
+                  <Form.Text style={{color: "red"}} >
                     {gpaxerrors}
                   </Form.Text>
                 </Form.Group>
 
-                <Form.Label style={{ fontSize:'1vw'}}>SAT Math</Form.Label>
+                <Form.Label >SAT Math</Form.Label>
                 <Form.Group  controlId="forsatmath">
-                  <Form.Control type="number" min="200" max="800" step="10" style={{ fontSize:'1vw'}} placeholder={newsatmath} value={newsatmath} onChange={e => setnewsatmath(e.target.value)}/>
-                  <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+                  <Form.Control type="number" min="200" max="800" step="10"  placeholder={newsatmath} value={newsatmath} onChange={e => setnewsatmath(e.target.value)}/>
+                  <Form.Text style={{color: "red"}} >
                     {satmatherrors}
                   </Form.Text>
                 </Form.Group>
 
-                <Form.Label style={{ fontSize:'1vw'}}>SAT English</Form.Label>
+                <Form.Label >SAT English</Form.Label>
                 <Form.Group  controlId="forsateng">
-                  <Form.Control type="number" min="200" max="800" step="10" style={{ fontSize:'1vw'}} placeholder={newsateng} value={newsateng} onChange={e => setnewsateng(e.target.value)}/>
-                  <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+                  <Form.Control type="number" min="200" max="800" step="10"  placeholder={newsateng} value={newsateng} onChange={e => setnewsateng(e.target.value)}/>
+                  <Form.Text style={{color: "red"}} >
                     {satengerrors}
                   </Form.Text>
                 </Form.Group>
 
-                <Form.Label style={{ fontSize:'1vw'}}>IELTS</Form.Label>
+                <Form.Label >IELTS</Form.Label>
                 <Form.Group  controlId="forielts">
-                  <Form.Control type="number" min="0.0" max="9.0" step="0.5" style={{ fontSize:'1vw'}} placeholder={newielts} value={newielts} onChange={e => setnewielts(e.target.value)}/>
-                  <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+                  <Form.Control type="number" min="0.0" max="9.0" step="0.5"  placeholder={newielts} value={newielts} onChange={e => setnewielts(e.target.value)}/>
+                  <Form.Text style={{color: "red"}} >
                     {ieltserrors}
                   </Form.Text>
                 </Form.Group>
 
                 {/* <Link> */}
                 {/* <Link to="/RecProgram"> */}
-                <Button type="Submit" className="acc-done-button" style={{ fontSize:'1vw'}} onClick={() => setcodes(1)}>
+                <Button type="Submit" className="acc-done-button" onClick={() => setcodes(1)}>
                     Edit Score
                 </Button>
                 {/* </Link> */}
@@ -357,60 +356,60 @@ function EduInformation (props) {
                 </Button>
                 <br/>
               </Form> */}
-              <h1 style={{ fontSize:'2vw'}}>GAT/PAT Section</h1>
+              <h1 >GAT/PAT Section</h1>
               <Form onSubmit={handlegpSubmit}>
-                <Form.Label style={{ fontSize:'1vw'}}>GAT - General Aptitude Test</Form.Label>
+                <Form.Label >GAT - General Aptitude Test</Form.Label>
                   <Form.Group  controlId="forgat">
-                    <Form.Control type="number" min="0" max="300" step="1" style={{ fontSize:'1vw'}} placeholder={newgat} value={newgat} onChange={e => setnewgat(e.target.value)}/>
+                    <Form.Control type="number" min="0" max="300" step="1" placeholder={newgat} value={newgat} onChange={e => setnewgat(e.target.value)}/>
                     {/* <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
                       {gaterrors}
                     </Form.Text> */}
                   </Form.Group>
-                  <Form.Label style={{ fontSize:'1vw'}}>PAT 1 - Aptitude in Mathematics</Form.Label>
+                  <Form.Label >PAT 1 - Aptitude in Mathematics</Form.Label>
                   <Form.Group  controlId="forpat1">
-                    <Form.Control type="number" min="0" max="300" step="1" style={{ fontSize:'1vw'}} placeholder={newpat1} value={newpat1} onChange={e => setnewpat1(e.target.value)}/>
+                    <Form.Control type="number" min="0" max="300" step="1" placeholder={newpat1} value={newpat1} onChange={e => setnewpat1(e.target.value)}/>
                     {/* <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
                       {pat1errors}
                     </Form.Text> */}
                   </Form.Group>
-                  <Form.Label style={{ fontSize:'1vw'}}>PAT 2 - Aptitude in Scientifics</Form.Label>
+                  <Form.Label >PAT 2 - Aptitude in Scientifics</Form.Label>
                   <Form.Group  controlId="forpat2">
-                    <Form.Control type="number" min="0" max="300" step="1" style={{ fontSize:'1vw'}} placeholder={newpat2} value={newpat2} onChange={e => setnewpat2(e.target.value)}/>
+                    <Form.Control type="number" min="0" max="300" step="1"  placeholder={newpat2} value={newpat2} onChange={e => setnewpat2(e.target.value)}/>
                     {/* <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
                       {pat2errors}
                     </Form.Text> */}
                   </Form.Group>
-                  <Form.Label style={{ fontSize:'1vw'}}>PAT 3 - Aptitude in Engineering</Form.Label>
+                  <Form.Label >PAT 3 - Aptitude in Engineering</Form.Label>
                   <Form.Group  controlId="forpat3">
-                    <Form.Control type="number" min="0" max="300" step="1" style={{ fontSize:'1vw'}} placeholder={newpat3} value={newpat3} onChange={e => setnewpat3(e.target.value)}/>
+                    <Form.Control type="number" min="0" max="300" step="1"  placeholder={newpat3} value={newpat3} onChange={e => setnewpat3(e.target.value)}/>
                     {/* <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
                       {pat3errors}
                     </Form.Text> */}
                   </Form.Group>
-                  <Form.Label style={{ fontSize:'1vw'}}>PAT 4 - Aptitude in Architectural</Form.Label>
+                  <Form.Label >PAT 4 - Aptitude in Architectural</Form.Label>
                   <Form.Group  controlId="forpat4">
-                    <Form.Control type="number" min="0" max="300" step="1" style={{ fontSize:'1vw'}} placeholder={newpat4} value={newpat4} onChange={e => setnewpat4(e.target.value)}/>
+                    <Form.Control type="number" min="0" max="300" step="1"  placeholder={newpat4} value={newpat4} onChange={e => setnewpat4(e.target.value)}/>
                     {/* <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
                       {pat4errors}
                     </Form.Text> */}
                   </Form.Group>
-                  <Form.Label style={{ fontSize:'1vw'}}>PAT 5 - Aptitude in Teacher professional</Form.Label>
+                  <Form.Label >PAT 5 - Aptitude in Teacher professional</Form.Label>
                   <Form.Group  controlId="forpat5">
-                    <Form.Control type="number" min="0" max="300" step="1" style={{ fontSize:'1vw'}} placeholder={newpat5} value={newpat5} onChange={e => setnewpat5(e.target.value)}/>
+                    <Form.Control type="number" min="0" max="300" step="1"  placeholder={newpat5} value={newpat5} onChange={e => setnewpat5(e.target.value)}/>
                     {/* <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
                       {pat5errors}
                     </Form.Text> */}
                   </Form.Group>
-                  <Form.Label style={{ fontSize:'1vw'}}>PAT 6 - Aptitude in Arts</Form.Label>
+                  <Form.Label >PAT 6 - Aptitude in Arts</Form.Label>
                   <Form.Group  controlId="forpat6">
-                    <Form.Control type="number" min="0" max="300" step="1" style={{ fontSize:'1vw'}} placeholder={newpat6} value={newpat6} onChange={e => setnewpat6(e.target.value)}/>
+                    <Form.Control type="number" min="0" max="300" step="1"  placeholder={newpat6} value={newpat6} onChange={e => setnewpat6(e.target.value)}/>
                     {/* <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
                       {pat6errors}
                     </Form.Text> */}
                   </Form.Group>
-                  <Form.Label style={{ fontSize:'1vw'}}>PAT 7 - Aptitude in Foreign language proficiency (French, German, Chinese, Japanese, Arabic, Pali)</Form.Label>
+                  <Form.Label >PAT 7 - Aptitude in Foreign language proficiency (French, German, Chinese, Japanese, Arabic, Pali)</Form.Label>
                   <Form.Group  controlId="forpat7">
-                    <Form.Control type="number" min="0" max="300" step="1" style={{ fontSize:'1vw'}} placeholder={newpat7} value={newpat7} onChange={e => setnewpat7(e.target.value)}/>
+                    <Form.Control type="number" min="0" max="300" step="1"  placeholder={newpat7} value={newpat7} onChange={e => setnewpat7(e.target.value)}/>
                     {/* <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
                       {pat7errors}
                     </Form.Text> */}
@@ -419,20 +418,20 @@ function EduInformation (props) {
 
                 {/* <Link> */}
                 {/* <Link to="/RecProgram"> */}
-                <Button type="Submit" className="acc-done-button" style={{ fontSize:'1vw'}} onClick={() => setcodes(2)}>
+                <Button type="Submit" className="acc-done-button"  onClick={() => setcodes(2)}>
                     Edit GAT/PAT Score
                 </Button>
                 {/* </Link> */}
 
                 <hr></hr>
                 <br></br>
-                <Button className="btn btn-danger btn-lg btn-block" Style={{ fontSize:'1vw'}} onClick={redirectback}>
+                <Button className="btn btn-danger btn-lg btn-block"  onClick={redirectback}>
                   Back
                 </Button>
                 <br></br>
               </Form>
-           </Col-4>
-           <Col-4></Col-4>
+           </Col>
+           {/* <Col-4></Col-4> */}
           </Container>
       </div>
     );

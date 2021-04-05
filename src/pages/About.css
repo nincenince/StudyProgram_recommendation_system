@@ -6,6 +6,7 @@
     background-color: rgb(255, 189, 102);
     padding:0.75%;
     margin-top: 30%;
+
 }
 
 .nextpage-button:hover{
@@ -50,6 +51,7 @@
     transform:translate(-50%, -50%) ;
     color: white;
     font-weight: 900;
+    
 }
 
 .Step-header{
@@ -106,3 +108,4 @@
     padding-right: 5%;
 
 }
+

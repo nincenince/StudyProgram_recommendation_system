@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link } from "react-router-dom";
 import './RecResult.css';
 import RecommendPrograms from "../RecommendPrograms";
-import { Col,Row, Container , Button} from "react-bootstrap";
+import { Col,Row, Container , Button, Navbar} from "react-bootstrap";
 
 class RecommendProg extends Component{
 
@@ -15,10 +15,14 @@ class RecommendProg extends Component{
           <>
             <div>
              
-             <h1 className = "edu-navbar-logo" >
-             <i className = "fas fa-graduation-cap edu-cap" style={{ fontSize:'5vw'}}></i>
-                 <p className= "edu-navbar-p" style={{ fontSize:'1vw'}}>Study Program</p><p className="edu-navbar-p" style={{ fontSize:'1vw'}}>Recommendation</p><p className="edu-navbar-p" style={{ fontSize:'1vw'}}>System
-             </p></h1>
+            <Navbar collapseOnSelect expand="lg"  >
+            <Navbar.Brand href="/"  >
+                <i 
+                 className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
+                ></i>
+                   <h5 style={{color:'coral'}}>website name</h5>
+                </Navbar.Brand>
+            </Navbar>
             
              
             
@@ -28,11 +32,11 @@ class RecommendProg extends Component{
                 
 <Container >
 <Col >
-  <h1 className= "recprog-header" style={{ fontSize:'2vw'}}>Recommend Programs Results</h1>
-  <Col className="recprog-box">
-        <h2 
-      style={{ fontSize:'2vw'}}
-        >Possible Programs</h2>
+  <h3 style={{fontWeight:"900"}}>Recommend Programs Results</h3>
+  {/* <Col className="recprog-box"> */}
+  <Col sm={{ span: 9, offset: 1}} style={{border:'solid', borderWidth:'thin', marginTop:"5%", borderLeftColor:'coral', borderLeftWidth:"5px"}}>
+        <h4 
+        >Possible Programs</h4>
             <br></br>
             <ul>
 
@@ -41,11 +45,14 @@ class RecommendProg extends Component{
                   RecommendPrograms.RecommendProgList.map((RecInfo) => {
                     return (
                       <div>
-                        <Row className= "recprog-proglist" style={{ fontSize:'1.2vw'}} >{RecInfo.Programs}</Row>
+                        <Row>
+                        <Col style={{float:'left', marginRight:'5%', paddingLeft:'5%'}} >
+                          {RecInfo.Programs}
+                        </Col>
                           {
                             RecInfo.ProgramList.map((RecDetail) => {
                               return (
-                                <p className="recprog-recscore" style={{ fontSize:'1.2vw'}}>
+                                <p > 
                                     {RecDetail.RecProgScore}
                                 </p>
                               );
@@ -53,7 +60,7 @@ class RecommendProg extends Component{
                            
                          }
                         
-              
+                        </Row>
 
                       </div>
                     );
@@ -65,10 +72,10 @@ class RecommendProg extends Component{
      </Col>
     
               
-            <Col lg={{ span: 12, offset: 11 }}>
+            <Col sm={{ span: 12, offset: 11 }}>
                 <Row>
                   <Link to="/RecProgram">
-                    <Button className="recprog-done-button" style={{ fontSize:'1vw'}}>
+                    <Button className="recprog-done-button" style={{marginTop:'25%'}}>
                       Done
                     </Button>
                     </Link>

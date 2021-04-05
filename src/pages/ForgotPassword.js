@@ -88,15 +88,7 @@ class ForgotPassword extends React.Component {
                 <i 
                  className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
                 ></i>
-                    <p 
-                    className= "navbar-p" style={{ fontSize:'1vw'}}
-                    >Study Program</p><p 
-                    className="navbar-p" style={{ fontSize:'1vw'}}
-                    >Recommendation</p>
-                    <p 
-                    className="navbar-p" style={{ fontSize:'1vw'}}
-                    >System
-                </p>
+                   <h5 style={{color:'coral'}}>website name</h5>
                 </Navbar.Brand>
             </Navbar>
 
@@ -104,24 +96,24 @@ class ForgotPassword extends React.Component {
 
         <Col  sm={{ span: 4, offset: 4}}>
           <Form onSubmit={this.handleSubmit}>
-            <h1 style={{ fontSize:'2vw', marginTop:'20%'}}>Forgot Your Password?</h1>
+            <h2 style={{  marginTop:'20%'}}>Forgot Your Password?</h2>
 
-            <i className="fa fa-lock" style={{fontSize:'3vw', float:'left', marginRight:'3%'}}></i>
-                <p style={{ fontSize:'1vw'}}>Please fill in your email address and we will send you the link to reset your password.</p>
+            <i className="fa fa-lock" style={{ float:'left', marginRight:'3%'}}></i>
+                <p >Please fill in your email address and we will send you the link to reset your password.</p>
 
 
             <Form.Group controlId="forgotpw">
-              <Form.Label style={{ fontSize:'1vw', marginTop:'5%'}}>Email address</Form.Label>
-              <Form.Control  style={{ fontSize:'1vw', width:'80%'}} type="email" name="email" 
+              <Form.Label style={{  marginTop:'5%'}}>Email address</Form.Label>
+              <Form.Control  style={{  width:'80%'}} type="email" name="email" 
                placeholder="Enter email" value={this.state.input.email} onChange={this.handleChange} />
-              <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+              <Form.Text style={{color: "red"}} >
               {this.state.errors.email}
               </Form.Text>
             </Form.Group>
      
 
             <Button 
-            style={{marginLeft:'25%',fontSize:"1vw",borderRadius:' 20px', backgroundColor:'coral', border:'coral'}}
+            style={{marginLeft:'25%',borderRadius:' 20px', backgroundColor:'coral', border:'coral'}}
             variant="primary" type="submit" value="Submit">
               Reset Password
             </Button>
@@ -132,8 +124,8 @@ class ForgotPassword extends React.Component {
 
           <Link to="/SignIn">
                     <Button 
-                    style={{ fontSize:'1vw',borderRadius:' 20px', backgroundColor:'coral',
-                    border:'coral', marginLeft:'15%', marginTop:'8%'}}
+                    style={{ borderRadius:' 20px', backgroundColor:'coral',
+                    border:'coral', marginLeft:'15%', marginTop:'15%'}}
                     >
                     Back
                     </Button>

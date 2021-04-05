@@ -115,15 +115,7 @@ function Dashboard (props){
                 <i 
                  className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
                 ></i>
-                    <p 
-                    className= "navbar-p" style={{ fontSize:'1vw'}}
-                    >Study Program</p><p 
-                    className="navbar-p" style={{ fontSize:'1vw'}}
-                    >Recommendation</p>
-                    <p 
-                    className="navbar-p" style={{ fontSize:'1vw'}}
-                    >System
-                </p>
+                   <h5 style={{color:'coral'}}>website name</h5>
                 </Navbar.Brand>
             </Navbar>
 
@@ -131,19 +123,19 @@ function Dashboard (props){
         <h3 style={{textAlign:'center'}}>Let's explore your data</h3>
         {/* <Container > */}
                 <Row>
-                <Col xs={6} style={{ border:'solid', borderWidth:'thin', borderRadius:'9px', backgroundColor:'white', marginLeft:'5%', marginTop:'2%'}}>
+                <Col sm={6} style={{ border:'solid', borderWidth:'thin', borderRadius:'9px', backgroundColor:'white', marginLeft:'5%', marginTop:'2%'}}>
                         <div >
-                        <p style={{ fontSize:'1.5vw', textDecoration:'bold', paddingTop:'2%'}} >Result History</p>
+                        <h4 style={{  textDecoration:'bold', paddingTop:'2%'}} >Result History</h4>
                         { History.RecommendProgList.map((RecInfo) => {
                             return(
                                 <div style={{border:'solid',borderRadius:'0px', borderWidth:'thin', paddingRight:'5%', paddingButtom:'5%', margin:'2%',  paddingLeft:'2%', backgroundImage: 'linear-gradient(to right, white, white)'}} key={ Math.random().toString(36).substr(2, 9) }>
-                                <p style={{fontSize:'1vw'}}>Date</p>
+                                <p >Date</p>
                                 <div className="row">   
-                                <div className= "col-4 history-proglist"  style={{ fontSize:'1vw'}}>{RecInfo.Date}</div>
+                                <div className= "col-4 history-proglist" >{RecInfo.Date}</div>
                                     {
                                     RecInfo.ProgramList.map((RecDetail) => {
                                         return (
-                                        <div className="col-8" style={{ fontSize:'1vw'}} key={ Math.random().toString(36).substr(2, 9) }>
+                                        <div className="col-8"  key={ Math.random().toString(36).substr(2, 9) }>
                                             <div className="row"> 
                                                 <div className="col-8 history-recprogram">
                                                     {RecDetail.Programs1}
@@ -191,25 +183,25 @@ function Dashboard (props){
                         </div>
             </Col>
 
-        <Col xs={4}  style={{ marginTop:'2%'}}>
+        <Col sm={4}  style={{ marginTop:'2%'}}>
         
             <div style={{ border:'solid',borderRadius:'20px', borderWidth:'thin',marginLeft:'5%', padding:'10%', backgroundColor:'rgb(255,255,255)'}}>
-            <p style={{ fontSize:'1.5vw', textDecoration:'bold'}} >Give us some feedback!</p>
+            <h4 style={{  textDecoration:'bold'}} >Give us some feedback!</h4>
             
             
             <Form.Group controlId="formratingstar">
-              <Form.Label style={{ fontSize:'1vw'}}>How do you like our service</Form.Label>
-              <Form.Control style={{ fontSize:'1vw'}} as="select" name="rating" value={rating} onChange={e => setrating(e.target.value)} >
+              <Form.Label >Rate our services</Form.Label>
+              <Form.Control  as="select" name="rating" value={rating} onChange={e => setrating(e.target.value)} >
                 <option style={{ fontSize:'1vw'}} value={1}>⭐</option>
                 <option style={{ fontSize:'1vw'}} value={2}>⭐⭐</option>
                 <option style={{ fontSize:'1vw'}} value={3}>⭐⭐⭐</option>
                 <option style={{ fontSize:'1vw'}} value={4}>⭐⭐⭐⭐</option>
                 <option style={{ fontSize:'1vw'}} value={5}>⭐⭐⭐⭐⭐</option>
               </Form.Control>
-              <textarea style={{ fontSize:'1vw', height:"100px", marginTop:"4%"}} rows="4" cols="50" name="feedback"
+              <textarea style={{  height:"100%", marginTop:"4%"}} rows="4" cols="50" name="feedback"
                 placeholder="Your Feedback..." value={feedback} onChange={e => setfeedback(e.target.value)}/>
                 
-                <Button style={{float:'right', marginTop:'2%',fontSize:'1vw'}} onClick={() => submitfeedback()}>Submit</Button>
+                <Button style={{float:'right', marginTop:'2%'}} onClick={() => submitfeedback()}>Submit</Button>
             </Form.Group>
             </div>
             
@@ -222,23 +214,23 @@ function Dashboard (props){
     {/* <Container> */}
     <Row>
 
-        <Col  xs={5} 
+        <Col  sm={5} 
         // style={{border:'solid', borderWidth:'thin',borderRadius:'5px', marginLeft:'10%', marginTop:'4%'}}
          >
-        <div style={{border:'solid', borderWidth:'thin',borderRadius:'5px', marginLeft:'10%', marginTop:'4%', padding:'7%'}}>
+        <div style={{border:'solid', borderWidth:'thin',borderRadius:'5px', marginLeft:'10%', marginTop:'4%', padding:'4%', paddingBottom:'13%', marginBottom:'10%'}}>
 
-                <p style={{ fontSize:'1.5vw', textDecoration:'bold'}}>Educational Information</p>
+                <h4 style={{ textDecoration:'bold', paddingBottom:'2%'}}>Educational Information</h4>
                 <div >
                 {
                   EducationInfo.EduInfo.map((Info) => {
                     return (
                       <div key={ Math.random().toString(36).substr(2, 9) }>
-                        <h4 className= "history-edulist" style={{ fontSize:'1vw'}} >{Info.TestName}</h4>
+                        <h8 className= "history-edulist" >{Info.TestName}</h8>
                         <ul>
                           {
                             Info.ScoreList.map((InfoDetail) => {
                               return (
-                                  <p  style={{ fontSize:'1vw'}} key={ Math.random().toString(36).substr(2, 9) }>
+                                  <p   key={ Math.random().toString(36).substr(2, 9) }>
                                     {InfoDetail.Score}
                                   </p>
                               );
@@ -252,7 +244,7 @@ function Dashboard (props){
             </div>
 
             <Link to="/EduInformation">
-                <Button  onClick={changeComefrom} style={{ fontSize:'1vw', borderRadius:'50px', backgroundColor:'coral',  float:'right'}}>
+                <Button  onClick={changeComefrom} style={{ borderRadius:'50px', backgroundColor:'coral',  float:'right'}}>
                     Edit Information
                 </Button>
             </Link>
@@ -262,13 +254,13 @@ function Dashboard (props){
 
 
                 
-        <Col xs={4} style={{marginTop:'2%',marginLeft:'4%'}}>
-            <div style={{ border:'solid', borderWidth:'thin', backgroundColor:'white', paddingBottom:'15%', borderRadius:'5px'}}>
-                <p style={{ fontSize:'1.5vw', textDecoration:'bold', padding:'3%'}}>Big 5 Personality Label</p>
+        <Col sm={4} style={{marginTop:'2%',marginLeft:'4%'}}>
+            <div style={{ border:'solid', borderWidth:'thin', backgroundColor:'white', paddingBottom:'18%', borderRadius:'5px'}}>
+                <h4 style={{  textDecoration:'bold', padding:'3%'}}>Big 5 Personality Label</h4>
                     <Radar style={{responsive:true}} data={dataa} />
                 <Link to="/PerTest">
-                    <Button  onClick={changeComefrom} style={{ fontSize:'1vw', borderRadius:'50px', backgroundColor:'coral',    border: '1px solid coral', float:'right', margin:'5%'}}>
-                        Take personality test
+                    <Button  onClick={changeComefrom} style={{ borderRadius:'50px', backgroundColor:'coral',  border: '1px solid coral', float:'right', marginTop:'5%', marginRight:'5%'}}>
+                        Take test
                     </Button>
                 </Link>
             </div>

@@ -12,23 +12,22 @@ function About() {
   
 <Jumbotron style={{ backgroundImage: `url(${bgimg})`, width:'100vw', height:'76vh'}} fluid>
     <Container>
-        
-          <p className="centered-text" style={{ fontSize:'2vw'}}>Discover your study program and future career,
+        <div >
+          <h3 className="centered-text"  >Discover your study program and future career,
             Let’s start analyse them with your 
-            education information and Personality.</p>
+            education information and Personality.</h3>
+        </div>
       
-      
-    <Col lg={{ span: 12, offset: 9 }} >
-        <p>
+    <Col sm={{ span: 12, offset: 9 }} >
+
         <Link to="/RecProgram">
           <Button 
-          className="nextpage-button" style={{ fontSize:'1vw'}}
-          // className="mx-auto"
+          className="nextpage-button" 
           >
         Recommend Program
         </Button>
         </Link>
-        </p>
+   
      </Col>
      </Container>
   </Jumbotron>

@@ -1,7 +1,7 @@
 import React from 'react';
 // import {Link } from "react-router-dom";
 import './AccInfo.css';
-import { Col,Row, Container , Form, Button} from "react-bootstrap";
+import { Col,Row, Container , Form, Button, Navbar} from "react-bootstrap";
 
 import axios from 'axios';
 import { useState, useEffect } from 'react';
@@ -225,68 +225,71 @@ function AccInfo (props) {
      
     return (
       <div>
-          <h1 className = "edu-navbar-logo">
-            <i className = "fas fa-graduation-cap edu-cap" style={{ fontSize:'5vw'}}></i>
-              <p className= "edu-navbar-p" style={{ fontSize:'1.25vw'}}>Study Program</p><p className="edu-navbar-p" style={{ fontSize:'1.25vw'}}>Recommendation</p><p className="edu-navbar-p" style={{ fontSize:'1.25vw'}}>
-                System
-              </p>
-          </h1>
+          <Navbar collapseOnSelect expand="lg"  >
+            <Navbar.Brand href="/"  >
+                <i 
+                 className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
+                ></i>
+                   <h5 style={{color:'coral'}}>website name</h5>
+                </Navbar.Brand>
+            </Navbar>
+
           <Container>
-            <Col xs={3}></Col>
-            <Col xs={5}>
+            <Col sm={3}></Col>
+            <Col sm={5}>
               {/* <Row>  */}
-                  <h1 style={{ fontSize:'2vw'}}>User Information</h1>
+                  <h2 style={{marginTop:'10%'}}>User Information</h2>
               {/* </Row> */}
             
               <Form onSubmit={handlePersonalSubmit}>
                 
                 <Form.Group controlId="forfn">
-                  <Form.Label style={{ fontSize:'1vw'}}>Firstname</Form.Label>
+                  <Form.Label >Firstname</Form.Label>
                   {/* <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder="Enter First Name"  value={firstname} onChange={e => setfirstname(e.target.value)} /> */}
-                  <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder={personal.firstname}  value={firstname} onChange={e => setfirstname(e.target.value)} />
-                  <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+                  <Form.Control  type="text" placeholder={personal.firstname}  value={firstname} onChange={e => setfirstname(e.target.value)} />
+                  <Form.Text style={{color: "red"}} >
                     {firstnameerrors}
                   </Form.Text>
                 </Form.Group>
 
                 <Form.Group controlId="forln">
-                  <Form.Label style={{ fontSize:'1vw'}}>Lastname</Form.Label>
-                  <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder={personal.lastname} value={lastname} onChange={e => setlastname(e.target.value)} />
-                  <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+                  <Form.Label >Lastname</Form.Label>
+                  <Form.Control  type="text" placeholder={personal.lastname} value={lastname} onChange={e => setlastname(e.target.value)} />
+                  <Form.Text style={{color: "red"}} >
                     {lastnameerrors}
                   </Form.Text>
                 </Form.Group>
 
 
-              <Form.Label style={{ fontSize:'1vw'}}>Gender</Form.Label>
+              <Form.Label >Gender</Form.Label>
                 <Form.Group  controlId="forgd">
-                  <Form.Control as="select" defaultValue={personal.sex} style={{ fontSize:'1vw'}} placeholder={personal.sex} value={gender} onChange={e => setgender(e.target.value)} >
-                    <option style={{ fontSize:'1vw'}}>{null}</option>
-                    <option style={{ fontSize:'1vw'}}>Female</option>
-                    <option style={{ fontSize:'1vw'}}>Male</option>
-                    <option style={{ fontSize:'1vw'}}>Other</option>
+                  <Form.Control as="select" defaultValue={personal.sex}  placeholder={personal.sex} value={gender} onChange={e => setgender(e.target.value)} >
+                    <option >{null}</option>
+                    <option >Female</option>
+                    <option >Male</option>
+                    <option >Other</option>
                   </Form.Control>
                   <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
                     {gendererrors}
                   </Form.Text>
                 </Form.Group>
 
-                <Form.Label style={{ fontSize:'1vw'}}>School</Form.Label>
+                <Form.Label >School</Form.Label>
                 <Form.Group  controlId="forsc">
-                  <Form.Control as="select" style={{ fontSize:'1vw'}} defaultValue={personal.school} placeholder={personal.school} value={school} onChange={e => setschool(e.target.value)}>
-                    <option style={{ fontSize:'1vw'}}>{null}</option>
-                    <option style={{ fontSize:'1vw'}}>School1</option>
-                    <option style={{ fontSize:'1vw'}}>School2</option>
-                    <option style={{ fontSize:'1vw'}}>School3</option>
+                  <Form.Control as="select" defaultValue={personal.school} placeholder={personal.school} value={school} onChange={e => setschool(e.target.value)}>
+                    <option >{null}</option>
+                    <option >School1</option>
+                    <option >School2</option>
+                    <option >School3</option>
                   </Form.Control>
-                  <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+                  <Form.Text style={{color: "red"}} >
                     {schoolerrors}
                   </Form.Text>
                 </Form.Group>
 
                 {/* <Link> */}
                 {/* <Link to="/RecProgram"> */}
-                <Button type="Submit" className="acc-done-button" style={{ fontSize:'1vw'}} onClick={() => setcodes(1)}>
+                <Button type="Submit" className="acc-done-button" onClick={() => setcodes(1)}>
                     Done
                 </Button>
                 {/* </Link> */}
@@ -315,20 +318,20 @@ function AccInfo (props) {
               </Form> */}
               <Form onSubmit={handleEmailSubmit}>
                 <Form.Group controlId="foroun">
-                <Form.Row style={{ fontSize:'2vw'}}>CHANGE EMAIL</Form.Row>
-                  <Form.Label style={{ fontSize:'1vw'}}>Current Email</Form.Label>
-                  <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder="Enter Current Email"  value={oldemail} onChange={e => setoldemail(e.target.value)} />
-                  <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+                <Form.Row >CHANGE EMAIL</Form.Row>
+                  <Form.Label >Current Email</Form.Label>
+                  <Form.Control  type="text" placeholder="Enter Current Email"  value={oldemail} onChange={e => setoldemail(e.target.value)} />
+                  <Form.Text style={{color: "red"}} >
                   {emailerrors}
                   </Form.Text>
-                  <Form.Label style={{ fontSize:'1vw'}}>New Email</Form.Label>
-                  <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder="Enter New Email"  value={newemail} onChange={e => setnewemail(e.target.value)} />
-                  <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+                  <Form.Label >New Email</Form.Label>
+                  <Form.Control type="text" placeholder="Enter New Email"  value={newemail} onChange={e => setnewemail(e.target.value)} />
+                  <Form.Text style={{color: "red"}} >
                   {emailerrors}
                   </Form.Text>
                 </Form.Group>
 
-                <Button style={{display:"flex", alignItems:"center", justifyContent:"center", fontSize:"1vw"}} type="submit"className="update-email-button" onClick={() => setcodes(2)}>
+                <Button style={{display:"flex", alignItems:"center", justifyContent:"center"}} type="submit"className="update-email-button" onClick={() => setcodes(2)}>
                   Update Email
                 </Button>
                 <br/>
@@ -336,24 +339,24 @@ function AccInfo (props) {
 
               <Form onSubmit={handlePasswordSubmit}>
                 <Form.Group controlId="forpw">
-                <Form.Row style={{ fontSize:'2vw'}}>CHANGE PASSWORD</Form.Row>
-                  <Form.Label style={{ fontSize:'1vw'}}>Current Password</Form.Label>
-                  <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder="Enter Current Email"  value={oldpassword} onChange={e => setoldpassword(e.target.value)} />
-                  <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+                <Form.Row >CHANGE PASSWORD</Form.Row>
+                  <Form.Label >Current Password</Form.Label>
+                  <Form.Control  type="text" placeholder="Enter Current Email"  value={oldpassword} onChange={e => setoldpassword(e.target.value)} />
+                  <Form.Text style={{color: "red"}} >
                   {oldpassworderrors}
                   </Form.Text>
-                  <Form.Label style={{ fontSize:'1vw'}}>New Password</Form.Label>
-                  <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder="Enter New Email"  value={newpassword} onChange={e => setnewpassword(e.target.value)} />
-                  <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+                  <Form.Label >New Password</Form.Label>
+                  <Form.Control type="text" placeholder="Enter New Email"  value={newpassword} onChange={e => setnewpassword(e.target.value)} />
+                  <Form.Text style={{color: "red"}} >
                   {newpassworderrors}
                   </Form.Text>
-                  <Form.Label style={{ fontSize:'1vw'}}>Confirm New Password</Form.Label>
-                  <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder="Enter New Email"  value={confirmnewpassword} onChange={e => setconfirmnewpassword(e.target.value)} />
-                  <Form.Text style={{color: "red", fontSize: "0.75vw"}} >
+                  <Form.Label >Confirm New Password</Form.Label>
+                  <Form.Control  type="text" placeholder="Enter New Email"  value={confirmnewpassword} onChange={e => setconfirmnewpassword(e.target.value)} />
+                  <Form.Text style={{color: "red"}} >
                   {confirm_new_passworderrors}
                   </Form.Text>
                 </Form.Group>
-                <Button style={{display:"flex", alignItems:"center", justifyContent:"center", fontSize:"1vw"}} className="update-pas-button"type="submit" onClick={() => setcodes(3)}>
+                <Button style={{display:"flex", alignItems:"center", justifyContent:"center"}} className="update-pas-button"type="submit" onClick={() => setcodes(3)}>
                   Update Password
                 </Button>
               </Form>
