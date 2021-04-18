@@ -135,10 +135,32 @@ export const destroy_comefrom = () => {
 export const signin_admin = () => {
     return {
         type: 'SIGN_IN_ADMIN'
-    }
-}
+    };
+};
 export const signout_admin = () => {
     return {
         type: 'SIGN_OUT_ADMIN'
-    }
-}
+    };
+};
+export const update_profilepic = pl => {
+    return {
+        type: 'UPDATE_PROFILEPIC',
+        payload: pl
+    };
+};
+export const destroy_profilepic = () => {
+    return {
+        type: 'DESTROY_PROFILEPIC'
+    };
+};
+export const update_rec = pl => {
+    return {
+        type: 'UPDATE_REC',
+        payload: pl
+    };
+};
+export const destroy_rec = () => {
+    return {
+        type: 'DESTROY_REC'
+    };
+};
