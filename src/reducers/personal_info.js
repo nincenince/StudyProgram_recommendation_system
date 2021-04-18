@@ -7,6 +7,7 @@ const data = {
   sex: "",
   school: "",
   role: "",
+  profilepic: ""
 };
 const personal_info_Reducer = (state = data, action) => {
   switch(action.type){
@@ -52,6 +53,12 @@ const personal_info_Reducer = (state = data, action) => {
         return state;
       case "DESTROY_ROLE":
         state.role = ""
+        return state;  
+      case "UPDATE_PROFILEPIC":
+        state.profilepic = action.payload;
+        return state;
+      case "DESTROY_PROFILEPIC":
+        state.profilepic = ""
         return state;  
       default:
         return state;
