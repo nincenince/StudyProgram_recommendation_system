@@ -6,7 +6,7 @@ import './Dashboard.css';
 import { Col, Row, Button, Form, Navbar} from "react-bootstrap";
 import { Radar} from 'react-chartjs-2';
 //import PersonanlityInfo from "../PersonalityInfo.json";
-import History from "../History";
+// import History from "../History";
 // import {Faculties} from "../faculties.jsx";
 import axios from 'axios';
 
@@ -20,10 +20,110 @@ function Dashboard (props){
     // let isLogged = useSelector(state => state.isLogged);
     let EducationInfo = useSelector(state => state.education);
     let PersonalityInfo = useSelector(state => state.personality);
+    let history_list = useSelector(state => state.recommend);
+    // const [History, setHistory] = useState( {
+    //     "Date": "",
+    //     "ProgramList": [
+    //     {
+    //         "Programs1": "",
+    //         "RecProgScore1": "",
+    //         "Programs2": "",
+    //         "RecProgScore2": "",
+    //         "Programs3": "",
+    //         "RecProgScore3": "",
+    //     }
+    //     ]
+    // });
+    useEffect(() => {
+        function mapdata () {
+            var count;
+            let temp = [];
+            if(history_list.length > 1) {
+                for(count = 1; count < history_list.length; count++){
+                    let a = 
+                    {
+                        "Date": history_list[count]['date'],
+                        "ProgramList": [
+                            {
+                                "Programs1": history_list[count]['first'],
+                                "RecProgScore1": history_list[count]['first_p'],
+                                "Programs2": history_list[count]['second'],
+                                "RecProgScore2": history_list[count]['second_p'],
+                                "Programs3": history_list[count]['third'],
+                                "RecProgScore3": history_list[count]['third_p'],
+                            }
+                        ]    
+                    };
+                    temp.push(a);
+                }
+                console.log("in in in ");
+                let x ={
+                    "RecommendProgList": temp
+                };
+                setHistory(x);
+            }
+        }
+        mapdata();
+    }, [EducationInfo]); 
+    let template = {
+        "RecommendProgList": [
+            {
+                "Date": "",
+                "ProgramList": [
+                {
+                    "Programs1": "",
+                    "RecProgScore1": "",
+                    "Programs2": "",
+                    "RecProgScore2": "",
+                    "Programs3": "",
+                    "RecProgScore3": "",
+                }
+                ]
+            }
+        ]
+    };
+    const [History, setHistory] = useState(template);
+    
     // let personal = useSelector(state => state.personal);
     let dispatch = useDispatch();
-    // let response = {}
     
+    // let response = {}
+    // const History = {
+    //     "RecommendProgList": [
+    //       {
+    //         "Date": "January 1, 2020",
+    //         "ProgramList": [
+    //           {
+    //             "Programs1": "Faculty of Engineering, Software Engineering Program ",
+    //             "RecProgScore1": "70%",
+    //             "Programs2": "Faculty of Engineering, Software Engineering Program ",
+    //             "RecProgScore2": "70%",
+    //             "Programs3": "",
+    //             "RecProgScore3": "",
+    //             "Programs4": "",
+    //             "RecProgScore4": ""
+    //           }
+    //         ]
+    //       },
+    //       {
+    //         "Date": "February 1, 2020",
+    //         "ProgramList": [
+    //           {
+    //             "Programs1": "Faculty of Engineering, Software Engineering Program ",
+    //             "RecProgScore1": "70%",
+    //             "Programs2": "Faculty of Engineering, Software Engineering Program ",
+    //             "RecProgScore2": "70%",
+    //             "Programs3": "Faculty of Engineering, Software Engineering Program  ",
+    //             "RecProgScore3": "70%",
+    //             "Programs4": "Faculty of Engineering, Software Engineering Program ",
+    //             "RecProgScore4": "70%"
+    //           }
+    //         ]
+    //       }      
+    //     ]   
+    // }
+
+
     const [rating, setrating] = useState(1);
     const [feedback, setfeedback] = useState('');
     // useEffect(() => {
@@ -58,9 +158,7 @@ function Dashboard (props){
         props.history.push("/PerTest");
     }
 
-    useEffect(() => {
-
-    }, [EducationInfo]);  
+     
     
     const submitfeedback = () => {
         // console.log(rating);
@@ -110,14 +208,14 @@ function Dashboard (props){
             {/* </div> */}
 
 
-            <Navbar collapseOnSelect expand="lg"  >
+            {/* <Navbar collapseOnSelect expand="lg"  >
             <Navbar.Brand href="/"  >
                 <i 
                  className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
                 ></i>
                    <h5 style={{color:'coral'}}>website name</h5>
                 </Navbar.Brand>
-            </Navbar>
+            </Navbar> */}
 
         <h2 style={{textAlign:'center'}}>Welcome back!</h2>
         <h3 style={{textAlign:'center'}}>Let's explore your data</h3>
