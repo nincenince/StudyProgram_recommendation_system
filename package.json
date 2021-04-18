@@ -10,6 +10,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.5.2",
     "chart.js": "^2.9.4",
+    "cloudinary": "^1.25.1",
     "express": "^4.17.1",
     "mdbreact": "^5.0.1",
     "rc-scrollbars": "^1.1.2",
