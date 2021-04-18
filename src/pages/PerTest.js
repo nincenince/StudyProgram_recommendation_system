@@ -96,14 +96,14 @@ function PerTest (props){
           <i className = "fas fa-graduation-cap edu-cap" Style={{ fontSize:'5vw'}}></i>
               <p className= "edu-navbar-p" Style={{ fontSize:'1.25vw'}}>Study Program</p><p className="edu-navbar-p" Style={{ fontSize:'1.25vw'}}>Recommendation</p><p className="edu-navbar-p" Style={{ fontSize:'1.25vw'}}>System
           </p></h1> */}
-      <Navbar collapseOnSelect expand="lg"  >
+      {/* <Navbar collapseOnSelect expand="lg"  >
             <Navbar.Brand href="/"  >
                 <i 
                  className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
                 ></i>
                    <h5 style={{color:'coral'}}>website name</h5>
                 </Navbar.Brand>
-            </Navbar>
+            </Navbar> */}
           
       <h5 style={{marginLeft:'10%'}}>Answer all 44 questions to see your Openness, Conscientiousness,
       Extraversion, Agreeableness, and Neuroticism score which labeled based on Big 5 Personality.</h5>
