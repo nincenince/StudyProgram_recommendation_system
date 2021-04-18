@@ -26,8 +26,8 @@ function Programs() {
   // })
 	useEffect(() => {
     async function get_course () {
-      const res = await axios.get('https://spr-system.herokuapp.com/get_course/');
-      //const res = await axios.get('http://127.0.0.1:8000/get_course/');
+      //const res = await axios.get('https://spr-system.herokuapp.com/get_course/');
+      const res = await axios.get('http://127.0.0.1:8000/get_course/');
       let responses = res.data['result'];
       setData(responses);
       setrresponse(responses);
@@ -98,10 +98,11 @@ function Programs() {
               <option style={{ fontSize:'1vw'}}>CMKL University</option>
               <option style={{ fontSize:'1vw'}}>KMITL Hospital</option>
               <option style={{ fontSize:'1vw'}}>42  Bangkok KMITL</option>
+              <option style={{ fontSize:'1vw'}}>Faculty of Dentistry</option>
               <option style={{ fontSize:'1vw'}}>KMITL Prince of Chumphon Campus </option>
               <option style={{ fontSize:'1vw'}}>School of Engineering</option>
               <option style={{ fontSize:'1vw'}}>Faculty of Architecture</option>
-              <option style={{ fontSize:'1vw'}}>Faculty of Science</option>
+              <option style={{ fontSize:'1vw'}}>School of Science</option>
               <option style={{ fontSize:'1vw'}}>Faculty of Industrial Education and Technology</option>
               <option style={{ fontSize:'1vw'}}>Faculty of Agricultural Technology</option>
               <option style={{ fontSize:'1vw'}}>Faculty of Information Technology</option>
@@ -124,6 +125,7 @@ function Programs() {
               <Row className = "ProgramsList-box" >
                 <Col>
                   <a href={d.url}>{d.ProgramName}</a>
+                  <img className="object-contain rounded-lg" src={"https://res.cloudinary.com/hdtjuro73/image/upload/w_250,h_150,c_scale,q_auto,f_auto/v1617779170/"+d.coursepic}></img>
                 </Col>
               </Row>
             </div>
