@@ -50,15 +50,15 @@ const App = () => (
         <IncludeNav path='/Feedbacks' component={Feedbacks} />
         <IncludeNav path='/SignUp' component={SignUp} />
         <IncludeNav path='/SignIn' component={SignIn} />
-        <NoNav path='/EduInformation' component={EduInformation} />
-        <NoNav path ='/RecResult' component={RecResult} />
-        <NoNav path='/Dashboard' component={Dashboard}/>
-        <NoNav path='/AccInfo' component={AccInfo}/>
-        <NoNav path='/PerTest' component={PerTest}/>
-        <NoNav path='/PerResult' component={PerResult}/>
+        <IncludeNav path='/EduInformation' component={EduInformation} />
+        <IncludeNav path ='/RecResult' component={RecResult} />
+        <IncludeNav path='/Dashboard' component={Dashboard}/>
+        <IncludeNav path='/AccInfo' component={AccInfo}/>
+        <IncludeNav path='/PerTest' component={PerTest}/>
+        <IncludeNav path='/PerResult' component={PerResult}/>
         <NoNav path='/ForgotPassword' component={ForgotPassword}/>
         <NoNav path='/Loading' component={Loading}/>
-        <NoNav path='/Admin_prog' component={Admin_prog}/>
+        <IncludeNav path='/Admin_prog' component={Admin_prog}/>
 
 
 
