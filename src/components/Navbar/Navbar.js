@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector, useDispatch} from 'react-redux';
 import { useEffect } from 'react';
 //import { signout } from '../actions';
-import { destroy_token, signout, destroy_firstname, destroy_lastname, destroy_email, destroy_sex, destroy_age, destroy_edu, destroy_per, destroy_comefrom, destroy_school, destroy_role, signout_admin } from '../../actions';
+import { destroy_token, signout, destroy_firstname, destroy_lastname, destroy_email, destroy_sex, destroy_age, destroy_edu, destroy_per, destroy_comefrom, destroy_school, destroy_role, signout_admin, destroy_profilepic, destroy_rec } from '../../actions';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom'
 
@@ -30,7 +30,8 @@ function Navbarr (props){
     let isLogged = useSelector(state => state.isLogged);
     let isAdmin = useSelector(state => state.isAdmin);
     let dispatch = useDispatch();
-
+    let personal = useSelector(state => state.personal);
+    let profilepicurl = "https://res.cloudinary.com/hdtjuro73/image/upload/w_50,c_fill,ar_1:1,g_auto,r_max/v1617866916/"+personal.profilepic;
     useEffect(() => {
         //token = useSelector(state => state.token);
       }, [token, isLogged]);
@@ -55,8 +56,10 @@ function Navbarr (props){
         dispatch(destroy_school());
         dispatch(destroy_role());
         dispatch(signout_admin());
-        response = await axios.post("https://spr-system.herokuapp.com/logout/", payload)
-        //response = await axios.post("http://127.0.0.1:8000/logout/", payload)
+        dispatch(destroy_profilepic());
+        dispatch(destroy_rec());
+        //response = await axios.post("https://spr-system.herokuapp.com/logout/", payload)
+        response = await axios.post("http://127.0.0.1:8000/logout/", payload)
         // if(response.data['status'] === true){
         //     dispatch(signout());
         //     dispatch(destroy_token());
@@ -81,7 +84,7 @@ function Navbarr (props){
             <Navbar.Brand href="/" >
                 <Nav.Link className="navbar-brand" href="/">
                     <i className = "fas fa-graduation-cap fa-3x" Style={{ fontSize:'4.95vw'}}>
-                    <span style={{color: 'red', fontSize:'40%'}}>Website Name</span>
+                    <span style={{color: 'red', fontSize:'40%'}}>Kandle</span>
                     </i>
                 </Nav.Link>
                 {/* <div className="row">
@@ -117,9 +120,13 @@ function Navbarr (props){
                             {/* <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" Style={{ fontSize:'0.9vw'}} >Account Information</NavDropdown.Item> */}
                             {/* <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  Style={{ fontSize:'0.9vw'}} >User Dashboard</NavDropdown.Item> */}
                             <NavDropdown.Divider />
-                            <NavDropdown.Item as={NavLink} to='/' 
-                            className="NavDropdownItem"  
-                            onClick={() => logout(token)} >Sign out</NavDropdown.Item>
+                            <NavDropdown.Item className="NavDropdownItem"  >
+                                <img style={{borderRadius: '100%'}} src={profilepicurl}/>
+                                <span style={{padding: '5%'}}>Admin</span>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem" onClick={() => logout(token)} >
+                                Sign out
+                            </NavDropdown.Item>
                         </NavDropdown> :
                         <NavDropdown style={{  align: 'right'}}
                         title="User"
@@ -145,6 +152,10 @@ function Navbarr (props){
                 title="User"
                  id="collasible-nav-dropdown" 
                 className="NavDropdown" >
+                    <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  >
+                        <img style={{borderRadius: '100%'}} src={profilepicurl}/>
+                        <span style={{padding: '5%'}}>{personal.firstname}</span>
+                    </NavDropdown.Item>
                     <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem"  >Account Information</NavDropdown.Item>
                     <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem" >User Dashboard</NavDropdown.Item>
                     <NavDropdown.Divider />
