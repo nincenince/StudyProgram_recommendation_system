@@ -2,20 +2,99 @@ import React from 'react';
 import {Link } from "react-router-dom";
 
 import './RecProgram.css'
-
+import axios from 'axios';
 import { Col,Row, Button, Image, Form} from "react-bootstrap";
 
 import { useDispatch} from 'react-redux';
 import { update_comefrom } from '../actions';
 // import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { update_rec } from '../actions';
 
 
 function RecProgram (props){
   let dispatch = useDispatch();
   let isLogged = useSelector(state => state.isLogged);
+  let token = useSelector(state => state.token);
+  let personal = useSelector(state => state.personal);
+  let personality = useSelector(state => state.personality);
+  let education = useSelector(state => state.education);
+
   const changeComefrom = () => {
     dispatch(update_comefrom('recommend'));
+  }
+
+  const validate = async() => {
+    console.log(personal);
+    console.log(personality);
+    console.log(education);
+    let valid = true;
+    let pv_list = ['กรุงเทพมหานคร', 'สมุทรปราการ', 'นนทบุรี', 'ปทุมธานี', 'พระนครศรีอยุธยา', 'อ่างทอง', 'ลพบุรี',
+     'สิงห์บุรี', 'ชัยนาท', 'สระบุรี', 'ชลบุรี', 'ระยอง', 'จันทบุรี', 'ตราด', 'ฉะเชิงเทรา', 'ปราจีนบุรี', 'นครนายก',
+      'สระแก้ว', 'นครราชสีมา', 'บุรีรัมย์', 'สุรินทร์', 'ศรีสะเกษ', 'อุบลราชธานี', 'ยโสธร', 'ชัยภูมิ', 'อำนาจเจริญ',
+       'หนองบัวลำภู', 'ขอนแก่น', 'อุดรธานี', 'เลย', 'หนองคาย', 'มหาสารคาม', 'ร้อยเอ็ด', 'กาฬสินธุ์', 'สกลนคร',
+        'นครพนม', 'มุกดาหาร', 'เชียงใหม่', 'ลำพูน', 'ลำปาง', 'อุตรดิตถ์', 'แพร่', 'น่าน', 'พะเยา', 'เชียงราย', 
+        'แม่ฮ่องสอน', 'นครสวรรค์', 'อุทัยธานี', 'กำแพงเพชร', 'ตาก', 'สุโขทัย', 'พิษณุโลก', 'พิจิตร', 'เพชรบูรณ์',
+         'ราชบุรี', 'กาญจนบุรี', 'สุพรรณบุรี', 'นครปฐม', 'สมุทรสาคร', 'สมุทรสงคราม', 'เพชรบุรี', 'ประจวบคีรีขันธ์',
+          'นครศรีธรรมราช', 'กระบี่', 'พังงา', 'ภูเก็ต', 'สุราษฎร์ธานี', 'ระนอง', 'ชุมพร', 'สงขลา', 'สตูล', 'ตรัง',
+           'พัทลุง', 'ปัตตานี', 'ยะลา', 'นราธิวาส', 'บึงกาฬ'];
+    let random = Math.floor(Math.random() * pv_list.length);
+    let rand_pv = pv_list[random];
+    console.log(rand_pv);
+    console.log(education.EduInfo[0].ScoreList[0].Score);
+    console.log(personality.reduce((a, b) => a + b, 0))
+    let error = "";
+    if(personal['school'] === null){
+      valid = false;
+      error += "Please enter your school\n";
+    }
+    console.log(education.EduInfo[0].ScoreList[0].Score);
+    if(education.EduInfo[0].ScoreList[0].Score === "0.00") {
+      valid = false;
+      error += "Please fill in your education information\n";
+    }
+    if(personality.reduce((a, b) => a + b, 0) === 0 ){
+      valid = false;
+      error += "Please take personality test before process further\n";
+    }
+    if(valid){
+      let payload = {
+        "school": personal['school'], 
+        "province": rand_pv, 
+        "gpa_high_school": education.EduInfo[0].ScoreList[0].Score
+      }
+      const header = {"Access-Control-Allow-Origin": "*"};
+      console.log(payload);
+      let response = await axios.post("https://student-recommend-api.herokuapp.com/predict/", payload);
+      let data = response.data;
+      console.log(data)
+      let response_data = {
+        "first": data['1st'],
+        "first_p": data['1st_percent'],
+        "second": data['2rd'],
+        "second_p": data['2st_percent'],
+        "third": data['3st'],
+        "third_p": data['3st_percent']
+      };
+      let payload2 = {
+        "token": token,
+        "info": response_data
+      }
+      console.log(payload2);
+      let response2 = {
+        "status": false
+      };
+      response2 = await axios.post("http://127.0.0.1:8000/get/recommend/", payload2)
+      if(response2.data['status'] === true){
+        dispatch(update_rec(response2.data['info']));
+        props.history.push("/RecResult");
+      }
+
+    }
+    else{
+      alert(error);
+    }
+    
   }
   return(
       <>
@@ -87,11 +166,9 @@ function RecProgram (props){
 
         {isLogged ?<Row>
           <Col  md={{ span: 3, offset: 5}}>
-            <Link to="/RecResult">
-              <Button style={{  marginTop:'10%',borderRadius:' 20px', backgroundColor:'rgb(255, 70, 0)',border:'coral'}}>
-                Recommend Program
+              <Button style={{  marginTop:'10%',borderRadius:' 20px', backgroundColor:'rgb(255, 70, 0)',border:'coral'}} type="Submit">
+                <a onClick={validate}> Recommend Program</a>
               </Button>
-            </Link>
           </Col>
         </Row>: null }
       </>
