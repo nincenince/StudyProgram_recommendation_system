@@ -250,8 +250,8 @@ function EduInformation (props) {
         "new_ielts": nie
       }
       console.log(payload);
-      response = await axios.post("https://spr-system.herokuapp.com/edit/education/info/", payload)
-      //response = await axios.post("http://127.0.0.1:8000/edit/education/info/", payload)
+      //response = await axios.post("https://spr-system.herokuapp.com/edit/education/info/", payload)
+      response = await axios.post("http://127.0.0.1:8000/edit/education/info/", payload)
     }
     else {
       return isValid;
@@ -279,14 +279,14 @@ function EduInformation (props) {
      
     return (
       <div>
-          <Navbar collapseOnSelect expand="lg"  >
+          {/* <Navbar collapseOnSelect expand="lg"  >
             <Navbar.Brand href="/"  >
                 <i 
                  className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
                 ></i>
                    <h5 style={{color:'coral'}}>website name</h5>
                 </Navbar.Brand>
-            </Navbar>
+            </Navbar> */}
           
           <Container>
             <Col sm={{ span: 4, offset: 3}}>
