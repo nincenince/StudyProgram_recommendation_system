@@ -6,7 +6,7 @@ import Lottie from "react-lottie";
 import "../App.css";
 
 import { useSelector, useDispatch} from 'react-redux';
-import { update_comefrom , update_per, update_edu} from '../actions';
+import { update_comefrom , update_per, update_edu, update_rec} from '../actions';
 
 const defaultOptions = {
   loop: true,
@@ -62,6 +62,7 @@ function Loading(props) {
             //console.log(responseData)
             dispatch(update_edu(responseData['1']['info']));
             dispatch(update_per(responseData['2']));
+            dispatch(update_rec(responseData['3']['RecommendProgList'][0]))
             props.history.push('/');
           }, 1500);
         });
