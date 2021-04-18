@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
-import { update_token, signin, update_firstname, update_lastname, update_email, update_sex, update_age, update_school, update_role, signin_admin } from '../actions';
+import { update_token, signin, update_firstname, update_lastname, update_email, update_sex, update_age, update_school, update_role, signin_admin, update_profilepic } from '../actions';
 
 
 function SignIn(props) {
@@ -106,6 +106,7 @@ function SignIn(props) {
             dispatch(update_age(response.data['info']['age']));
             dispatch(update_school(response.data['info']['school']));
             dispatch(update_role(response.data['info']['role']));
+            dispatch(update_profilepic(response.data['info']['profilepic']));
             if(response.data['info']['role'] === "admin"){
               dispatch(signin_admin());
               props.history.push('/');
