@@ -62,8 +62,8 @@ class ForgotPassword extends React.Component {
         let payload = {
           'email': input['email']
         }
-        //this.response = await axios.post('http://127.0.0.1:8000/reset_password/', payload);
-        this.response = await axios.post('https://spr-system.herokuapp.com/reset_password/', payload);
+        this.response = await axios.post('http://127.0.0.1:8000/reset_password/', payload);
+        //this.response = await axios.post('https://spr-system.herokuapp.com/reset_password/', payload);
         if (this.response.data['status'] === true) {
           console.log(this.response.data)
           alert(this.response.data['message'])

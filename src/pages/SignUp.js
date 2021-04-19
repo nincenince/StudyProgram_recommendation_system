@@ -237,8 +237,8 @@ function SignUp (props, {defaultImage}) {
           'profilepic': profilepic
         }
         console.log(payload);
-        //response = await axios.post("https://spr-system.herokuapp.com/signup/", payload);
-        response = await axios.post("http://127.0.0.1:8000/signup/", payload);
+        response = await axios.post("https://spr-system.herokuapp.com/signup/", payload);
+        //response = await axios.post("http://127.0.0.1:8000/signup/", payload);
       }
       else {
         return isValid;

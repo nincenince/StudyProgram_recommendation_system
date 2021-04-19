@@ -58,8 +58,8 @@ function Navbarr (props){
         dispatch(signout_admin());
         dispatch(destroy_profilepic());
         dispatch(destroy_rec());
-        //response = await axios.post("https://spr-system.herokuapp.com/logout/", payload)
-        response = await axios.post("http://127.0.0.1:8000/logout/", payload)
+        response = await axios.post("https://spr-system.herokuapp.com/logout/", payload)
+        //response = await axios.post("http://127.0.0.1:8000/logout/", payload)
         // if(response.data['status'] === true){
         //     dispatch(signout());
         //     dispatch(destroy_token());

@@ -96,8 +96,8 @@ const Admin_prog = (props, {defaultImage}) => {
   // })
 	useEffect(() => {
     async function get_data () {
-      //const res = await axios.get('https://spr-system.herokuapp.com/get_course_admin/');
-      const res = await axios.get('http://127.0.0.1:8000/get_course_admin/');
+      const res = await axios.get('https://spr-system.herokuapp.com/get_course_admin/');
+      //const res = await axios.get('http://127.0.0.1:8000/get_course_admin/');
       let response = res.data['result'];
       //console.log(response);
       let inside_data = [];
@@ -167,8 +167,8 @@ const Admin_prog = (props, {defaultImage}) => {
     let payload = {
       "id" : value
     };
-    //response = await axios.post('https://spr-system.herokuapp.com/delete_course/', payload);
-    response = await axios.post('http://127.0.0.1:8000/delete_course/', payload);
+    response = await axios.post('https://spr-system.herokuapp.com/delete_course/', payload);
+    //response = await axios.post('http://127.0.0.1:8000/delete_course/', payload);
     //console.log(value);
     if(response.data['status'] === true){
       window.location.reload(false);
@@ -303,8 +303,8 @@ const Admin_prog = (props, {defaultImage}) => {
         'coursepic': coursepic
       }
       console.log(payload);
-      //response = await axios.post("https://spr-system.herokuapp.com/add_course/", payload);
-      response = await axios.post("http://127.0.0.1:8000/add_course/", payload);
+      response = await axios.post("https://spr-system.herokuapp.com/add_course/", payload);
+      //response = await axios.post("http://127.0.0.1:8000/add_course/", payload);
     }
     else {
       return isValid;

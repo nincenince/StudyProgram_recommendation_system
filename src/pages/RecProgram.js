@@ -84,7 +84,8 @@ function RecProgram (props){
       let response2 = {
         "status": false
       };
-      response2 = await axios.post("http://127.0.0.1:8000/get/recommend/", payload2)
+      response2 = await axios.post("https://spr-system.herokuapp.com/get/recommend/", payload2)
+      //response2 = await axios.post("http://127.0.0.1:8000/get/recommend/", payload2)
       if(response2.data['status'] === true){
         dispatch(update_rec(response2.data['info']));
         props.history.push("/RecResult");

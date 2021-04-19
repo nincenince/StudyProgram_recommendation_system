@@ -250,8 +250,8 @@ function EduInformation (props) {
         "new_ielts": nie
       }
       console.log(payload);
-      //response = await axios.post("https://spr-system.herokuapp.com/edit/education/info/", payload)
-      response = await axios.post("http://127.0.0.1:8000/edit/education/info/", payload)
+      response = await axios.post("https://spr-system.herokuapp.com/edit/education/info/", payload)
+      //response = await axios.post("http://127.0.0.1:8000/edit/education/info/", payload)
     }
     else {
       return isValid;
