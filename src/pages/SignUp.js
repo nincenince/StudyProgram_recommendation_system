@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import './SignUp.css'
 // import bg from '../images/IMG_0947.JPG'; 
-import { Col, Container , Button, Form} from "react-bootstrap";
-import { useState, useEffect, useRef } from 'react';
-import { useSelector, useDispatch} from 'react-redux';
+import { Col , Button, Form} from "react-bootstrap";
+import { useState,  useRef } from 'react';
+// import { useSelector, useDispatch} from 'react-redux';
 
 
 function SignUp (props, {defaultImage}) {
@@ -257,9 +257,8 @@ function SignUp (props, {defaultImage}) {
     return (
       <>
       <div >
-          <Container >
-            <Col></Col>
-            <Col sm={5}>
+       
+            <Col md={{ span: 4, offset: 4}} style={{marginTop:'5%'}}>
 
           <Form onSubmit={handleSubmit}>
             <h2>Sign Up</h2>
@@ -392,8 +391,7 @@ function SignUp (props, {defaultImage}) {
           
           
           </Col>
-          <Col></Col>
-        </Container>
+    
         
                   
 

@@ -1,7 +1,7 @@
 import React, { useState}  from 'react';
 import './EduInformation.css'
 
-import { Col,Row, Container , Button, Form, Navbar} from "react-bootstrap";
+import { Col,Row , Button, Form} from "react-bootstrap";
 
 import axios from 'axios';
 import { useSelector, useDispatch} from 'react-redux';
@@ -92,647 +92,1017 @@ function PerTest (props){
   return(
       <>
       <div>
-          {/* <h1 className = "edu-navbar-logo">
-          <i className = "fas fa-graduation-cap edu-cap" Style={{ fontSize:'5vw'}}></i>
-              <p className= "edu-navbar-p" Style={{ fontSize:'1.25vw'}}>Study Program</p><p className="edu-navbar-p" Style={{ fontSize:'1.25vw'}}>Recommendation</p><p className="edu-navbar-p" Style={{ fontSize:'1.25vw'}}>System
-          </p></h1> */}
-      {/* <Navbar collapseOnSelect expand="lg"  >
-            <Navbar.Brand href="/"  >
-                <i 
-                 className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
-                ></i>
-                   <h5 style={{color:'coral'}}>website name</h5>
-                </Navbar.Brand>
-            </Navbar> */}
+          
           
       <h5 style={{marginLeft:'10%'}}>Answer all 44 questions to see your Openness, Conscientiousness,
       Extraversion, Agreeableness, and Neuroticism score which labeled based on Big 5 Personality.</h5>
 
       <h5 style={{paddingLeft:'10%'}}>Rate each statement according to how it describes you, where 1 = Disagree, 3 = Neutral, and 5 = Agree.</h5>
       <Form onSubmit={handleSubmit}>
-        <Container>
+        {/* <Container> */}
           <Col>
-            <h2 className= "Edu-header" >Personality Test</h2>
+            <h2 className= "Edu-header" style={{ marginBottom:'3%', marginLeft:'10%', marginTop:'4%'}} >Personality Test</h2>
             <div>
               <ul>
-                <Col className= "edu-box">
-                  <Col md={{ span: 9, offset: 3 }}>
+                {/* <Col className= "edu-box"> */}
+                  <Col md={{ span: 8, offset: 4 }}>
                     
                     <Row>
-                      <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is talkative</h4>
+                      <h4  style={{textAlign:'center'}} >Is talkative</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q1} min="1" max="5" step="1" id="q1" onChange={e => setq1(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
-                    </Row>
+                <Row style={{ marginBottom:'3%'}}>
+                    <Form.Check  
+                        inline label="1"  type={'radio'} value="1" style={{ marginRight:'5%'}}
+                        name="formHorizontalRadios "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{ marginRight:'5%'}}
+                        name="formHorizontalRadios "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{  marginRight:'5%'}}
+                        name="formHorizontalRadios "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{  marginRight:'5%'}}
+                        name="formHorizontalRadios "  />
+                        <Form.Check                                
+                        inline label="5"  type={'radio'} value="5" style={{  marginRight:'5%'}}
+                        name="formHorizontalRadios "   />
+                </Row>
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Tends to find fault with others</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q2} min="1" max="5" step="1" id="q2" onChange={e => setq2(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                    <Form.Check  
+                        inline label="1"  type={'radio'} value="1" style={{ marginRight:'5%'}}
+                        name="formHorizontalRadios2 "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{ marginRight:'5%'}}
+                        name="formHorizontalRadios2 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{  marginRight:'5%'}}
+                        name="formHorizontalRadios2 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios2 "  />
+                        <Form.Check                                
+                        inline label="5"  type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios2 "   />
                     </Row>
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Does a thorough job</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q3} min="1" max="5" step="1" id="q3" onChange={e => setq3(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                    <Form.Check  
+                        inline label="1"  type={'radio'} value="1" style={{ marginRight:'5%'}}
+                        name="formHorizontalRadios3 "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{ marginRight:'5%'}}
+                        name="formHorizontalRadios3 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{  marginRight:'5%'}}
+                        name="formHorizontalRadios3 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios3 "  />
+                        <Form.Check                                
+                        inline label="5"  type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios3 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is depressed, blue</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q4} min="1" max="5" step="1" id="q1" onChange={e => setq4(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios4  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios4 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios4 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios4 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios4 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is original, comes up with new ideas</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q5} min="1" max="5" step="1" id="q1" onChange={e => setq5(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios5  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios5 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios5 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios5 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios5 "   />
                     </Row>
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is reserved</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q6} min="1" max="5" step="1" id="q1" onChange={e => setq6(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios6  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios6 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios6 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios6 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios6 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is helpful and unselfish with others</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q7} min="1" max="5" step="1" id="q1" onChange={e => setq7(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios7  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios7 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios7 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios7 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios7 "   />
                     </Row>
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Can be somewhat careless</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q8} min="1" max="5" step="1" id="q1" onChange={e => setq8(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios8  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios8 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios8 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios8 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios8 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is relaxed, handles stress well</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q9} min="1" max="5" step="1" id="q1" onChange={e => setq9(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios9  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios9 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios9 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios9 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios9 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is curious about many different things</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q10} min="1" max="5" step="1" id="q1" onChange={e => setq10(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios10  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios10 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios10 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios10 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios10 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is full of energy</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q11} min="1" max="5" step="1" id="q1" onChange={e => setq11(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios11  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios11 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios11 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios11 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios11 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Starts quarrels with others</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q12} min="1" max="5" step="1" id="q1" onChange={e => setq12(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios12  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios12 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios12 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios12 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios12 "   />
                     </Row>
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{  textAlign:'left'}} >Is a reliable worker</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q13} min="1" max="5" step="1" id="q1" onChange={e => setq13(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios13  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios13 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios13 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios13 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios13 "   />
                     </Row>
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Can be tense</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q14} min="1" max="5" step="1" id="q1" onChange={e => setq14(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios14  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios14 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios14 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios14 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios14 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is ingenious, a deep thinker</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q15} min="1" max="5" step="1" id="q1" onChange={e => setq15(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios15  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios15 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios15 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios15 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios15 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Generates a lot of enthusiasm</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q16} min="1" max="5" step="1" id="q1" onChange={e => setq16(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios16  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios16 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios16 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios16 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios16 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Has a forgiving nature</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q17} min="1" max="5" step="1" id="q1" onChange={e => setq17(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios17  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios17 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios17 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios17 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios17 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Tends to be disorganized</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q18} min="1" max="5" step="1" id="q1" onChange={e => setq18(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios18  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios18 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios18 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios18 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios18 "   />
                     </Row>
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Worries a lot</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q19} min="1" max="5" step="1" id="q1" onChange={e => setq19(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios19  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios19 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios19 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios19 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios19 "   />
                     </Row>
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Has an active imagination</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q20} min="1" max="5" step="1" id="q1" onChange={e => setq20(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios20  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios20 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios20 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios20 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios20 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Tends to be quiet</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q21} min="1" max="5" step="1" id="q1" onChange={e => setq21(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios21  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios21 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios21 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios21 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios21 "   />
                     </Row>
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is generally trusting</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q22} min="1" max="5" step="1" id="q1" onChange={e => setq22(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios22  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios22 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios22 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios22 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios22 "   />
                     </Row>
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Tends to be lazy</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q23} min="1" max="5" step="1" id="q1" onChange={e => setq23(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios23  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios23 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios23 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios23 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios23 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is emotionally stable, not easily upset</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q24} min="1" max="5" step="1" id="q1" onChange={e => setq24(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios24  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios24 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios24 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios24 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios24 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is inventive</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q25} min="1" max="5" step="1" id="q1" onChange={e => setq25(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios25  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios25 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios25 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios25 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios25 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Has an assertive personality</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q26} min="1" max="5" step="1" id="q1" onChange={e => setq26(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios26  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios26 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios26 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios26 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios26 "   />
                     </Row>
+
                     
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Can be cold and aloof</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q27} min="1" max="5" step="1" id="q1" onChange={e => setq27(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios27  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios27 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios27 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios27 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios27 "   />
                     </Row>
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Perseveres until the task is finished</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q28} min="1" max="5" step="1" id="q1" onChange={e => setq28(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios28  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios28 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios28 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios28 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios28 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Can be moody</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q29} min="1" max="5" step="1" id="q1" onChange={e => setq29(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios29  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios29 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios29 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios29 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios29 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Values artistic, aesthetic experiences</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q30} min="1" max="5" step="1" id="q1" onChange={e => setq30(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios30  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios30 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios30 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios30 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios30 "   />
                     </Row>
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is sometimes shy, inhibited</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q31} min="1" max="5" step="1" id="q1" onChange={e => setq31(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios31  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios31 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios31 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios31 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios31 "   />
                     </Row>
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is considerate and kind to almost everyone</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q32} min="1" max="5" step="1" id="q1" onChange={e => setq32(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios32  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios32 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios32 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios32 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios32 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Does things efficiently</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q33} min="1" max="5" step="1" id="q1" onChange={e => setq33(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios33  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios33 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios33 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios33 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios33 "   />
                     </Row>
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Remains calm in tense situations</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q34} min="1" max="5" step="1" id="q1" onChange={e => setq34(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios34  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios34 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios34 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios34 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios34 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Prefers work that is routine</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q35} min="1" max="5" step="1" id="q1" onChange={e => setq35(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios35  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios35 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios35 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios35 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios35 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is outgoing, sociable</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q36} min="1" max="5" step="1" id="q1" onChange={e => setq36(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios36  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios36 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios36 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios36 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios36 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is sometimes rude to others</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q37} min="1" max="5" step="1" id="q1" onChange={e => setq37(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios37  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios37 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios37 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios37 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios37 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Makes plans and follows through with them</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q38} min="1" max="5" step="1" id="q1" onChange={e => setq38(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios38  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios38 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios38 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios38 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios38 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Gets nervous easily</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q39} min="1" max="5" step="1" id="q1" onChange={e => setq39(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios39  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios39 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios39 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios39 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios39 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Likes to reflect, play with ideas</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q40} min="1" max="5" step="1" id="q1" onChange={e => setq40(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios40  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios40 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios40 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios40 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios40 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Has few artistic interests</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q41} min="1" max="5" step="1" id="q1" onChange={e => setq41(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios41  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios41 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios41 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios41 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios41 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Likes to cooperate with others</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q42} min="1" max="5" step="1" id="q1" onChange={e => setq42(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios42  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios42 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios42 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios42 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios42 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is easily distracted</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q43} min="1" max="5" step="1" id="q1" onChange={e => setq43(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios43  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios43 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios43 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios43 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios43 "   />
                     </Row>
+
 
                     <Row>
                       <h4 className= "pertest-info-label" Style={{ fontSize:'1.4vw', textAlign:'left'}} >Is sophisticated in art, music, or literature</h4>
                     </Row>
-                    <Row>
-                      <div className="range" >
-                        <input type="range" className="custom-range" value={q44} min="1" max="5" step="1" id="q1" onChange={e => setq44(parseInt(e.target.value))}/>
-                        <p Style="text-align:center;">
-                        <span Style="float:left;">1</span>
-                          <span Style="float:center;">3</span>
-                          <span Style="float:right;">5</span>
-                        </p>
-                      </div>
+                    <Row style={{ marginBottom:'3%'}}>
+                      
+                      <Form.Check 
+                        inline label="1"  type={'radio'} value="1" style={{   marginRight:'5%'}}
+                        name="formHorizontalRadios44  "  />
+                        <Form.Check  
+                        inline label="2"  type={'radio'} value="2" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios44 "  />
+                        <Form.Check                          
+                        inline label="3" type={'radio'}  value="3" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios44 "  />
+                        <Form.Check                               
+                        inline label="4" type={'radio'} value="4" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios44 "  />
+                        <Form.Check                                
+                        inline label="5" type={'radio'} value="5" style={{    marginRight:'5%'}}
+                        name="formHorizontalRadios44 "   />
                     </Row>
+
 
                   </Col>
                   {/* <Link to="/RecProgram"> */}
@@ -741,11 +1111,11 @@ function PerTest (props){
                     </Button>
                   {/* </Link> */}
                 
-                </Col>
+                {/* </Col> */}
               </ul>
             </div>
           </Col>
-        </Container>
+        {/* </Container> */}
       </Form>     
     </div>
     

@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 // import bg from '../images/plain.png'; 
 // import bg from '../images/IMG_0947.JPG'; 
 // import { Container } from 'react-bootstrap';
-import { Col, Container , Button, Form} from "react-bootstrap";
+import { Col , Button, Form} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import axios from 'axios';
@@ -166,9 +166,7 @@ function SignIn(props) {
       {isLogged ? <h1>You are alredy logged in</h1> :
       <Form onSubmit={handleSubmit}>
       
-        <Container>
-          <Col></Col>
-          <Col sm={6}>
+          <Col md={{ span: 4, offset: 4}} style={{marginTop:'5%'}}>
               <h2 >Sign In</h2>
               <Form.Group controlId="foremail">
                 <Form.Label>Email address</Form.Label>
@@ -199,9 +197,7 @@ function SignIn(props) {
                 <Link to="/ForgotPassword">Forgot password?</Link>
               </p>
           </Col>
-          <Col></Col>
-      
-          </Container>   
+  
             </Form> }
           </div>
       

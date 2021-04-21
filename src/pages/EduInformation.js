@@ -288,8 +288,7 @@ function EduInformation (props) {
                 </Navbar.Brand>
             </Navbar> */}
           
-          <Container>
-            <Col sm={{ span: 4, offset: 3}}>
+            <Col md={{ span: 4, offset: 4}}>
                   <h1 style={{marginTop:'20%'}}>Education Information</h1>
             
               <Form onSubmit={handlefSubmit}>
@@ -432,7 +431,6 @@ function EduInformation (props) {
               </Form>
            </Col>
            {/* <Col-4></Col-4> */}
-          </Container>
       </div>
     );
 }

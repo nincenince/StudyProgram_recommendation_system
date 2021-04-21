@@ -3,6 +3,8 @@ import { Col , Navbar, Button, Form} from "react-bootstrap";
 import {Link } from "react-router-dom";
 import axios from 'axios';
   
+import Kandle_logo from '../images/Kandle_logo.png'
+
 class ForgotPassword extends React.Component {
     constructor() {
     super();
@@ -85,16 +87,16 @@ class ForgotPassword extends React.Component {
       <div>
            <Navbar collapseOnSelect expand="lg"  >
             <Navbar.Brand href="/"  >
-                <i 
-                 className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
-                ></i>
-                   <h5 style={{color:'coral'}}>website name</h5>
+            {/* <i className = "fas fa-graduation-cap fa-3x" Style={{ fontSize:'4.95vw'}}> */}
+            <img src={Kandle_logo} style={{width:100,  marginLeft:'4%'}} />             
+                   <span style={{color: 'red', fontSize:'100%', fontWeight:'900'}}>Kandle</span>
+                    {/* </i> */}
                 </Navbar.Brand>
             </Navbar>
 
 {/* <Container> */}
 
-        <Col  sm={{ span: 4, offset: 4}}>
+        <Col  md={{ span: 4, offset: 4}}>
           <Form onSubmit={this.handleSubmit}>
             <h2 style={{  marginTop:'20%'}}>Forgot Your Password?</h2>
 
@@ -104,7 +106,7 @@ class ForgotPassword extends React.Component {
 
             <Form.Group controlId="forgotpw">
               <Form.Label style={{  marginTop:'5%'}}>Email address</Form.Label>
-              <Form.Control  style={{  width:'80%'}} type="email" name="email" 
+              <Form.Control  style={{  width:'100%'}} type="email" name="email" 
                placeholder="Enter email" value={this.state.input.email} onChange={this.handleChange} />
               <Form.Text style={{color: "red"}} >
               {this.state.errors.email}

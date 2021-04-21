@@ -75,17 +75,24 @@ function Programs() {
   return (
     <div className="App">
 
-      <div  style={{ marginLeft: "20%", marginRight: "20%"}}>Search:<br></br>
+      {/* <div  style={{ marginLeft: "20%", marginRight: "20%"}}> */}
+      <Col  md={{ span: 6, offset: 3}}>
+        <h4>Search:</h4>
         <input
-            style={{width:"70%"}}
+            style={{width:"70%" }}
             type="text"
             placeholder="Type to search..."
             value={searchText}
             onChange={e => handleChange(e.target.value)}
           />
-      </div>
-      <br></br>
-      <div style={{ marginLeft: "20%", marginRight: "20%"}}>Select Faculty/College:
+          
+      {/* </div> */}
+      {/* </Col> */}
+
+      {/* <div style={{ marginLeft: "20%", marginRight: "20%"}}>Select Faculty/College: */}
+   
+      <h4 style={{marginTop:'4%'}}>Select Faculty/College:</h4>
+
         <Form>  
           <Form.Group controlId="forfn">
             {/* <Form.Label style={{ fontSize:'1vw'}}>Select Faculty/College</Form.Label> */}
@@ -117,9 +124,12 @@ function Programs() {
             </Form.Control>                  
           </Form.Group>
         </Form>
-      </div> 
-
-      {found ? <Container>
+        </Col>
+      {/* </div>  */}
+     
+      {found ?
+        <Container>
+      
         {data.map((d, i) => {
             return <div key={i} style={{ backgroundColor: d.color }}>
               <Row className = "ProgramsList-box" >
@@ -131,7 +141,8 @@ function Programs() {
             </div>
             })}
             {data.length === 0 && <span>!</span>} 
-        </Container> : 
+         </Container> 
+        : 
         <Container>
           Not Found
           

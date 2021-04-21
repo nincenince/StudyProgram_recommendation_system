@@ -1,7 +1,7 @@
 import React from 'react';
 // import {Link } from "react-router-dom";
 import './AccInfo.css';
-import { Col,Row, Container , Form, Button, Navbar} from "react-bootstrap";
+import { Col,Row, Form, Button, Navbar} from "react-bootstrap";
 
 import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
@@ -349,9 +349,8 @@ function AccInfo (props,defaultImage) {
                 </Navbar.Brand>
             </Navbar> */}
 
-          <Container>
-            <Col sm={3}></Col>
-            <Col sm={5}>
+        
+            <Col md={{ span: 4, offset: 4}}>
               
               {/* <Row>  */}
                   <h2 style={{marginTop:'10%'}}>User Information</h2>
@@ -526,8 +525,7 @@ function AccInfo (props,defaultImage) {
               </Form>
 
            </Col>
-           <Col></Col>
-          </Container>
+
       </div>
     );
 }

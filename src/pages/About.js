@@ -4,34 +4,57 @@ import './About.css';
 import bgimg from '../images/bg2.jpg';
 import { Col,Row, Container , Image, Jumbotron, Button} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import MaterialIcon from 'react-google-material-icons'
 
 function About() {
     return (
      
 <div>
   
-<Jumbotron style={{ backgroundImage: `url(${bgimg})`, width:'100vw', height:'76vh'}} fluid>
-    <Container>
+{/* <Jumbotron style={{ backgroundImage: `url(${bgimg})`, width:'100vw', height:'76vh'}} fluid>
         <div >
           <h3 className="centered-text"  >Discover your study program and future career,
             Let’s start analyse them with your 
             education information and Personality.</h3>
         </div>
       
-    <Col sm={{ span: 12, offset: 9 }} >
+        <div >
+
+    <Col 
+    md={{ span: 12, offset: 9 }} 
+    >
 
         <Link to="/RecProgram">
-          <Button 
-          className="nextpage-button" 
+          <Button style={{ marginTop:'25%',borderRadius:' 20px', backgroundColor:'coral',border:'coral'}}
+          // className="nextpage-button" 
+          className="align-self-end ml-auto"
           >
-        Recommend Program
+       <h6 style={{marginTop:'5%'}}>Recommend Program</h6> 
         </Button>
         </Link>
-   
      </Col>
-     </Container>
-  </Jumbotron>
+  </div>
+  </Jumbotron> */}
 
+<Jumbotron style={{ backgroundImage: `url(${bgimg})`, width:'100vw', height:'76vh'}} fluid>
+  <Container>
+    <h3 className="centered-text"  >
+      Discover your study program and future career,
+      Let’s start analyse them with your 
+      education information and Personality.
+      
+      <span >
+        <Col sm={{ span: 12, offset: 9 }} >
+          <Link to="/RecProgram">
+            <Button style={{ marginTop:'25%',borderRadius:' 20px', backgroundColor:'coral',border:'coral'}}>
+              Recommend Program
+            </Button>
+          </Link>
+        </Col>
+      </span>
+    </h3>      
+    </Container>
+</Jumbotron>
 
     <Container fluid>
       <Row>
@@ -61,9 +84,12 @@ function About() {
       <Row>
         <Col></Col>
           <Col md={2} >
-          <Image style={{widht:'4vw', height:'7vh', paddingLeft:'35%'}} src={require("../images/signin.png")}/>
+          {/* <Image style={{widht:'4vw', height:'7vh', paddingLeft:'35%'}} src={require("../images/signin.png")}/> */}
+          <span style={{marginLeft:'35%', color:'coral'}}>
+          <MaterialIcon icon="login" size={36} />
+          </span>
 
-          <p style={{textAlign:'center', paddingTop:'3%'}}
+ <p style={{textAlign:'center', paddingTop:'3%'}}
           >Sign In to our website </p>
           {/* <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
         
@@ -71,8 +97,10 @@ function About() {
 
 
           <Col md={2}>
-          <Image style={{widht:'4vw', height:'7vh', paddingLeft:'35%'}} src={require("../images/signup.png")}/>
-
+          {/* <Image style={{widht:'4vw', height:'7vh', paddingLeft:'35%'}} src={require("../images/signup.png")}/> */}
+          <span style={{marginLeft:'38%', color:'coral'}}>
+          <MaterialIcon icon="cast_for_education" size={36} />
+          </span>
           <p style={{textAlign:'center', paddingTop:'3%'}}
           // class="Step2"
           >Fill in your Educational Information</p>
@@ -83,16 +111,20 @@ function About() {
      
   
           <Col md={2}>
-          <Image style={{widht:'4vw', height:'7vh', paddingLeft:'35%'}} src={require("../images/perstest.png")}/>
-
+          {/* <Image style={{widht:'4vw', height:'7vh', paddingLeft:'35%'}} src={require("../images/perstest.png")}/> */}
+          <span style={{marginLeft:'35%', color:'coral'}}>
+          <MaterialIcon icon="contacts" size={36} />
+          </span>
           {/* <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
           <p style={{textAlign:'center', paddingTop:'3%'}}
           // class="Step3"
           >Take Personality Test</p></Col>
 
           <Col md={2}>
-          <Image style={{widht:'4vw', height:'7vh', paddingLeft:'35%'}} src={require("../images/results.png")}/>
-
+          {/* <Image style={{widht:'4vw', height:'7vh', paddingLeft:'35%'}} src={require("../images/results.png")}/> */}
+          <span style={{marginLeft:'35%', color:'coral'}}>
+          <MaterialIcon icon="receipt_long" size={36} />
+          </span>
           {/* <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
           <p style={{textAlign:'center', paddingTop:'3%'}}
           // class="Step4"

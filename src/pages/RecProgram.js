@@ -3,7 +3,7 @@ import {Link } from "react-router-dom";
 
 import './RecProgram.css'
 import axios from 'axios';
-import { Col,Row, Button, Image, Form} from "react-bootstrap";
+import { Col,Row, Button, Image} from "react-bootstrap";
 
 import { useDispatch} from 'react-redux';
 import { update_comefrom } from '../actions';
@@ -118,16 +118,16 @@ function RecProgram (props){
             <h4>to use our recommendation service.</h4>
             <i className="fas fa-sign-in-alt" style={{ float:'left', marginRight:'3%'}}></i>
                 <p >Press the button below to Sign In/ Sign Up.</p>
-     
+
         <Link to="/SignIn">
             <Button 
             style={{marginLeft:'25%',borderRadius:' 20px', backgroundColor:'coral', border:'coral'}}
             >
-              SignIn/ SignUp
+            SignIn/ SignUp
             </Button>
           </Link>
-           
-          </Col>
+        </Col>
+       
 
 
       
@@ -144,7 +144,7 @@ function RecProgram (props){
               {/* <p style={{fontSize:'1.4vw'}}>Educational Information</p> */}
               <Link to="/EduInformation">
                 <Button onClick={changeComefrom} style={{ borderRadius:' 20px', backgroundColor:'coral',border:'coral', marginLeft:'15%', fontSize:'1vw'}}>
-                  Enter Information
+                 <h6 style={{marginTop:'5%'}}>Enter Information</h6>
                 </Button>
               </Link>
             </div>
@@ -157,7 +157,7 @@ function RecProgram (props){
               {/* <p style={{fontSize:'1.4vw'}}>Personality Label test</p> */}
               <Link to="/PerTest">
                 <Button onClick={changeComefrom} style={{ borderRadius:' 20px', backgroundColor:'coral',border:'coral', marginLeft:'30%', fontSize:'1vw'}}>
-                  Take test
+                 <h6 style={{marginTop:'5%'}}>Take test</h6>
                 </Button>
               </Link>
             </div>
