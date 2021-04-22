@@ -16,10 +16,53 @@ import { useEffect } from 'react';
 import { destroy_token, signout, destroy_firstname, destroy_lastname, destroy_email, destroy_sex, destroy_age, destroy_edu, destroy_per, destroy_comefrom, destroy_school, destroy_role, signout_admin, destroy_profilepic, destroy_rec } from '../../actions';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 
 
 function Navbarr (props){
+    const loadingContainer = {
+        width: "2rem",
+        height: "2rem",
+        display: "flex",
+        justifyContent: "space-around",
+        marginLeft: "25%"
+      };
+      
+      const loadingCircle = {
+        display: "block",
+        width: "0.5rem",
+        height: "0.5rem",
+        backgroundColor: "black",
+        borderRadius: "0.25rem"
+      };
+      
+      const loadingContainerVariants = {
+        start: {
+          transition: {
+            staggerChildren: 0.2
+          }
+        },
+        end: {
+          transition: {
+            staggerChildren: 0.2
+          }
+        }
+      };
+      
+      const loadingCircleVariants = {
+        start: {
+          y: "50%"
+        },
+        end: {
+          y: "150%"
+        }
+      };
+      const loadingCircleTransition = {
+        duration: 0.5,
+        yoyo: Infinity,
+        ease: "easeInOut"
+      };
     // state = { clicked: false,
     //     open: false }
 
@@ -87,6 +130,30 @@ function Navbarr (props){
                     {/* <i className = "fas fa-graduation-cap fa-3x" Style={{ fontSize:'4.95vw'}}> */}
                     <img src={Kandle_logo} style={{width:100,  marginLeft:'4%'}} />
                     <span style={{color: 'red', fontSize:'100%', fontWeight:'900'}}>Kandle</span>
+                    <span>
+                    <motion.div
+                        style={loadingContainer}
+                        variants={loadingContainerVariants}
+                        initial="start"
+                        animate="end"
+                        >
+                        <motion.span
+                            style={loadingCircle}
+                            variants={loadingCircleVariants}
+                            transition={loadingCircleTransition}
+                        />
+                        <motion.span
+                            style={loadingCircle}
+                            variants={loadingCircleVariants}
+                            transition={loadingCircleTransition}
+                        />
+                        <motion.span
+                            style={loadingCircle}
+                            variants={loadingCircleVariants}
+                            transition={loadingCircleTransition}
+                        />
+                        </motion.div>
+                    </span>
                     {/* </i> */}
                 </Nav.Link>
                 {/* <div className="row">
