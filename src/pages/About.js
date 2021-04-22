@@ -5,8 +5,11 @@ import bgimg from '../images/bg2.jpg';
 import { Col,Row, Container , Image, Jumbotron, Button} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MaterialIcon from 'react-google-material-icons'
+import { motion } from 'framer-motion'
 
 function About() {
+
+  
     return (
      
 <div>
@@ -38,7 +41,11 @@ function About() {
 
 <Jumbotron style={{ backgroundImage: `url(${bgimg})`, width:'100vw', height:'76vh'}} fluid>
   <Container>
-    <h3 className="centered-text"  >
+    <Col-2></Col-2>
+    <Col-8>
+    <motion.h3 className="centered-text" animate={{ x: "-20vw" }}
+    initial={{ x: "-50vw" }}
+    transition={{ duration: 1 }}>
       Discover your study program and future career,
       Let’s start analyse them with your 
       education information and Personality.
@@ -52,7 +59,9 @@ function About() {
           </Link>
         </Col>
       </span>
-    </h3>      
+    </motion.h3>   
+    </Col-8> 
+    <Col-2></Col-2>  
     </Container>
 </Jumbotron>
 
@@ -133,7 +142,6 @@ function About() {
 
       </Row>
 
-
   </Container>
 
 
@@ -165,8 +173,9 @@ function About() {
 
         </div> */}
         {/* </Container> */}
+        
       </div>
-   
+
 
     )
   }
