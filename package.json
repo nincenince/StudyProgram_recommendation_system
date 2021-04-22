@@ -12,6 +12,7 @@
     "chart.js": "^2.9.4",
     "cloudinary": "^1.25.1",
     "express": "^4.17.1",
+    "framer-motion": "^4.1.6",
     "material-design-icons": "^3.0.1",
     "mdbreact": "^5.0.1",
     "rc-scrollbars": "^1.1.2",
