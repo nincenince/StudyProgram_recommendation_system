@@ -97,9 +97,9 @@ function About() {
           <span style={{marginLeft:'35%', color:'coral'}}>
           <MaterialIcon icon="login" size={36} />
           </span>
-
+          <Link to="/SignIn">
  <p style={{textAlign:'center', paddingTop:'3%'}}
-          >Sign In to our website </p>
+          >Sign In to our website </p></Link>
           {/* <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
         
           </Col>
@@ -110,9 +110,11 @@ function About() {
           <span style={{marginLeft:'38%', color:'coral'}}>
           <MaterialIcon icon="cast_for_education" size={36} />
           </span>
+          <Link to="/RecProgram">
           <p style={{textAlign:'center', paddingTop:'3%'}}
           // class="Step2"
           >Fill in your Educational Information</p>
+          </Link>
         {/* <div>Icons made by <a href="" title="catkuro">catkuro</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
 
           </Col>
@@ -125,9 +127,11 @@ function About() {
           <MaterialIcon icon="contacts" size={36} />
           </span>
           {/* <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
+          <Link to="/RecProgram">
           <p style={{textAlign:'center', paddingTop:'3%'}}
           // class="Step3"
-          >Take Personality Test</p></Col>
+          >Take Personality Test</p>
+          </Link></Col>
 
           <Col md={2}>
           {/* <Image style={{widht:'4vw', height:'7vh', paddingLeft:'35%'}} src={require("../images/results.png")}/> */}
@@ -135,9 +139,11 @@ function About() {
           <MaterialIcon icon="receipt_long" size={36} />
           </span>
           {/* <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
+          <Link to="/RecProgram">
           <p style={{textAlign:'center', paddingTop:'3%'}}
           // class="Step4"
-          >Recommend Programs Result</p></Col>
+          >Recommend Programs Result</p>
+          </Link></Col>
        <Col></Col>
 
       </Row>

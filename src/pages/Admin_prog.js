@@ -354,10 +354,12 @@ const Admin_prog = (props, {defaultImage}) => {
       </Navbar> */}
 
 
-      <p style={{marginLeft:'2%', fontSize:'2.5vw'}}>Course lists</p>
-<div style={{margin:'3%'}}>
+      <h2 style={{marginLeft:'2%'}}>Program lists</h2>
+      <div style={{margin:'3%'}}> 
    
-   <Button style={{float:'right', marginTop:'0.5%', backgroundColor:'rgb(104,193,68)', borderColor:'rgb(104,193,68)'}} onClick={handleOpen}>
+   <Button style={{
+     marginLeft:'60%',
+      float:'right', marginTop:'1.5%', backgroundColor:'rgb(104,193,68)', borderColor:'rgb(104,193,68)'}} onClick={handleOpen}>
       Add Program
     </Button>
 
@@ -474,20 +476,22 @@ const Admin_prog = (props, {defaultImage}) => {
                 <Button 
                 style={{display:"flex", alignItems:"center", justifyContent:"center"}}
                 variant="primary" type="submit" value="Submit">
-                  Add course
+                  Add Program
                 </Button>
               </div>
             </Form>
           </div>
         </Fade>
       </Modal>
+
     <MDBDataTable 
-        responsive
+      searching= "true"
+      responsive
       scrollY
       maxHeight="50vh"
       striped
       bordered
-    //   small
+      small
       data={data}
     />
 

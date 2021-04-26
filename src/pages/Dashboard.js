@@ -226,8 +226,8 @@ function Dashboard (props){
                         <h4 style={{  textDecoration:'bold', paddingTop:'2%'}} >Result History</h4>
                         { History.RecommendProgList.map((RecInfo) => {
                             return(
-                                <div style={{border:'solid',borderRadius:'0px', borderWidth:'thin', paddingRight:'5%', paddingButtom:'5%', margin:'2%',  paddingLeft:'2%', backgroundImage: 'linear-gradient(to right, white, white)'}} key={ Math.random().toString(36).substr(2, 9) }>
-                                <p >Date</p>
+                                <div style={{border:'solid',borderRadius:'0px', borderWidth:'thin', paddingRight:'5%', paddingButtom:'5%', margin:'2%',  paddingLeft:'2%' ,  backgroundImage: 'linear-gradient(to right, white, white)'}} key={ Math.random().toString(36).substr(2, 9) }>
+                                <h6 style={{paddingTop:'2%'}}><span style={{marginRight:'22%'}}>Date </span><span style={{marginRight:'7%'}} >Recommended Program</span> <span >Recommendation score</span> </h6>
                                 <div className="row">   
                                 <div className= "col-4 history-proglist" >{RecInfo.Date}</div>
                                     {
@@ -352,7 +352,7 @@ function Dashboard (props){
 
 
                 
-        <Col sm={4} style={{marginTop:'2%',marginLeft:'4%'}}>
+        <Col sm={4} style={{marginTop:'1.55%',marginLeft:'4%'}}>
             <div style={{ border:'solid', borderWidth:'thin', backgroundColor:'white', paddingBottom:'18%', borderRadius:'5px'}}>
                 <h4 style={{  textDecoration:'bold', padding:'3%'}}>Big 5 Personality Label</h4>
                     <Radar style={{responsive:true}} data={dataa} />

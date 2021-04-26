@@ -79,7 +79,7 @@ function Programs() {
       <Col  md={{ span: 6, offset: 3}}>
         <h4>Search:</h4>
         <input
-            style={{width:"70%" }}
+            style={{width:"70%", height:'38px' }}
             type="text"
             placeholder="Type to search..."
             value={searchText}
@@ -97,7 +97,7 @@ function Programs() {
           <Form.Group controlId="forfn">
             {/* <Form.Label style={{ fontSize:'1vw'}}>Select Faculty/College</Form.Label> */}
             {/* <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder="Enter First Name"  value={firstname} onChange={e => setfirstname(e.target.value)} /> */}
-            <Form.Control as="select" style={{ fontSize:'1vw', width:"70%"}} value={facu} onChange={e => filterData(e.target.value)} key="fa">
+            <Form.Control as="select" style={{ width:"70%"}} value={facu} onChange={e => filterData(e.target.value)} key="fa">
               <option style={{ fontSize:'1vw'}}>{null}</option>
               <option style={{ fontSize:'1vw'}}>College of Educational Innovation Research</option>
               <option style={{ fontSize:'1vw'}}>Institute of Music Science and Engineering</option>
