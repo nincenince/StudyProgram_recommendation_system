@@ -27,7 +27,7 @@ function Feedbacks(props){
 
 
       <h2 
-      style={{ fontSize:'2vw', margin:'2%', marginLeft:'10%'}}
+      style={{ margin:'2%', marginLeft:'10%'}}
         >Feedbacks from our users!</h2>
     
     <Col >
