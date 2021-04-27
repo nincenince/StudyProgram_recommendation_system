@@ -182,7 +182,7 @@ function Navbarr (props){
                         <Nav className="mr-auto nav-menu d-flex justify-content-around">
                     <Nav.Link as={NavLink} to='/Admin_prog' exact  href="/Admin_prog" className= "nav-links" activeClassName="underline" style={{ fontSize:'1vw'}}>Add Course </Nav.Link>
                     <Nav.Link as={NavLink} to='/Feedbacks' exact  href="/Feedbacks" className= "nav-links" activeClassName="underline" Style={{ fontSize:'1vw'}}>Feedbacks </Nav.Link>
-                    {isLogged ? <NavDropdown style={{  float: 'right', widht:'300px'}}
+                    {isLogged ? <NavDropdown style={{  float:'right', width:'300px'}}
                         title="User"
                         id="collasible-nav-dropdown" 
                         className="NavDropdown"
