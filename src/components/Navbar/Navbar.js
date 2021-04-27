@@ -180,7 +180,7 @@ function Navbarr (props){
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
             {isAdmin ? <Navbar.Collapse id="responsive-navbar-nav" >
                         <Nav className="mr-auto nav-menu d-flex justify-content-around">
-                    <Nav.Link as={NavLink} to='/Admin_prog' exact  href="/Admin_prog" className= "nav-links" activeClassName="underline" style={{ fontSize:'1vw'}}>Add Course </Nav.Link>
+                    <Nav.Link as={NavLink} to='/Admin_prog' exact  href="/Admin_prog" className= "nav-links" activeClassName="underline">Add Course </Nav.Link>
                     <Nav.Link as={NavLink} to='/Feedbacks' exact  href="/Feedbacks" className= "nav-links" activeClassName="underline" Style={{ fontSize:'1vw'}}>Feedbacks </Nav.Link>
                     {isLogged ? <NavDropdown style={{  float: 'right', widht:'300px'}}
                         title="User"
@@ -222,7 +222,7 @@ function Navbarr (props){
                 title="User"
                  id="collasible-nav-dropdown" 
                 className="NavDropdown" 
-                style ={{ width:'350px'}}
+                style ={{ width:'200px'}}
                 >
                     <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  >
                         <img style={{borderRadius: '100%'}} src={profilepicurl}/>

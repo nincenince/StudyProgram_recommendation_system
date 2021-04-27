@@ -38,9 +38,9 @@ function Feedbacks(props){
                   feedbackk.map((Info) => {
                     return (
                       <div style={{border:'solid', borderWidth:'thin', borderRadius:'15px',margin:'5%'}} key={Info.User_Feedback}>
-                        <p style={{ fontSize:'1vw', fontWeight:'900', paddingLeft:'5%', paddingTop:'2%'}} >{Info.Title} - {Info.Rating}</p>
+                        <p style={{  fontWeight:'900', paddingLeft:'5%', paddingTop:'2%'}} >{Info.Title} - {Info.Rating}</p>
                         {
-                          <p style={{ fontSize:'1vw', paddingLeft:'10%',paddingRight:'2%', paddingBottom:'3%'}} >{Info.User_Feedback}</p>
+                          <p style={{ paddingLeft:'10%',paddingRight:'2%', paddingBottom:'3%'}} >{Info.User_Feedback}</p>
                         }
                 
                       </div>
