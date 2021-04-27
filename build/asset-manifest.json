@@ -1,37 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.1a814cb0.chunk.css",
-    "main.js": "/static/js/main.ef8646a4.chunk.js",
-    "main.js.map": "/static/js/main.ef8646a4.chunk.js.map",
+    "main.css": "/static/css/main.3b4bc343.chunk.css",
+    "main.js": "/static/js/main.38ae69c4.chunk.js",
+    "main.js.map": "/static/js/main.38ae69c4.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.408e7f6b.js",
     "runtime-main.js.map": "/static/js/runtime-main.408e7f6b.js.map",
-    "static/css/2.d9ad5f5c.chunk.css": "/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.5a355b7f.chunk.js": "/static/js/2.5a355b7f.chunk.js",
-    "static/js/2.5a355b7f.chunk.js.map": "/static/js/2.5a355b7f.chunk.js.map",
+    "static/css/2.6b150a1a.chunk.css": "/static/css/2.6b150a1a.chunk.css",
+    "static/js/2.b6f5ac20.chunk.js": "/static/js/2.b6f5ac20.chunk.js",
+    "static/js/2.b6f5ac20.chunk.js.map": "/static/js/2.b6f5ac20.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.83d2f16f2a137bd6aa7d3a3d10a7332b.js": "/precache-manifest.83d2f16f2a137bd6aa7d3a3d10a7332b.js",
+    "precache-manifest.efcc2bd7403f3d8d51ea2e2d03a035be.js": "/precache-manifest.efcc2bd7403f3d8d51ea2e2d03a035be.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/2.d9ad5f5c.chunk.css.map": "/static/css/2.d9ad5f5c.chunk.css.map",
-    "static/css/main.1a814cb0.chunk.css.map": "/static/css/main.1a814cb0.chunk.css.map",
-    "static/js/2.5a355b7f.chunk.js.LICENSE.txt": "/static/js/2.5a355b7f.chunk.js.LICENSE.txt",
-    "static/media/CIE.jpg": "/static/media/CIE.8a58b619.jpg",
-    "static/media/IMG_0947.JPG": "/static/media/IMG_0947.3ece334e.JPG",
-    "static/media/bg2.jpg": "/static/media/bg2.5e77403a.jpg",
-    "static/media/ce.jpg": "/static/media/ce.b589aca5.jpg",
-    "static/media/elec.png": "/static/media/elec.6a2e0af7.png",
-    "static/media/ie.png": "/static/media/ie.b26e0a59.png",
-    "static/media/perstest.png": "/static/media/perstest.ae7b181d.png",
-    "static/media/results.png": "/static/media/results.11a4c2db.png",
-    "static/media/robo.png": "/static/media/robo.3e180854.png",
-    "static/media/se.png": "/static/media/se.8789c444.png",
-    "static/media/signin.png": "/static/media/signin.54378673.png",
-    "static/media/signup.png": "/static/media/signup.40e9d6d2.png"
+    "static/css/2.6b150a1a.chunk.css.map": "/static/css/2.6b150a1a.chunk.css.map",
+    "static/css/main.3b4bc343.chunk.css.map": "/static/css/main.3b4bc343.chunk.css.map",
+    "static/js/2.b6f5ac20.chunk.js.LICENSE.txt": "/static/js/2.b6f5ac20.chunk.js.LICENSE.txt",
+    "static/media/Kandle_logo.png": "/static/media/Kandle_logo.bf6fb27c.png",
+    "static/media/bg2.jpg": "/static/media/bg2.5e77403a.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.408e7f6b.js",
-    "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.5a355b7f.chunk.js",
-    "static/css/main.1a814cb0.chunk.css",
-    "static/js/main.ef8646a4.chunk.js"
+    "static/css/2.6b150a1a.chunk.css",
+    "static/js/2.b6f5ac20.chunk.js",
+    "static/css/main.3b4bc343.chunk.css",
+    "static/js/main.38ae69c4.chunk.js"
   ]
 }
