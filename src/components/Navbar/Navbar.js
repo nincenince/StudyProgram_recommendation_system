@@ -180,8 +180,8 @@ function Navbarr (props){
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
             {isAdmin ? <Navbar.Collapse id="responsive-navbar-nav" >
                         <Nav className="mr-auto nav-menu d-flex justify-content-around">
-                    <Nav.Link as={NavLink} to='/Admin_prog' exact  href="/Admin_prog" className= "nav-links" activeClassName="underline">Add Course </Nav.Link>
-                    <Nav.Link as={NavLink} to='/Feedbacks' exact  href="/Feedbacks" className= "nav-links" activeClassName="underline" Style={{ fontSize:'1vw'}}>Feedbacks </Nav.Link>
+                    <Nav.Link as={NavLink} to='/Admin_prog' exact  href="/Admin_prog" className= "nav-links" activeClassName="underline" style={{ width:'200px'}}>Add Course </Nav.Link>
+                    <Nav.Link as={NavLink} to='/Feedbacks' exact  href="/Feedbacks" className= "nav-links" activeClassName="underline" style={{ width:'200px'}}>Feedbacks </Nav.Link>
                     {isLogged ? <NavDropdown style={{  float:'right', width:'300px'}}
                         title="User"
                         id="collasible-nav-dropdown" 
@@ -209,7 +209,7 @@ function Navbarr (props){
                         </NavDropdown>}
                 </Nav>
                 </Navbar.Collapse>:
-                <Navbar.Collapse id="responsive-navbar-nav" >
+                <Navbar.Collapse id="responsive-navbar-nav"  >
                 <Nav className="mr-auto nav-menu d-flex justify-content-around">
                 <Nav.Link as={NavLink} to='/' exact href="/" className= "nav-links" activeClassName="underline" >About</Nav.Link>
                 <Nav.Link as={NavLink} to='/RecProgram' exact href="/RecProgram" className= "nav-links" activeClassName="underline" >Recommend Programs</Nav.Link>
