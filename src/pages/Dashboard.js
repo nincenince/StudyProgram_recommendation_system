@@ -226,46 +226,51 @@ function Dashboard (props){
                         <h4 style={{  textDecoration:'bold', paddingTop:'2%'}} >Result History</h4>
                         { History.RecommendProgList.map((RecInfo) => {
                             return(
-                                <div style={{border:'solid',borderRadius:'0px', borderWidth:'thin', paddingRight:'5%', paddingButtom:'5%', margin:'2%',  paddingLeft:'2%' ,  backgroundImage: 'linear-gradient(to right, white, white)'}} key={ Math.random().toString(36).substr(2, 9) }>
-                                <h6 style={{paddingTop:'2%'}}><span style={{marginRight:'22%'}}>Date </span><span style={{marginRight:'7%'}} >Recommended Program</span> <span >Recommendation score</span> </h6>
+                                <div style={{border:'solid',borderRadius:'0px', borderWidth:'thin', paddingButtom:'5%', margin:'2%',  paddingLeft:'2%' , backgroundImage: 'linear-gradient(to right, white, white)'}} key={ Math.random().toString(36).substr(2, 9) }>
+                                {/* <h6 style={{paddingTop:'2%'}}><span style={{marginRight:'22%'}}>Date </span><span style={{marginRight:'7%'}} >Recommended Program</span> <span >Recommendation score</span> </h6> */}
                                 <div className="row">   
-                                <div className= "col-4 history-proglist" >{RecInfo.Date}</div>
+
+                                
+                                <div className= "col-3 history-proglist" ><p >Date </p>{RecInfo.Date}</div>
                                     {
                                     RecInfo.ProgramList.map((RecDetail) => {
                                         return (
-                                        <div className="col-8"  key={ Math.random().toString(36).substr(2, 9) }>
+                                        <div className="col-9"  key={ Math.random().toString(36).substr(2, 9) }>
                                             <div className="row"> 
-                                                <div className="col-8 history-recprogram">
+                                                <div className="col-6 history-recprogram" style={{paddingRight:'5%'}}>
+                                                <p >Recommended Program</p>
                                                     {RecDetail.Programs1}
                                                 </div>
-                                                <div className="col-4 history-recscore">
+                                                <div className="col-6 history-recscore">
+                                                <p >Recommendation Score</p>
                                                     {RecDetail.RecProgScore1}
                                                 </div>                                                
                                             </div>
+
                                             <hr></hr>
                                             <div className="row"> 
-                                                <div className="col-8 history-recprogram">
+                                                <div className="col-6 history-recprogram">
                                                     {RecDetail.Programs2}
                                                 </div>
-                                                <div className="col-4 history-recscore">
+                                                <div className="col-6 history-recscore">
                                                     {RecDetail.RecProgScore2}
                                                 </div>                                                
                                             </div>
                                             <hr></hr>
                                             <div className="row"> 
-                                                <div className="col-8 history-recprogram">
+                                                <div className="col-6 history-recprogram">
                                                     {RecDetail.Programs3}
                                                 </div>
-                                                <div className="col-4 history-recscore">
+                                                <div className="col-6 history-recscore">
                                                     {RecDetail.RecProgScore3}
                                                 </div>                                                
                                             </div>
                                             <hr></hr>
                                             <div className="row"> 
-                                                <div className="col-8 history-recprogram">
+                                                <div className="col-6 history-recprogram">
                                                     {RecDetail.Programs4}
                                                 </div>
-                                                <div className="col-4 history-recscore">
+                                                <div className="col-6 history-recscore">
                                                     {RecDetail.RecProgScore4}
                                                 </div>                                                
                                             </div>        
