@@ -186,7 +186,7 @@ function Navbarr (props){
                         title="User"
                         id="collasible-nav-dropdown" 
                         className="NavDropdown"
-                        style ={{ width:'200px'}} >
+                        style ={{ width:'250px'}} >
                             {/* <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" Style={{ fontSize:'0.9vw'}} >Account Information</NavDropdown.Item> */}
                             {/* <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  Style={{ fontSize:'0.9vw'}} >User Dashboard</NavDropdown.Item> */}
                             <NavDropdown.Divider />
@@ -222,7 +222,7 @@ function Navbarr (props){
                 title="User"
                  id="collasible-nav-dropdown" 
                 className="NavDropdown" 
-                style ={{ width:'200px'}}
+                style ={{ width:'250px'}}
                 >
                     <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  style ={{ width:'200px'}}>
                         <img style={{borderRadius: '100%'}} src={profilepicurl}/>
