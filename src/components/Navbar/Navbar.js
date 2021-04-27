@@ -231,7 +231,7 @@ function Navbarr (props){
                     <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style ={{ textAlign:'center', width:'200px'}} >Account Information</NavDropdown.Item>
                     <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"style ={{ textAlign:'center', width:'200px'}} >User Dashboard</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem"   onClick={() => logout(token)} style ={{ textAlign:'center', width:'190px'}} >Sign Out</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem"   onClick={() => logout(token)} style ={{ textAlign:'center', width:'190px', backgroundColor:'white', color:'black'}} >Sign Out</NavDropdown.Item>
                 </NavDropdown> :
                 <NavDropdown 
                 title="User"
