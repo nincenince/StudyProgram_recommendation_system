@@ -224,14 +224,14 @@ function Navbarr (props){
                 className="NavDropdown" 
                 style ={{ width:'200px'}}
                 >
-                    <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  >
+                    <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  style ={{ width:'200px'}}>
                         <img style={{borderRadius: '100%'}} src={profilepicurl}/>
                         <span style={{padding: '5%'}}>{personal.firstname}</span>
                     </NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style ={{ textAlign:'center'}} >Account Information</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"style ={{ textAlign:'center'}} >User Dashboard</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style ={{ textAlign:'center', width:'200px'}} >Account Information</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"style ={{ textAlign:'center', width:'200px'}} >User Dashboard</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem"   onClick={() => logout(token)} style ={{ textAlign:'center'}} >Sign Out</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem"   onClick={() => logout(token)} style ={{ textAlign:'center', width:'200px'}} >Sign Out</NavDropdown.Item>
                 </NavDropdown> :
                 <NavDropdown 
                 title="User"
