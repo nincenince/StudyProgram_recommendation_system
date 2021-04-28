@@ -288,7 +288,7 @@ function Dashboard (props){
 
         <Col sm={4}  style={{ marginTop:'2%'}}>
         
-            <div style={{ border:'solid',borderRadius:'20px', borderWidth:'thin',marginLeft:'5%', padding:'10%', backgroundColor:'rgb(255,255,255)'}}>
+            <div style={{ border:'solid',borderRadius:'9px', borderWidth:'thin',marginLeft:'5%', padding:'10%', backgroundColor:'rgb(255,255,255)'}}>
             <h4 style={{  textDecoration:'bold'}} >Give us some feedback!</h4>
             
             

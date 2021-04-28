@@ -198,14 +198,15 @@ function Navbarr (props){
                                 Sign out
                             </NavDropdown.Item>
                         </NavDropdown> :
-                        <NavDropdown style={{  align: 'right'}}
+                        <NavDropdown style={{  align: 'right', width:'300px'}}
                         title="User"
                         id="collasible-nav-dropdown" 
-                        className="NavDropdown nav navbar-nav ml-auto w-100 justify-content-end" >
+                        className="NavDropdown nav navbar-nav ml-auto w-100 justify-content-end"
+                         >
                             {/* <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style={{ fontSize:'0.9vw'}} >Account Information</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  style={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw'}}>User Dashboard</NavDropdown.Item>
                             <NavDropdown.Divider /> */}
-                            <NavDropdown.Item as={NavLink} to='/SignIn' className="NavDropdownItem"  tyle={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw', textAlign:'center'}}>Sign In</NavDropdown.Item>
+                            <NavDropdown.Item as={NavLink} to='/SignIn' className="NavDropdownItem"  tyle={{ fontSize:'0.9vw'}} style={{ width:'300px',textAlign:'center'}}>Sign In</NavDropdown.Item>
                         </NavDropdown>}
                 </Nav>
                 </Navbar.Collapse>:
@@ -236,7 +237,8 @@ function Navbarr (props){
                 <NavDropdown 
                 title="User"
                  id="collasible-nav-dropdown" 
-                className="NavDropdown" >
+                className="NavDropdown" 
+                style ={{ width:'300px'}}>
                     {/* <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style={{ fontSize:'0.9vw'}} >Account Information</NavDropdown.Item>
                     <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  style={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw'}}>User Dashboard</NavDropdown.Item>
                     <NavDropdown.Divider /> */}
