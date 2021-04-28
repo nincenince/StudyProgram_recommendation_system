@@ -238,11 +238,11 @@ function Dashboard (props){
                                         <div className="col-9"  key={ Math.random().toString(36).substr(2, 9) }>
                                             <div className="row"> 
                                                 <div className="col-6 history-recprogram" style={{paddingRight:'5%'}}>
-                                                <p >Recommended Program</p>
+                                                <p  style={{fontSize:'93%', marginLeft:'-5%'}}>Recommended Program</p>
                                                     {RecDetail.Programs1}
                                                 </div>
                                                 <div className="col-6 history-recscore">
-                                                <p >Recommendation Score</p>
+                                                <p style={{fontSize:'93%', marginRight:'-5%'}}>Recommendation Score</p>
                                                     {RecDetail.RecProgScore1}
                                                 </div>                                                
                                             </div>
