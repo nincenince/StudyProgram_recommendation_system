@@ -1,7 +1,7 @@
 import React from 'react';
 import './Feedbacks.css'
 import {Button, Navbar, Form} from "react-bootstrap";
-import { MDBDataTable } from 'mdbreact';
+import { MDBDataTableV5 } from 'mdbreact';
 import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 
@@ -32,27 +32,27 @@ const Admin_prog = (props, {defaultImage}) => {
       {
         label: 'ID',
         field: 'id',
-        sort: 'asc',
+        
       },
       {
         label: 'Faculty',
         field: 'faculty',
-        sort: 'asc',
+        
       },
       {
         label: 'Department',
         field: 'department',
-        sort: 'asc',
+        
       },
       {
         label: 'Program',
         field: 'program',
-        sort: 'asc',
+        
       },
       {
         label: '',
         field: 'button',
-        sort: 'asc',
+        
       }
     ],
     rows: [
@@ -118,27 +118,27 @@ const Admin_prog = (props, {defaultImage}) => {
           {
             label: 'ID',
             field: 'id',
-            sort: 'asc',
+            width: 100
           },
           {
             label: 'Faculty',
             field: 'faculty',
-            sort: 'asc',
+            width: 250
           },
           {
             label: 'Department',
             field: 'department',
-            sort: 'asc',
+            width: 250
           },
           {
             label: 'Program',
             field: 'program',
-            sort: 'asc',
+            width: 250
           },
           {
             label: '',
             field: 'button',
-            sort: 'asc',
+            width: 100
           }
         ],
         rows: inside_data
@@ -358,8 +358,8 @@ const Admin_prog = (props, {defaultImage}) => {
       <div style={{margin:'3%'}}> 
    
    <Button style={{
-     marginLeft:'60%',
-      float:'right', marginTop:'1.5%', backgroundColor:'rgb(104,193,68)', borderColor:'rgb(104,193,68)'}} onClick={handleOpen}>
+      
+      float:'right', marginTop:'1%', backgroundColor:'rgb(104,193,68)', borderColor:'rgb(104,193,68)'}} onClick={handleOpen}>
       Add Program
     </Button>
 
@@ -484,8 +484,7 @@ const Admin_prog = (props, {defaultImage}) => {
         </Fade>
       </Modal>
 
-    <MDBDataTable 
-      searching= "true"
+    <MDBDataTableV5 
       responsive
       scrollY
       maxHeight="50vh"
@@ -493,6 +492,14 @@ const Admin_prog = (props, {defaultImage}) => {
       bordered
       small
       data={data}
+      pagingTop
+      searchTop
+      searchBottom={false}
+      entriesOptions={[5, 20, 50, 100]}
+      entries={5}
+      barReverse
+      hover
+      fullPagination
     />
 
 </div>
