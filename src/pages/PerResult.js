@@ -12,25 +12,12 @@ class RecommendProg extends Component{
 
       return(
           <>
-            <div>
-             
-            <Navbar collapseOnSelect expand="lg"  >
-            <Navbar.Brand href="/"  >
-                <i 
-                 className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
-                ></i>
-                   <h5 style={{color:'coral'}}>website name</h5>
-                </Navbar.Brand>
-            </Navbar>
             
-             
-            </div>
                 
                 
-        <Container >
 
                            
-<Col >
+<Col md={{ span: 10, offset: 1}} >
   <h4 
    >Big 5 Personality Result</h4>
   <Col sm={{ span: 6, offset: 2}} style={{border:'solid', borderWidth:'thin', marginTop:"5%", borderLeftColor:'coral', borderLeftWidth:"5px"}}>
@@ -88,7 +75,6 @@ class RecommendProg extends Component{
                 </Button>
             </Link> */}
 
-        </Container>
           </>
       )
   }

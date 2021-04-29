@@ -83,19 +83,12 @@ function RecommendProg (props){
   return(
     <>
       <div>
-        {/* <Navbar collapseOnSelect expand="lg"  >
-        <Navbar.Brand href="/"  >
-            <i 
-              className = "fas fa-graduation-cap" style={{ fontSize:'4.95vw'}}
-            ></i>
-                <h5 style={{color:'coral'}}>website name</h5>
-            </Navbar.Brand>
-        </Navbar> */}
+       
       </div>
           
                 
-      <Container >
-        <Col >
+      {/* <Container > */}
+        <Col md={{ span: 8, offset: 2}}>
           <h3 style={{fontWeight:"900"}}>Recommend Programs Results</h3>
           {/* <Col className="recprog-box"> */}
           <Col sm={{ span: 9, offset: 1}} style={{border:'solid', borderWidth:'thin', marginTop:"5%", borderLeftColor:'coral', borderLeftWidth:"5px"}}>
@@ -137,7 +130,7 @@ function RecommendProg (props){
             </Row>
           </Col>
         </Col>
-      </Container>
+      {/* </Container> */}
     </>
   )
 }
