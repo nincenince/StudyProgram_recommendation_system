@@ -7,6 +7,7 @@ import "../App.css";
 
 import { useSelector, useDispatch} from 'react-redux';
 import { update_comefrom , update_per, update_edu, update_rec} from '../actions';
+import "@lottiefiles/lottie-player";
 
 const defaultOptions = {
   loop: true,
@@ -18,7 +19,7 @@ const defaultOptions = {
 };
 
 const defaultOptions2 = {
-  loop: true,
+  loop: false,
   autoplay: true,
   animationData: successData.default,
   rendererSettings: {
@@ -65,8 +66,11 @@ function Loading(props) {
             dispatch(update_rec(responseData['3']['RecommendProgList'][0]))
             props.history.push('/');
           }, 1500);
-        });
-    }, 6000);
+        })
+        .catch(function(error) {
+          window.location.reload();
+        });  
+    }, 2000);
   }, []);
 
   return (
@@ -77,9 +81,14 @@ function Loading(props) {
             <div style={{ display: "flex" }}>
               <h1></h1>
               {!loading ? (
-                <Lottie options={defaultOptions} height={140} width={140} />
+                <div style={{margin: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: '25vh'}}>
+                  <Lottie options={defaultOptions} height={350} width={350} />
+                </div>
               ) : (
-                <Lottie options={defaultOptions2} height={140} width={140} />
+                <div style={{margin: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: '25vh'}}>
+                  <Lottie options={defaultOptions2} height={350} width={350} speed={0.5}/>
+                </div>
+                
               )}
             </div>
           </FadeIn>
@@ -87,6 +96,11 @@ function Loading(props) {
           <h1></h1>
         )}
       </header>
+      <footer style={{position: 'absolute', bottom: '0'}}>
+        <p style={{fontSize: 'calc(0.25em + 0.25vw)'}}>Loading animations by Sara Díaz on LottieFiles: https://lottiefiles.com/8707-loading <br></br>
+        Success animations by Thomas Lansonneur on LottieFiles: https://lottiefiles.com/645-success</p>
+        {/* <p style={{fontSize: '50%'}}>Success animations by Thomas Lansonneur on LottieFiles: https://lottiefiles.com/645-success</p> */}
+      </footer>
     </div>
   );
 }
