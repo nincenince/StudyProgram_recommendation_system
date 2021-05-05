@@ -17,10 +17,10 @@ class RecommendProg extends Component{
                 
 
                            
-<Col md={{ span: 10, offset: 1}} >
-  <h4 
+<Col md={{ span: 10, offset: 2}} >
+  <h4 style={{fontWeight:"900", marginTop:'4%'}}
    >Big 5 Personality Result</h4>
-  <Col sm={{ span: 6, offset: 2}} style={{border:'solid', borderWidth:'thin', marginTop:"5%", borderLeftColor:'coral', borderLeftWidth:"5px"}}>
+  <Col sm={{ span: 6, offset: 1}} style={{border:'solid', borderWidth:'thin', marginTop:"5%", borderLeftColor:'coral', borderLeftWidth:"5px"}}>
         <h4
       style={{ margin:'2%'}}
         >Personality Label</h4>
@@ -36,11 +36,11 @@ class RecommendProg extends Component{
           return (
             <div>
               <Row>
-              <Col style={{float:'left', paddingLeft:'5%', marginRight:'85%'}}>
+              <Col style={{float:'left', paddingLeft:'5%', marginRight:'55%'}}>
                 {PerInfo.Personality}
               </Col>
                   {/* <Col style={{float:'right'}}> */}
-                        <p>{PerInfo.PersonalityScore}</p> 
+                        <p style={{float:'right'}}>{PerInfo.PersonalityScore}</p> 
                   {/* </Col> */}
                   
               </Row>
@@ -55,7 +55,7 @@ class RecommendProg extends Component{
      </Col>
     
               
-            <Col sm={{ span: 12, offset: 11 }}>
+            <Col sm={{ span: 12, offset: 10 }}>
                 <Row>
                   <Link to="/RecProgram">
                     <Button className="PerResult-done-button" style={{marginTop:'25%', borderRadius:'20px', backgroundColor:'coral', bordercolor:'coral'}}>

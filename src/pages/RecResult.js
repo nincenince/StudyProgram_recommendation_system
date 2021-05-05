@@ -89,10 +89,10 @@ function RecommendProg (props){
                 
       {/* <Container > */}
         <Col md={{ span: 8, offset: 2}}>
-          <h3 style={{fontWeight:"900"}}>Recommend Programs Results</h3>
+          <h3 style={{fontWeight:"900", marginTop:'4%'}}>Recommend Programs Results</h3>
           {/* <Col className="recprog-box"> */}
-          <Col sm={{ span: 9, offset: 1}} style={{border:'solid', borderWidth:'thin', marginTop:"5%", borderLeftColor:'coral', borderLeftWidth:"5px"}}>
-            <h4>Possible Programs</h4>
+          <Col sm={{ span: 8, offset: 1}} style={{border:'solid', borderWidth:'thin', marginTop:"5%", borderLeftColor:'coral', borderLeftWidth:"5px"}}>
+            <h4 style={{ margin:'2%'}}>Possible Programs</h4>
             <br></br>
             <ul>
               <div>
