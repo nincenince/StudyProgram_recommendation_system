@@ -136,13 +136,17 @@ function Programs() {
                 <Col>
                   <br></br>
                   <img className="object-contain rounded-lg" src={"https://res.cloudinary.com/hdtjuro73/image/upload/w_250,h_150,c_scale,q_auto,f_auto/v1617779170/"+d.coursepic}></img>
-                  <a href={d.url}>{d.ProgramName}</a>
+                  <hr></hr>
+                  <p>
+                    <a style={{textAlign: 'center', fontSize: 'calc(0.5em + 0.5vw)', fontFamily: 'Arial'}} href={d.url}>{d.ProgramName}</a>
+                  </p>
                 </Col>
               </Row>
             </div>
             })}
             {data.length === 0 && <span>!</span>} 
          </Container> 
+         
         : 
         <Container>
           Not Found
