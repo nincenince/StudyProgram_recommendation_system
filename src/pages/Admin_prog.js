@@ -148,7 +148,59 @@ const Admin_prog = (props, {defaultImage}) => {
     }
     get_data();
     // console.log(response);
-  },[found, response])
+  },[])
+
+  const re_data = async () => {
+    const res = await axios.get('https://spr-system.herokuapp.com/get_course_admin/');
+    //const res = await axios.get('http://127.0.0.1:8000/get_course_admin/');
+    let response = res.data['result'];
+    //console.log(response);
+    let inside_data = [];
+    for(let i = 0; i<response.length; i++){
+      let a = {
+        id: i+1,
+        program: response[i]['program'],
+        faculty: response[i]['faculty'],
+        department: response[i]['department'],
+        button:<Button style={{backgroundColor:'transparent', border:'transparent'}} onClick={() => out(response[i]['id'])}>
+        <i className="fas fa-trash" style={{color:'red'}}></i>
+    </Button>
+      };
+    inside_data.push(a);
+    }
+    const temp = {
+      columns: [
+        {
+          label: 'ID',
+          field: 'id',
+          width: 100
+        },
+        {
+          label: 'Faculty',
+          field: 'faculty',
+          width: 250
+        },
+        {
+          label: 'Department',
+          field: 'department',
+          width: 250
+        },
+        {
+          label: 'Program',
+          field: 'program',
+          width: 250
+        },
+        {
+          label: '',
+          field: 'button',
+          width: 100
+        }
+      ],
+      rows: inside_data
+    };
+    setdata(temp);
+    setfound(true)
+  }
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -176,7 +228,6 @@ const Admin_prog = (props, {defaultImage}) => {
     else{
       alert(response.data['message']);
     }
-    
   }
   async function handleImageUpload() {
     if (fileSelect) {
@@ -329,6 +380,7 @@ const Admin_prog = (props, {defaultImage}) => {
     else {
       alert(response.data['message'])
     }
+    re_data();
     return isValid;
 
 }
@@ -434,7 +486,7 @@ const Admin_prog = (props, {defaultImage}) => {
                 </Form.Text>
               </Form.Group>
               {image ? (<div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
-                <img className="object-contain rounded-lg" src={image.replace("upload/", "upload/w_150,h_150,c_scale,q_auto,f_auto/")}/>
+                <img className="object-contain rounded-lg" src={image.replace("upload/", "upload/w_250,h_150,c_scale,q_auto,f_auto/")}/>
                 <Button style={{backgroundColor:'transparent', border:'transparent',display:"flex", alignItems:"center", justifyContent:"center"}} onClick={() => deletepic()}>
                   <i className="fas fa-trash" style={{color:'red'}}></i>
                 </Button>
@@ -496,7 +548,7 @@ const Admin_prog = (props, {defaultImage}) => {
       searchTop
       searchBottom={false}
       entriesOptions={[5, 20, 50, 100]}
-      entries={5}
+      entries={50}
       barReverse
       hover
       fullPagination
