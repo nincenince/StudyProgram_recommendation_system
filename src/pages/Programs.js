@@ -134,8 +134,9 @@ function Programs() {
             return <div key={i} style={{ backgroundColor: d.color }}>
               <Row className = "ProgramsList-box" >
                 <Col>
-                  <a href={d.url}>{d.ProgramName}</a>
+                  <br></br>
                   <img className="object-contain rounded-lg" src={"https://res.cloudinary.com/hdtjuro73/image/upload/w_250,h_150,c_scale,q_auto,f_auto/v1617779170/"+d.coursepic}></img>
+                  <a href={d.url}>{d.ProgramName}</a>
                 </Col>
               </Row>
             </div>
