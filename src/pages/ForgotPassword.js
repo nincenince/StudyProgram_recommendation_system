@@ -3,7 +3,7 @@ import { Col , Navbar, Button, Form} from "react-bootstrap";
 import {Link } from "react-router-dom";
 import axios from 'axios';
   
-import Kandle_logo from '../images/Kandle_logo.png'
+import Kandle_logo from '../images/Kandle_Logo.JPG'
 
 class ForgotPassword extends React.Component {
     constructor() {

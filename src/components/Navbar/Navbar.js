@@ -8,7 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavLink from 'react-bootstrap/NavLink';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Kandle_logo from './Kandle_logo.png'
+import Kandle_logo from './Kandle_Logo.JPG'
 
 import { useSelector, useDispatch} from 'react-redux';
 import { useEffect } from 'react';
