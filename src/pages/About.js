@@ -67,19 +67,19 @@ function About() {
 
     <Container fluid>
       <Row>
-        <Col></Col>
-          <Col md={2} ><h1 style={{color: "red", textAlign:"center"}}>55</h1>
+        {/* <Col></Col> */}
+          <Col md={{ span: 4, offset:2}} ><h1 style={{color: "red", textAlign:"center"}}>55</h1>
           <p style={{textAlign:"center"}} >recommendation program</p>
           </Col>
  
-          <Col md={1.5} >
+          <Col md={{ span: 1}}>
           <p className="vertical-line"></p>
           </Col>
   
-          <Col md={2} > <h1 style={{color: "red",textAlign:"center"}}>Big5</h1>
+          <Col md={{ span: 3}} > <h1 style={{color: "red",textAlign:"center"}}>Big5</h1>
           <p style={{textAlign:"center"}}>Personality Test based</p>
           </Col>
-          <Col></Col>
+          {/* <Col></Col> */}
       </Row>
    
 <Row><br></br></Row>
