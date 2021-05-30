@@ -8,7 +8,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavLink from 'react-bootstrap/NavLink';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Kandle_logo from './Kandle_Logo.JPG'
+// import Kandle_logo from './Kandle_Logo.JPG'
+import Kandle_logo from './KandleLogo.JPG'
 
 import { useSelector, useDispatch} from 'react-redux';
 import { useEffect } from 'react';
@@ -128,8 +129,8 @@ function Navbarr (props){
             <Navbar.Brand href="/" >
                 <Nav.Link className="navbar-brand" href="/">
                     {/* <i className = "fas fa-graduation-cap fa-3x" Style={{ fontSize:'4.95vw'}}> */}
-                    <img src={Kandle_logo} style={{width:100,  marginLeft:'4%'}} />
-                    <span style={{color: 'red', fontSize:'100%', fontWeight:'900'}}>Kandle</span>
+                    <img src={Kandle_logo} style={{width:120,  marginLeft:'4%'}} />
+                    {/* <span style={{color: 'red', fontSize:'100%', fontWeight:'900'}}>Kandle</span> */}
                     <span>
                     <motion.div
                         style={loadingContainer}

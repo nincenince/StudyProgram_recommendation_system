@@ -3,7 +3,7 @@ import { Col , Navbar, Button, Form} from "react-bootstrap";
 import {Link } from "react-router-dom";
 import axios from 'axios';
   
-import Kandle_logo from '../images/Kandle_Logo.JPG'
+import Kandle_logo from '../images/KandleLogo.JPG'
 
 class ForgotPassword extends React.Component {
     constructor() {
@@ -88,8 +88,8 @@ class ForgotPassword extends React.Component {
            <Navbar collapseOnSelect expand="lg"  >
             <Navbar.Brand href="/"  >
             {/* <i className = "fas fa-graduation-cap fa-3x" Style={{ fontSize:'4.95vw'}}> */}
-            <img src={Kandle_logo} style={{width:100,  marginLeft:'4%'}} />             
-                   <span style={{color: 'red', fontSize:'100%', fontWeight:'900'}}>Kandle</span>
+            <img src={Kandle_logo} style={{width:120,  marginLeft:'15%'}} />             
+                   {/* <span style={{color: 'red', fontSize:'100%', fontWeight:'900'}}>Kandle</span> */}
                     {/* </i> */}
                 </Navbar.Brand>
             </Navbar>
