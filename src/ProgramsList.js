@@ -5,7 +5,10 @@ export const ProgramsList =[
         "value":"Computer Innovation Engineering",
         "ProgramName": "Computer Innovation Engineering",
         "ProgramLogo": require("./images/CIE.jpg"),
-        "url": "https://cie.kmitl.ac.th/department/computer-engineering/"
+        "url": "https://cie.kmitl.ac.th/department/computer-engineering/",
+        "faculty_thai": "วิศวกรรมศาสตร์",
+        "department_thai": "วิศวกรรมคอมพิวเตอร์",
+        "program_thai": "วิศวกรรมซอร์ฟแวร์"
       },
       {
         "label":"Computer Engineering",
