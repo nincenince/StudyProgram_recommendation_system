@@ -16,12 +16,17 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    overflow:'hidden',
   },
   paper: {
+    posisiton: 'absolute',
+    height: '40rem',
+    width: '50rem',
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+    overflow: 'scroll'
   },
 }));
 
@@ -71,6 +76,31 @@ const Admin_prog = (props, {defaultImage}) => {
   const [found, setfound] = useState(true);
   let response = {};
 
+  const facu_thai = {
+    "College of Educational Innovation Research : วิทยาลัยวิจัยนวัตกรรมทางการศึกษา" : "วิทยาลัยวิจัยนวัตกรรมทางการศึกษา",
+    "Institute of Music Science and Engineering : วิทยาลัยวิศวกรรมสังคีต" : "วิทยาลัยวิศวกรรมสังคีต",
+    "KOSEN-KMITL : สถาบันโคเซ็นแห่งสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง" : "สถาบันโคเซ็นแห่งสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+    "CMKL University : มหาวิทยาลัยซีเอ็มเคแอล" : "มหาวิทยาลัยซีเอ็มเคแอล",
+    "KMITL Hospital : โรงพยาบาลพระจอมเกล้าเจ้าคุณทหาร" : "โรงพยาบาลพระจอมเกล้าเจ้าคุณทหาร",
+    "Faculty of Dentistry : คณะทันตแพทยศาสตร์" : "คณะทันตแพทยศาสตร",
+    "KMITL Prince of Chumphon Campus : วิทยาเขตชุมพรเขตรอุดมศักดิ์ จังหวัดชุมพร" : "วิทยาเขตชุมพรเขตรอุดมศักดิ์",
+    "School of Engineering : คณะวิศวกรรมศาสตร์" : "คณะวิศวกรรมศาสตร์",
+    "Faculty of Architecture : คณะสถาปัตยกรรมศาสตร์ ศิลปะและการออกแบบ" : "คณะสถาปัตยกรรมศาสตร์ ศิลปะและการออกแบบ",
+    "School of Science : คณะวิทยาศาสตร์" : "คณะวิทยาศาสตร์",
+    "Faculty of Industrial Education and Technology : คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี" : "คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี",
+    "Faculty of Agricultural Technology : คณะเทคโนโลยีการเกษตร" : "คณะเทคโนโลยีการเกษตร",
+    "Faculty of Information Technology : คณะเทคโนโลยีสารสนเทศ" : "คณะเทคโนโลยีสารสนเทศ",
+    "Faculty of Food Industry : คณะอุตสาหกรรมอาหาร" : "คณะอุตสาหกรรมอาหาร",
+    "KMITL Business School : คณะบริหารธุรกิจ" : "คณะบริหารธุรกิจ",
+    "Faculty of Liberal Arts : คณะศิลปศาสตร์" : "คณะศิลปศาสตร์",
+    "College of Nanotechnology : วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง" : "วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง",
+    "College of Advanced Manufacturing Innovation : วิทยาลัยนวัตกรรมการผลิตขั้นสูง" : "วิทยาลัยนวัตกรรมการผลิตขั้นสูง",
+    "Faculty of Medicine : คณะแพทยศาสตร์" : "คณะแพทยศาสตร์",
+    "International Academy of Aviation Industry : วิทยาลัยอุตสาหกรรมการบินนานาชาติ" : "วิทยาลัยอุตสาหกรรมการบินนานาชาติ",
+    "King Mongkut's International Demonstration School : โรงเรียนสาธิตนานาชาติพระจอมเกล้า" : "โรงเรียนสาธิตนานาชาติพระจอมเกล้า",
+    "Other : อื่นๆ" : "อื่นๆ"
+    };
+
   const [faculty, setfaculty] = useState('');
   const [facultyerrors, setfacultyerrors] = useState('');
   const [department, setdepartment] = useState('');
@@ -79,6 +109,10 @@ const Admin_prog = (props, {defaultImage}) => {
   const [programerrors, setprogramerrors] = useState('');
   const [link, setlink] = useState('');
   const [linkerrors, setlinkerrors] = useState('');
+  const [departmentth, setdepartmentth] = useState('');
+  const [departmenttherrors, setdepartmenttherrors] = useState('');
+  const [programth, setprogramth] = useState('');
+  const [programtherrors, setprogramtherrors] = useState('');
 
   const cloudinary = require('cloudinary/lib/cloudinary').v2;
   const fileSelect = useRef(null);
@@ -97,16 +131,16 @@ const Admin_prog = (props, {defaultImage}) => {
 	useEffect(() => {
     async function get_data () {
       const res = await axios.get('https://spr-system.herokuapp.com/get_course_admin/');
-      //const res = await axios.get('http://127.0.0.1:8000/get_course_admin/');
+      // const res = await axios.get('http://127.0.0.1:8000/get_course_admin/');
       let response = res.data['result'];
       //console.log(response);
       let inside_data = [];
       for(let i = 0; i<response.length; i++){
         let a = {
           id: i+1,
-          program: response[i]['program'],
-          faculty: response[i]['faculty'],
-          department: response[i]['department'],
+          program: response[i]['program'] + " : " + response[i]['program_thai'],
+          faculty: response[i]['faculty'] + " : " + response[i]['faculty_thai'],
+          department: response[i]['department'] + " : " + response[i]['department_thai'],
           button:<Button style={{backgroundColor:'transparent', border:'transparent'}} onClick={() => out(response[i]['id'])}>
           <i className="fas fa-trash" style={{color:'red'}}></i>
       </Button>
@@ -121,17 +155,17 @@ const Admin_prog = (props, {defaultImage}) => {
             width: 100
           },
           {
-            label: 'Faculty',
+            label: 'Faculty : คณะ',
             field: 'faculty',
             width: 250
           },
           {
-            label: 'Department',
+            label: 'Department : ภาควิชา',
             field: 'department',
             width: 250
           },
           {
-            label: 'Program',
+            label: 'Program : หลักสูตร',
             field: 'program',
             width: 250
           },
@@ -152,7 +186,7 @@ const Admin_prog = (props, {defaultImage}) => {
 
   const re_data = async () => {
     const res = await axios.get('https://spr-system.herokuapp.com/get_course_admin/');
-    //const res = await axios.get('http://127.0.0.1:8000/get_course_admin/');
+    // const res = await axios.get('http://127.0.0.1:8000/get_course_admin/');
     let response = res.data['result'];
     //console.log(response);
     let inside_data = [];
@@ -176,17 +210,17 @@ const Admin_prog = (props, {defaultImage}) => {
           width: 100
         },
         {
-          label: 'Faculty',
+          label: 'Faculty : คณะ',
           field: 'faculty',
           width: 250
         },
         {
-          label: 'Department',
+          label: 'Department : ภาควิชา',
           field: 'department',
           width: 250
         },
         {
-          label: 'Program',
+          label: 'Program : หลักสูตร',
           field: 'program',
           width: 250
         },
@@ -220,7 +254,7 @@ const Admin_prog = (props, {defaultImage}) => {
       "id" : value
     };
     response = await axios.post('https://spr-system.herokuapp.com/delete_course/', payload);
-    //response = await axios.post('http://127.0.0.1:8000/delete_course/', payload);
+    // response = await axios.post('http://127.0.0.1:8000/delete_course/', payload);
     //console.log(value);
     if(response.data['status'] === true){
       window.location.reload(false);
@@ -308,10 +342,11 @@ const Admin_prog = (props, {defaultImage}) => {
   }
   const handleSubmit = (event) => {
     event.preventDefault();
-    validate(faculty, department, program, link);
+    const faculty_thai = facu_thai[faculty];
+    validate(faculty, department, program, link, departmentth, programth, faculty_thai);
     
   }
-  const validate = async (ft, dp, pg, lk) => {
+  const validate = async (ft, dp, pg, lk, dp_th, pg_th, ft_th) => {
     // let input = this.state.input;
     // let errors = {};
     
@@ -320,6 +355,9 @@ const Admin_prog = (props, {defaultImage}) => {
     input['department'] = dp;
     input['program'] = pg;
     input['link'] = lk;
+    input['department_thai'] = dp_th;
+    input['program_thai'] = pg_th;
+    input['faculty_thai'] = ft_th;
 
     let isValid = true;
 
@@ -328,10 +366,20 @@ const Admin_prog = (props, {defaultImage}) => {
       isValid = false;
       setdepartmenterrors("Please enter department.");
     }
+    if (!input["department_thai"]) {
+      console.log('1');
+      isValid = false;
+      setdepartmenttherrors("โปรดใส่หลักสูตร");
+    }
     if (!input["program"]) {
       console.log('2');
       isValid = false;
       setprogramerrors("Please enter program.");
+    }
+    if (!input["program_thai"]) {
+      console.log('2');
+      isValid = false;
+      setprogramtherrors("โปรดใส่สาขาวิชา");
     }
     if (!input["link"]) {
       console.log('3');
@@ -348,14 +396,17 @@ const Admin_prog = (props, {defaultImage}) => {
        
       let payload = {
         "faculty": input['faculty'],
+        "faculty_thai": input['faculty_thai'],
         "department": input['department'],
+        "department_thai" : input['department_thai'],
         "program_name": input['program'],
+        "program_name_thai": input['program_thai'],
         "link": input['link'],
         'coursepic': coursepic
       }
       console.log(payload);
       response = await axios.post("https://spr-system.herokuapp.com/add_course/", payload);
-      //response = await axios.post("http://127.0.0.1:8000/add_course/", payload);
+      // response = await axios.post("http://127.0.0.1:8000/add_course/", payload);
     }
     else {
       return isValid;
@@ -365,11 +416,15 @@ const Admin_prog = (props, {defaultImage}) => {
       alert(response.data['message'])
       setfaculty('');
       setdepartment('');
+      setdepartmentth('');
       setprogram('');
+      setprogramth('');
       setlink('');
       setfacultyerrors('');
       setdepartmenterrors('');
+      setdepartmenttherrors('')
       setprogramerrors('');
+      setprogramtherrors('');
       setlinkerrors('');
       setcoursepic('default_user_img_nzynlg.png');
       setProgress(0);
@@ -431,54 +486,75 @@ const Admin_prog = (props, {defaultImage}) => {
           <div className={classes.paper}>
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formfaculty">
-                <Form.Label >Faculty</Form.Label>
+                <Form.Label >Faculty : คณะ</Form.Label>
                 <Form.Control  as="select" name="faculty" value={faculty} onChange={e => setfaculty(e.target.value)} >
                   <option style={{ fontSize:'1vw'}}>{null}</option>
-                  <option style={{ fontSize:'1vw'}}>College of Educational Innovation Research</option>
-                  <option style={{ fontSize:'1vw'}}>Institute of Music Science and Engineering</option>
-                  <option style={{ fontSize:'1vw'}}>KOSEN-KMITL</option>
-                  <option style={{ fontSize:'1vw'}}>CMKL University</option>
-                  <option style={{ fontSize:'1vw'}}>KMITL Hospital</option>
-                  <option style={{ fontSize:'1vw'}}>42  Bangkok KMITL</option>
-                  <option style={{ fontSize:'1vw'}}>KMITL Prince of Chumphon Campus </option>
-                  <option style={{ fontSize:'1vw'}}>School of Engineering</option>
-                  <option style={{ fontSize:'1vw'}}>Faculty of Architecture</option>
-                  <option style={{ fontSize:'1vw'}}>School of Science</option>
-                  <option style={{ fontSize:'1vw'}}>Faculty of Industrial Education and Technology</option>
-                  <option style={{ fontSize:'1vw'}}>Faculty of Agricultural Technology</option>
-                  <option style={{ fontSize:'1vw'}}>Faculty of Information Technology</option>
-                  <option style={{ fontSize:'1vw'}}>Faculty of Food Industry</option>
-                  <option style={{ fontSize:'1vw'}}>KMITL Business School</option>
-                  <option style={{ fontSize:'1vw'}}>Faculty of Liberal Arts</option>
-                  <option style={{ fontSize:'1vw'}}>College of Nanotechnology</option>
-                  <option style={{ fontSize:'1vw'}}>College of Advanced Manufacturing Innovation</option>
-                  <option style={{ fontSize:'1vw'}}>Faculty of Medicine</option>
-                  <option style={{ fontSize:'1vw'}}>International Academy of Aviation Industry</option>
-                  <option style={{ fontSize:'1vw'}}>King Mongkut's International Demonstration School</option>
-                  <option style={{ fontSize:'1vw'}}>Other</option>
+                  <option style={{ fontSize:'1vw'}}>College of Educational Innovation Research : วิทยาลัยวิจัยนวัตกรรมทางการศึกษา</option>
+                  <option style={{ fontSize:'1vw'}}>Institute of Music Science and Engineering : วิทยาลัยวิศวกรรมสังคีต</option>
+                  <option style={{ fontSize:'1vw'}}>KOSEN-KMITL : สถาบันโคเซ็นแห่งสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</option>
+                  <option style={{ fontSize:'1vw'}}>CMKL University : มหาวิทยาลัยซีเอ็มเคแอล</option>
+                  <option style={{ fontSize:'1vw'}}>KMITL Hospital : โรงพยาบาลพระจอมเกล้าเจ้าคุณทหาร</option>
+                  <option style={{ fontSize:'1vw'}}>Faculty of Dentistry : คณะทันตแพทยศาสตร์</option>
+                  <option style={{ fontSize:'1vw'}}>KMITL Prince of Chumphon Campus : วิทยาเขตชุมพรเขตรอุดมศักดิ์ จังหวัดชุมพร</option>
+                  <option style={{ fontSize:'1vw'}}>School of Engineering : คณะวิศวกรรมศาสตร์</option>
+                  <option style={{ fontSize:'1vw'}}>Faculty of Architecture : คณะสถาปัตยกรรมศาสตร์ ศิลปะและการออกแบบ</option>
+                  <option style={{ fontSize:'1vw'}}>School of Science : คณะวิทยาศาสตร์</option>
+                  <option style={{ fontSize:'1vw'}}>Faculty of Industrial Education and Technology : คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี</option>
+                  <option style={{ fontSize:'1vw'}}>Faculty of Agricultural Technology : คณะเทคโนโลยีการเกษตร</option>
+                  <option style={{ fontSize:'1vw'}}>Faculty of Information Technology : คณะเทคโนโลยีสารสนเทศ</option>
+                  <option style={{ fontSize:'1vw'}}>Faculty of Food Industry : คณะอุตสาหกรรมอาหาร</option>
+                  <option style={{ fontSize:'1vw'}}>KMITL Business School : คณะบริหารธุรกิจ</option>
+                  <option style={{ fontSize:'1vw'}}>Faculty of Liberal Arts : คณะศิลปศาสตร์</option>
+                  <option style={{ fontSize:'1vw'}}>College of Nanotechnology : วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง</option>
+                  <option style={{ fontSize:'1vw'}}>College of Advanced Manufacturing Innovation : วิทยาลัยนวัตกรรมการผลิตขั้นสูง</option>
+                  <option style={{ fontSize:'1vw'}}>Faculty of Medicine : คณะแพทยศาสตร์</option>
+                  <option style={{ fontSize:'1vw'}}>International Academy of Aviation Industry : วิทยาลัยอุตสาหกรรมการบินนานาชาติ</option>
+                  <option style={{ fontSize:'1vw'}}>King Mongkut's International Demonstration School : โรงเรียนสาธิตนานาชาติพระจอมเกล้า</option>
+                  <option style={{ fontSize:'1vw'}}>Other : อื่นๆ</option>
                 </Form.Control>
                 <Form.Text style={{color: "red"}} >
                   {facultyerrors}
                 </Form.Text>
               </Form.Group>
+
               <Form.Group controlId="formdeaprtment">
-                <Form.Label >Department</Form.Label>
+                <Form.Label >Department (Optional)</Form.Label>
                 <Form.Control type="text" name="department"
-                placeholder="Enter Department" value={department} onChange={e => setdepartment(e.target.value)} />
+                placeholder="Example: Computer Engineering" value={department} onChange={e => setdepartment(e.target.value)} />
                 <Form.Text style={{color: "red"}} >
                   {departmenterrors}
                 </Form.Text>
               </Form.Group>
+
+              <Form.Group controlId="formdeaprtment_th">
+                <Form.Label >ภาควิชา (ไม่จำเป็น)</Form.Label>
+                <Form.Control type="text" name="department_th"
+                placeholder="ตัวอย่าง: วิศวกรรมคอมพิวเตอร์" value={departmentth} onChange={e => setdepartmentth(e.target.value)} />
+                <Form.Text style={{color: "red"}} >
+                  {departmenttherrors}
+                </Form.Text>
+              </Form.Group>
+
               <Form.Group controlId="formprogram">
                 <Form.Label >Program</Form.Label>
                 <Form.Control type="text" name="program"
-                placeholder="Enter Program" value={program} onChange={e => setprogram(e.target.value)} />
+                placeholder="Example: B.Eng Software engineering" value={program} onChange={e => setprogram(e.target.value)} />
                 <Form.Text style={{color: "red"}} >
                   {programerrors}
                 </Form.Text>
               </Form.Group>
+
+              <Form.Group controlId="formprogram_th">
+                <Form.Label >หลักสูตร</Form.Label>
+                <Form.Control type="text" name="program_th"
+                placeholder="ตัวอย่าง: วศ.บ วิศวกรรมซอร์ฟแวร์" value={programth} onChange={e => setprogramth(e.target.value)} />
+                <Form.Text style={{color: "red"}} >
+                  {programtherrors}
+                </Form.Text>
+              </Form.Group>
+
               <Form.Group controlId="formlink">
-                <Form.Label >Link</Form.Label>
+                <Form.Label >Link : ลิ้งค์</Form.Label>
                 <Form.Control type="text" name="link"
                 placeholder="Enter link" value={link} onChange={e => setlink(e.target.value)} />
                 <Form.Text style={{color: "red"}} >
