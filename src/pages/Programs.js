@@ -27,10 +27,12 @@ function Programs() {
 	useEffect(() => {
     async function get_course () {
       const res = await axios.get('https://spr-system.herokuapp.com/get_course/');
-      //const res = await axios.get('http://127.0.0.1:8000/get_course/');
+      // const res = await axios.get('http://127.0.0.1:8000/get_course/');
       let responses = res.data['result'];
       setData(responses);
       setrresponse(responses);
+      // setData(ProgramsList);
+      // setrresponse(ProgramsList);
     }
     get_course();
     // console.log(response);
@@ -77,7 +79,7 @@ function Programs() {
 
       {/* <div  style={{ marginLeft: "20%", marginRight: "20%"}}> */}
       <Col  md={{ span: 6, offset: 3}}>
-        <h4>Search:</h4>
+        <h4>Search / ค้นหา:</h4>
         <input
             style={{width:"70%", height:'38px' }}
             type="text"
@@ -139,6 +141,9 @@ function Programs() {
                   <hr></hr>
                   <p>
                     <a style={{textAlign: 'center', fontSize: 'calc(0.5em + 0.5vw)', fontFamily: 'Arial'}} href={d.url}>{d.ProgramName}</a>
+                  </p>
+                  <p>
+                    {d.program_thai}
                   </p>
                 </Col>
               </Row>
