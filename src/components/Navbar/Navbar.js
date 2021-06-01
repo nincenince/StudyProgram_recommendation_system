@@ -131,7 +131,7 @@ function Navbarr (props){
                     {/* <i className = "fas fa-graduation-cap fa-3x" Style={{ fontSize:'4.95vw'}}> */}
                     <img src={Kandle_logo} style={{width:120,  marginLeft:'4%'}} />
                     {/* <span style={{color: 'red', fontSize:'100%', fontWeight:'900'}}>Kandle</span> */}
-                    <span>
+                    {/* <span>
                     <motion.div
                         style={loadingContainer}
                         variants={loadingContainerVariants}
@@ -154,7 +154,7 @@ function Navbarr (props){
                             transition={loadingCircleTransition}
                         />
                         </motion.div>
-                    </span>
+                    </span> */}
                     {/* </i> */}
                 </Nav.Link>
                 {/* <div className="row">
