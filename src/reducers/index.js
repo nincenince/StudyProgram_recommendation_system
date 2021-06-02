@@ -6,6 +6,7 @@ import personality_info_Reducer from './personality_info';
 import comefromReducer from './comefrom';
 import adminlockReducer from './isAdmin';
 import recommend_info_reducer from './recommend_info'
+import recommend_payload_reducer from './recPayload'
 import { combineReducers } from 'redux';
 
 const allReducer = combineReducers({
@@ -17,5 +18,6 @@ const allReducer = combineReducers({
     comefrom: comefromReducer,
     isAdmin: adminlockReducer,
     recommend: recommend_info_reducer,
+    recPayload: recommend_payload_reducer
 });
 export default allReducer;
