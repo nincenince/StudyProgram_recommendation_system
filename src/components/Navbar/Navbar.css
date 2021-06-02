@@ -44,7 +44,7 @@
     list-style: none;
     text-align: center;
     width: 100%;
-    justify-content: end;
+    justify-content: center;
     margin-left: 0%;
     margin-top: 2.5%;
 }
@@ -107,10 +107,11 @@
 
 .NavDropdown{
    padding:5px;
-   width:180px;
+   justify-content: center;
+   
 }
 .NavDropdownItem {
-    padding:15%;
+    padding:10%;
 
 }
 
@@ -127,7 +128,7 @@
         height: 500px;
         position: absolute;
         top: 80px;
-        left: -100%;
+        /* left: -100%; */
         opacity: 1;
         transition: all 0.5s ease;
 
