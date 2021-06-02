@@ -9,7 +9,7 @@ import { useDispatch} from 'react-redux';
 import { update_comefrom } from '../actions';
 // import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { update_rec } from '../actions';
+import { update_rec, update_recpay } from '../actions';
 
 
 function RecProgram (props){
@@ -63,7 +63,6 @@ function RecProgram (props){
         "province": rand_pv, 
         "gpa_high_school": education.EduInfo[0].ScoreList[0].Score
       }
-      const header = {"Access-Control-Allow-Origin": "*"};
       console.log(payload);
       let response = await axios.post("https://student-recommend-api.herokuapp.com/predict/", payload);
       let data = response.data;
@@ -81,16 +80,17 @@ function RecProgram (props){
         "info": response_data
       }
       console.log(payload2);
-      let response2 = {
-        "status": false
-      };
-      response2 = await axios.post("https://spr-system.herokuapp.com/get/recommend/", payload2)
-      //response2 = await axios.post("http://127.0.0.1:8000/get/recommend/", payload2)
-      if(response2.data['status'] === true){
-        dispatch(update_rec(response2.data['info']));
-        props.history.push("/RecResult");
-      }
-
+      // let response2 = {
+      //   "status": false
+      // };
+      dispatch(update_recpay(payload2))
+      props.history.push('./LoadingRec');
+      // response2 = await axios.post("https://spr-system.herokuapp.com/get/recommend/", payload2)
+      // //response2 = await axios.post("http://127.0.0.1:8000/get/recommend/", payload2)
+      // if(response2.data['status'] === true){
+      //   dispatch(update_rec(response2.data['info']));
+      //   props.history.push("/RecResult");
+      // }
     }
     else{
       alert(error);
