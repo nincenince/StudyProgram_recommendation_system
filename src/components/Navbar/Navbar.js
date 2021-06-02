@@ -230,16 +230,16 @@ function Navbarr (props){
                 </span>}
                  id="collasible-nav-dropdown" 
                 className="NavDropdown" 
-                style ={{ width:'300px' , justifyContent: 'center' , padding: '0', margin: '0'}}
+                style ={{  padding: '0', margin: '0'}}
                 >
                     {/* <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  style ={{ width:'200px'}}>
                         <img style={{borderRadius: '100%'}} src={profilepicurl}/>
                         <span style={{padding: '5%'}}>{personal.firstname}</span>
                     </NavDropdown.Item> */}
-                    <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style ={{ textAlign:'center'}} >Account Information</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"style ={{ textAlign:'center'}} >User Dashboard</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style ={{ textAlign:'center'}} >Account</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"style ={{ textAlign:'center'}} >Dashboard</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem"   onClick={() => logout(token)} style ={{ textAlign:'center', backgroundColor:'white', color:'black'}} >Sign Out</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem"   onClick={() => logout(token)} style ={{ textAlign:'center'}} >Sign Out</NavDropdown.Item>
                 </NavDropdown> :
                     <Form style={{justifyContent: 'space-evenly'}} inline>
                         <Button variant="outline-danger" style={{backgroundColor: '#f6ddcb'}} as={NavLink} to='/SignIn'>Sign In</Button>
