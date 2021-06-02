@@ -17,6 +17,8 @@ import PerResult from './pages/PerResult'
 import ForgotPassword from './pages/ForgotPassword'
 import Loading from './pages/Loading'
 import Admin_prog from './pages/Admin_prog'
+import LoadingRec from './pages/LoadingRec'
+import LoadingPer from './pages/LoadingPer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const IncludeNav = ({ component: Component , ...rest})=>{
@@ -58,6 +60,8 @@ const App = () => (
         <IncludeNav path='/PerResult' component={PerResult}/>
         <NoNav path='/ForgotPassword' component={ForgotPassword}/>
         <NoNav path='/Loading' component={Loading}/>
+        <NoNav path='/LoadingRec' component={LoadingRec}/>
+        <NoNav path='/LoadingPer' component={LoadingPer}/>
         <IncludeNav path='/Admin_prog' component={Admin_prog}/>
 
 
