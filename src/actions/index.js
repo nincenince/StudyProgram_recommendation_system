@@ -164,3 +164,14 @@ export const destroy_rec = () => {
         type: 'DESTROY_REC'
     };
 };
+export const update_recpay = pl => {
+    return {
+        type: 'UPDATE_RECPAY',
+        payload: pl
+    };
+};
+export const destroy_recpay = () => {
+    return {
+        type: 'DESTROY_RECPAY'
+    };
+};
