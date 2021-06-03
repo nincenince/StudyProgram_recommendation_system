@@ -100,6 +100,30 @@ const Admin_prog = (props, {defaultImage}) => {
     "King Mongkut's International Demonstration School : โรงเรียนสาธิตนานาชาติพระจอมเกล้า" : "โรงเรียนสาธิตนานาชาติพระจอมเกล้า",
     "Other : อื่นๆ" : "อื่นๆ"
     };
+  const facu_eng = {
+    "College of Educational Innovation Research : วิทยาลัยวิจัยนวัตกรรมทางการศึกษา" : "College of Educational Innovation Research",
+    "Institute of Music Science and Engineering : วิทยาลัยวิศวกรรมสังคีต" : "Institute of Music Science and Engineering",
+    "KOSEN-KMITL : สถาบันโคเซ็นแห่งสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง" : "KOSEN-KMITL",
+    "CMKL University : มหาวิทยาลัยซีเอ็มเคแอล" : "CMKL University",
+    "KMITL Hospital : โรงพยาบาลพระจอมเกล้าเจ้าคุณทหาร" : "KMITL Hospital",
+    "Faculty of Dentistry : คณะทันตแพทยศาสตร์" : "Faculty of Dentistry",
+    "KMITL Prince of Chumphon Campus : วิทยาเขตชุมพรเขตรอุดมศักดิ์ จังหวัดชุมพร" : "KMITL Prince of Chumphon Campus",
+    "School of Engineering : คณะวิศวกรรมศาสตร์" : "School of Engineering",
+    "Faculty of Architecture : คณะสถาปัตยกรรมศาสตร์ ศิลปะและการออกแบบ" : "Faculty of Architecture",
+    "School of Science : คณะวิทยาศาสตร์" : "School of Science",
+    "Faculty of Industrial Education and Technology : คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี" : "Faculty of Industrial Education and Technology",
+    "Faculty of Agricultural Technology : คณะเทคโนโลยีการเกษตร" : "Faculty of Agricultural Technology",
+    "Faculty of Information Technology : คณะเทคโนโลยีสารสนเทศ" : "Faculty of Information Technology",
+    "Faculty of Food Industry : คณะอุตสาหกรรมอาหาร" : "Faculty of Food Industry",
+    "KMITL Business School : คณะบริหารธุรกิจ" : "KMITL Business School",
+    "Faculty of Liberal Arts : คณะศิลปศาสตร์" : "Faculty of Liberal Arts",
+    "College of Nanotechnology : วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง" : "College of Nanotechnology",
+    "College of Advanced Manufacturing Innovation : วิทยาลัยนวัตกรรมการผลิตขั้นสูง" : "College of Advanced Manufacturing Innovation",
+    "Faculty of Medicine : คณะแพทยศาสตร์" : "Faculty of Medicine",
+    "International Academy of Aviation Industry : วิทยาลัยอุตสาหกรรมการบินนานาชาติ" : "International Academy of Aviation Industry",
+    "King Mongkut's International Demonstration School : โรงเรียนสาธิตนานาชาติพระจอมเกล้า" : "King Mongkut's International Demonstration School",
+    "Other : อื่นๆ" : "Other"
+  };
 
   const [faculty, setfaculty] = useState('');
   const [facultyerrors, setfacultyerrors] = useState('');
@@ -193,9 +217,9 @@ const Admin_prog = (props, {defaultImage}) => {
     for(let i = 0; i<response.length; i++){
       let a = {
         id: i+1,
-        program: response[i]['program'],
-        faculty: response[i]['faculty'],
-        department: response[i]['department'],
+        program: response[i]['program'] + " : " + response[i]['program_thai'],
+        faculty: response[i]['faculty'] + " : " + response[i]['faculty_thai'],
+        department: response[i]['department'] + " : " + response[i]['department_thai'],
         button:<Button style={{backgroundColor:'transparent', border:'transparent'}} onClick={() => out(response[i]['id'])}>
         <i className="fas fa-trash" style={{color:'red'}}></i>
     </Button>
@@ -343,7 +367,8 @@ const Admin_prog = (props, {defaultImage}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const faculty_thai = facu_thai[faculty];
-    validate(faculty, department, program, link, departmentth, programth, faculty_thai);
+    const faculty_eng = facu_eng[faculty];
+    validate(faculty_eng, department, program, link, departmentth, programth, faculty_thai);
     
   }
   const validate = async (ft, dp, pg, lk, dp_th, pg_th, ft_th) => {
