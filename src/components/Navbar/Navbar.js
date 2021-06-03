@@ -186,31 +186,43 @@ function Navbarr (props){
                     <Nav.Link as={NavLink} to='/Admin_prog' exact  href="/Admin_prog" className= "nav-links" activeClassName="underline" >Add Program </Nav.Link>
                     <Nav.Link as={NavLink} to='/Feedbacks' exact  href="/Feedbacks" className= "nav-links" activeClassName="underline" >Feedbacks </Nav.Link>
                     {isLogged ? <NavDropdown style={{  float:'right', width:'300px'}}
-                        title="User"
+                    title={<span style={{fontSize: 'calc(0.50em + 0.50vw)', padding: '0', margin: '0' }}>
+                        <img style={{borderRadius: '80%' , justifyContent: 'center'}} src={navprofilepicurl} alt="img"/>
+                        Admin
+                    </span>}
+                        // title="User"
                         id="collasible-nav-dropdown" 
                         className="NavDropdown"
-                        style ={{ width:'350px'}} >
+                        style ={{ padding: '0', margin: '0'}} >
                             {/* <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" Style={{ fontSize:'0.9vw'}} >Account Information</NavDropdown.Item> */}
                             {/* <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  Style={{ fontSize:'0.9vw'}} >User Dashboard</NavDropdown.Item> */}
-                            <NavDropdown.Divider />
+                            {/* <NavDropdown.Divider />
                             <NavDropdown.Item className="NavDropdownItem"  >
                                 <img style={{borderRadius: '100%'}} src={profilepicurl} alt="img"/>
                                 <span style={{padding: '5%'}}>Admin</span>
-                            </NavDropdown.Item>
+                            </NavDropdown.Item> */}
                             <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem" style ={{ textAlign:'center'}} onClick={() => logout(token)} >
                                 Sign out
                             </NavDropdown.Item>
                         </NavDropdown> :
-                        <NavDropdown style={{  align: 'right', width:'300px'}}
-                        title="User"
-                        id="collasible-nav-dropdown" 
-                        className="NavDropdown nav navbar-nav ml-auto w-100 justify-content-end"
-                         >
-                            {/* <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style={{ fontSize:'0.9vw'}} >Account Information</NavDropdown.Item>
-                            <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  style={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw'}}>User Dashboard</NavDropdown.Item>
-                            <NavDropdown.Divider /> */}
-                            <NavDropdown.Item as={NavLink} to='/SignIn' className="NavDropdownItem"  tyle={{ fontSize:'0.9vw'}} style={{ width:'300px',textAlign:'center'}}>Sign In</NavDropdown.Item>
-                        </NavDropdown>}
+                        <Form style={{justifyContent: 'space-evenly'}} inline>
+                            <Button variant="outline-danger" style={{backgroundColor: '#f6ddcb'}} as={NavLink} to='/SignIn'>Sign In</Button>
+                            <Navbar.Text>
+                            <span style={{fontSize: 0}}>|</span> or <span style={{fontSize: 0}}>|</span>
+                            </Navbar.Text>
+                            <Button variant="danger" as={NavLink} to='/SignUp'>Sign Up</Button>
+                        </Form>
+                        // <NavDropdown style={{  align: 'right', width:'300px'}}
+                        // title="User"
+                        // id="collasible-nav-dropdown" 
+                        // className="NavDropdown nav navbar-nav ml-auto w-100 justify-content-end"
+                        //  >
+                        //     {/* <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style={{ fontSize:'0.9vw'}} >Account Information</NavDropdown.Item>
+                        //     <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"  style={{ fontSize:'0.9vw'}} style={{ fontSize:'1vw'}}>User Dashboard</NavDropdown.Item>
+                        //     <NavDropdown.Divider /> */}
+                        //     <NavDropdown.Item as={NavLink} to='/SignIn' className="NavDropdownItem"  tyle={{ fontSize:'0.9vw'}} style={{ width:'300px',textAlign:'center'}}>Sign In</NavDropdown.Item>
+                        // </NavDropdown>
+                    }
                 </Nav>
                 </Navbar.Collapse>:
                 <Navbar.Collapse id="responsive-navbar-nav"  >
