@@ -543,7 +543,7 @@ const Admin_prog = (props, {defaultImage}) => {
               </Form.Group>
 
               <Form.Group controlId="formdeaprtment">
-                <Form.Label >Department (Optional)</Form.Label>
+                <Form.Label >Department</Form.Label>
                 <Form.Control type="text" name="department"
                 placeholder="Example: Computer Engineering" value={department} onChange={e => setdepartment(e.target.value)} />
                 <Form.Text style={{color: "red"}} >
@@ -552,7 +552,7 @@ const Admin_prog = (props, {defaultImage}) => {
               </Form.Group>
 
               <Form.Group controlId="formdeaprtment_th">
-                <Form.Label >ภาควิชา (ไม่จำเป็น)</Form.Label>
+                <Form.Label >ภาควิชา</Form.Label>
                 <Form.Control type="text" name="department_th"
                 placeholder="ตัวอย่าง: วิศวกรรมคอมพิวเตอร์" value={departmentth} onChange={e => setdepartmentth(e.target.value)} />
                 <Form.Text style={{color: "red"}} >
