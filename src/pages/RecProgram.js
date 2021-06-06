@@ -138,8 +138,8 @@ function RecProgram (props){
           <Col md={{ span: 3, offset: 3 }}>
             <div style={{border:'solid', borderWidth:'thin',marginTop:'15%', padding:'10%', marginLeft:'5%'}}>
               <Image style={{widht:'3vw', height:'7vh', 
-              paddingLeft:'35%'
-              }} src={require("../images/1.png")}/>
+              paddingLeft:'35%'}} 
+              src={require("../images/1.png")}/>
               <p style={{ padding:'5%'}}>Enter your Educational Information</p>
               {/* <p style={{fontSize:'1.4vw'}}>Educational Information</p> */}
               <Link to="/EduInformation">
@@ -152,11 +152,12 @@ function RecProgram (props){
 
           <Col  md={{ span: 3 }}>
           <div style={{border:'solid', borderWidth:'thin',marginTop:'15%', padding:'10%', marginLeft:'5%'}}>
-          <Image style={{widht:'4vw', height:'7vh' ,paddingLeft:'35%'}} src={require("../images/2.png")}/>
-              <p style={{ padding:'5%'}}>Take Big 5 Personality Label test</p>
+          <Image style={{widht:'3vw',height:'7vh',paddingLeft:'35%'}} 
+          src={require("../images/2.png")}/>
+              <p style={{ padding:'5%' }}>Take Big 5 Personality Label test</p>
               {/* <p style={{fontSize:'1.4vw'}}>Personality Label test</p> */}
               <Link to="/PerTest">
-                <Button onClick={changeComefrom} style={{ borderRadius:' 20px', backgroundColor:'coral',border:'coral', marginLeft:'30%', fontSize:'1vw'}}>
+                <Button onClick={changeComefrom} style={{ borderRadius:' 20px', backgroundColor:'coral',border:'coral', marginLeft:'30%', fontSize:'1vw', marginBottom:'1.2%'}}>
                  <h6 style={{marginTop:'5%'}}>Take test</h6>
                 </Button>
               </Link>
@@ -166,8 +167,8 @@ function RecProgram (props){
         </Row>: null }
 
         {isLogged ?<Row>
-          <Col  md={{ span: 3, offset: 5}}>
-              <Button style={{  marginTop:'10%',borderRadius:' 20px', backgroundColor:'rgb(255, 70, 0)',border:'coral'}} type="Submit">
+          <Col  md={{ span: 4, offset: 5}}>
+              <Button style={{  marginTop:'10%',borderRadius:' 20px', backgroundColor:'rgb(255, 70, 0)',border:'coral', marginLeft:'6%'}} type="Submit">
                 <a onClick={validate}> Recommend Program</a>
               </Button>
           </Col>
