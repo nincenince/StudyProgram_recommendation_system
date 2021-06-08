@@ -19,7 +19,10 @@ import Loading from './pages/Loading'
 import Admin_prog from './pages/Admin_prog'
 import LoadingRec from './pages/LoadingRec'
 import LoadingPer from './pages/LoadingPer'
+import SelectProgram from './pages/SelectProgram'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 export const IncludeNav = ({ component: Component , ...rest})=>{
   return (
@@ -63,9 +66,7 @@ const App = () => (
         <NoNav path='/LoadingRec' component={LoadingRec}/>
         <NoNav path='/LoadingPer' component={LoadingPer}/>
         <IncludeNav path='/Admin_prog' component={Admin_prog}/>
-
-
-
+        <IncludeNav path='/SelectProgram' component={SelectProgram}/>
       </Switch>
     </Router>
 
