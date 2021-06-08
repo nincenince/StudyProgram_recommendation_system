@@ -7,7 +7,7 @@ import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import { update_firstname, update_lastname, update_email, update_sex, update_school, update_profilepic } from '../actions';
-
+import t_school from '../School_list'
 
 function AccInfo (props,defaultImage) {
   //   constructor() {
@@ -114,7 +114,7 @@ function AccInfo (props,defaultImage) {
 
   function handleFiles(files) {
     for (let i = 0; i < files.length; i++) {
-      console.log(files[i]);
+      // console.log(files[i]);
       uploadFile(files[i]);
     }
   }
@@ -122,8 +122,8 @@ function AccInfo (props,defaultImage) {
     setcodes(4);
 
     setPublicid(personal.profilepic);
-    console.log("personal profile pic: "+personal.profilepic);
-    console.log("From submit: "+Publicid)
+    // console.log("personal profile pic: "+personal.profilepic);
+    // console.log("From submit: "+Publicid)
     deletepic(personal.profilepic);
     
     validate(token,false,null,false,false,null,null,false,null,false,null,false,null,false,null,true,profilepic);
@@ -141,7 +141,7 @@ function AccInfo (props,defaultImage) {
     // Update progress (can be used to show progress indicator)
     xhr.upload.addEventListener("progress", (e) => {
       setProgress(Math.round((e.loaded * 100.0) / e.total));
-      console.log(Math.round((e.loaded * 100.0) / e.total));
+      // console.log(Math.round((e.loaded * 100.0) / e.total));
     });
 
     xhr.onreadystatechange = (e) => {
@@ -152,9 +152,9 @@ function AccInfo (props,defaultImage) {
         setprofilepic(a[7]);
         setImage(response.secure_url);
         
-        console.log("From upload: ");
-        console.log(Publicid);
-        console.log(response);
+        // console.log("From upload: ");
+        // console.log(Publicid);
+        // console.log(response);
       }
     };
 
@@ -186,7 +186,7 @@ function AccInfo (props,defaultImage) {
       api_secret: '-vPJzL6YrTpc4Ef6KO9XNqKXJ5I' 
     });
     
-    console.log("From delete: "+a);
+    // console.log("From delete: "+a);
 
     await cloudinary.uploader.destroy(a,
       function(err, res) {
@@ -301,7 +301,7 @@ function AccInfo (props,defaultImage) {
           "profilepic_change": pfpc,
           "new_profilepic": npfp
         }
-        console.log(payload);
+        // console.log(payload);
         response = await axios.post("https://spr-system.herokuapp.com/edit/personal/info/", payload)
         //response = await axios.post("http://127.0.0.1:8000/edit/personal/info/", payload)
       }
@@ -309,7 +309,7 @@ function AccInfo (props,defaultImage) {
         return isValid;
       }
       if( response.data['status'] === true) {
-        console.log(response.data)
+        // console.log(response.data)
         //console.log(response.data['message']);
         dispatch(update_firstname(response.data['info']['firstname']));
         dispatch(update_lastname(response.data['info']['lastname']));
@@ -441,9 +441,11 @@ function AccInfo (props,defaultImage) {
                 <Form.Group  controlId="forsc">
                   <Form.Control as="select" defaultValue={personal.school} value={school} onChange={e => setschool(e.target.value)}>
                     <option >{null}</option>
-                    <option >School1</option>
-                    <option >School2</option>
-                    <option >School3</option>
+                    {t_school.school.map((ava) => {
+                      return (
+                        <option>{ava.name}</option>  
+                      );})
+                    }
                   </Form.Control>
                   <Form.Text style={{color: "red"}} >
                     {schoolerrors}
@@ -504,17 +506,17 @@ function AccInfo (props,defaultImage) {
                 <Form.Group controlId="forpw">
                 <Form.Row >CHANGE PASSWORD</Form.Row>
                   <Form.Label >Current Password</Form.Label>
-                  <Form.Control  type="text" placeholder="Enter Current Email"  value={oldpassword} onChange={e => setoldpassword(e.target.value)} />
+                  <Form.Control  type="password" placeholder="Enter Current Password"  value={oldpassword} onChange={e => setoldpassword(e.target.value)} />
                   <Form.Text style={{color: "red"}} >
                   {oldpassworderrors}
                   </Form.Text>
                   <Form.Label >New Password</Form.Label>
-                  <Form.Control type="text" placeholder="Enter New Email"  value={newpassword} onChange={e => setnewpassword(e.target.value)} />
+                  <Form.Control type="password" placeholder="Enter New Password"  value={newpassword} onChange={e => setnewpassword(e.target.value)} />
                   <Form.Text style={{color: "red"}} >
                   {newpassworderrors}
                   </Form.Text>
                   <Form.Label >Confirm New Password</Form.Label>
-                  <Form.Control  type="text" placeholder="Enter New Email"  value={confirmnewpassword} onChange={e => setconfirmnewpassword(e.target.value)} />
+                  <Form.Control  type="password" placeholder="Enter New Password"  value={confirmnewpassword} onChange={e => setconfirmnewpassword(e.target.value)} />
                   <Form.Text style={{color: "red"}} >
                   {confirm_new_passworderrors}
                   </Form.Text>
