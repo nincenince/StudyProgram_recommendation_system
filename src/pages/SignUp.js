@@ -5,7 +5,7 @@ import './SignUp.css'
 import { Col , Button, Form} from "react-bootstrap";
 import { useState,  useRef } from 'react';
 // import { useSelector, useDispatch} from 'react-redux';
-
+import t_school from '../School_list'
 
 function SignUp (props, {defaultImage}) {
   // var cloudinary = require('cloudinary');
@@ -61,7 +61,7 @@ function SignUp (props, {defaultImage}) {
 
   function handleFiles(files) {
     for (let i = 0; i < files.length; i++) {
-      console.log(files[i]);
+      // console.log(files[i]);
       uploadFile(files[i]);
     }
   }
@@ -82,7 +82,7 @@ function SignUp (props, {defaultImage}) {
     // Update progress (can be used to show progress indicator)
     xhr.upload.addEventListener("progress", (e) => {
       setProgress(Math.round((e.loaded * 100.0) / e.total));
-      console.log(Math.round((e.loaded * 100.0) / e.total));
+      // console.log(Math.round((e.loaded * 100.0) / e.total));
     });
 
     xhr.onreadystatechange = (e) => {
@@ -93,7 +93,7 @@ function SignUp (props, {defaultImage}) {
         setprofilepic(a[7]);
         setImage(response.secure_url);
         setPublicid(response.public_id);
-        console.log(response);
+        // console.log(response);
       }
     };
 
@@ -125,7 +125,7 @@ function SignUp (props, {defaultImage}) {
       api_secret: '-vPJzL6YrTpc4Ef6KO9XNqKXJ5I' 
     });
     
-    console.log(Publicid);
+    // console.log(Publicid);
 
     await cloudinary.uploader.destroy(Publicid,
       function(err, res) {
@@ -152,20 +152,20 @@ function SignUp (props, {defaultImage}) {
       let isValid = true;
   
       if (!input["firstname"]) {
-        console.log('1');
+        // console.log('1');
         isValid = false;
         // errors["username"] = "Please enter your firstname.";
         setfirstnameerrors("Please enter your firstname.");
       }
       if (!input["lastname"]) {
-        console.log('2');
+        // console.log('2');
         isValid = false;
         // errors["lastname"] = "Please enter your lastname.";
         setlastnameerrors("Please enter your lastname.");
       }
   
       if (!input["email"]) {
-        console.log('3');
+        // console.log('3');
         isValid = false;
         // errors["email"] = "Please enter your email Address.";
         setemailerrors("Please enter your email Address.");
@@ -175,7 +175,7 @@ function SignUp (props, {defaultImage}) {
           
         var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
         if (!pattern.test(input["email"])) {
-          console.log('4');
+          // console.log('4');
           isValid = false;
           // errors["email"] = "Please enter valid email address.";
           setemailerrors("Please enter valid email address.");
@@ -183,20 +183,20 @@ function SignUp (props, {defaultImage}) {
       }
       
       if (!input["gender"]) {
-        console.log('5');
+        // console.log('5');
         isValid = false;
         // errors["gender"] = "Please select your gender.";
         setgendererrors("Please select your gender.");
       }
       if (!input["school"]) {
-        console.log('6');
+        // console.log('6');
         isValid = false;
         // errors["school"] = "Please enter your school.";
         setschoolerrors("Please select your school.");
       }
 
       if (!input["password"]) {
-        console.log('7');
+        // console.log('7');
         isValid = false;
         // errors["password"] = "Please enter your password.";
         setpassworderrors("Please enter your new password.");
@@ -204,7 +204,7 @@ function SignUp (props, {defaultImage}) {
       }
   
       if (!input["confirm_password"]) {
-        console.log('8');
+        // console.log('8');
         isValid = false;
         // errors["confirm_password"] = "Please enter your confirm password.";
         setconfirmpassworderrors("Please enter your new password.");
@@ -214,7 +214,7 @@ function SignUp (props, {defaultImage}) {
       if (typeof input["password"] !== "undefined" && typeof input["confirm_password"] !== "undefined") {
           
         if (input["password"] !== input["confirm_password"]) {
-          console.log('9');
+          // console.log('9');
           isValid = false;
           // errors["password"] = "Passwords don't match.";
           setconfirmpassworderrors("Passwords don't match.");
@@ -236,7 +236,7 @@ function SignUp (props, {defaultImage}) {
           'role' : 'user',
           'profilepic': profilepic
         }
-        console.log(payload);
+        // console.log(payload);
         response = await axios.post("https://spr-system.herokuapp.com/signup/", payload);
         //response = await axios.post("http://127.0.0.1:8000/signup/", payload);
       }
@@ -244,7 +244,7 @@ function SignUp (props, {defaultImage}) {
         return isValid;
       }
       if (response.data['status'] === true) {
-        console.log(response.data)
+        // console.log(response.data)
         alert(response.data['message'])
         props.history.push("/SignIn")
       }
@@ -289,14 +289,16 @@ function SignUp (props, {defaultImage}) {
               </Form.Text>
             </Form.Group>
 
-
+            
             <Form.Group controlId="formschool">
               <Form.Label >School</Form.Label>
               <Form.Control  as="select" name="school" value={school} onChange={e => setschool(e.target.value)} >
-              <option >{null}</option>
-                    <option >School1</option>
-                    <option >School2</option>
-                    <option >School3</option>
+                <option >{null}</option>
+                {t_school.school.map((ava) => {
+                  return (
+                    <option>{ava.name}</option>  
+                  );})
+                }
               </Form.Control>
               <Form.Text style={{color: "red"}} >
                 {schoolerrors}
@@ -380,7 +382,7 @@ function SignUp (props, {defaultImage}) {
 
             <br></br>
             <br></br>
-            <div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
+            <div style={{display:"flex", alignItems:"center", justifyContent:"center", marginBottom: '10%'}}>
               <Button 
               style={{display:"flex", alignItems:"center", justifyContent:"center"}}
               variant="primary" type="submit" value="Submit">
