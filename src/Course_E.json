@@ -1,0 +1,211 @@
+{
+    "Courses":[
+       {
+          "KMITL_NAME":"วท.บ. เศรษฐศาสตร์ธุรกิจและการจัดการ",
+          "RECOMMEND_NAME":"เศรษฐศาสตร์ธุรกิจและการจัดการ",
+          "KMITL_NAME_ENG":"B.Sc. Business and Managerial Economics"
+       },
+       {
+          "KMITL_NAME":"วท.บ. เทคโนโลยีสารสนเทศ",
+          "RECOMMEND_NAME":"เทคโนโลยีสารสนเทศ",
+          "KMITL_NAME_ENG":"B.Sc. Information Technology"
+       },
+       {
+          "KMITL_NAME":"วท.บ. วิทยาการคอมพิวเตอร์",
+          "RECOMMEND_NAME":"วิทยาการคอมพิวเตอร์",
+          "KMITL_NAME_ENG":"B.Sc. Computer Science"
+       },
+       {
+          "KMITL_NAME":"วศ.บ. วิศวกรรมไฟฟ้า",
+          "RECOMMEND_NAME":"วิศวกรรมไฟฟ้า",
+          "KMITL_NAME_ENG":"B.Eng. Electrical Engineering"
+       },
+       {
+          "KMITL_NAME":"วท.บ.เคมีอุตสาหกรรม",
+          "RECOMMEND_NAME":"เคมีอุตสาหกรรม",
+          "KMITL_NAME_ENG":"B.Sc. Industrial Chemistry"
+       },
+       {
+          "KMITL_NAME":"วท.บ. จุลชีววิทยาอุตสาหกรรม",
+          "RECOMMEND_NAME":"จุลชีววิทยาอุตสาหกรรม",
+          "KMITL_NAME_ENG":"B.Sc. Industrial Microbiology"
+       },
+       {
+          "KMITL_NAME":"วศ.บ. วิศวกรรมโทรคมนาคมและโครงข่าย",
+          "RECOMMEND_NAME":"วิศวกรรมโทรคมนาคม",
+          "KMITL_NAME_ENG":"B.Eng. Telecommunications and Network Engineering"
+       },
+       {
+          "KMITL_NAME":"วศ.บ. วิศวกรรมอิเล็กทรอนิกส์",
+          "RECOMMEND_NAME":"วิศวกรรมอิเล็กทรอนิกส์",
+          "KMITL_NAME_ENG":"B.Eng. Electronics Engineering"
+       },
+       {
+          "KMITL_NAME":"วศ.บ. วิศวกรรมวัสดุนาโน",
+          "RECOMMEND_NAME":"วิศวกรรมวัสดุนาโน",
+          "KMITL_NAME_ENG":"B.Eng. Nanomaterial Engineering"
+       },
+       {
+          "KMITL_NAME":"วท.บ.เทคโนโลยีชีวภาพ",
+          "RECOMMEND_NAME":"เทคโนโลยีชีวภาพ",
+          "KMITL_NAME_ENG":"B.Sc. Biotechnology"
+       },
+       {
+          "KMITL_NAME":"วศ.บ. วิศวกรรมโยธา",
+          "RECOMMEND_NAME":"วิศวกรรมโยธา",
+          "KMITL_NAME_ENG":"B.Eng. Civil Engineering"
+       },
+       {
+          "KMITL_NAME":"วท.บ. วิศวกรรมแปรรูปอาหาร",
+          "RECOMMEND_NAME":"วิศวกรรมแปรรูปอาหาร",
+          "KMITL_NAME_ENG":"B.Sc. Food Process Engineering"
+       },
+       {
+          "KMITL_NAME":"วท.บ. เทคโนโลยีการหมักในอุตสาหกรรมอาหาร",
+          "RECOMMEND_NAME":"เทคโนโลยีการหมักในอุตสาหกรรมอาหาร",
+          "KMITL_NAME_ENG":"B.Sc. Fermentation Technology in Food Industry"
+       },
+       {
+          "KMITL_NAME":"วศ.บ. วิศวกรรมคอมพิวเตอร์",
+          "RECOMMEND_NAME":"วิศวกรรมคอมพิวเตอร์",
+          "KMITL_NAME_ENG":"B.Eng. Computer Engineering"
+       },
+       {
+          "KMITL_NAME":"วท.บ. วิทยาศาสตร์และเทคโนโลยีการอาหาร",
+          "RECOMMEND_NAME":"วิทยาศาสตร์และเทคโนโลยีการอาหาร",
+          "KMITL_NAME_ENG":"B.Sc. Food Science and Technology"
+       },
+       {
+          "KMITL_NAME":"ค.อ.บ. ครุศาสตร์วิศวกรรม",
+          "RECOMMEND_NAME":"ครุศาสตร์วิศวกรรม (หลักสูตร 5 ปี)",
+          "KMITL_NAME_ENG":"B.S.Ind.Ed. Engineering Education"
+       },
+       {
+          "KMITL_NAME":"สถ.บ. สถาปัตยกรรมภายใน",
+          "RECOMMEND_NAME":"สถาปัตยกรรมภายใน",
+          "KMITL_NAME_ENG":"B.Arch. Interior Architecture"
+       },
+       {
+          "KMITL_NAME":"สถ.บ. สถาปัตยกรรมหลัก",
+          "RECOMMEND_NAME":"สถาปัตยกรรมหลัก",
+          "KMITL_NAME_ENG":"B.Arch. Architecture"
+       },
+       {
+          "KMITL_NAME":"สถ.บ. ศิลปอุตสาหกรรม",
+          "RECOMMEND_NAME":"ศิลปอุตสาหกรรม (หลักสูตร 4 ปี)",
+          "KMITL_NAME_ENG":"B.Arch. Industrial Design"
+       },
+       {
+          "KMITL_NAME":"วศ.บ. วิศวกรรมเครื่องกล",
+          "RECOMMEND_NAME":"วิศวกรรมเครื่องกล",
+          "KMITL_NAME_ENG":"B.Eng. Mechanical Engineering"
+       },
+       {
+          "KMITL_NAME":"ค.อ.บ. ครุศาสตร์เกษตร",
+          "RECOMMEND_NAME":"ครุศาสตร์เกษตร (หลักสูตร 5 ปี)",
+          "KMITL_NAME_ENG":"B.S.Ind.Ed. Agricultural Education"
+       },
+       {
+          "KMITL_NAME":"วท.บ. เทคโนโลยีสารสนเทศ",
+          "RECOMMEND_NAME":"วิศวกรรมสารสนเทศ",
+          "KMITL_NAME_ENG":"B.Sc. Information Technology"
+       },
+       {
+          "KMITL_NAME":"วศ.บ. วิศวกรรมระบบการผลิต",
+          "RECOMMEND_NAME":"วิศวกรรมระบบการผลิต",
+          "KMITL_NAME_ENG":"B.Eng. Manufacturing System Engineering"
+       },
+       {
+          "KMITL_NAME":"ภ.สถ.บ. ภูมิสถาปัตยกรรม",
+          "RECOMMEND_NAME":"สถาปัตยกรรม(หลักสูตร 5 ปี)",
+          "KMITL_NAME_ENG":"Bachelor of Landscape Architecture"
+       },
+       {
+          "KMITL_NAME":"วท.บ. วิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ",
+          "RECOMMEND_NAME":"วิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ",
+          "KMITL_NAME_ENG":"B.Sc. Data Science and Business Analytics"
+       },
+       {
+          "KMITL_NAME":"วศ.บ. วิศวกรรมเคมี",
+          "RECOMMEND_NAME":"วิศวกรรมเคมี",
+          "KMITL_NAME_ENG":"B.Eng. Chemical Engineering"
+       }
+    ],
+    "Courses2":[
+       {
+          "KMITL_NAME":"บริหารธุรกิจบัณฑิต",
+          "RECOMMEND_NAME":"บริหารธุรกิจ",
+          "KMITL_NAME_ENG":"Bachelor of Business Administration"
+       },
+       {
+          "KMITL_NAME":"วท.บ. เทคโนโลยีการผลิตพืช",
+          "RECOMMEND_NAME":"เกษตรศาสตร์",
+          "KMITL_NAME_ENG":"B.Sc. Plant Production Technology"
+       },
+       {
+          "KMITL_NAME":"วท.บ. คณิตศาสตร์ประยุกต์",
+          "RECOMMEND_NAME":"คณิตศาสตร์ประยุกต์",
+          "KMITL_NAME_ENG":"B.Sc. Applied Mathematics"
+       },
+       {
+          "KMITL_NAME":"วท.บ.สถิติประยุกต์",
+          "RECOMMEND_NAME":"สถิติประยุกต์",
+          "KMITL_NAME_ENG":"B.Sc. Applied Statistics"
+       },
+       {
+          "KMITL_NAME":"วท.บ. นิเทศศาสตร์เกษตร",
+          "RECOMMEND_NAME":"นิเทศศาสตร์เกษตร",
+          "KMITL_NAME_ENG":"B.Sc. Agricultural Communication"
+       },
+       {
+          "KMITL_NAME":"วท.บ.ฟิสิกส์อุตสาหกรรม",
+          "RECOMMEND_NAME":"ฟิสิกส์ประยุกต์",
+          "KMITL_NAME_ENG":"B.Sc. Industrial Physics"
+       },
+       {
+          "KMITL_NAME":"ศศ.บ. ภาษาอังกฤษ",
+          "RECOMMEND_NAME":"ภาษาอังกฤษ",
+          "KMITL_NAME_ENG":"B.A. English"
+       },
+       {
+          "KMITL_NAME":"ศศ.บ. ภาษาญี่ปุ่น",
+          "RECOMMEND_NAME":"ภาษาญี่ปุ่น",
+          "KMITL_NAME_ENG":"B.A. Japanese"
+       },
+       {
+          "KMITL_NAME":"วท.บ. เทคโนโลยีการผลิตสัตว์และวิทยาศาสตร์เนื้อสัตว์",
+          "RECOMMEND_NAME":"สัตวศาสตร์",
+          "KMITL_NAME_ENG":"B.Sc. Animal Production Technology and Meat Science"
+       },
+       {
+          "KMITL_NAME":"วท.บ.เคมีสิ่งแวดล้อม",
+          "RECOMMEND_NAME":"เคมีสิ่งแวดล้อม",
+          "KMITL_NAME_ENG":"B.Sc. Environmental Chemistry"
+       },
+       {
+          "KMITL_NAME":"ค.อ.บ. ครุศาสตร์การออกแบบสภาพแวดล้อมภายใน",
+          "RECOMMEND_NAME":"การออกแบบสภาพแวดล้อมภายใน (หลักสูตร 5 ปี)",
+          "KMITL_NAME_ENG":"B.S.Ind.Ed. Interior Environmental Design"
+       },
+       {
+          "KMITL_NAME":"วท.บ. นวัตกรรมการผลิตสัตว์น้ำและการจัดการทรัพยากรประมง",
+          "RECOMMEND_NAME":"วิทยาศาสตร์การประมง",
+          "KMITL_NAME_ENG":"B.Sc. Innovative Aquatic Animal Production and Fishery Resource Management"
+       },
+       {
+          "KMITL_NAME":"วท.บ. พัฒนาการเกษตร",
+          "RECOMMEND_NAME":"พัฒนาการเกษตร",
+          "KMITL_NAME_ENG":"B.Sc. Agricultural Development"
+       },
+       {
+          "KMITL_NAME":"วศ.บ. วิศวกรรมอุตสาหการ",
+          "RECOMMEND_NAME":"วิศวกรรมอุตสาหการ",
+          "KMITL_NAME_ENG":"B.Eng. Industrial Engineering"
+       },
+       {
+          "KMITL_NAME":"ศศ.บ. นวัตกรรมการท่องเที่ยวและการบริการ",
+          "RECOMMEND_NAME":"นวัตกรรมการท่องเที่ยวและการบริการ",
+          "KMITL_NAME_ENG":"B.A. Innovation in Tourism and Hospitality"
+       }
+    ]
+ }
