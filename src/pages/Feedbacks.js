@@ -32,7 +32,7 @@ function Feedbacks(props){
     
     <Col >
 
-          <div style={{border:'solid', borderWidth:'thin', marginLeft:'10%',marginRight:'10%', marginTop:'4%'}}>
+          <div style={{border:'solid', borderWidth:'thin', marginLeft:'10%',marginRight:'10%', marginTop:'4%', marginBottom: '10%'}}>
           <Scrollbars style={{ width: '100vw', height: '65vh'}}>
                 {
                   feedbackk.map((Info) => {
