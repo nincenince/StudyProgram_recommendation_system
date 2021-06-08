@@ -91,7 +91,7 @@ function SignIn(props) {
           }
           // console.log(isValid)
           // console.log("Now")
-          console.log(response.data)
+          // console.log(response.data)
           // console.log("Wow")
           if (response.data['status'] === true) {
             console.log("Passed");
@@ -128,7 +128,7 @@ function SignIn(props) {
           else {
             alert("Fail to login");
           }
-          console.log(isValid);
+          // console.log(isValid);
           return isValid;
       }
       // const get_nes = async (tk) => {
