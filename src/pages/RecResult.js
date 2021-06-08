@@ -34,7 +34,23 @@ function RecommendProg (props){
             "RecProgScore": "100%"
           }
         ]
-      }      
+      },
+      {
+        "Programs": "Program4",
+        "ProgramList": [
+          {
+            "RecProgScore": "100%"
+          }
+        ]
+      },
+      {
+        "Programs": "Program5",
+        "ProgramList": [
+          {
+            "RecProgScore": "100%"
+          }
+        ]
+      }          
     ]   
   }
   const [RecommendPrograms, setRecommendPrograms] = useState(temp)
@@ -43,11 +59,22 @@ function RecommendProg (props){
         var count;
         let temp = [];
         let latest_data = history_list[history_list.length-1];
+        let s1 = "";
+        let s2 = "";
+        let s3 = "";
+        let s4 = "";
+        let s5 = "";
+        for(let i=0;i<parseInt(latest_data['first_s']);i++){s1=s1+"⭐️"};
+        for(let i=0;i<parseInt(latest_data['second_s']);i++){s2=s2+"⭐️"};
+        for(let i=0;i<parseInt(latest_data['third_s']);i++){s3=s3+"⭐️"};
+        for(let i=0;i<parseInt(latest_data['forth_s']);i++){s4=s4+"⭐️"};
+        for(let i=0;i<parseInt(latest_data['fifth_s']);i++){s5=s5+"⭐️"};
         let a = {
           "Programs": latest_data['first'],
           "ProgramList": [
             {
-              "RecProgScore": latest_data['first_p'] + "%"
+              "RecProgScore": latest_data['first_p'],
+              "RecProgStar": s1
             }
           ]
         }
@@ -55,7 +82,8 @@ function RecommendProg (props){
           "Programs": latest_data['second'],
           "ProgramList": [
             {
-              "RecProgScore": latest_data['second_p'] + "%"
+              "RecProgScore": latest_data['second_p'],
+              "RecProgStar": s2
             }
           ]
         }
@@ -63,13 +91,34 @@ function RecommendProg (props){
           "Programs": latest_data['third'],
           "ProgramList": [
             {
-              "RecProgScore": latest_data['third_p'] + "%"
+              "RecProgScore": latest_data['third_p'],
+              "RecProgStar": s3
+            }
+          ]
+        }
+        let d = {
+          "Programs": latest_data['forth'],
+          "ProgramList": [
+            {
+              "RecProgScore": latest_data['forth_p'],
+              "RecProgStar": s4
+            }
+          ]
+        }
+        let e = {
+          "Programs": latest_data['fifth'],
+          "ProgramList": [
+            {
+              "RecProgScore": latest_data['fifth_p'],
+              "RecProgStar": s5
             }
           ]
         }
         temp.push(a);
         temp.push(b);
         temp.push(c);
+        temp.push(d);
+        temp.push(e);
         let x ={
           "RecommendProgList": temp
         };
@@ -105,9 +154,14 @@ function RecommendProg (props){
                         </Col>
                           {RecInfo.ProgramList.map((RecDetail) => {
                             return (
-                              <p > 
-                                {RecDetail.RecProgScore}
-                              </p>
+                              <div>
+                                <p> 
+                                  {RecDetail.RecProgStar}
+                                </p>
+                                <p>
+                                  Predicted grade: {RecDetail.RecProgScore}
+                                </p>
+                              </div>
                             );
                           })}
                       </Row>
@@ -123,7 +177,7 @@ function RecommendProg (props){
           <Col sm={{ span: 12, offset: 11 }}>
             <Row>
               <Link to="/RecProgram">
-                <Button className="recprog-done-button" style={{marginTop:'25%'}}>
+                <Button className="recprog-done-button" style={{marginTop:'25%', marginBottom:'50%'}}>
                   Done
                 </Button>
               </Link>
