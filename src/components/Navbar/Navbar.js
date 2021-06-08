@@ -201,7 +201,7 @@ function Navbarr (props){
                                 <img style={{borderRadius: '100%'}} src={profilepicurl} alt="img"/>
                                 <span style={{padding: '5%'}}>Admin</span>
                             </NavDropdown.Item> */}
-                            <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem" style ={{ textAlign:'center'}} onClick={() => logout(token)} >
+                            <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem" style ={{ textAlign:'center', backgroundColor: 'white', color:'red', fontWeight: 'bold'}} onClick={() => logout(token)} >
                                 Sign out
                             </NavDropdown.Item>
                         </NavDropdown> :
@@ -251,7 +251,7 @@ function Navbarr (props){
                     <NavDropdown.Item as={NavLink} to='/AccInfo' className="NavDropdownItem" style ={{ textAlign:'center'}} >Account</NavDropdown.Item>
                     <NavDropdown.Item as={NavLink} to='/Dashboard' className="NavDropdownItem"style ={{ textAlign:'center'}} >Dashboard</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem"   onClick={() => logout(token)} style ={{ textAlign:'center'}} >Sign Out</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/' className="NavDropdownItem"   onClick={() => logout(token)} style ={{ textAlign:'center', backgroundColor: 'white', color:'red', fontWeight: 'bold'}}>Sign Out</NavDropdown.Item>
                 </NavDropdown> :
                     <Form style={{justifyContent: 'space-evenly'}} inline>
                         <Button variant="outline-danger" style={{backgroundColor: '#f6ddcb'}} as={NavLink} to='/SignIn'>Sign In</Button>
