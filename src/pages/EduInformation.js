@@ -110,14 +110,14 @@ function EduInformation (props) {
     if(newpat7 === 0){
       setnewpat7(education.EduInfo[8].ScoreList[0].Score)
     }
-    console.log(newgat);
-    console.log(newpat1);
-    console.log(newpat2);
-    console.log(newpat3);
-    console.log(newpat4);
-    console.log(newpat5);
-    console.log(newpat6);
-    console.log(newpat7);
+    // console.log(newgat);
+    // console.log(newpat1);
+    // console.log(newpat2);
+    // console.log(newpat3);
+    // console.log(newpat4);
+    // console.log(newpat5);
+    // console.log(newpat6);
+    // console.log(newpat7);
     validate(token,false,null,true,newgat,true,newpat1,true,newpat2,true,newpat3,true,newpat4,true,newpat5,true,newpat6,true,newpat7,false,null,false,null,false,null);
   }
   
@@ -249,7 +249,7 @@ function EduInformation (props) {
         "ielts_change": iec,
         "new_ielts": nie
       }
-      console.log(payload);
+      // console.log(payload);
       response = await axios.post("https://spr-system.herokuapp.com/edit/education/info/", payload)
       //response = await axios.post("http://127.0.0.1:8000/edit/education/info/", payload)
     }
@@ -257,7 +257,7 @@ function EduInformation (props) {
       return isValid;
     }
     if( response.data['status'] === true) {
-      console.log(response.data)
+      // console.log(response.data)
       //console.log(response.data['message']);
       dispatch(update_edu(response.data['info']));
       alert(response.data['message']);
