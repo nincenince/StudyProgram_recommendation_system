@@ -32,7 +32,7 @@ class ForgotPassword extends React.Component {
     event.preventDefault();
   
     if(this.validate()){
-        console.log(this.state);
+        // console.log(this.state);
         let input = {};
         input["email"] = "";
         this.setState({input:input});
@@ -67,7 +67,7 @@ class ForgotPassword extends React.Component {
         //this.response = await axios.post('http://127.0.0.1:8000/reset_password/', payload);
         this.response = await axios.post('https://spr-system.herokuapp.com/reset_password/', payload);
         if (this.response.data['status'] === true) {
-          console.log(this.response.data)
+          // console.log(this.response.data)
           alert(this.response.data['message'])
           this.props.history.push("/SignIn")
         }
