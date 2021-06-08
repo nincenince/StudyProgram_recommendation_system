@@ -143,7 +143,8 @@ const Admin_prog = (props, {defaultImage}) => {
   const [image, setImage] = useState(defaultImage);
   const [progress, setProgress] = useState(0);
   const [Publicid, setPublicid]=  useState('');
-  const [coursepic, setcoursepic] = useState('default_user_img_nzynlg.png');
+  const [coursepic, setcoursepic] = useState('default_program_pic_khykow.png');
+  // https://res.cloudinary.com/hdtjuro73/image/upload/v1623141648/default_program_pic_khykow.png
 
   // useEffect(async () => {
   //   await axios.get('127.0.0.1:8000/get_all_user').then(
@@ -295,7 +296,7 @@ const Admin_prog = (props, {defaultImage}) => {
 
   function handleFiles(files) {
     for (let i = 0; i < files.length; i++) {
-      console.log(files[i]);
+      // console.log(files[i]);
       uploadFile(files[i]);
     }
   }
@@ -310,7 +311,7 @@ const Admin_prog = (props, {defaultImage}) => {
     // Update progress (can be used to show progress indicator)
     xhr.upload.addEventListener("progress", (e) => {
       setProgress(Math.round((e.loaded * 100.0) / e.total));
-      console.log(Math.round((e.loaded * 100.0) / e.total));
+      // console.log(Math.round((e.loaded * 100.0) / e.total));
     });
 
     xhr.onreadystatechange = (e) => {
@@ -321,7 +322,7 @@ const Admin_prog = (props, {defaultImage}) => {
         setcoursepic(a[7]);
         setImage(response.secure_url);
         setPublicid(response.public_id);
-        console.log(response);
+        // console.log(response);
       }
     };
 
@@ -353,7 +354,7 @@ const Admin_prog = (props, {defaultImage}) => {
       api_secret: '-vPJzL6YrTpc4Ef6KO9XNqKXJ5I' 
     });
     
-    console.log(Publicid);
+    // console.log(Publicid);
 
     await cloudinary.uploader.destroy(Publicid,
       function(err, res) {
@@ -387,32 +388,32 @@ const Admin_prog = (props, {defaultImage}) => {
     let isValid = true;
 
     if (!input["department"]) {
-      console.log('1');
+      // console.log('1');
       isValid = false;
       setdepartmenterrors("Please enter department.");
     }
     if (!input["department_thai"]) {
-      console.log('1');
+      // console.log('1');
       isValid = false;
       setdepartmenttherrors("โปรดใส่หลักสูตร");
     }
     if (!input["program"]) {
-      console.log('2');
+      // console.log('2');
       isValid = false;
       setprogramerrors("Please enter program.");
     }
     if (!input["program_thai"]) {
-      console.log('2');
+      // console.log('2');
       isValid = false;
       setprogramtherrors("โปรดใส่สาขาวิชา");
     }
     if (!input["link"]) {
-      console.log('3');
+      // console.log('3');
       isValid = false;
       setlinkerrors("Please enter link.");
     }
     if (!input["faculty"]) {
-      console.log('4');
+      // console.log('4');
       isValid = false;
       setfacultyerrors("Please select faculty.");
     }
@@ -429,7 +430,7 @@ const Admin_prog = (props, {defaultImage}) => {
         "link": input['link'],
         'coursepic': coursepic
       }
-      console.log(payload);
+      // console.log(payload);
       response = await axios.post("https://spr-system.herokuapp.com/add_course/", payload);
       // response = await axios.post("http://127.0.0.1:8000/add_course/", payload);
     }
@@ -437,7 +438,7 @@ const Admin_prog = (props, {defaultImage}) => {
       return isValid;
     }
     if (response.data['status'] === true) {
-      console.log(response.data)
+      // console.log(response.data)
       alert(response.data['message'])
       setfaculty('');
       setdepartment('');
@@ -554,7 +555,7 @@ const Admin_prog = (props, {defaultImage}) => {
               <Form.Group controlId="formdeaprtment_th">
                 <Form.Label >ภาควิชา</Form.Label>
                 <Form.Control type="text" name="department_th"
-                placeholder="ตัวอย่าง: วิศวกรรมคอมพิวเตอร์" value={departmentth} onChange={e => setdepartmentth(e.target.value)} />
+                placeholder="ตัวอย่าง: วิศวกรรมคอมพิวเตอร์" value={departmentth} onChange={e => setdepartmentth(e.target.value)}/>
                 <Form.Text style={{color: "red"}} >
                   {departmenttherrors}
                 </Form.Text>
@@ -586,6 +587,7 @@ const Admin_prog = (props, {defaultImage}) => {
                   {linkerrors}
                 </Form.Text>
               </Form.Group>
+              <Form.Label >Course picture : รูปประกอบ</Form.Label>
               {image ? (<div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
                 <img className="object-contain rounded-lg" src={image.replace("upload/", "upload/w_250,h_150,c_scale,q_auto,f_auto/")}/>
                 <Button style={{backgroundColor:'transparent', border:'transparent',display:"flex", alignItems:"center", justifyContent:"center"}} onClick={() => deletepic()}>
@@ -593,7 +595,7 @@ const Admin_prog = (props, {defaultImage}) => {
                 </Button>
               </div>)
               :<div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
-                <img className="object-contain rounded-lg" src="https://res.cloudinary.com/hdtjuro73/image/upload/w_150,h_150,c_scale,q_auto,f_auto/v1617779170/default_user_img_nzynlg.png"/>
+                <img className="object-contain rounded-lg" src="https://res.cloudinary.com/hdtjuro73/image/upload/w_150,h_150,c_scale,q_auto,f_auto/v1617779170/default_program_pic_khykow.png"/>
               </div>}
               <hr></hr>
               <div className="bg-gray-200 border-4 border-dashed border-gray-400 rounded-lg" >
