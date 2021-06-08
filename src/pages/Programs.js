@@ -101,28 +101,28 @@ function Programs() {
             {/* <Form.Control style={{ fontSize:'1vw'}} type="text" placeholder="Enter First Name"  value={firstname} onChange={e => setfirstname(e.target.value)} /> */}
             <Form.Control as="select" style={{ width:"70%"}} value={facu} onChange={e => filterData(e.target.value)} key="fa">
               <option style={{ fontSize:'1vw'}}>{null}</option>
-              <option style={{ fontSize:'1vw'}}>College of Educational Innovation Research</option>
-              <option style={{ fontSize:'1vw'}}>Institute of Music Science and Engineering</option>
-              <option style={{ fontSize:'1vw'}}>KOSEN-KMITL</option>
-              <option style={{ fontSize:'1vw'}}>CMKL University</option>
-              <option style={{ fontSize:'1vw'}}>KMITL Hospital</option>
-              <option style={{ fontSize:'1vw'}}>42  Bangkok KMITL</option>
-              <option style={{ fontSize:'1vw'}}>Faculty of Dentistry</option>
-              <option style={{ fontSize:'1vw'}}>KMITL Prince of Chumphon Campus </option>
-              <option style={{ fontSize:'1vw'}}>School of Engineering</option>
-              <option style={{ fontSize:'1vw'}}>Faculty of Architecture</option>
-              <option style={{ fontSize:'1vw'}}>School of Science</option>
-              <option style={{ fontSize:'1vw'}}>Faculty of Industrial Education and Technology</option>
-              <option style={{ fontSize:'1vw'}}>Faculty of Agricultural Technology</option>
-              <option style={{ fontSize:'1vw'}}>Faculty of Information Technology</option>
-              <option style={{ fontSize:'1vw'}}>Faculty of Food Industry</option>
-              <option style={{ fontSize:'1vw'}}>KMITL Business School</option>
-              <option style={{ fontSize:'1vw'}}>Faculty of Liberal Arts</option>
-              <option style={{ fontSize:'1vw'}}>College of Nanotechnology</option>
-              <option style={{ fontSize:'1vw'}}>College of Advanced Manufacturing Innovation</option>
-              <option style={{ fontSize:'1vw'}}>Faculty of Medicine</option>
-              <option style={{ fontSize:'1vw'}}>International Academy of Aviation Industry</option>
-              <option style={{ fontSize:'1vw'}}>King Mongkut's International Demonstration School</option>
+              <option value="College of Educational Innovation Research" style={{ fontSize:'1vw'}}>College of Educational Innovation Research : วิทยาลัยวิจัยนวัตกรรมทางการศึกษา</option>
+              <option value="Institute of Music Science and Engineering" style={{ fontSize:'1vw'}}>Institute of Music Science and Engineering : วิทยาลัยวิศวกรรมสังคีต</option>
+              <option value="KOSEN-KMITL" style={{ fontSize:'1vw'}}>KOSEN-KMITL : สถาบันโคเซ็นแห่งสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</option>
+              <option value="CMKL University" style={{ fontSize:'1vw'}}>CMKL University : มหาวิทยาลัยซีเอ็มเคแอล</option>
+              <option value="KMITL Hospital" style={{ fontSize:'1vw'}}>KMITL Hospital : โรงพยาบาลพระจอมเกล้าเจ้าคุณทหาร</option>
+              <option value="Faculty of Dentistry" style={{ fontSize:'1vw'}}>Faculty of Dentistry : คณะทันตแพทยศาสตร์</option>
+              <option value="KMITL Prince of Chumphon Campus" style={{ fontSize:'1vw'}}>KMITL Prince of Chumphon Campus : วิทยาเขตชุมพรเขตรอุดมศักดิ์ จังหวัดชุมพร</option>
+              <option value="School of Engineering" style={{ fontSize:'1vw'}}>School of Engineering : คณะวิศวกรรมศาสตร์</option>
+              <option value="Faculty of Architecture" style={{ fontSize:'1vw'}}>Faculty of Architecture : คณะสถาปัตยกรรมศาสตร์ ศิลปะและการออกแบบ</option>
+              <option value="School of Science" style={{ fontSize:'1vw'}}>School of Science : คณะวิทยาศาสตร์</option>
+              <option value="Faculty of Industrial Education and Technology" style={{ fontSize:'1vw'}}>Faculty of Industrial Education and Technology : คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี</option>
+              <option value="Faculty of Agricultural Technology" style={{ fontSize:'1vw'}}>Faculty of Agricultural Technology : คณะเทคโนโลยีการเกษตร</option>
+              <option value="Faculty of Information Technology" style={{ fontSize:'1vw'}}>Faculty of Information Technology : คณะเทคโนโลยีสารสนเทศ</option>
+              <option value="Faculty of Food Industry" style={{ fontSize:'1vw'}}>Faculty of Food Industry : คณะอุตสาหกรรมอาหาร</option>
+              <option value="KMITL Business School" style={{ fontSize:'1vw'}}>KMITL Business School : คณะบริหารธุรกิจ</option>
+              <option value="Faculty of Liberal Arts" style={{ fontSize:'1vw'}}>Faculty of Liberal Arts : คณะศิลปศาสตร์</option>
+              <option value="College of Nanotechnology" style={{ fontSize:'1vw'}}>College of Nanotechnology : วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง</option>
+              <option value="College of Advanced Manufacturing Innovation" style={{ fontSize:'1vw'}}>College of Advanced Manufacturing Innovation : วิทยาลัยนวัตกรรมการผลิตขั้นสูง</option>
+              <option value="Faculty of Medicine" style={{ fontSize:'1vw'}}>Faculty of Medicine : คณะแพทยศาสตร์</option>
+              <option value="International Academy of Aviation Industry" style={{ fontSize:'1vw'}}>International Academy of Aviation Industry : วิทยาลัยอุตสาหกรรมการบินนานาชาติ</option>
+              <option value="King Mongkut's International Demonstration School" style={{ fontSize:'1vw'}}>King Mongkut's International Demonstration School : โรงเรียนสาธิตนานาชาติพระจอมเกล้า</option>
+              <option value="Other" style={{ fontSize:'1vw'}}>Other : อื่นๆ</option>
             </Form.Control>                  
           </Form.Group>
         </Form>
