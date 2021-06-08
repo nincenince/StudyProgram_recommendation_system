@@ -51,12 +51,16 @@ function Dashboard (props){
                                 "RecProgScore2": history_list[count]['second_p'],
                                 "Programs3": history_list[count]['third'],
                                 "RecProgScore3": history_list[count]['third_p'],
+                                "Programs4": history_list[count]['forth'],
+                                "RecProgScore4": history_list[count]['forth_p'],
+                                "Programs5": history_list[count]['fifth'],
+                                "RecProgScore5": history_list[count]['fifth_p'],
                             }
                         ]    
                     };
                     temp.push(a);
                 }
-                console.log("in in in ");
+                // console.log("in in in ");
                 let x ={
                     "RecommendProgList": temp
                 };
@@ -77,6 +81,10 @@ function Dashboard (props){
                     "RecProgScore2": "",
                     "Programs3": "",
                     "RecProgScore3": "",
+                    "Programs4": "",
+                    "RecProgScore4": "",
+                    "Programs5": "",
+                    "RecProgScore5": "",
                 }
                 ]
             }
@@ -231,47 +239,62 @@ function Dashboard (props){
                                 <div className="row">   
 
                                 
-                                <div className= "col-3 history-proglist" ><p >Date </p>{RecInfo.Date}</div>
+                                <div className= "col-3 history-proglist" style={{fontWeight: 'bold',justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}><p >Date </p>{RecInfo.Date}</div>
                                     {
                                     RecInfo.ProgramList.map((RecDetail) => {
                                         return (
                                         <div className="col-9"  key={ Math.random().toString(36).substr(2, 9) }>
                                             <div className="row"> 
-                                                <div className="col-6 history-recprogram" style={{paddingRight:'5%'}}>
-                                                <p  style={{fontSize:'93%', marginLeft:'-5%'}}>Recommended Program</p>
-                                                    {RecDetail.Programs1}
+                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
+                                                    <p  style={{fontWeight: 'bold',justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>Recommended Program</p>
                                                 </div>
                                                 <div className="col-6 history-recscore">
-                                                <p style={{fontSize:'93%', marginRight:'-5%'}}>Recommendation Score</p>
+                                                    <p style={{fontWeight: 'bold',justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>Predicted Grade</p>
+                                                </div>                                                
+                                            </div>
+                                            <hr></hr>
+                                            <div className="row"> 
+                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
+                                                    {RecDetail.Programs1}
+                                                </div>
+                                                <div className="col-6 history-recscore" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
                                                     {RecDetail.RecProgScore1}
                                                 </div>                                                
                                             </div>
-
                                             <hr></hr>
                                             <div className="row"> 
-                                                <div className="col-6 history-recprogram">
+                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
                                                     {RecDetail.Programs2}
                                                 </div>
-                                                <div className="col-6 history-recscore">
+                                                <div className="col-6 history-recscore" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
                                                     {RecDetail.RecProgScore2}
                                                 </div>                                                
                                             </div>
                                             <hr></hr>
                                             <div className="row"> 
-                                                <div className="col-6 history-recprogram">
+                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
                                                     {RecDetail.Programs3}
                                                 </div>
-                                                <div className="col-6 history-recscore">
+                                                <div className="col-6 history-recscore" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
                                                     {RecDetail.RecProgScore3}
                                                 </div>                                                
                                             </div>
                                             <hr></hr>
                                             <div className="row"> 
-                                                <div className="col-6 history-recprogram">
+                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
                                                     {RecDetail.Programs4}
                                                 </div>
-                                                <div className="col-6 history-recscore">
+                                                <div className="col-6 history-recscore" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
                                                     {RecDetail.RecProgScore4}
+                                                </div>                                                
+                                            </div> 
+                                            <hr></hr>
+                                            <div className="row" style={{paddingBottom: '5%'}}> 
+                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
+                                                    {RecDetail.Programs5}
+                                                </div>
+                                                <div className="col-6 history-recscore" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
+                                                    {RecDetail.RecProgScore5}
                                                 </div>                                                
                                             </div>        
                                         </div>
