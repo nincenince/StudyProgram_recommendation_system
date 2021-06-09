@@ -9,10 +9,53 @@ import { useSelector, useDispatch} from 'react-redux';
 function RecommendProg (props){
 
   let history_list = useSelector(state => state.recommend);
+  let combine_course = {
+    "บริหารธุรกิจบัณฑิต":"Bachelor of Business Administration",
+    "วท.บ. เทคโนโลยีการผลิตพืช":"B.Sc. Plant Production Technology",
+    "วท.บ. เศรษฐศาสตร์ธุรกิจและการจัดการ":"B.Sc. Business and Managerial Economics",
+    "วท.บ. เทคโนโลยีสารสนเทศ":"B.Sc. Information Technology",
+    "วท.บ. วิทยาการคอมพิวเตอร์":"B.Sc. Computer Science",
+    "วศ.บ. วิศวกรรมไฟฟ้า":"B.Eng. Electrical Engineering",
+    "วท.บ.เคมีอุตสาหกรรม":"B.Sc. Industrial Chemistry",
+    "วท.บ. คณิตศาสตร์ประยุกต์":"B.Sc. Applied Mathematics",
+    "วท.บ.สถิติประยุกต์":"B.Sc. Applied Statistics",
+    "วท.บ. นิเทศศาสตร์เกษตร":"B.Sc. Agricultural Communication",
+    "วท.บ. จุลชีววิทยาอุตสาหกรรม":"B.Sc. Industrial Microbiology",
+    "วศ.บ. วิศวกรรมโทรคมนาคมและโครงข่าย":"B.Eng. Telecommunications and Network Engineering",
+    "วท.บ.ฟิสิกส์อุตสาหกรรม":"B.Sc. Industrial Physics",
+    "ศศ.บ. ภาษาอังกฤษ":"B.A. English",
+    "ศศ.บ. ภาษาญี่ปุ่น":"B.A. Japanese",
+    "วท.บ. เทคโนโลยีการผลิตสัตว์และวิทยาศาสตร์เนื้อสัตว์":"B.Sc. Animal Production Technology and Meat Science",
+    "วศ.บ. วิศวกรรมอิเล็กทรอนิกส์":"B.Eng. Electronics Engineering",
+    "วศ.บ. วิศวกรรมวัสดุนาโน":"B.Eng. Nanomaterial Engineering",
+    "วท.บ.เทคโนโลยีชีวภาพ":"B.Sc. Biotechnology",
+    "วศ.บ. วิศวกรรมโยธา":"B.Eng. Civil Engineering",
+    "วท.บ.เคมีสิ่งแวดล้อม":"B.Sc. Environmental Chemistry",
+    "วท.บ. วิศวกรรมแปรรูปอาหาร":"B.Sc. Food Process Engineering",
+    "วท.บ. เทคโนโลยีการหมักในอุตสาหกรรมอาหาร":"B.Sc. Fermentation Technology in Food Industry",
+    "วศ.บ. วิศวกรรมคอมพิวเตอร์":"B.Eng. Computer Engineering",
+    "วท.บ. วิทยาศาสตร์และเทคโนโลยีการอาหาร":"B.Sc. Food Science and Technology",
+    "ค.อ.บ. ครุศาสตร์การออกแบบสภาพแวดล้อมภายใน":"B.S.Ind.Ed. Interior Environmental Design",
+    "ค.อ.บ. ครุศาสตร์วิศวกรรม":"B.S.Ind.Ed. Engineering Education",
+    "สถ.บ. สถาปัตยกรรมภายใน":"B.Arch. Interior Architecture",
+    "สถ.บ. สถาปัตยกรรมหลัก":"B.Arch. Architecture",
+    "สถ.บ. ศิลปอุตสาหกรรม":"B.Arch. Industrial Design",
+    "วศ.บ. วิศวกรรมเครื่องกล":"B.Eng. Mechanical Engineering",
+    "วท.บ. นวัตกรรมการผลิตสัตว์น้ำและการจัดการทรัพยากรประมง":"B.Sc. Innovative Aquatic Animal Production and Fishery Resource Management",
+    "ค.อ.บ. ครุศาสตร์เกษตร":"B.S.Ind.Ed. Agricultural Education",
+    "วท.บ. พัฒนาการเกษตร":"B.Sc. Agricultural Development",
+    "วศ.บ. วิศวกรรมอุตสาหการ":"B.Eng. Industrial Engineering",
+    "วศ.บ. วิศวกรรมระบบการผลิต":"B.Eng. Manufacturing System Engineering",
+    "ภ.สถ.บ. ภูมิสถาปัตยกรรม":"Bachelor of Landscape Architecture",
+    "ศศ.บ. นวัตกรรมการท่องเที่ยวและการบริการ":"B.A. Innovation in Tourism and Hospitality",
+    "วท.บ. วิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ":"B.Sc. Data Science and Business Analytics",
+    "วศ.บ. วิศวกรรมเคมี":"B.Eng. Chemical Engineering"
+  };
   let temp = {
     "RecommendProgList": [
       {
         "Programs": "Program1",
+        "programs_eng": "Program1_eng",
         "ProgramList": [
           {
             "RecProgScore": "100%"
@@ -21,6 +64,7 @@ function RecommendProg (props){
       },
       {
         "Programs": "Program2",
+        "programs_eng": "Program2_eng",
         "ProgramList": [
           {
             "RecProgScore": "100%"
@@ -29,6 +73,7 @@ function RecommendProg (props){
       },
       {
         "Programs": "Program3",
+        "programs_eng": "Program3_eng",
         "ProgramList": [
           {
             "RecProgScore": "100%"
@@ -37,6 +82,7 @@ function RecommendProg (props){
       },
       {
         "Programs": "Program4",
+        "programs_eng": "Program4_eng",
         "ProgramList": [
           {
             "RecProgScore": "100%"
@@ -45,6 +91,7 @@ function RecommendProg (props){
       },
       {
         "Programs": "Program5",
+        "programs_eng": "Program5_eng",
         "ProgramList": [
           {
             "RecProgScore": "100%"
@@ -71,6 +118,7 @@ function RecommendProg (props){
         for(let i=0;i<parseInt(latest_data['fifth_s']);i++){s5=s5+"⭐️"};
         let a = {
           "Programs": latest_data['first'],
+          "programs_eng": combine_course[latest_data['first']],
           "ProgramList": [
             {
               "RecProgScore": latest_data['first_p'],
@@ -80,6 +128,7 @@ function RecommendProg (props){
         }
         let b = {
           "Programs": latest_data['second'],
+          "programs_eng": combine_course[latest_data['second']],
           "ProgramList": [
             {
               "RecProgScore": latest_data['second_p'],
@@ -89,6 +138,7 @@ function RecommendProg (props){
         }
         let c = {
           "Programs": latest_data['third'],
+          "programs_eng": combine_course[latest_data['third']],
           "ProgramList": [
             {
               "RecProgScore": latest_data['third_p'],
@@ -98,6 +148,7 @@ function RecommendProg (props){
         }
         let d = {
           "Programs": latest_data['forth'],
+          "programs_eng": combine_course[latest_data['forth']],
           "ProgramList": [
             {
               "RecProgScore": latest_data['forth_p'],
@@ -107,6 +158,7 @@ function RecommendProg (props){
         }
         let e = {
           "Programs": latest_data['fifth'],
+          "programs_eng": combine_course[latest_data['fifth']],
           "ProgramList": [
             {
               "RecProgScore": latest_data['fifth_p'],
@@ -150,21 +202,24 @@ function RecommendProg (props){
                     <div>
                       <Row>
                         <Col style={{float:'left', marginRight:'5%', paddingLeft:'5%'}} >
-                          {RecInfo.Programs}
+                          <p>{RecInfo.Programs}</p>
+                          <p>{RecInfo.programs_eng}</p>          
                         </Col>
+                        
                           {RecInfo.ProgramList.map((RecDetail) => {
                             return (
-                              <div>
+                              <Col>
                                 <p> 
                                   {RecDetail.RecProgStar}
                                 </p>
                                 <p>
                                   Predicted grade: {RecDetail.RecProgScore}
                                 </p>
-                              </div>
+                              </Col>
                             );
                           })}
                       </Row>
+                      <hr></hr>
                     </div>
                     );
                   })
