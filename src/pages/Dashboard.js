@@ -21,6 +21,48 @@ function Dashboard (props){
     let EducationInfo = useSelector(state => state.education);
     let PersonalityInfo = useSelector(state => state.personality);
     let history_list = useSelector(state => state.recommend);
+    let combine_course = {
+        "บริหารธุรกิจบัณฑิต":"Bachelor of Business Administration",
+        "วท.บ. เทคโนโลยีการผลิตพืช":"B.Sc. Plant Production Technology",
+        "วท.บ. เศรษฐศาสตร์ธุรกิจและการจัดการ":"B.Sc. Business and Managerial Economics",
+        "วท.บ. เทคโนโลยีสารสนเทศ":"B.Sc. Information Technology",
+        "วท.บ. วิทยาการคอมพิวเตอร์":"B.Sc. Computer Science",
+        "วศ.บ. วิศวกรรมไฟฟ้า":"B.Eng. Electrical Engineering",
+        "วท.บ.เคมีอุตสาหกรรม":"B.Sc. Industrial Chemistry",
+        "วท.บ. คณิตศาสตร์ประยุกต์":"B.Sc. Applied Mathematics",
+        "วท.บ.สถิติประยุกต์":"B.Sc. Applied Statistics",
+        "วท.บ. นิเทศศาสตร์เกษตร":"B.Sc. Agricultural Communication",
+        "วท.บ. จุลชีววิทยาอุตสาหกรรม":"B.Sc. Industrial Microbiology",
+        "วศ.บ. วิศวกรรมโทรคมนาคมและโครงข่าย":"B.Eng. Telecommunications and Network Engineering",
+        "วท.บ.ฟิสิกส์อุตสาหกรรม":"B.Sc. Industrial Physics",
+        "ศศ.บ. ภาษาอังกฤษ":"B.A. English",
+        "ศศ.บ. ภาษาญี่ปุ่น":"B.A. Japanese",
+        "วท.บ. เทคโนโลยีการผลิตสัตว์และวิทยาศาสตร์เนื้อสัตว์":"B.Sc. Animal Production Technology and Meat Science",
+        "วศ.บ. วิศวกรรมอิเล็กทรอนิกส์":"B.Eng. Electronics Engineering",
+        "วศ.บ. วิศวกรรมวัสดุนาโน":"B.Eng. Nanomaterial Engineering",
+        "วท.บ.เทคโนโลยีชีวภาพ":"B.Sc. Biotechnology",
+        "วศ.บ. วิศวกรรมโยธา":"B.Eng. Civil Engineering",
+        "วท.บ.เคมีสิ่งแวดล้อม":"B.Sc. Environmental Chemistry",
+        "วท.บ. วิศวกรรมแปรรูปอาหาร":"B.Sc. Food Process Engineering",
+        "วท.บ. เทคโนโลยีการหมักในอุตสาหกรรมอาหาร":"B.Sc. Fermentation Technology in Food Industry",
+        "วศ.บ. วิศวกรรมคอมพิวเตอร์":"B.Eng. Computer Engineering",
+        "วท.บ. วิทยาศาสตร์และเทคโนโลยีการอาหาร":"B.Sc. Food Science and Technology",
+        "ค.อ.บ. ครุศาสตร์การออกแบบสภาพแวดล้อมภายใน":"B.S.Ind.Ed. Interior Environmental Design",
+        "ค.อ.บ. ครุศาสตร์วิศวกรรม":"B.S.Ind.Ed. Engineering Education",
+        "สถ.บ. สถาปัตยกรรมภายใน":"B.Arch. Interior Architecture",
+        "สถ.บ. สถาปัตยกรรมหลัก":"B.Arch. Architecture",
+        "สถ.บ. ศิลปอุตสาหกรรม":"B.Arch. Industrial Design",
+        "วศ.บ. วิศวกรรมเครื่องกล":"B.Eng. Mechanical Engineering",
+        "วท.บ. นวัตกรรมการผลิตสัตว์น้ำและการจัดการทรัพยากรประมง":"B.Sc. Innovative Aquatic Animal Production and Fishery Resource Management",
+        "ค.อ.บ. ครุศาสตร์เกษตร":"B.S.Ind.Ed. Agricultural Education",
+        "วท.บ. พัฒนาการเกษตร":"B.Sc. Agricultural Development",
+        "วศ.บ. วิศวกรรมอุตสาหการ":"B.Eng. Industrial Engineering",
+        "วศ.บ. วิศวกรรมระบบการผลิต":"B.Eng. Manufacturing System Engineering",
+        "ภ.สถ.บ. ภูมิสถาปัตยกรรม":"Bachelor of Landscape Architecture",
+        "ศศ.บ. นวัตกรรมการท่องเที่ยวและการบริการ":"B.A. Innovation in Tourism and Hospitality",
+        "วท.บ. วิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ":"B.Sc. Data Science and Business Analytics",
+        "วศ.บ. วิศวกรรมเคมี":"B.Eng. Chemical Engineering"
+      };
     // const [History, setHistory] = useState( {
     //     "Date": "",
     //     "ProgramList": [
@@ -46,14 +88,19 @@ function Dashboard (props){
                         "ProgramList": [
                             {
                                 "Programs1": history_list[count]['first'],
+                                "Programs1_eng": combine_course[history_list[count]['first']],
                                 "RecProgScore1": history_list[count]['first_p'],
                                 "Programs2": history_list[count]['second'],
+                                "Programs2_eng": combine_course[history_list[count]['second']],
                                 "RecProgScore2": history_list[count]['second_p'],
                                 "Programs3": history_list[count]['third'],
+                                "Programs3_eng": combine_course[history_list[count]['third']],
                                 "RecProgScore3": history_list[count]['third_p'],
                                 "Programs4": history_list[count]['forth'],
+                                "Programs4_eng": combine_course[history_list[count]['forth']],
                                 "RecProgScore4": history_list[count]['forth_p'],
                                 "Programs5": history_list[count]['fifth'],
+                                "Programs5_eng": combine_course[history_list[count]['fifth']],
                                 "RecProgScore5": history_list[count]['fifth_p'],
                             }
                         ]    
@@ -76,14 +123,19 @@ function Dashboard (props){
                 "ProgramList": [
                 {
                     "Programs1": "",
+                    "Programs1_eng": "",
                     "RecProgScore1": "",
                     "Programs2": "",
+                    "Programs2_eng": "",
                     "RecProgScore2": "",
                     "Programs3": "",
+                    "Programs3_eng": "",
                     "RecProgScore3": "",
                     "Programs4": "",
+                    "Programs4_eng": "",
                     "RecProgScore4": "",
                     "Programs5": "",
+                    "Programs5_eng": "",
                     "RecProgScore5": "",
                 }
                 ]
@@ -229,7 +281,7 @@ function Dashboard (props){
         <h3 style={{textAlign:'center'}}>Let's explore your data</h3>
         {/* <Container > */}
                 <Row>
-                <Col sm={6} style={{ border:'solid', borderWidth:'thin', borderRadius:'9px', backgroundColor:'white', marginLeft:'5%', marginTop:'2%'}}>
+                <Col sm={6} style={{ border:'solid', borderWidth:'thin', borderRadius:'9px', backgroundColor:'white', marginLeft:'5%', marginTop:'2%' ,overflow: 'scroll', height: '45rem'}}>
                         <div >
                         <h4 style={{  textDecoration:'bold', paddingTop:'2%'}} >Result History</h4>
                         { History.RecommendProgList.map((RecInfo) => {
@@ -254,8 +306,9 @@ function Dashboard (props){
                                             </div>
                                             <hr></hr>
                                             <div className="row"> 
-                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
-                                                    {RecDetail.Programs1}
+                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center', marginBottom: '-5%', fontSize: '90%'}}>
+                                                    <p>{RecDetail.Programs1}</p>
+                                                    <p>{RecDetail.Programs1_eng}</p>
                                                 </div>
                                                 <div className="col-6 history-recscore" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
                                                     {RecDetail.RecProgScore1}
@@ -263,8 +316,9 @@ function Dashboard (props){
                                             </div>
                                             <hr></hr>
                                             <div className="row"> 
-                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
-                                                    {RecDetail.Programs2}
+                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center', marginBottom: '-5%', fontSize: '90%'}}>
+                                                    <p>{RecDetail.Programs2}</p>
+                                                    <p>{RecDetail.Programs2_eng}</p>
                                                 </div>
                                                 <div className="col-6 history-recscore" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
                                                     {RecDetail.RecProgScore2}
@@ -272,8 +326,9 @@ function Dashboard (props){
                                             </div>
                                             <hr></hr>
                                             <div className="row"> 
-                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
-                                                    {RecDetail.Programs3}
+                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center', marginBottom: '-5%', fontSize: '90%'}}>
+                                                    <p>{RecDetail.Programs3}</p>
+                                                    <p>{RecDetail.Programs3_eng}</p>
                                                 </div>
                                                 <div className="col-6 history-recscore" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
                                                     {RecDetail.RecProgScore3}
@@ -281,8 +336,9 @@ function Dashboard (props){
                                             </div>
                                             <hr></hr>
                                             <div className="row"> 
-                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
-                                                    {RecDetail.Programs4}
+                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center', marginBottom: '-5%', fontSize: '90%'}}>
+                                                    <p>{RecDetail.Programs4}</p>
+                                                    <p>{RecDetail.Programs4_eng}</p>
                                                 </div>
                                                 <div className="col-6 history-recscore" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
                                                     {RecDetail.RecProgScore4}
@@ -290,8 +346,9 @@ function Dashboard (props){
                                             </div> 
                                             <hr></hr>
                                             <div className="row" style={{paddingBottom: '5%'}}> 
-                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
-                                                    {RecDetail.Programs5}
+                                                <div className="col-6 history-recprogram" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center', marginBottom: '-5%', fontSize: '90%'}}>
+                                                    <p>{RecDetail.Programs5}</p>
+                                                    <p>{RecDetail.Programs5_eng}</p>
                                                 </div>
                                                 <div className="col-6 history-recscore" style={{justyfyContent: 'center', textAlign: 'center', alignItem: 'center'}}>
                                                     {RecDetail.RecProgScore5}
