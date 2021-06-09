@@ -370,7 +370,7 @@ function RecProgram (props){
           <Row>
             <Col xs={12} md={7}>
               <Col style={{border:'solid', borderWidth:'thin', marginTop:"5%", borderLeftColor:'coral', borderLeftWidth:"5px"}}>
-                <h3 style={{ margin:'2%'}}>Avaliable Programs</h3>
+                <h3 style={{ margin:'2%'}}>Available Programs</h3>
                 {/* <p style={{ margin:'2%', fontWeight: 'bold'}}>Based on you personality traits</p> */}
                 <hr/>
                 <p style={{ margin:'2%'}}>Please select 5 programs that you're interested in from the list below</p>
@@ -389,7 +389,7 @@ function RecProgram (props){
                           </div>
                         );})
                       }
-                      <p style={{ margin:'2%', fontWeight: 'bold'}}>Other avaliable programs at KMITL</p>
+                      <p style={{ margin:'2%', fontWeight: 'bold'}}>Other available programs at KMITL</p>
                       <br/> 
                       {Course.Courses2.map((ava) => {
                         return (
