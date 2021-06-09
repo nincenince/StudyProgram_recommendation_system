@@ -46,9 +46,8 @@ function About() {
     <motion.h3 className="centered-text" animate={{ x: "-20vw" }}
     initial={{ x: "-50vw" }}
     transition={{ duration: 1 }}>
-      Discover your study program and future career,
-      Let’s start analyse them with your 
-      education information and Personality.
+      Discover the programs that match your education background. <br></br>
+      Just provide your educational information and take the Big Five personality test.
       
       <span >
         <Col sm={{ span: 12, offset: 9 }} >
@@ -68,7 +67,7 @@ function About() {
     <Container fluid>
       <Row>
         {/* <Col></Col> */}
-          <Col md={{ span: 4, offset:2}} ><h1 style={{color: "red", textAlign:"center"}}>55</h1>
+          <Col md={{ span: 4, offset:2}} ><h1 style={{color: "red", textAlign:"center"}}>41</h1>
           <p style={{textAlign:"center"}} >recommendation program</p>
           </Col>
  
